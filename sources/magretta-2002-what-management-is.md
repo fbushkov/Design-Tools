@@ -7,7 +7,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [outside-in-value, business-model-as-story, strategic-tradeoffs, mission-to-measures, pareto-focus, systematic-abandonment]
+approaches: [business-model-as-story, diagnostic-vs-reward-metrics, outside-in-value, purpose-derived-measures, reframe-the-brief, strategic-tradeoffs, targets-to-process-data]
 categories: [metrics-as-target, method-cargo, busy-no-result, product-direction]
 read: true
 rating: 4

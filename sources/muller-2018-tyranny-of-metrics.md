@@ -7,7 +7,7 @@ type: book        # book, paper, article, course, talk
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [metrics-introduction-checklist, diagnostic-vs-reward-metrics, practitioner-designed-metrics, outcome-not-input-metrics, metrics-gaming-audit]
+approaches: [diagnostic-vs-reward-metrics, purpose-derived-measures, system-before-person]
 categories: [metrics-as-target, control-surveillance, busy-no-result, resistance]
 read: true
 rating:

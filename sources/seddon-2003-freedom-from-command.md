@@ -7,7 +7,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [failure-demand-analysis, vanguard-check, capability-charts, design-against-demand, it-after-improvement]
+approaches: [dark-matter-mapping, design-against-demand, diagnostic-vs-reward-metrics, embedded-strategic-design, failure-demand-analysis, it-after-improvement, outside-in-value, process-behavior-chart, purpose-derived-measures, strategic-tradeoffs, system-before-person, targets-to-process-data, vanguard-check]
 categories: [metrics-as-target, busy-no-result, silo-service, control-surveillance, method-cargo, resistance]
 read: true
 rating:

@@ -7,7 +7,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics, service-design]
-approaches: [frame-creation, paradox-because-chain, theme-analysis, frame-as-if, problem-solution-coevolution]
+approaches: [dark-matter-mapping, embedded-strategic-design, frame-creation, reframe-the-brief, strategic-tradeoffs]
 categories: [busy-no-result, resistance, method-cargo, control-surveillance]
 read: true
 rating:

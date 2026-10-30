@@ -7,7 +7,7 @@ type: book        # book, paper, article, course, talk
 language: ru
 link:
 directions: [strategy, diagnostics, service-design]
-approaches: [deming-14-points, common-vs-special-causes, operational-definitions, pdca-cycle, people-outside-the-system, measurement-system-check, internal-customer-chain, independent-assessment, quota-to-process-data, single-supplier-partnership]
+approaches: [design-against-demand, diagnostic-vs-reward-metrics, embedded-strategic-design, it-after-improvement, operational-definitions, outside-in-value, process-behavior-chart, purpose-derived-measures, system-before-person, targets-to-process-data, vanguard-check]
 categories: [metrics-as-target, busy-no-result, control-surveillance, silo-service, method-cargo, employee-experience]
 read: true
 rating:
