@@ -2,6 +2,7 @@
 id: owner-bottleneck
 title: Собственник — узкое место во всех решениях
 directions: [diagnostics, strategy]
+category: [decision-bottleneck]
 maturity: { management: [1, 2] }
 scale: [micro, small]
 approaches: []

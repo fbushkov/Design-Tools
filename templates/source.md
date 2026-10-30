@@ -8,6 +8,7 @@ language: ru
 link:
 directions: []
 approaches: []    # какие подходы из него взяты
+categories: []   # категории проблем из taxonomy.md, на которые источник отвечает
 read: false
 rating:           # 1–5, насколько полезно на практике
 tags: []
