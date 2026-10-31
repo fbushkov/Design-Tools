@@ -3,7 +3,7 @@ id: diagnostic-vs-reward-metrics
 title: Показатели для диагностики, а не для наград
 directions: [strategy, diagnostics, team-ai]
 solves: [metrics-as-target, resistance]
-sources: [muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence]
+sources: [muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, poister-2014-managing-measuring-performance]
 maturity_min: { data: 2 }
 tags: [kpi, goodhart-law, campbell-law, pay-for-performance, чек-лист]
 status: draft

@@ -3,7 +3,7 @@ id: targets-to-process-data
 title: Вместо плана и нормы — данные о самой работе
 directions: [strategy, diagnostics, service-design]
 solves: [metrics-as-target, busy-no-result]
-sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is]
+sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance]
 maturity_min: { data: 2 }
 tags: [цели, kpi, нормы, системное-мышление]
 status: draft
