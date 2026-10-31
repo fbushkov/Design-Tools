@@ -3,7 +3,7 @@ id: strategic-tradeoffs
 title: Стратегические компромиссы и умение отказываться
 directions: [strategy, diagnostics]
 solves: [busy-no-result]
-sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, dorst-2015-frame-innovation]
+sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes]
 maturity_min: { management: 2 }
 tags: [стратегия, портер, друкер, фокус, 80-20]
 status: draft
