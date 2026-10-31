@@ -3,7 +3,7 @@ id: vanguard-check
 title: Проверка системы перед планом (модель check Vanguard)
 directions: [diagnostics, service-design, strategy]
 solves: [busy-no-result, method-cargo, resistance]
-sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis]
+sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, stickdorn-2018-sd-doing]
 maturity_min: { management: 2 }
 tags: [vanguard, системное-мышление, диагностика, цикл-улучшения]
 status: draft

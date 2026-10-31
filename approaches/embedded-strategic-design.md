@@ -3,7 +3,7 @@ id: embedded-strategic-design
 title: Изменение изнутри или помощь извне
 directions: [strategy, team-ai, diagnostics]
 solves: [method-cargo, resistance]
-sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-1981-creating-corporate-future]
+sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-1981-creating-corporate-future, stickdorn-2018-sd-doing]
 maturity_min: { management: 2 }
 tags: [консалтинг, встроенная-команда, обучение-организации, стратегический-дизайн]
 status: draft
