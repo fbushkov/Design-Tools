@@ -7,7 +7,7 @@ type: book        # book, paper, article, course, talk
 language: ru
 link:
 directions: [strategy, diagnostics, service-design]
-approaches: [design-against-demand, diagnostic-vs-reward-metrics, embedded-strategic-design, it-after-improvement, operational-definitions, outside-in-value, process-behavior-chart, purpose-derived-measures, system-before-person, targets-to-process-data, vanguard-check]
+approaches: [design-against-demand, diagnostic-vs-reward-metrics, embedded-strategic-design, it-after-improvement, operational-definitions, outside-in-value, process-behavior-chart, purpose-derived-measures, system-before-person, targets-to-process-data, vanguard-check, ai-task-frontier-mapping, balancing-counter-metrics, employee-journey-mapping, intermediate-institutions, leverage-points, solve-resolve-dissolve, system-traps]
 categories: [metrics-as-target, busy-no-result, control-surveillance, silo-service, method-cargo, employee-experience]
 read: true
 rating:

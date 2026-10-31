@@ -7,7 +7,7 @@ type: paper
 language: en
 link:
 directions: [team-ai]
-approaches: [automation-by-stage-and-level, human-last-step-for-risky-decisions, trust-calibration-feedback]
+approaches: [automation-by-stage-and-level, ai-task-frontier-mapping, human-ai-heuristic-review]
 categories: [ai-no-effect, routine-load, employee-experience]
 read: true
 rating:

@@ -7,7 +7,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [operational-definitions, diagnostic-vs-reward-metrics, assumptions-behind-numbers, profit-vs-cash, working-capital-levers, conservative-investment-case, open-book-finance]
+approaches: [operational-definitions, diagnostic-vs-reward-metrics, balancing-counter-metrics, decision-record, targets-to-process-data, trust-ladder]
 categories: [metrics-as-target, busy-no-result, resistance]
 read: true
 rating:

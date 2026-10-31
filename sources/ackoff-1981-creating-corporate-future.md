@@ -7,7 +7,7 @@ type: book
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [reframe-the-brief, dark-matter-mapping, system-before-person, it-after-improvement, embedded-strategic-design, process-behavior-chart, idealized-design, mess-formulation, solve-resolve-dissolve, assumption-surfacing, participative-planning, decision-record, explanatory-model]
+approaches: [reframe-the-brief, dark-matter-mapping, system-before-person, it-after-improvement, embedded-strategic-design, process-behavior-chart, idealized-design, mess-formulation, solve-resolve-dissolve, decision-record, ai-pilot-with-control, diagnostic-vs-reward-metrics, implementation-as-project, leverage-points, outside-in-value, program-logic-model, rules-for-top-first, service-prototyping]
 categories: [decision-bottleneck, silo-service, metrics-as-target, resistance, method-cargo, busy-no-result]
 read: true
 rating:

@@ -7,7 +7,7 @@ type: paper       # CHI 2019, Microsoft Research, 13 страниц и прил�
 language: en
 link: https://doi.org/10.1145/3290605.3300233
 directions: [team-ai, service-design]
-approaches: [human-ai-heuristic-review, scope-ai-when-uncertain, ai-feedback-and-control-loop]
+approaches: [human-ai-heuristic-review, automation-by-stage-and-level, employee-journey-mapping]
 categories: [ai-no-effect, employee-experience, resistance, control-surveillance]
 read: true
 rating:

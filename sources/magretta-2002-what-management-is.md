@@ -7,7 +7,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [business-model-as-story, diagnostic-vs-reward-metrics, outside-in-value, purpose-derived-measures, reframe-the-brief, strategic-tradeoffs, targets-to-process-data]
+approaches: [business-model-as-story, diagnostic-vs-reward-metrics, outside-in-value, purpose-derived-measures, reframe-the-brief, strategic-tradeoffs, targets-to-process-data, balancing-counter-metrics, decision-record, program-logic-model]
 categories: [metrics-as-target, method-cargo, busy-no-result, product-direction]
 read: true
 rating: 4

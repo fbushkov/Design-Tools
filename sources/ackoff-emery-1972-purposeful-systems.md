@@ -7,7 +7,7 @@ type: book
 language: ru
 link:
 directions: [diagnostics, strategy]
-approaches: [operational-definitions, system-before-person, outside-in-value, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, task-goal-ideal, solve-resolve-dissolve, assumption-surfacing, joint-optimization-subgoals, choice-parameters-diagnosis, behavior-over-self-report, instrumentality-shift]
+approaches: [operational-definitions, system-before-person, outside-in-value, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, solve-resolve-dissolve, employee-journey-mapping, experience-journey-map, idealized-design, implementation-as-project, mess-formulation, rules-for-top-first, trust-ladder]
 categories: [control-surveillance, resistance, decision-bottleneck, silo-service, metrics-as-target]
 read: true
 rating:

@@ -7,7 +7,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [operational-definitions, purpose-derived-measures, diagnostic-vs-reward-metrics, targets-to-process-data, system-before-person, outside-in-value, program-logic-model, measure-by-intended-use, balancing-counter-metrics, context-adjusted-benchmarking, performance-data-audit, measure-candidate-assessment]
+approaches: [operational-definitions, purpose-derived-measures, diagnostic-vs-reward-metrics, targets-to-process-data, system-before-person, outside-in-value, program-logic-model, balancing-counter-metrics, experience-journey-map, implementation-as-project, process-behavior-chart, service-prototyping, system-traps]
 categories: [metrics-as-target, busy-no-result, control-surveillance, method-cargo, resistance, silo-service]
 read: true
 rating:

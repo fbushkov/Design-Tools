@@ -7,7 +7,7 @@ type: paper
 language: en
 link: https://doi.org/10.1287/orsc.2025.21838
 directions: [team-ai, diagnostics]
-approaches: [it-after-improvement, operational-definitions, ai-task-frontier-mapping, ai-pilot-with-control, ai-overreliance-check]
+approaches: [it-after-improvement, operational-definitions, ai-task-frontier-mapping, ai-pilot-with-control, automation-by-stage-and-level]
 categories: [ai-no-effect, routine-load]
 read: true
 rating:

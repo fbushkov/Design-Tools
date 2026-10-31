@@ -7,7 +7,7 @@ type: book
 language: ru
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [system-before-person, purpose-derived-measures, reframe-the-brief, dark-matter-mapping, leverage-points, system-traps, behavior-over-time, stock-flow-feedback-map, feedback-to-decider, limiting-factor-shift]
+approaches: [system-before-person, purpose-derived-measures, reframe-the-brief, dark-matter-mapping, leverage-points, system-traps, balancing-counter-metrics, mess-formulation, program-logic-model, rules-for-top-first, service-prototyping, targets-to-process-data]
 categories: [busy-no-result, metrics-as-target, resistance, silo-service, decision-bottleneck, method-cargo]
 read: true
 rating:
