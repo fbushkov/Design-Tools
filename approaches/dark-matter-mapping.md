@@ -3,7 +3,7 @@ id: dark-matter-mapping
 title: Карта тёмной материи и системных условий
 directions: [strategy, service-design, diagnostics]
 solves: [method-cargo, resistance, silo-service]
-sources: [hill-2012-dark-matter, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes, meadows-2008-thinking-in-systems]
+sources: [hill-2012-dark-matter, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future]
 maturity_min: { management: 2 }
 tags: [организационная-культура, системное-мышление, стратегический-дизайн, внедрение]
 status: draft

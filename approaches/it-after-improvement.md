@@ -3,7 +3,7 @@ id: it-after-improvement
 title: Сначала улучшить работу, потом автоматизировать
 directions: [team-ai, service-design, diagnostics]
 solves: [method-cargo]
-sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, hill-2012-dark-matter, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier]
+sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, hill-2012-dark-matter, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, ackoff-1981-creating-corporate-future]
 maturity_min: { process: 2 }
 tags: [ит, автоматизация, ии, внедрение]
 status: draft

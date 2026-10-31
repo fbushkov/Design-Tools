@@ -3,7 +3,7 @@ id: outside-in-value
 title: Ценность снаружи и цепочка внутренних потребителей
 directions: [strategy, service-design, diagnostics]
 solves: [silo-service]
-sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command]
+sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-emery-1972-purposeful-systems]
 maturity_min: { product: 1 }
 tags: [ценность, клиент, внутренний-клиент, друкер]
 status: draft

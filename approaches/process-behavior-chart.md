@@ -3,7 +3,7 @@ id: process-behavior-chart
 title: Карта поведения процесса (обычный разброс против особой причины)
 directions: [diagnostics, strategy, service-design]
 solves: [metrics-as-target, busy-no-result]
-sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command]
+sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-1981-creating-corporate-future]
 maturity_min: { data: 2 }
 tags: [вариабельность, контрольная-карта, системное-мышление, деминг]
 status: draft

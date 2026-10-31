@@ -3,7 +3,7 @@ id: purpose-derived-measures
 title: Показатели от цели, результат вместо усилий
 directions: [strategy, diagnostics, service-design]
 solves: [metrics-as-target, busy-no-result]
-sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, meadows-2008-thinking-in-systems]
+sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, meadows-2008-thinking-in-systems, ackoff-emery-1972-purposeful-systems]
 maturity_min: { management: 2, data: 2 }
 tags: [kpi, цель, миссия, измерение-результата]
 status: draft

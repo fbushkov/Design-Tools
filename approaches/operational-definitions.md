@@ -3,7 +3,7 @@ id: operational-definitions
 title: Операциональные определения и проверка системы измерения
 directions: [diagnostics, service-design]
 solves: [metrics-as-target]
-sources: [deming-1982-out-of-crisis, berman-knight-2006-financial-intelligence, dellacqua-2026-jagged-frontier]
+sources: [deming-1982-out-of-crisis, berman-knight-2006-financial-intelligence, dellacqua-2026-jagged-frontier, ackoff-emery-1972-purposeful-systems]
 maturity_min: { process: 2 }
 tags: [измерение, качество, определения, деминг]
 status: draft
