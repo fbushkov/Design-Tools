@@ -3,7 +3,7 @@ id: reframe-the-brief
 title: Переформулировать исходный запрос
 directions: [strategy, diagnostics, service-design]
 solves: [busy-no-result, method-cargo]
-sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, magretta-2002-what-management-is]
+sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, magretta-2002-what-management-is, meadows-2008-thinking-in-systems]
 maturity_min: {}
 tags: [постановка-задачи, бриф, рефрейминг, стратегический-дизайн]
 status: draft

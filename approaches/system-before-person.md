@@ -3,7 +3,7 @@ id: system-before-person
 title: Сначала система, потом человек
 directions: [diagnostics, strategy, team-ai]
 solves: [metrics-as-target, resistance]
-sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics]
+sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, meadows-2008-thinking-in-systems]
 maturity_min: { management: 2 }
 tags: [аттестация, системное-мышление, мотивация, ответственность]
 status: draft
