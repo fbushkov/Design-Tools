@@ -1,6 +1,7 @@
 ---
 id: deming-1982-out-of-crisis
 title: Выход из кризиса
+cite: Деминг 1982
 authors: [Эдвардс Деминг]
 year: 1982
 type: book        # book, paper, article, course, talk

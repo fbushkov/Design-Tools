@@ -1,6 +1,7 @@
 ---
 id: hill-2012-dark-matter
 title: Dark Matter and Trojan Horses. A Strategic Design Vocabulary
+cite: Хилл 2012
 authors: [Dan Hill]
 year: 2012
 type: book        # эссе на 90 страниц, Strelka Press

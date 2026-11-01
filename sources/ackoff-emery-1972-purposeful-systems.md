@@ -1,6 +1,7 @@
 ---
 id: ackoff-emery-1972-purposeful-systems
 title: "О целеустремлённых системах"
+cite: Акофф и Эмери 1972
 authors: [Рассел Акофф, Фред Эмери]
 year: 1972
 type: book

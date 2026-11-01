@@ -1,6 +1,7 @@
 ---
 id: parasuraman-2000-levels-of-automation
 title: "A Model for Types and Levels of Human Interaction with Automation"
+cite: Парасураман 2000
 authors: [Raja Parasuraman, Thomas B. Sheridan, Christopher D. Wickens]
 year: 2000
 type: paper

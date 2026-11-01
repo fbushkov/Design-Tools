@@ -1,6 +1,7 @@
 ---
 id: dorst-2015-frame-innovation
 title: "Frame Innovation: Create New Thinking by Design"
+cite: Дорст 2015
 authors: [Kees Dorst]
 year: 2015
 type: book        # book, paper, article, course, talk

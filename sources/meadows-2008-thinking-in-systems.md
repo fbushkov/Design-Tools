@@ -1,6 +1,7 @@
 ---
 id: meadows-2008-thinking-in-systems
 title: Азбука системного мышления
+cite: Медоуз 2008
 authors: [Донелла Медоуз]
 year: 2008
 type: book

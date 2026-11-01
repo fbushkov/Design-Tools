@@ -1,6 +1,7 @@
 ---
 id: seddon-2003-freedom-from-command
 title: "Freedom from Command and Control: Rethinking Management for Lean Service"
+cite: Седдон 2003
 authors: [John Seddon]
 year: 2003
 type: book

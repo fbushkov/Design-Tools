@@ -1,6 +1,7 @@
 ---
 id: author-year-short
 title: Название
+cite: Фамилия ГГГГ  # короткое имя для ссылок в разборах, уникальное
 authors: []
 year:
 type: book        # book, paper, article, course, talk

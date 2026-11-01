@@ -1,6 +1,7 @@
 ---
 id: muller-2018-tyranny-of-metrics
 title: Тирания показателей
+cite: Мюллер 2018
 authors: [Джерри Мюллер]
 year: 2018
 type: book        # book, paper, article, course, talk

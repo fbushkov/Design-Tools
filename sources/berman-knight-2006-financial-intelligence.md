@@ -1,6 +1,7 @@
 ---
 id: berman-knight-2006-financial-intelligence
 title: Financial Intelligence
+cite: Берман и Найт 2006
 authors: [Karen Berman, Joe Knight]
 year: 2006
 type: book        # book, paper, article, course, talk

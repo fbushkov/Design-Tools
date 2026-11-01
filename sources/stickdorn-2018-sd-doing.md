@@ -1,6 +1,7 @@
 ---
 id: stickdorn-2018-sd-doing
 title: "This Is Service Design Doing: Applying Service Design Thinking in the Real World"
+cite: Стикдорн 2018
 authors: [Marc Stickdorn, Markus Hormess, Adam Lawrence, Jakob Schneider]
 year: 2018
 type: book

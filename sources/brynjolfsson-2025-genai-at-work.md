@@ -1,6 +1,7 @@
 ---
 id: brynjolfsson-2025-genai-at-work
 title: "Generative AI at Work"
+cite: Бриньолфссон 2025
 authors: [Erik Brynjolfsson, Danielle Li, Lindsey Raymond]
 year: 2025
 type: paper

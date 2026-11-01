@@ -1,6 +1,7 @@
 ---
 id: magretta-2002-what-management-is
 title: What Management Is
+cite: Маргретта 2002
 authors: [Joan Magretta]
 year: 2002
 type: book

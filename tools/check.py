@@ -67,6 +67,18 @@ def main():
                     errors.append(f"{where}: в {field} ссылка на несуществующий {target}/{ref}")
                 elif back and cid not in as_list(cards[(target, ref)].get(back)):
                     errors.append(f"{where}: {target}/{ref} не ссылается обратно в поле {back}")
+    # Короткие имена нужны аналитику для ссылок в разборах, поэтому они обязательны и уникальны.
+    cites = {}
+    for (kind, cid), meta in cards.items():
+        if kind != "sources":
+            continue
+        c = meta.get("cite")
+        if not c:
+            errors.append(f"sources/{cid}: нет поля cite")
+        elif c in cites:
+            errors.append(f"sources/{cid}: cite «{c}» уже занят sources/{cites[c]}")
+        else:
+            cites[c] = cid
     for e in errors:
         print(e)
     print(f"карточек: {len(cards)}, ошибок: {len(errors)}")

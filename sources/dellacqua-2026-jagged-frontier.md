@@ -1,6 +1,7 @@
 ---
 id: dellacqua-2026-jagged-frontier
 title: Navigating the Jagged Technological Frontier
+cite: Делл'Аква 2026
 authors: [Fabrizio Dell'Acqua, Edward McFowland III, Ethan Mollick, Hila Lifshitz, Katherine C. Kellogg, Saran Rajendran, Lisa Krayer, François Candelon, Karim R. Lakhani]
 year: 2026
 type: paper

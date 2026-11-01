@@ -1,6 +1,7 @@
 ---
 id: auzan-2022-cultural-codes
 title: Культурные коды экономики. Как ценности влияют на конкуренцию, демократию и благосостояние народа
+cite: Аузан 2022
 authors: [Александр Аузан]
 year: 2022
 type: book        # book, paper, article, course, talk

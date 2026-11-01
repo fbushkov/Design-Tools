@@ -1,6 +1,7 @@
 ---
 id: amershi-2019-human-ai-guidelines
 title: Guidelines for Human-AI Interaction
+cite: Амерши 2019
 authors: [Saleema Amershi, Dan Weld, Mihaela Vorvoreanu, Adam Fourney, Besmira Nushi, Penny Collisson, Jina Suh, Shamsi Iqbal, Paul N. Bennett, Kori Inkpen, Jaime Teevan, Ruth Kikin-Gil, Eric Horvitz]
 year: 2019
 type: paper       # CHI 2019, Microsoft Research, 13 страниц и приложение

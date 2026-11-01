@@ -1,6 +1,7 @@
 ---
 id: poister-2014-managing-measuring-performance
 title: Managing and Measuring Performance in Public and Nonprofit Organizations
+cite: Поистер 2014
 authors: [Theodore Poister, Maria Aristigueta, Jeremy Hall]
 year: 2014
 type: book        # book, paper, article, course, talk

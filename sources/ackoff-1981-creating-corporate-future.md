@@ -1,6 +1,7 @@
 ---
 id: ackoff-1981-creating-corporate-future
 title: "Планирование будущего корпорации"
+cite: Акофф 1981
 authors: [Рассел Акофф]
 year: 1981
 type: book
