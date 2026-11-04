@@ -2,31 +2,38 @@
 
 Сюда попадает всё, что ещё не разобрано в `sources/`. После разбора строка удаляется.
 
-## Из папки «Книги по менеджменту и управлению»
+## Загружены в библиотеку, конспекта ещё нет
 
-Названия опознаны по именам файлов. Там, где стоит «проверить», это догадка.
+Текст в markdown лежит в `Design-tools-library/md/<id>.md`.
 
-### Системный подход и управление — `strategy`, `diagnostics`
+### Деловая основа и стратегия — `strategy`
 
-- Рассел Акофф. Планирование будущего корпорации (Creating the Corporate Future, 1981). В папке два файла с почти одинаковым названием, возможно дубль.
-- Рассел Акофф, Фред Эмери. О целеустремлённых системах (On Purposeful Systems, 1972)
-- Эдвардс Деминг. Выход из кризиса (Out of the Crisis, 1982)
-- Джерри Мюллер. Тирания показателей (The Tyranny of Metrics, 2018)
+- Джош Кауфман. Личный MBA (2010) — `kaufman-2010-personal-mba`
+- Ричард Румельт. Хорошая стратегия, плохая стратегия (2011) — `rumelt-2011-good-bad-strategy`
 
-### Блок А. Взаимодействие человека и ИИ — `team-ai`
+### Ремесло консультанта — `diagnostics`
 
-- Итан Моллик. Co-Intelligence (2024)
-- Saleema Amershi и др. Guidelines for Human-AI Interaction (CHI 2019)
-- `parasuraman.pdf` — вероятно, Parasuraman, Sheridan, Wickens. A Model for Types and Levels of Human Interaction with Automation (2000), проверить
+- Питер Блок. Flawless Consulting (3-е изд. 2011) — `block-1981-flawless-consulting`
+- Эдгар Шейн. Humble Inquiry (2-е изд. 2021) — `schein-2013-humble-inquiry`
+- Барбара Минто. Принцип пирамиды — `minto-1981-pyramid-principle`
 
-### Блок Б. Исследования ИИ в работе — `team-ai`
+### Изменения и российский контекст — `strategy`
 
-- Fabrizio Dell'Acqua и др. Navigating the Jagged Technological Frontier (рабочая версия 2023, в имени файла 2026, проверить год публикации)
-- `qjae044.pdf` — вероятно, Brynjolfsson, Li, Raymond. Generative AI at Work (Quarterly Journal of Economics, 2025), проверить
+- Джон Коттер. Впереди перемен (Leading Change, 1996) — `kotter-1996-leading-change`
+- Алена Леденёва. How Russia Really Works (2006) — `ledeneva-2006-how-russia-works`
+
+### Показатели — `diagnostics`
+
+- Abd-Elrahman и др. Статья в Management Research Review (2025) — `abd-elrahman-2025-holistic-performance`
+- Эпштейн, Манцони (ред.). Performance Measurement and Management Control (2006), сборник — `epstein-manzoni-2006-performance-measurement`
+
+### Команда и ИИ — `team-ai`
+
+- Итан Моллик. Co-Intelligence (2024) — `mollick-2024-co-intelligence`
 
 ### Неопознанное
 
-- `photo_2026-08-30_20-19-34.jpg`
+- `photo_2026-08-30_20-19-34.jpg` — в библиотеку не загружен, лежит у автора.
 
 ## Статьи автора на bushkovstudio
 

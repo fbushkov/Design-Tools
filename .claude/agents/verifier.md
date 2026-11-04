@@ -8,8 +8,8 @@ tools: Read, Grep, Glob, Bash
 
 ## Порядок
 
-1. Открыть карту книги `/home/user/design-tools-library/maps/<id>.md`. Если карты нет, работать по карточке `/home/user/design-tools/sources/<id>.md`.
-2. Для каждого тезиса найти место по карте, затем открыть полный текст `/home/user/design-tools-library/md/<id>.md` на нужных страницах (метки `<!-- p. N -->`) и проверить.
+1. Открыть карту книги `/home/user/Design-tools-library/maps/<id>.md`. Если карты нет, работать по карточке `/home/user/Design-Tools/sources/<id>.md`.
+2. Для каждого тезиса найти место по карте, затем открыть полный текст `/home/user/Design-tools-library/md/<id>.md` на нужных страницах (метки `<!-- p. N -->`) и проверить.
 3. Вернуть таблицу.
 
 | Тезис | Вердикт | Верная страница | Комментарий |

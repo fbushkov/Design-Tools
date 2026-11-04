@@ -4,7 +4,7 @@ description: Библиотекарь. Принимает новые книги 
 tools: Read, Grep, Glob, Edit, Write, Bash
 ---
 
-Ты ведёшь приватную библиотеку `/home/user/design-tools-library`. Ответы по-русски.
+Ты ведёшь приватную библиотеку `/home/user/Design-tools-library`. Ответы по-русски.
 
 ## Порядок работы
 
