@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [program-logic-model, balancing-counter-metrics, implementation-as-project, strategic-tradeoffs, purpose-derived-measures, system-before-person, diagnostic-vs-reward-metrics, targets-to-process-data, change-process-questions, initiative-triage, decision-rights-clarity, aligned-managerial-levers, fair-incentive-design, support-function-value-measures, contextual-pms-design, destination-statement, rationalized-myth-check, value-driver-tree, stakeholder-contribution-ledger]
+approaches: [program-logic-model, balancing-counter-metrics, implementation-as-project, strategic-tradeoffs, purpose-derived-measures, system-before-person, diagnostic-vs-reward-metrics, targets-to-process-data, ceremony-audit, decision-rights-clarity, eight-stage-change, initiative-triage, measure-vs-delegate-matrix, rule-feasibility-check]
 categories: [metrics-as-target, method-cargo, resistance, busy-no-result, decision-bottleneck, control-surveillance, employee-experience]
 read: true
 rating:

@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [strategic-tradeoffs, mess-formulation, frame-creation, reframe-the-brief, decision-record, strategy-kernel, bad-strategy-check, proximate-objectives, chain-link-campaigns, infer-strategy-from-policies, hump-chart, interesting-advantage, attractor-state, inertia-diagnosis, strategy-as-hypothesis, create-and-destroy, outside-view]
+approaches: [strategic-tradeoffs, mess-formulation, frame-creation, reframe-the-brief, decision-record, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, eight-stage-change, hump-chart, initiative-triage, problem-definition-framework, proximate-objectives, strategy-kernel, system-before-person]
 categories: [product-direction, busy-no-result, method-cargo, metrics-as-target, resistance]
 read: true
 rating: 5

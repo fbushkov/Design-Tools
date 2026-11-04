@@ -8,7 +8,7 @@ type: paper        # book, paper, article, course, talk
 language: en
 link: https://doi.org/10.1108/MRR-11-2023-0875
 directions: [diagnostics, strategy]
-approaches: [program-logic-model, capitals-quality-outcomes-model, human-to-structural-capital]
+approaches: [program-logic-model, diagnostic-vs-reward-metrics]
 categories: [busy-no-result, churn]
 read: true
 rating:

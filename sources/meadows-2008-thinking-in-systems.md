@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [system-before-person, purpose-derived-measures, reframe-the-brief, dark-matter-mapping, leverage-points, system-traps, balancing-counter-metrics, mess-formulation, program-logic-model, rules-for-top-first, service-prototyping, targets-to-process-data]
+approaches: [system-before-person, purpose-derived-measures, reframe-the-brief, dark-matter-mapping, leverage-points, system-traps, balancing-counter-metrics, mess-formulation, program-logic-model, rules-for-top-first, service-prototyping, targets-to-process-data, problem-definition-framework]
 categories: [busy-no-result, metrics-as-target, resistance, silo-service, decision-bottleneck, method-cargo]
 read: true
 rating:

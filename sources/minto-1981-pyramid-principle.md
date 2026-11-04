@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [reframe-the-brief, pyramid-principle, scqa-introduction, problem-definition-framework, diagnostic-issue-tree, end-product-actions]
+approaches: [reframe-the-brief, consulting-contract, meeting-for-action, problem-definition-framework, proximate-objectives, pyramid-principle]
 categories: [busy-no-result, method-cargo]
 read: true
 rating:

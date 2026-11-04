@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [diagnostic-vs-reward-metrics, purpose-derived-measures, system-before-person, balancing-counter-metrics, leverage-points, system-traps, trust-ladder]
+approaches: [diagnostic-vs-reward-metrics, purpose-derived-measures, system-before-person, balancing-counter-metrics, leverage-points, system-traps, trust-ladder, measure-vs-delegate-matrix, name-the-resistance]
 categories: [metrics-as-target, control-surveillance, busy-no-result, resistance]
 read: true
 rating:

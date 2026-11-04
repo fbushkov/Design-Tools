@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [team-ai]
-approaches: [ai-task-frontier-mapping, automation-by-stage-and-level, shadow-ai-amnesty, ceremony-task-audit, ai-critic-personas, ai-practice-simulator]
+approaches: [ai-task-frontier-mapping, automation-by-stage-and-level, ceremony-audit, it-after-improvement, shadow-ai-amnesty]
 categories: [ai-no-effect, routine-load, resistance, control-surveillance, employee-experience]
 read: true
 rating:

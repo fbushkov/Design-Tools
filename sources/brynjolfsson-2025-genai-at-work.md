@@ -8,7 +8,7 @@ type: paper
 language: en
 link: https://doi.org/10.1093/qje/qjae044
 directions: [team-ai, service-design]
-approaches: [it-after-improvement, ai-pilot-with-control, ai-task-frontier-mapping, automation-by-stage-and-level, diagnostic-vs-reward-metrics, employee-journey-mapping, failure-demand-analysis, human-ai-heuristic-review]
+approaches: [it-after-improvement, ai-pilot-with-control, ai-task-frontier-mapping, automation-by-stage-and-level, diagnostic-vs-reward-metrics, employee-journey-mapping, failure-demand-analysis, human-ai-heuristic-review, shadow-ai-amnesty]
 categories: [ai-no-effect, routine-load, employee-experience, resistance]
 read: true
 rating:

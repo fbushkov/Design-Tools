@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics, team-ai]
-approaches: [diagnostic-vs-reward-metrics, balancing-counter-metrics, purpose-derived-measures, targets-to-process-data, system-before-person, trust-ladder]
+approaches: [diagnostic-vs-reward-metrics, balancing-counter-metrics, purpose-derived-measures, targets-to-process-data, system-before-person, trust-ladder, measure-vs-delegate-matrix]
 categories: [metrics-as-target, control-surveillance, resistance, method-cargo]
 read: true
 rating:

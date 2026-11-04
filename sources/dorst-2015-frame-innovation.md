@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics, service-design]
-approaches: [dark-matter-mapping, embedded-strategic-design, frame-creation, reframe-the-brief, strategic-tradeoffs, implementation-as-project, intermediate-institutions, solve-resolve-dissolve]
+approaches: [dark-matter-mapping, embedded-strategic-design, frame-creation, reframe-the-brief, strategic-tradeoffs, implementation-as-project, intermediate-institutions, solve-resolve-dissolve, chain-link-campaigns, problem-definition-framework, strategy-kernel]
 categories: [busy-no-result, resistance, method-cargo, control-surveillance]
 read: true
 rating:
