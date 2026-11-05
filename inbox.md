@@ -2,7 +2,7 @@
 
 Сюда попадает всё, что ещё не разобрано в `sources/`. После разбора строка удаляется.
 
-## Загружены в библиотеку, идёт приём (2026-11-04)
+## Загружены в библиотеку, конспекта ещё нет
 
 Id предварительные, библиотекарь уточняет их по тексту.
 
@@ -14,8 +14,6 @@ Id предварительные, библиотекарь уточняет и�
 - Марти Каган. Inspired (2017) — `cagan-2017-inspired`
 - Эрика Холл. Just Enough Research (2013) — `hall-2013-just-enough-research`
 - Лу Дауни. Good Services (2020) — `downe-2020-good-services`
-- Линн Шостак. Designing Services That Deliver (1984) — `shostack-1984-designing-services`
-- Helsinki Design Lab. In Studio (2011) — `hdl-2011-in-studio`
 
 ### Команды, процессы, изменения — `strategy`, `team-ai`, `diagnostics`
 
@@ -26,15 +24,6 @@ Id предварительные, библиотекарь уточняет и�
 - Голдратт. Цель (1984) — `goldratt-1984-the-goal`
 - Сенге. Пятая дисциплина (1990) — `senge-1990-fifth-discipline`
 - Кейнер. Facilitator's Guide to Participatory Decision-Making — `kaner-1996-facilitators-guide`
-- Грейнер. Evolution and Revolution as Organizations Grow (1972) — `greiner-1972-evolution-revolution`
-
-### Показатели и ИИ — `diagnostics`, `team-ai`
-
-- Керр. On the Folly of Rewarding A, While Hoping for B (1975) — `kerr-1975-folly-of-rewarding`
-- Бернстайн. The Transparency Paradox (2012) — `bernstein-2012-transparency-paradox`
-- Бейнбридж. Ironies of Automation (1983) — `bainbridge-1983-ironies-of-automation`
-- METR. Early-2025 AI and experienced open-source developers (2025) — `metr-2025-ai-developer-productivity`
-- Четыре статьи с неясными именами файлов (`09-083.pdf`, `5188231.pdf`, `annals2020.pdf`, `ssrn_id577141…pdf`), опознаются
 
 ### Российский контекст — `strategy`
 
@@ -48,8 +37,8 @@ Id предварительные, библиотекарь уточняет и�
 - Полейн, Лёвлие, Ризон. Service Design. From Insight to Implementation (2013)
 - Калбах. Mapping Experiences (3-е изд.) — файл у автора больше 100 МБ, нужно сжать
 - Design Council. Systemic Design Framework (2021)
-- Dell'Acqua и др. The Cybernetic Teammate (2025)
-- Фей, Денисон. Organizational Culture and Effectiveness (2003), Михайлова. Contrasts in Culture (2000), Леденёва. Can Russia Modernise? (2013) — если не окажутся среди неопознанных статей
+- Михайлова. Contrasts in Culture (2000)
+- Леденёва. Can Russia Modernise? (2013)
 
 ### Неопознанное
 
