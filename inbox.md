@@ -11,7 +11,7 @@ Id предварительные, библиотекарь уточняет и�
 - Кристенсен и др. Конкурируя с удачей (2016) — `christensen-2016-competing-against-luck`
 - Тереза Торрес. Continuous Discovery Habits (2021) — `torres-2021-continuous-discovery`
 - Мелисса Перри. Escaping the Build Trap (2018) — `perri-2018-build-trap`
-- Марти Каган. Inspired (2017) — `cagan-2017-inspired`
+- Марти Каган. Inspired, первое издание (2008) — `cagan-2008-inspired`
 - Эрика Холл. Just Enough Research (2013) — `hall-2013-just-enough-research`
 - Лу Дауни. Good Services (2020) — `downe-2020-good-services`
 
