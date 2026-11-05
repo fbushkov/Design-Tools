@@ -8,7 +8,7 @@ type: paper
 language: en
 link:
 directions: [team-ai, diagnostics]
-approaches: [ai-pilot-with-control, ai-task-frontier-mapping, operational-definitions]
+approaches: [ai-pilot-with-control, ai-task-frontier-mapping, operational-definitions, ai-team-composition]
 categories: [ai-no-effect]
 read: true
 rating:

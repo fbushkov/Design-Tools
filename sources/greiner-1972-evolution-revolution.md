@@ -8,7 +8,7 @@ type: article
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [system-before-person]
+approaches: [system-before-person, culture-traits-diagnosis, decision-rights-clarity, eight-stage-change, growth-phase-diagnosis]
 categories: [decision-bottleneck, resistance, method-cargo, control-surveillance]
 read: true
 rating:

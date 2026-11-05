@@ -8,7 +8,7 @@ type: paper        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [system-before-person, purpose-derived-measures, balancing-counter-metrics, rule-feasibility-check, system-traps]
+approaches: [system-before-person, purpose-derived-measures, balancing-counter-metrics, rule-feasibility-check, system-traps, culture-traits-diagnosis, diagnostic-vs-reward-metrics]
 categories: [metrics-as-target, method-cargo]
 read: true
 rating:

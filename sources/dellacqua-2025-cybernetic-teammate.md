@@ -8,7 +8,7 @@ type: paper
 language: en
 link:
 directions: [team-ai]
-approaches: [ai-task-frontier-mapping, ai-pilot-with-control]
+approaches: [ai-task-frontier-mapping, ai-pilot-with-control, ai-team-composition]
 categories: [ai-no-effect, silo-service, employee-experience, routine-load]
 read: true
 rating:

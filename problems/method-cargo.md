@@ -5,7 +5,7 @@ directions: [strategy]
 category: [method-cargo]
 maturity: { management: [2, 3], process: [2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check]
+approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week]
 cases: []
 tags: [внедрение, мода, ритуал, системное-мышление]
 status: draft
@@ -58,6 +58,8 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 - **Методология внедрена, отчёты сдаются, решения прежние.** Проверить, что из системы реально используется, а что стало церемонией ([ceremony-audit](../approaches/ceremony-audit.md)), и выполнимы ли правила одновременно ([rule-feasibility-check](../approaches/rule-feasibility-check.md)).
 - **Стратегия — документ, который не меняет решений.** Проверить на признаки плохой стратегии и найти ядро ([strategy-kernel](../approaches/strategy-kernel.md)).
 - **Методологию ставит внешний консультант.** Договориться о роли до начала: консультант, который «ставит» систему, становится суррогатным менеджером ([consulting-contract](../approaches/consulting-contract.md)). Пройти стадии изменения, не начиная с культуры ([eight-stage-change](../approaches/eight-stage-change.md)).
+- **Методология перенесена из другой фазы роста или другой культуры.** Проверить, какой фазе соответствует внедряемое устройство (Грейнер считает, что фазы нельзя пропустить, с. 10, [growth-phase-diagnosis](../approaches/growth-phase-diagnosis.md)), и что значат понятия методологии в этой компании ([culture-traits-diagnosis](../approaches/culture-traits-diagnosis.md)).
+- **Нужен не рецепт, а переопределение вопроса.** Студийная неделя ([studio-week](../approaches/studio-week.md)), с оговоркой, что сам рецепт HDL расписан до часов (Бойер и др., с. 45, 109–113).
 
 Где расходятся источники о российском контексте. Деминг считает свои принципы универсальными, Аузан объясняет японский успех готовностью годами следовать стандарту и двадцатилетним горизонтом, которых в российской культуре нет (см. «Что спорно» в карточке Аузана). Отсюда довод за промежуточные шаги, но не отказ от метода. Сроки тоже расходятся. У Хилла и Седдона изменение идёт месяцы и годы, у Аузана культура меняется десятилетиями. С какого уровня начинать, источники тоже не согласны. Стикдорн советует инициатора из среднего звена (с. 725–727), Дорст и Седдон — первых лиц.
 

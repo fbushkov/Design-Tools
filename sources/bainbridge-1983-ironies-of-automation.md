@@ -8,7 +8,7 @@ type: paper
 language: en
 link:
 directions: [team-ai]
-approaches: [automation-by-stage-and-level, human-ai-heuristic-review]
+approaches: [automation-by-stage-and-level, human-ai-heuristic-review, ai-task-frontier-mapping, algorithmic-control-audit]
 categories: [ai-no-effect, employee-experience, resistance]
 read: true
 rating:

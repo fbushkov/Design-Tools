@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [strategic-tradeoffs, dark-matter-mapping, intermediate-institutions, trust-ladder, rules-for-top-first, diagnostic-vs-reward-metrics, idealized-design, system-traps]
+approaches: [strategic-tradeoffs, dark-matter-mapping, intermediate-institutions, trust-ladder, rules-for-top-first, diagnostic-vs-reward-metrics, idealized-design, system-traps, culture-traits-diagnosis]
 categories: [resistance, method-cargo, decision-bottleneck, control-surveillance, metrics-as-target]
 read: true
 rating:

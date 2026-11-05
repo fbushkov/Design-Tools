@@ -8,7 +8,7 @@ type: paper       # Academy of Management Annals 14(1): 366–410, doi 10.5465/a
 language: en
 link: https://doi.org/10.5465/annals.2018.0174
 directions: [team-ai, strategy, diagnostics]
-approaches: [human-ai-heuristic-review, automation-by-stage-and-level, diagnostic-vs-reward-metrics]
+approaches: [human-ai-heuristic-review, automation-by-stage-and-level, diagnostic-vs-reward-metrics, algorithmic-control-audit, trust-ladder]
 categories: [control-surveillance, resistance, ai-no-effect, employee-experience, metrics-as-target]
 read: true
 rating:

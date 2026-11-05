@@ -8,7 +8,7 @@ type: paper        # book, paper, article, course, talk
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [decision-rights-clarity, system-before-person, eight-stage-change]
+approaches: [decision-rights-clarity, system-before-person, eight-stage-change, culture-traits-diagnosis, growth-phase-diagnosis, humble-inquiry]
 categories: [silo-service, decision-bottleneck, resistance, method-cargo]
 read: true
 rating:
