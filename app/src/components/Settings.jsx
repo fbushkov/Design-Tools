@@ -3,6 +3,7 @@ import { Button, Input, Code, addToast } from '@heroui/react';
 import { FolderOpen, Download, RefreshCw, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useApp } from '../state.jsx';
 import { PageHeader, Panel } from './ui.jsx';
+import AISettings from './AISettings.jsx';
 
 function Status({ ok, okText, badText }) {
   return (
@@ -118,6 +119,8 @@ export default function Settings() {
             </div>
           </div>
         </Panel>
+
+        <AISettings />
 
         {log && (
           <Panel title="Журнал git">

@@ -55,7 +55,7 @@ export default function Library({ which }) {
 
   return (
     <div className="h-full grid grid-cols-[360px_1fr] min-h-0">
-      <aside className="border-r border-default-200/70 flex flex-col min-h-0 bg-content1/60">
+      <aside className="border-r border-default-200/70 flex flex-col min-h-0">
         <div className="px-5 pt-6 pb-3 space-y-3">
           <div>
             <h1 className="text-lg font-semibold tracking-tight">{KIND[kind].plural}</h1>
@@ -125,7 +125,7 @@ export default function Library({ which }) {
           {!filtered.length && <EmptyState icon={Search} title="Ничего не найдено" text="Измените запрос или снимите фильтр категории." />}
         </ScrollShadow>
       </aside>
-      <div ref={detailRef} className="overflow-auto min-h-0">
+      <div ref={detailRef} className="overflow-auto min-h-0 bg-content1">
         <div className="px-10 py-8">{current ? <CardView card={current} /> : <EmptyState title="Выберите карточку слева" />}</div>
       </div>
     </div>

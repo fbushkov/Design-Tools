@@ -123,14 +123,58 @@ function bookPage(libDir, id, page) {
   };
 }
 
-function saveAnalysis(libDir, filename, content) {
-  if (!libDir) return { ok: false, error: 'Не указана папка библиотеки.' };
+function analysesDir(libDir) {
+  if (!libDir) throw new Error('Не указана папка библиотеки.');
   const dir = path.join(libDir, 'analyses');
   fs.mkdirSync(dir, { recursive: true });
-  const safe = filename.replace(/[\\/:*?"<>|]/g, '-');
-  const file = path.join(dir, safe);
-  fs.writeFileSync(file, content, 'utf8');
-  return { ok: true, file };
+  return dir;
 }
 
-module.exports = { loadBase, bookPage, saveAnalysis };
+// Имя файла без путей: разбор всегда лежит в analyses/.
+function safeName(name) {
+  return path.basename(String(name)).replace(/[\\/:*?"<>|]/g, '-');
+}
+
+// Сохранить разбор. Если файл с таким именем уже есть и это не тот же разбор — добавить суффикс.
+function saveAnalysis(libDir, filename, content, overwrite) {
+  try {
+    const dir = analysesDir(libDir);
+    let name = safeName(filename);
+    if (!overwrite) {
+      const base = name.replace(/\.md$/, '');
+      let i = 2;
+      while (fs.existsSync(path.join(dir, name))) name = `${base}-${i++}.md`;
+    }
+    const file = path.join(dir, name);
+    fs.writeFileSync(file, content, 'utf8');
+    return { ok: true, file, name };
+  } catch (e) {
+    return { ok: false, error: e.message };
+  }
+}
+
+function deleteAnalysis(libDir, filename) {
+  try {
+    const file = path.join(analysesDir(libDir), safeName(filename));
+    if (path.basename(file).toLowerCase() === 'readme.md') return { ok: false, error: 'README удалять нельзя.' };
+    fs.unlinkSync(file);
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e.message };
+  }
+}
+
+// Поменять поля шапки разбора (итог, тестовый или реальный), не трогая текст.
+function updateAnalysisMeta(libDir, filename, patch) {
+  try {
+    const file = path.join(analysesDir(libDir), safeName(filename));
+    const parsed = matter(fs.readFileSync(file, 'utf8'));
+    const data = { ...parsed.data, ...patch };
+    fs.writeFileSync(file, matter.stringify(parsed.content, data), 'utf8');
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e.message };
+  }
+}
+
+module.exports = { loadBase, bookPage, saveAnalysis, deleteAnalysis, updateAnalysisMeta };

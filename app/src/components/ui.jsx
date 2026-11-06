@@ -32,7 +32,7 @@ export function PageHeader({ title, description, actions, children }) {
 // Блок с заголовком: основной строительный элемент экранов.
 export function Panel({ title, subtitle, icon: I, actions, children, className = '', bodyClass = '' }) {
   return (
-    <section className={`bg-content1 rounded-large border border-default-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.03)] ${className}`}>
+    <section className={`bg-content1 rounded-large border border-default-200/70 ${className}`}>
       {(title || actions) && (
         <div className="flex items-start justify-between gap-3 px-5 pt-4 pb-2">
           <div className="flex items-start gap-2.5 min-w-0">
@@ -42,7 +42,7 @@ export function Panel({ title, subtitle, icon: I, actions, children, className =
               {subtitle && <p className="text-xs text-default-500 mt-0.5">{subtitle}</p>}
             </div>
           </div>
-          {actions}
+          {actions && <div className="shrink-0">{actions}</div>}
         </div>
       )}
       <div className={`px-5 pb-5 ${title ? 'pt-1' : 'pt-5'} ${bodyClass}`}>{children}</div>

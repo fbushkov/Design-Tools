@@ -2,7 +2,8 @@ const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const { execFile } = require('child_process');
-const { loadBase, bookPage, saveAnalysis } = require('./data.cjs');
+const { loadBase, bookPage, saveAnalysis, deleteAnalysis, updateAnalysisMeta } = require('./data.cjs');
+const ai = require('./ai.cjs');
 
 const REPOS = {
   base: 'https://github.com/fbushkov/Design-Tools.git',
@@ -110,7 +111,15 @@ ipcMain.handle('base:load', () => {
   return loadBase(s.baseDir, s.libDir);
 });
 ipcMain.handle('book:page', (_e, id, page) => bookPage(readSettings().libDir, id, page));
-ipcMain.handle('analysis:save', (_e, filename, content) => saveAnalysis(readSettings().libDir, filename, content));
+ipcMain.handle('analysis:save', (_e, filename, content, overwrite) => saveAnalysis(readSettings().libDir, filename, content, overwrite));
+ipcMain.handle('analysis:delete', (_e, filename) => deleteAnalysis(readSettings().libDir, filename));
+ipcMain.handle('analysis:meta', (_e, filename, patch) => updateAnalysisMeta(readSettings().libDir, filename, patch));
+ipcMain.handle('ai:config', () => ai.publicConfig());
+ipcMain.handle('ai:save', (_e, provider, key) => ai.saveProvider(provider, key));
+ipcMain.handle('ai:remove', (_e, id) => ai.removeProvider(id));
+ipcMain.handle('ai:active', (_e, id) => ai.setActive(id));
+ipcMain.handle('ai:test', (_e, id) => ai.test(id));
+ipcMain.handle('ai:plan', (_e, ctx) => ai.plan(ctx));
 ipcMain.handle('git:pull', async () => {
   const s = readSettings();
   const out = [];
@@ -124,7 +133,7 @@ ipcMain.handle('git:push-analyses', async (_e, message) => {
   const s = readSettings();
   if (!s.libDir) return 'Не указана папка библиотеки.';
   const steps = [
-    ['add', '--sparse', 'analyses'],
+    ['add', '--sparse', '-A', 'analyses'],
     ['commit', '-m', message || 'Разбор из приложения'],
     ['push'],
   ];

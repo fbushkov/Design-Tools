@@ -175,7 +175,19 @@ export function linkifyCitations(body, card, index) {
 
 const STOP = new Set(['котор', 'чтобы', 'этого', 'когда', 'потом', 'очень', 'всего', 'только', 'между', 'после', 'сейча', 'компа', 'котор', 'нужно', 'может', 'будет', 'также', 'через', 'своих', 'свою', 'своей', 'этому', 'именн', 'более', 'теперь']);
 
+// Синонимы: слова заказчика -> слова карточек базы. Пополнять по итогам разборов.
+const SYNONYMS = [
+  [/основател\S*|гендиректор\S*|директор\S*|владел\S*|первое лицо|первого лица|руководств\S* наверху/gi, 'собственник решения наверху'],
+  [/подписыва\S* вс\S*|согласу\S*|согласован\S*|утвержда\S*/gi, 'решения наверху согласование'],
+  [/не стыку\S*|стыков\S*|пересыла\S*|передают друг другу|между отдел\S*|между подразделени\S*/gi, 'подразделение отдел это не к нам'],
+  [/по (два|три|несколько|нескольку) раз\S*|повторно|снова звон\S*/gi, 'повторяет повторные обращения'],
+  [/тайком|втихую|тайно|свои инструменты/gi, 'скрыто используют'],
+  [/уход\S* клиент\S*|отток\S*|удержани\S*|не возвраща\S*/gi, 'клиенты уходят повторной покупки'],
+  [/долго выход\S*|выходят за \d+ месяц\S*|time.to.market|медленн\S* запуск\S*/gi, 'медленный поток очередь передачи'],
+];
+
 export function stems(text) {
+  for (const [re, canon] of SYNONYMS) text = (text || '').replace(re, (m) => m + ' ' + canon);
   return new Set(
     norm(' ' + (text || '').replace(/[^\p{L}\s]/gu, ' ') + ' ')
       ? (text || '')
@@ -232,7 +244,7 @@ export function stageFit(approach, level) {
   return null;
 }
 
-export function rankApproaches(base, selectedProblems, query, maturity) {
+export function rankApproaches(base, selectedProblems, query, maturity, ctx = {}) {
   const byId = new Map(base.approaches.map((a) => [a.id, a]));
   const counts = new Map();
   for (const p of selectedProblems) for (const id of p.data.approaches || []) counts.set(id, (counts.get(id) || 0) + 1);
@@ -252,9 +264,12 @@ export function rankApproaches(base, selectedProblems, query, maturity) {
       for (const w of q) if (st.has(w)) text += 1;
       const fit = maturityFit(a, maturity);
       const stage = stageFit(a, maturity.management);
+      // Инструменты только для ИТ-разработки опускаем, если бизнес не ИТ-продукт.
+      const itOnly = (a.data.tags || []).includes('devops');
+      const itPenalty = itOnly && ctx.offer !== 'it-product' ? (ctx.offer ? 4 : 2) : 0;
       const bonus = stage === 'harm' ? -6 : stage === 'fit' ? 2 : 0;
       const refs = selectedProblems.filter((p) => (p.data.approaches || []).includes(id)).length;
-      return { approach: a, score: c * 3 + text - (fit.ok ? 0 : 2) + bonus, refs, fit, stage };
+      return { approach: a, score: c * 3 + text - (fit.ok ? 0 : 2) + bonus - itPenalty, refs, fit, stage, itOnly };
     })
     .filter(Boolean)
     .sort((x, y) => y.score - x.score);

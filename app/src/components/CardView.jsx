@@ -65,7 +65,7 @@ export default function CardView({ card, onOpenFull }) {
         <span className="text-default-300">·</span>
         <code className="text-[11px]">{card.id}</code>
         {d.status && (
-          <Chip size="sm" variant="flat" color={d.status === 'draft' ? 'warning' : 'success'} className="h-5 text-[11px]">
+          <Chip size="sm" variant="flat" color={d.status === 'draft' ? 'default' : 'success'} className="h-5 text-[11px]">
             {d.status === 'draft' ? 'черновик' : d.status}
           </Chip>
         )}
@@ -89,7 +89,7 @@ export default function CardView({ card, onOpenFull }) {
         </div>
       )}
 
-      <div className="mt-4 rounded-large border border-default-200/70 bg-content1 px-4 py-2">
+      <div className="mt-4 rounded-large bg-default-50 px-4 py-2">
         {cats.length > 0 && (
           <Row label="Категории">
             <div className="flex flex-wrap gap-1">

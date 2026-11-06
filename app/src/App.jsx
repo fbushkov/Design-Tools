@@ -52,7 +52,7 @@ function NavItem({ item, active, disabled, onPress, count }) {
       onClick={onPress}
       disabled={disabled}
       className={`group w-full h-9 flex items-center gap-2.5 px-3 rounded-medium text-[13px] transition-colors ${
-        active ? 'bg-content1 text-foreground font-medium shadow-sm border border-default-200/70' : 'text-default-600 hover:bg-default-100 border border-transparent'
+        active ? 'bg-default-200/60 text-foreground font-medium' : 'text-default-600 hover:bg-default-100'
       } ${disabled ? 'opacity-40 pointer-events-none' : ''}`}
     >
       <I size={16} className={active ? 'text-primary' : 'text-default-400 group-hover:text-default-600'} />
@@ -81,7 +81,7 @@ export default function App() {
         <button
           onClick={() => setPalette(true)}
           disabled={!ready}
-          className="h-9 flex items-center gap-2 px-3 rounded-medium bg-content1 border border-default-200/70 text-default-500 text-[13px] hover:border-default-300 disabled:opacity-40"
+          className="h-9 flex items-center gap-2 px-3 rounded-medium bg-content1 border border-default-200 text-default-500 text-[13px] hover:border-default-300 hover:text-default-700 transition-colors disabled:opacity-40"
         >
           <Search size={15} />
           <span className="flex-1 text-left">Поиск по базе</span>
