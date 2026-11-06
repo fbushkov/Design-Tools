@@ -18,13 +18,24 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: app/package-lock.json
       - run: npm ci
+      # При ручном запуске метки ещё нет: создать её из версии в package.json.
+      # GitHub не публикует выпуск без метки.
+      - name: Метка версии
+        shell: bash
+        run: |
+          TAG="v$(node -p "require('./package.json').version")"
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
+            echo "Метка $TAG уже есть"
+          else
+            git tag "$TAG" && git push origin "$TAG"
+          fi
       - run: npm run release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
