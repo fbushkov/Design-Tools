@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [strategic-tradeoffs, mess-formulation, frame-creation, reframe-the-brief, decision-record, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, eight-stage-change, hump-chart, initiative-triage, problem-definition-framework, proximate-objectives, strategy-kernel, system-before-person]
+approaches: [strategic-tradeoffs, mess-formulation, frame-creation, reframe-the-brief, decision-record, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, eight-stage-change, hump-chart, initiative-triage, problem-definition-framework, proximate-objectives, strategy-kernel, system-before-person, outcome-strategy-cascade]
 categories: [product-direction, busy-no-result, method-cargo, metrics-as-target, resistance]
 read: true
 rating: 5

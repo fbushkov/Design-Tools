@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, service-design]
-approaches: [critical-assumption-testing, service-prototyping, experience-journey-map, reframe-the-brief, balancing-counter-metrics, program-logic-model, decision-record]
+approaches: [critical-assumption-testing, service-prototyping, experience-journey-map, reframe-the-brief, balancing-counter-metrics, program-logic-model, decision-record, jobs-to-be-done, opportunity-solution-tree, outcome-strategy-cascade]
 categories: [product-direction, metrics-as-target, busy-no-result]
 read: true
 rating: 4

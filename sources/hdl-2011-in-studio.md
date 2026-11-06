@@ -8,7 +8,7 @@ type: book        # Helsinki Design Lab / Sitra, 339 страниц PDF
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [frame-creation, reframe-the-brief, dark-matter-mapping, matter-meta-zoom, embedded-strategic-design, service-prototyping, studio-week]
+approaches: [frame-creation, reframe-the-brief, dark-matter-mapping, matter-meta-zoom, embedded-strategic-design, service-prototyping, studio-week, meeting-for-action, participation-diamond]
 categories: [silo-service, resistance, method-cargo]
 read: true
 rating:

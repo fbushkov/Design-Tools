@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [strategy, diagnostics]
-approaches: [implementation-as-project, system-before-person, rules-for-top-first, intermediate-institutions, eight-stage-change, humble-inquiry, name-the-resistance, proximate-objectives, strategy-kernel, growth-phase-diagnosis]
+approaches: [implementation-as-project, system-before-person, rules-for-top-first, intermediate-institutions, eight-stage-change, humble-inquiry, name-the-resistance, proximate-objectives, strategy-kernel, growth-phase-diagnosis, participation-diamond]
 categories: [resistance, method-cargo, decision-bottleneck, busy-no-result]
 read: true
 rating:

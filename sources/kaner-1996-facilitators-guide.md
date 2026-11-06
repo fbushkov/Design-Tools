@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [decision-rights-clarity, meeting-for-action, name-the-resistance]
+approaches: [decision-rights-clarity, meeting-for-action, name-the-resistance, decision-implementability-audit, eight-stage-change, humble-inquiry, initiative-triage, participation-diamond, positional-analysis, psych-safety-toolkit]
 categories: [decision-bottleneck, resistance, busy-no-result]
 read: true
 rating:

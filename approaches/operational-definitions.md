@@ -3,7 +3,7 @@ id: operational-definitions
 title: Операциональные определения и проверка системы измерения
 directions: [diagnostics, service-design]
 solves: [metrics-as-target, ai-no-effect]
-sources: [deming-1982-out-of-crisis, berman-knight-2006-financial-intelligence, dellacqua-2026-jagged-frontier, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, kaufman-2010-personal-mba, metr-2025-ai-developer-productivity]
+sources: [deming-1982-out-of-crisis, berman-knight-2006-financial-intelligence, dellacqua-2026-jagged-frontier, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, kaufman-2010-personal-mba, metr-2025-ai-developer-productivity, forsgren-2018-accelerate]
 maturity_min: { process: 2 }
 tags: [измерение, качество, определения, деминг]
 status: draft
@@ -24,6 +24,8 @@ status: draft
 Кауфман добавляет проверку прокси: число без контекста ничего не значит, а заменитель годится, только если тесно связан с предметом. Люди держатся за удобные цифры: в P&G команды отказались от точного счётчика посетителей, потому что их показатель упал бы, и Кауфман советует независимый аудит измерений (Кауфман, с. 432–437, 449–450).
 
 Беккер и соавторы (METR) показывают, как определение результата решает исход замера ИИ. Прежние исследования находили рост на 14–51 %, считая строки кода, коммиты и пулл-реквесты, а такие показатели растут без роста производительности (Беккер и др., с. 1, 3). Здесь задачу определяли и оценивали до жеребьёвки, а результатом считали время до слияния при высоких стандартах ревью, и вышло замедление на 19 % (с. 1–2, 5–6). С ИИ строк на час было на 47 % больше, и авторы прямо говорят, что это ничего не доказывает (с. 22).
+
+Accelerate: разные команды называют «lead time» разные вещи, поэтому опрос задаёт всем одни определения (Форсгрен, с. 199). Время выполнения берут только за часть «поставка», от коммита до продакшена, потому что у проектирования нет понятной точки старта и разброс велик (с. 47–49).
 
 ## Когда работает
 

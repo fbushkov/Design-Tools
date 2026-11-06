@@ -8,7 +8,7 @@ type: paper       # Administrative Science Quarterly 57(2): 181–216; в биб
 language: en
 link: http://asq.sagepub.com
 directions: [strategy, diagnostics, team-ai]
-approaches: [diagnostic-vs-reward-metrics, measure-vs-delegate-matrix, system-traps, rule-feasibility-check, trust-ladder, algorithmic-control-audit, humble-inquiry]
+approaches: [diagnostic-vs-reward-metrics, measure-vs-delegate-matrix, system-traps, rule-feasibility-check, trust-ladder, algorithmic-control-audit, humble-inquiry, psych-safety-toolkit]
 categories: [control-surveillance, metrics-as-target, resistance, employee-experience]
 read: true
 rating:

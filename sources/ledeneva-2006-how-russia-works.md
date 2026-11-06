@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [dark-matter-mapping, system-before-person, rules-for-top-first, trust-ladder, intermediate-institutions, system-traps, targets-to-process-data, ceremony-audit, decision-rights-clarity, humble-inquiry, rule-feasibility-check, shadow-ai-amnesty]
+approaches: [dark-matter-mapping, system-before-person, rules-for-top-first, trust-ladder, intermediate-institutions, system-traps, targets-to-process-data, ceremony-audit, decision-rights-clarity, humble-inquiry, rule-feasibility-check, shadow-ai-amnesty, nominal-vs-real-allocation]
 categories: [resistance, control-surveillance, method-cargo, metrics-as-target, decision-bottleneck]
 read: true
 rating:

@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [strategy-kernel, critical-assumption-testing, program-logic-model, decision-rights-clarity, balancing-counter-metrics, proximate-objectives, initiative-triage, service-prototyping]
+approaches: [strategy-kernel, critical-assumption-testing, program-logic-model, decision-rights-clarity, balancing-counter-metrics, proximate-objectives, initiative-triage, service-prototyping, diagnostic-vs-reward-metrics, jobs-to-be-done, nominal-vs-real-allocation, opportunity-solution-tree, outcome-strategy-cascade, reframe-the-brief, team-types-and-interaction-modes]
 categories: [product-direction, busy-no-result, metrics-as-target, method-cargo, decision-bottleneck]
 read: true
 rating:

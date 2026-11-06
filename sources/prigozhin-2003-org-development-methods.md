@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [consulting-contract, reframe-the-brief, layers-of-analysis, name-the-resistance, ceremony-audit, system-before-person, decision-rights-clarity, eight-stage-change, implementation-as-project, purpose-derived-measures, trust-ladder, rules-for-top-first, culture-traits-diagnosis, meeting-for-action, growth-phase-diagnosis, critical-assumption-testing, automation-by-stage-and-level]
+approaches: [consulting-contract, reframe-the-brief, layers-of-analysis, name-the-resistance, ceremony-audit, system-before-person, decision-rights-clarity, eight-stage-change, implementation-as-project, purpose-derived-measures, trust-ladder, rules-for-top-first, culture-traits-diagnosis, meeting-for-action, growth-phase-diagnosis, critical-assumption-testing, automation-by-stage-and-level, ai-pilot-with-control, dark-matter-mapping, decision-implementability-audit, diagnostic-vs-reward-metrics, humble-inquiry, mess-formulation, positional-analysis, sanctions-ratio-audit]
 categories: [resistance, decision-bottleneck, method-cargo, busy-no-result, silo-service, control-surveillance, churn, metrics-as-target]
 read: true
 rating:

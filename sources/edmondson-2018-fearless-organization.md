@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, team-ai]
-approaches: [humble-inquiry, system-before-person, name-the-resistance, trust-ladder, rule-feasibility-check]
+approaches: [humble-inquiry, system-before-person, name-the-resistance, trust-ladder, rule-feasibility-check, critical-assumption-testing, eight-stage-change, psych-safety-toolkit, sanctions-ratio-audit]
 categories: [resistance, control-surveillance, employee-experience, metrics-as-target, decision-bottleneck]
 read: true
 rating:

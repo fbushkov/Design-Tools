@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [reframe-the-brief, implementation-as-project, consulting-contract, eight-stage-change, humble-inquiry, layers-of-analysis, meeting-for-action, name-the-resistance, pyramid-principle, rule-feasibility-check]
+approaches: [reframe-the-brief, implementation-as-project, consulting-contract, eight-stage-change, humble-inquiry, layers-of-analysis, meeting-for-action, name-the-resistance, pyramid-principle, rule-feasibility-check, positional-analysis]
 categories: [resistance, method-cargo, metrics-as-target, control-surveillance]
 read: true
 rating:

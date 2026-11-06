@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, service-design]
-approaches: [critical-assumption-testing, service-prototyping, decision-rights-clarity, strategic-tradeoffs, reframe-the-brief]
+approaches: [critical-assumption-testing, service-prototyping, decision-rights-clarity, strategic-tradeoffs, reframe-the-brief, diagnostic-vs-reward-metrics, jobs-to-be-done, opportunity-solution-tree]
 categories: [product-direction, decision-bottleneck, busy-no-result, method-cargo]
 read: true
 rating: 4

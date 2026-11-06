@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [humble-inquiry, critical-assumption-testing, problem-definition-framework, diagnostic-vs-reward-metrics]
+approaches: [humble-inquiry, critical-assumption-testing, problem-definition-framework, diagnostic-vs-reward-metrics, jobs-to-be-done, positional-analysis, reframe-the-brief]
 categories: [product-direction, decision-bottleneck, metrics-as-target, resistance]
 read: true
 rating:

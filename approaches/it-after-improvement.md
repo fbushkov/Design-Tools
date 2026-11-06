@@ -3,7 +3,7 @@ id: it-after-improvement
 title: Сначала улучшить работу, потом автоматизировать
 directions: [team-ai, service-design, diagnostics]
 solves: [method-cargo, ai-no-effect, routine-load]
-sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, hill-2012-dark-matter, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, ackoff-1981-creating-corporate-future, kaufman-2010-personal-mba, mollick-2024-co-intelligence]
+sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, hill-2012-dark-matter, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, ackoff-1981-creating-corporate-future, kaufman-2010-personal-mba, mollick-2024-co-intelligence, skelton-pais-2019-team-topologies, adizes-1988-corporate-lifecycles]
 maturity_min: { process: 2 }
 tags: [ит, автоматизация, ии, внедрение]
 status: draft
@@ -31,6 +31,8 @@ status: draft
 - Бывают ситуации, где ИТ и есть условие изменения, например данные о поездах у Хилла сами поставили вопрос о едином сервисе для пассажира (Хилл, с. 29–33). Жёсткий порядок «сначала без ИТ» такие случаи не учитывает.
 - Если команду не пускают улучшать работу до внедрения, подход превращается в отсрочку решения.
 - Моллик предлагает обратное: звать ИИ во все задачи, где нет правовых и этических запретов, и так выяснять форму границы, а лучшие применения найдут сами работники (Моллик, с. 47–48, 117–118). Частично он сходится с подходом: начинать с нудных процессов и проверять, не убрать ли эту работу совсем (с. 123–124), и не ждать пользы без перестройки систем (с. 120). См. [shadow-ai-amnesty](shadow-ai-amnesty.md).
+- **Технология ради смены организации.** В кейсе uSwitch Kubernetes внедряли, «потому что хотели изменить организацию», и Скелтон и Паис называют это сильным стратегическим руководством (Скелтон и Паис, с. 221–222). При этом они же предупреждают, что инструменты без навыков и культуры вредят (с. 111, 139).
+- **Системы раньше структуры.** Адизес считает вредным внедрять системы и процессы раньше, чем устроена структура (Адизес, с. 176–177), а форма, обогнавшая функцию, у него признак старения: каждый новый контроль выявляет новые отклонения, и под них вводят следующий (с. 261–264).
 
 ## Как я его адаптирую
 

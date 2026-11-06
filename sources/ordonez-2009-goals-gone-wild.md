@@ -8,7 +8,7 @@ type: paper        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics, team-ai]
-approaches: [balancing-counter-metrics, diagnostic-vs-reward-metrics, system-before-person, measure-vs-delegate-matrix, targets-to-process-data, eight-stage-change]
+approaches: [balancing-counter-metrics, diagnostic-vs-reward-metrics, system-before-person, measure-vs-delegate-matrix, targets-to-process-data, eight-stage-change, outcome-strategy-cascade]
 categories: [metrics-as-target, control-surveillance, busy-no-result]
 read: true
 rating:

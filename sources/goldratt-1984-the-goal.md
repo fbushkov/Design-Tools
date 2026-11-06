@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [chain-link-campaigns, system-traps, leverage-points, purpose-derived-measures, diagnostic-vs-reward-metrics, targets-to-process-data, system-before-person, initiative-triage]
+approaches: [chain-link-campaigns, system-traps, leverage-points, purpose-derived-measures, diagnostic-vs-reward-metrics, targets-to-process-data, system-before-person, initiative-triage, critical-assumption-testing, mess-formulation, throughput-accounting]
 categories: [busy-no-result, metrics-as-target, method-cargo, resistance, silo-service]
 read: true
 rating:

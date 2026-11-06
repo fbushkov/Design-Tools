@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [diagnostics, strategy]
-approaches: [rule-feasibility-check, ceremony-audit, system-before-person, decision-rights-clarity, rules-for-top-first, dark-matter-mapping, system-traps, purpose-derived-measures, meeting-for-action, name-the-resistance, implementation-as-project, automation-by-stage-and-level, algorithmic-control-audit, consulting-contract]
+approaches: [rule-feasibility-check, ceremony-audit, system-before-person, decision-rights-clarity, rules-for-top-first, dark-matter-mapping, system-traps, purpose-derived-measures, meeting-for-action, name-the-resistance, implementation-as-project, automation-by-stage-and-level, algorithmic-control-audit, consulting-contract, ai-pilot-with-control, culture-traits-diagnosis, decision-implementability-audit, positional-analysis, psych-safety-toolkit, sanctions-ratio-audit]
 categories: [busy-no-result, decision-bottleneck, method-cargo, resistance, control-surveillance, silo-service, metrics-as-target]
 read: true
 rating:

@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [service-design, diagnostics]
-approaches: [outside-in-value, failure-demand-analysis, purpose-derived-measures, system-before-person]
+approaches: [outside-in-value, failure-demand-analysis, purpose-derived-measures, system-before-person, service-blueprint, service-prototyping, team-types-and-interaction-modes]
 categories: [silo-service, churn, metrics-as-target]
 read: true
 rating:

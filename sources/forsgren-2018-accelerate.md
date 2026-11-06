@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, team-ai]
-approaches: [diagnostic-vs-reward-metrics, balancing-counter-metrics, targets-to-process-data, purpose-derived-measures, culture-traits-diagnosis, system-before-person, failure-demand-analysis, decision-rights-clarity, operational-definitions]
+approaches: [diagnostic-vs-reward-metrics, balancing-counter-metrics, targets-to-process-data, purpose-derived-measures, culture-traits-diagnosis, system-before-person, failure-demand-analysis, decision-rights-clarity, operational-definitions, four-key-delivery-metrics, psych-safety-toolkit, team-cognitive-load-check, team-types-and-interaction-modes]
 categories: [metrics-as-target, busy-no-result, control-surveillance, method-cargo, decision-bottleneck, employee-experience]
 read: true
 rating:

@@ -8,7 +8,7 @@ type: book
 language: ru
 link:
 directions: [diagnostics, strategy]
-approaches: [rule-feasibility-check, ceremony-audit, dark-matter-mapping, system-before-person, system-traps, intermediate-institutions]
+approaches: [rule-feasibility-check, ceremony-audit, dark-matter-mapping, system-before-person, system-traps, intermediate-institutions, nominal-vs-real-allocation, positional-analysis, sanctions-ratio-audit]
 categories: [control-surveillance, metrics-as-target, resistance, method-cargo, busy-no-result]
 read: true
 rating:
