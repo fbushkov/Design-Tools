@@ -1,0 +1,30 @@
+# Сборка установщика Design Tools для Windows и выпуск на GitHub.
+# Запуск: метка вида v0.3.1 (git tag v0.3.1 && git push origin v0.3.1)
+# или вручную во вкладке Actions. Установленные программы подхватят выпуск сами.
+name: Выпуск приложения
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: npm ci
+      - run: npm run release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

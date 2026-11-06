@@ -17,6 +17,16 @@ contextBridge.exposeInMainWorld('dt', {
     test: (id) => ipcRenderer.invoke('ai:test', id),
     plan: (ctx) => ipcRenderer.invoke('ai:plan', ctx),
   },
+  update: {
+    state: () => ipcRenderer.invoke('update:state'),
+    check: () => ipcRenderer.invoke('update:check'),
+    install: () => ipcRenderer.invoke('update:install'),
+    onState: (fn) => {
+      const h = (_e, s) => fn(s);
+      ipcRenderer.on('update:state', h);
+      return () => ipcRenderer.removeListener('update:state', h);
+    },
+  },
   pull: () => ipcRenderer.invoke('git:pull'),
   pushAnalyses: (msg) => ipcRenderer.invoke('git:push-analyses', msg),
   setup: (dir, branch) => ipcRenderer.invoke('git:setup', dir, branch),

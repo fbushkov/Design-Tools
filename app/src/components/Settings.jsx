@@ -4,6 +4,7 @@ import { FolderOpen, Download, RefreshCw, CheckCircle2, AlertCircle } from 'luci
 import { useApp } from '../state.jsx';
 import { PageHeader, Panel } from './ui.jsx';
 import AISettings from './AISettings.jsx';
+import UpdatePanel from './UpdatePanel.jsx';
 
 function Status({ ok, okText, badText }) {
   return (
@@ -121,6 +122,7 @@ export default function Settings() {
         </Panel>
 
         <AISettings />
+        <UpdatePanel />
 
         {log && (
           <Panel title="Журнал git">

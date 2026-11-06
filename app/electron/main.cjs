@@ -152,8 +152,46 @@ ipcMain.handle('git:setup', async (_e, parentDir, branch) => {
 });
 ipcMain.handle('shell:open', (_e, p) => shell.openPath(p));
 
+// Обновление самой программы: установленная версия проверяет выпуски на GitHub,
+// скачивает новую в фоне и ставит её при перезапуске. При запуске из исходников не работает.
+let updateState = { status: 'idle' };
+function sendUpdate(next) {
+  updateState = { ...updateState, ...next };
+  BrowserWindow.getAllWindows().forEach((w) => w.webContents.send('update:state', updateState));
+}
+function initUpdater() {
+  if (!app.isPackaged) {
+    updateState = { status: 'dev' };
+    return null;
+  }
+  const { autoUpdater } = require('electron-updater');
+  autoUpdater.autoDownload = true;
+  autoUpdater.autoInstallOnAppQuit = true;
+  autoUpdater.on('checking-for-update', () => sendUpdate({ status: 'checking', error: '' }));
+  autoUpdater.on('update-available', (i) => sendUpdate({ status: 'downloading', version: i.version, percent: 0 }));
+  autoUpdater.on('update-not-available', () => sendUpdate({ status: 'latest' }));
+  autoUpdater.on('download-progress', (p) => sendUpdate({ status: 'downloading', percent: Math.round(p.percent) }));
+  autoUpdater.on('update-downloaded', (i) => sendUpdate({ status: 'ready', version: i.version }));
+  autoUpdater.on('error', (e) => sendUpdate({ status: 'error', error: String(e?.message || e).slice(0, 200) }));
+  return autoUpdater;
+}
+let updater = null;
+ipcMain.handle('update:state', () => ({ ...updateState, current: app.getVersion() }));
+ipcMain.handle('update:check', async () => {
+  if (!updater) return { ...updateState, current: app.getVersion() };
+  try {
+    await updater.checkForUpdates();
+  } catch (e) {
+    sendUpdate({ status: 'error', error: String(e?.message || e).slice(0, 200) });
+  }
+  return { ...updateState, current: app.getVersion() };
+});
+ipcMain.handle('update:install', () => updater && updater.quitAndInstall());
+
 app.whenReady().then(() => {
   createWindow();
+  updater = initUpdater();
+  if (updater) setTimeout(() => updater.checkForUpdates().catch(() => {}), 4000);
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
