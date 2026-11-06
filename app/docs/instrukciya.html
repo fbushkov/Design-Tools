@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Tools — регламент работы</title>
+<style>
+  :root { --bg:#F7F7F8; --card:#fff; --fg:#18181B; --muted:#62626B; --line:#E4E4E7; --accent:#4F46E5; --accent-soft:#EEF2FF; --warn:#B45309; --warn-soft:#FFFBEB; --ok:#15803D; --ok-soft:#F0FDF4; --bad:#BE123C; --bad-soft:#FFF1F2; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0E0E11; --card:#17171B; --fg:#ECECEE; --muted:#A1A1AA; --line:#2A2A30; --accent:#818CF8; --accent-soft:#1E1B4B; --warn:#F59E0B; --warn-soft:#2A1D05; --ok:#4ADE80; --ok-soft:#052E16; --bad:#FB7185; --bad-soft:#2A0A12; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px 80px; }
+  header h1 { font-size: 30px; line-height:1.2; margin: 0 0 8px; letter-spacing:-.02em; }
+  header p { color: var(--muted); margin: 0; }
+  nav.toc { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:28px 0; columns: 2; column-gap: 28px; }
+  nav.toc a { display:block; color:var(--fg); text-decoration:none; padding:3px 0; font-size:14px; break-inside: avoid; }
+  nav.toc a:hover { color: var(--accent); }
+  h2 { font-size: 21px; margin: 44px 0 10px; letter-spacing:-.01em; scroll-margin-top: 20px; }
+  h2 .n { display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; font-size:13px; margin-right:10px; vertical-align: 3px; }
+  h3 { font-size: 16px; margin: 24px 0 6px; }
+  p, li { color: var(--fg); }
+  .muted { color: var(--muted); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin:14px 0; }
+  .steps { counter-reset: s; list-style:none; padding:0; margin: 12px 0; }
+  .steps > li { counter-increment: s; position: relative; padding: 2px 0 14px 44px; }
+  .steps > li::before { content: counter(s); position:absolute; left:0; top:2px; width:28px; height:28px; border-radius:50%; border:2px solid var(--accent); color:var(--accent); display:grid; place-items:center; font-size:13px; font-weight:600; }
+  .steps > li::after { content:""; position:absolute; left:13px; top:34px; bottom:4px; width:2px; background:var(--line); }
+  .steps > li:last-child::after { display:none; }
+  code, kbd { font-family: Consolas, "Cascadia Mono", monospace; font-size: 13px; }
+  code { background: var(--accent-soft); padding: 1px 6px; border-radius: 5px; }
+  kbd { border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 6px; background:var(--card); }
+  pre { background: #18181B; color:#E4E4E7; padding:14px 16px; border-radius:10px; overflow:auto; font-size:13px; }
+  .note { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 12px 0; }
+  .warn { border-left-color: var(--warn); background: var(--warn-soft); }
+  table { width:100%; border-collapse: separate; border-spacing:0; border:1px solid var(--line); border-radius:12px; overflow:hidden; margin: 12px 0; font-size: 14px; background: var(--card); }
+  th, td { text-align:left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12.5px; color: var(--muted); font-weight: 600; background: color-mix(in srgb, var(--card) 85%, var(--line)); }
+  .tag { display:inline-block; font-size:12px; padding:1px 8px; border-radius:999px; font-weight:600; }
+  .t-ok { background:var(--ok-soft); color:var(--ok); } .t-bad { background:var(--bad-soft); color:var(--bad); } .t-warn { background:var(--warn-soft); color:var(--warn); }
+  footer { margin-top: 56px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Design Tools — регламент работы</h1>
+  <p>Как запускать приложение, проводить разбор ситуации клиента и что делать после. Версия приложения 0.2, без ИИ.</p>
+</header>
+
+<nav class="toc" aria-label="Содержание">
+  <a href="#start">1. Запуск</a>
+  <a href="#setup">2. Первая настройка</a>
+  <a href="#cycle">3. Разбор ситуации: регламент</a>
+  <a href="#marks">4. Что значат пометки</a>
+  <a href="#after">5. После разбора</a>
+  <a href="#base">6. Справочник, карта, поиск, книги</a>
+  <a href="#update">7. Обновление базы и новые книги</a>
+  <a href="#keys">8. Горячие клавиши</a>
+  <a href="#rules">9. Правила конфиденциальности</a>
+  <a href="#faq">10. Если что-то не так</a>
+</nav>
+
+<h2 id="start"><span class="n">1</span>Запуск</h2>
+<p>Есть два способа. Пока приложение часто обновляется, удобнее первый.</p>
+<div class="card">
+  <h3 style="margin-top:0">Через PowerShell — рекомендуется сейчас</h3>
+  <pre>cd C:\Users\eXC24\Design-Tools\app
+git pull
+npm install
+npm start</pre>
+  <p class="muted">Через 10–20 секунд откроется окно «Design Tools». <code>git pull</code> и <code>npm install</code> нужны только когда вышло обновление — в остальные дни достаточно <code>npm start</code>.</p>
+</div>
+<div class="card">
+  <h3 style="margin-top:0">Через файл .exe</h3>
+  <pre>cd C:\Users\eXC24\Design-Tools\app
+npm run dist</pre>
+  <p>В папке <code>app\release\</code> появится <code>Design Tools 0.2.0.exe</code> — его можно скопировать на рабочий стол и запускать двойным щелчком, установка не нужна. При первом запуске укажите папки базы в настройках (раздел 2). Минус: после каждого обновления приложения файл нужно собрать заново.</p>
+</div>
+
+<h2 id="setup"><span class="n">2</span>Первая настройка</h2>
+<ol class="steps">
+  <li>Откройте <b>Настройки</b> (внизу боковой панели).</li>
+  <li>Если папок ещё нет — нажмите <b>Скачать базу в папку…</b> и выберите <code>C:\Users\eXC24</code>. Приложение скачает <code>Design-Tools</code> и приватную <code>Design-tools-library</code> без файлов книг: только тексты, карты, разборы и каталог. Может открыться окно входа в GitHub.</li>
+  <li>Если папки уже есть — укажите их значком папки в полях <b>Design-Tools</b> и <b>Design-tools-library</b>.</li>
+  <li>Под полями должны загореться зелёные отметки: «загружено: … проблем, … подходов» и «тексты книг доступны». Внизу боковой панели — зелёная точка «база и книги подключены».</li>
+</ol>
+
+<h2 id="cycle"><span class="n">3</span>Разбор ситуации: регламент</h2>
+<p>Раздел <b>Новый разбор</b>. Черновик сохраняется сам — можно закрыть приложение и вернуться. Справа всегда видна сводка: контекст, зрелость, выбранные проблемы и путь.</p>
+
+<ol class="steps">
+  <li>
+    <b>Название.</b> Коротко о ситуации, <b>без названия компании и людей</b> — например, «Сервисная сеть: KPI и жалобы клиентов».
+  </li>
+  <li>
+    <b>Шаг 1. Ситуация.</b>
+    <ul>
+      <li><b>Что происходит</b> — словами заказчика: что болит, что пробовали, что считают причиной. Чем конкретнее слова, тем точнее подбор проблем.</li>
+      <li><b>Режим.</b> Быстрый — перед первой встречей, достаточно вопросов 1–4. Полный — для диагностики, нужны все 8.</li>
+      <li><b>Бизнес</b> — масштаб, модель, что продают, рынок.</li>
+      <li><b>Зрелость</b> — кнопки 1–4 по каждой оси. Под кнопками подпись уровня; для управления — какой кризис назревает. <b>Уровень управления задайте обязательно</b>: без него не работают пометки «органично» и «вредно».</li>
+      <li><b>Траектория</b> — растёт компания или стареет. Признаки старения: растёт доля административных расходов, падает доля выручки от новинок, вопросы «как и кто» вытесняют «зачем и что».</li>
+      <li><b>Уточнение</b> — 8 вопросов. Ответ «не знаю» допустим: такие вопросы уйдут в регламент как вопросы заказчику.</li>
+      <li><b>Категории</b> — необязательно, если уже понятно, о чём ситуация.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Шаг 2. Проблемы и вопросы.</b> Приложение показывает похожие проблемы с полосой совпадения и общими словами. Отметьте <b>две-три</b>, которые действительно похожи — не по полосе, а по описанию «Как выглядит». Ниже появятся <b>вопросы для диагностики</b>: отметьте, что будете спрашивать. Фильтр по адресату помогает собрать вопросы для одной встречи.
+  </li>
+  <li>
+    <b>Шаг 3. Рекомендации.</b> Подходы из выбранных проблем. У каждого: суть, <b>опора</b> (кто за), <b>спорят и уточняют</b> (кто против или ограничивает), раскрывающиеся «Когда работает», «На каких стадиях», «Где ломается». Подходы, вредные на вашей стадии, вынесены вниз отдельным блоком. Прочитайте «Где ломается» у двух-трёх верхних и <b>выберите один</b>.
+  </li>
+  <li>
+    <b>Шаг 4. Регламент.</b> Собран из выбранного подхода и проблем: цель и критерии успеха → уточнить у заказчика → диагностика по адресатам → применить инструменты подхода → проверить риски → опора. Отмечайте выполненное, пишите заметки к шагам: кто, когда, что адаптировать.
+  </li>
+  <li>
+    <b>Сохраните</b> — <kbd>Ctrl</kbd>+<kbd>S</kbd> или кнопка «Сохранить». Разбор ляжет в приватную библиотеку, в <code>analyses/</code>. Кнопка с двумя листами копирует разбор в буфер в markdown — например, чтобы вставить в письмо или заметки.
+  </li>
+</ol>
+
+<div class="note">Любая ссылка вида <span style="border-bottom:1px dotted">с. 189</span> кликается и открывает текст этой страницы книги. Проверяйте ключевые тезисы перед тем, как нести их клиенту.</div>
+
+<h2 id="marks"><span class="n">4</span>Что значат пометки</h2>
+<table>
+  <tr><th>Пометка</th><th>Что значит</th><th>Что делать</th></tr>
+  <tr><td><span class="tag t-ok">органично на вашей стадии</span></td><td>Источник прямо говорит, что подход подходит этому уровню управления</td><td>Хороший кандидат</td></tr>
+  <tr><td><span class="tag t-bad">вредно на стадии N</span></td><td>Источник говорит, что на этом уровне подход избыточен или вреден (например, каскад показателей при уровне 1)</td><td>Не выбирать без веской причины; прочитать «На каких стадиях»</td></tr>
+  <tr><td><span class="tag t-warn">рано</span></td><td>Подход требует зрелости выше выбранной по какой-то оси</td><td>Сначала подтянуть эту ось или взять другой путь</td></tr>
+  <tr><td>без пометки</td><td>Стадии для подхода не размечены — источники о них молчат</td><td>Решать по «Когда работает» и «Где ломается»</td></tr>
+  <tr><td>черновик</td><td>Карточка ещё без вашей позиции</td><td>Раздел «Как я его адаптирую» пока содержит только вопросы</td></tr>
+</table>
+
+<h2 id="after"><span class="n">5</span>После разбора</h2>
+<ol class="steps">
+  <li><b>Мои разборы → Отправить в GitHub</b> — разборы уйдут в приватную библиотеку и не потеряются.</li>
+  <li>Когда по ситуации прошла реальная работа — допишите в файле разбора поле <code>outcome</code>: какой путь выбрали и что получилось. Попросите Claude помочь.</li>
+  <li>Если результат интересен — Claude сделает из разбора <b>обезличенный кейс</b> в <code>cases/</code> публичной базы.</li>
+  <li>Если в разборе база «молчала» — скажите Claude: пробел попадёт в <code>gaps.md</code>, из него выбираются следующие книги.</li>
+  <li>Если с рекомендацией не согласны — это повод заполнить «Как я его адаптирую» или «Моя позиция» в карточке подхода.</li>
+</ol>
+
+<h2 id="base"><span class="n">6</span>Справочник, карта, поиск, книги</h2>
+<ul>
+  <li><b>Проблемы, Подходы, Источники</b> — список слева, карточка справа. Поиск по словам и фильтр по категории. Над текстом карточки — оглавление разделов; у подхода — стадии квадратами 1–4 (зелёный — органично, красный — вредно).</li>
+  <li><b>Карта</b> — выберите стадию 1–4 и смотрите: контур бизнеса → проблема → подходы с авторами и инструментами → бизнес-результат. Переключатель вверху группирует по контурам бизнеса или по направлениям работы.</li>
+  <li><b>Поиск по всей базе</b> — <kbd>Ctrl</kbd>+<kbd>K</kbd>, ввести слово или автора, <kbd>Enter</kbd>.</li>
+  <li><b>Страница книги</b> — клик по номеру страницы. Вкладки «Текст страницы» и «Карта книги», листание стрелками <kbd>←</kbd> <kbd>→</kbd>, переход по номеру. Номера — по PDF; смещение к печатным указано в карточке источника.</li>
+  <li><b>Карточка поверх экрана</b> — ссылки в разборе открывают карточку сбоку, не теряя разбор. «Открыть в справочнике» переводит в раздел.</li>
+</ul>
+
+<h2 id="update"><span class="n">7</span>Обновление базы и новые книги</h2>
+<ul>
+  <li><b>Обновить базу</b> — Настройки → «Обновить с GitHub», затем значок обновления внизу боковой панели.</li>
+  <li><b>Новые книги</b> — загрузите файлы в приватную библиотеку (через сайт GitHub до 25 МБ или сценарием PowerShell) и напишите Claude. Порядок: библиотекарь принимает файл → конспектор делает карточку и карту → куратор связывает с базой. После этого — «Обновить с GitHub».</li>
+  <li><b>Обновить само приложение</b> — <code>git pull</code> и <code>npm install</code> в папке <code>app</code> (раздел 1).</li>
+</ul>
+
+<h2 id="keys"><span class="n">8</span>Горячие клавиши</h2>
+<table>
+  <tr><th>Клавиши</th><th>Действие</th></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>Поиск по всей базе</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Сохранить разбор в библиотеку</td></tr>
+  <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Листать страницы книги</td></tr>
+  <tr><td><kbd>Esc</kbd></td><td>Закрыть окно книги, поиск или карточку</td></tr>
+</table>
+
+<h2 id="rules"><span class="n">9</span>Правила конфиденциальности</h2>
+<div class="note warn">
+  <ul style="margin:0">
+    <li>Названия компаний и имена людей — <b>не</b> в названии и тексте разбора. Разборы хранятся только в приватной библиотеке.</li>
+    <li>В публичную базу Design-Tools попадает только обезличенный кейс.</li>
+    <li>Тексты книг не копируются в публичную базу: там только конспекты и короткие цитаты со страницей.</li>
+  </ul>
+</div>
+
+<h2 id="faq"><span class="n">10</span>Если что-то не так</h2>
+<table>
+  <tr><th>Симптом</th><th>Что сделать</th></tr>
+  <tr><td>«База не подключена»</td><td>Настройки → указать папку Design-Tools (в ней должен быть файл <code>taxonomy.md</code>).</td></tr>
+  <tr><td>Внизу панели «библиотека не подключена» (жёлтая точка)</td><td>Приложение не нашло приватную Design-tools-library рядом с Design-Tools. Настройки → «Скачать базу в папку…» → выбрать <code>C:\Users\eXC24</code> (ту же папку, где лежит Design-Tools). Или указать уже существующую папку библиотеки. Без неё не открываются страницы книг и не сохраняются разборы.</td></tr>
+  <tr><td>Ссылка на страницу пишет «нет текста»</td><td>Не подключена библиотека или книга ещё не переведена в текст. Настройки → поле Design-tools-library.</td></tr>
+  <tr><td>Нет пометок «органично» / «вредно»</td><td>Не задан уровень управления на шаге 1, или стадии подхода не размечены.</td></tr>
+  <tr><td>Новые карточки не видны</td><td>Настройки → «Обновить с GitHub», затем значок обновления внизу панели.</td></tr>
+  <tr><td>Окно не открывается после <code>npm start</code>, красный текст в PowerShell</td><td>Пришлите снимок экрана Claude. Часто помогает повторный <code>npm install</code>.</td></tr>
+  <tr><td>«Отправить в GitHub» с ошибкой</td><td>Нужен вход в GitHub в git. Запустите в PowerShell <code>git push</code> в папке библиотеки — откроется окно входа.</td></tr>
+</table>
+
+<footer>Design Tools · регламент к версии 0.2 · ноябрь 2026</footer>
+</div>
+</body>
+</html>

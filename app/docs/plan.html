@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Tools — план</title>
+<style>
+  :root { --bg:#F7F7F8; --card:#fff; --fg:#18181B; --muted:#62626B; --line:#E4E4E7; --accent:#4F46E5; --accent-soft:#EEF2FF; --ok:#15803D; --ok-soft:#F0FDF4; --warn:#B45309; --warn-soft:#FFFBEB; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0E0E11; --card:#17171B; --fg:#ECECEE; --muted:#A1A1AA; --line:#2A2A30; --accent:#818CF8; --accent-soft:#1E1B4B; --ok:#4ADE80; --ok-soft:#052E16; --warn:#F59E0B; --warn-soft:#2A1D05; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 30px; margin: 0 0 8px; letter-spacing: -.02em; }
+  .lead { color: var(--muted); margin: 0 0 28px; }
+  .stats { display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 32px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .stat b { display:block; font-size: 26px; letter-spacing:-.02em; }
+  .stat span { color: var(--muted); font-size: 13px; }
+  h2 { font-size: 20px; margin: 40px 0 6px; letter-spacing: -.01em; }
+  h2 small { font-size: 13px; font-weight: 500; color: var(--muted); margin-left: 8px; }
+  .sub { color: var(--muted); margin: 0 0 14px; font-size: 14px; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .item h3 { margin: 0 0 4px; font-size: 15.5px; }
+  .item p { margin: 0; color: var(--muted); font-size: 14px; }
+  .who { display:inline-block; font-size: 11.5px; font-weight: 600; padding: 1px 8px; border-radius: 999px; margin-bottom: 8px; }
+  .you { background: var(--warn-soft); color: var(--warn); }
+  .claude { background: var(--accent-soft); color: var(--accent); }
+  .both { background: var(--ok-soft); color: var(--ok); }
+  .timeline { position: relative; margin: 8px 0 0; padding: 0; list-style: none; }
+  .timeline li { position: relative; padding: 0 0 18px 34px; }
+  .timeline li::before { content:""; position:absolute; left:7px; top:6px; width:12px; height:12px; border-radius:50%; background: var(--card); border: 2px solid var(--accent); }
+  .timeline li.done::before { background: var(--ok); border-color: var(--ok); }
+  .timeline li::after { content:""; position:absolute; left:12px; top:22px; bottom:0; width:2px; background: var(--line); }
+  .timeline li:last-child::after { display:none; }
+  .timeline b { display:block; }
+  .timeline span { color: var(--muted); font-size: 14px; }
+  table { width:100%; border-collapse: separate; border-spacing:0; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--card); font-size: 14px; }
+  th, td { text-align:left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .p1 { color: var(--warn); font-weight: 600; white-space: nowrap; }
+  .p2 { color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .p3 { color: var(--muted); font-weight: 600; white-space: nowrap; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 720px) { .grid, .stats { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Что дальше</h1>
+<p class="lead">План работ по базе знаний и приложению Design Tools на ноябрь 2026. Метка у задачи показывает, кто её делает: <span class="who you">вы</span> <span class="who claude">Claude</span> <span class="who both">вместе</span></p>
+
+<div class="stats">
+  <div class="stat"><b>55</b><span>источников с картами и конспектами</span></div>
+  <div class="stat"><b>76</b><span>подходов, 17 со стадиями</span></div>
+  <div class="stat"><b>13</b><span>проблем с вопросами для диагностики</span></div>
+  <div class="stat"><b>0.2</b><span>версия приложения для Windows</span></div>
+</div>
+
+<h2>Где мы сейчас</h2>
+<ol class="timeline">
+  <li class="done"><b>Этап 1. Каркас и первая волна</b><span>Структура базы, словарь, шаблоны, проверка, агенты, 17 источников.</span></li>
+  <li class="done"><b>Этап 2–3. Покрытие направлений</b><span>Ещё 38 источников: консалтинг, изменения, стратегия, продукт, сервис, команды, показатели, российский контекст. Оси зрелости по Грейнеру и Адизесу, контуры бизнеса, стадии подходов.</span></li>
+  <li class="done"><b>Этап 5. Приложение 0.2</b><span>Разбор, регламент, карта, справочник, чтение книг, поиск, темы.</span></li>
+  <li><b>Сейчас: проверка на практике</b><span>Тестовые разборы, правка формата, позиция автора.</span></li>
+  <li><b>Дальше: ИИ в приложении и практика автора</b><span>Разбор силами Claude, кейсы, свои методики.</span></li>
+</ol>
+
+<h2>Ближайшие шаги <small>1–2 недели</small></h2>
+<p class="sub">Главное сейчас — проверить формат на реальных ситуациях, пока база не разрослась ещё сильнее.</p>
+<div class="grid">
+  <div class="item"><span class="who you">вы</span><h3>2–3 тестовых разбора в приложении</h3><p>На ситуациях из практики, без названий. Отмечать, где подбор промахнулся, где регламент неудобен, где база молчит.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Правка формата по итогам</h3><p>Подбор проблем, порядок шагов регламента, шаблоны <code>intake</code> и <code>analysis</code>. Пробелы — в <code>gaps.md</code>.</p></div>
+  <div class="item"><span class="who you">вы</span><h3>Загрузить недостающие книги</h3><p>Список ниже. Самые важные — Киган и Лейхи, Ротер и Шук, Диксон, Маргретта о Портере.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Принять и законспектировать новые книги</h3><p>Библиотекарь → конспекторы → куратор. Новая проблема «коммодитизация и падение маржи» — после книг о конкурентной стратегии.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Карты для 17 книг первой волны</h3><p>Деминг, Седдон, Мюллер, Медоуз и др. пока без карт — проверяющему и окну «Карта книги» не на что опереться. Заодно сверить расходящиеся страницы (Бриньолфссон, Акофф).</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Доразметить стадии подходов</h3><p>Размечено 17 из 76. После новых книг — ещё там, где появится опора.</p></div>
+</div>
+
+<h2>Приложение: версия 0.3 <small>после тестовых разборов</small></h2>
+<div class="grid">
+  <div class="item"><span class="who both">вместе</span><h3>Разбор и регламент силами Claude</h3><p>Кнопка «Разобрать с ИИ»: Claude пишет разбор по шаблону с метками опоры и регламент по выбранному пути, а проверяющий сверяет страницы. Нужно решение: ключ API (оплата отдельно, примерно 0,5–2 $ за разбор) или подписка через Claude Code.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Итоги разбора</h3><p>Поле «что выбрали и что получилось» прямо в приложении, кнопка «сделать обезличенный кейс».</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Экспорт</h3><p>Разбор и регламент в PDF и Word для клиента — без внутренних меток и ссылок на страницы.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Ваша позиция в приложении</h3><p>Редактирование разделов «Как я его адаптирую» и «Моя позиция» прямо в карточке, с отправкой в GitHub.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Сборка .exe и автообновление</h3><p>Готовый файл без PowerShell, когда формат устоится.</p></div>
+  <div class="item"><span class="who claude">Claude</span><h3>Сравнение подходов</h3><p>Два-три подхода рядом: условия, стадии, кто за и против, инструменты.</p></div>
+</div>
+
+<h2>Ваша методология <small>этап 4, постоянно</small></h2>
+<div class="grid">
+  <div class="item"><span class="who you">вы</span><h3>«Моя позиция» в проблемах</h3><p>Начать с «Показатель стал целью»: черновые вопросы уже есть, ответить на них своими словами. Claude поможет оформить.</p></div>
+  <div class="item"><span class="who you">вы</span><h3>«Как я его адаптирую» в подходах</h3><p>Сначала у тех, что вы реально применяете: ЦКП, сервисный блупринт, JTBD, проверка допущений.</p></div>
+  <div class="item"><span class="who both">вместе</span><h3>Статьи с bushkovstudio</h3><p>9 статей в <code>inbox.md</code> уже содержат вашу позицию — их разбор быстрее всего даст карточки со статусом «работает».</p></div>
+  <div class="item"><span class="who both">вместе</span><h3>Кейсы в <code>cases/</code></h3><p>Из завершённых разборов — обезличенные кейсы: что было, что применили, что вышло.</p></div>
+</div>
+
+<h2>Какие книги ещё нужны</h2>
+<table>
+  <tr><th>Важность</th><th>Книга</th><th>Что закрывает</th></tr>
+  <tr><td class="p1">обязательно</td><td>Киган, Лейхи. «Иммунитет к изменениям» (2009)</td><td>Психологию сопротивления у того, кто меняется</td></tr>
+  <tr><td class="p1">обязательно</td><td>Ротер, Шук. «Учиться видеть» (1999)</td><td>VSM и время выхода на рынок вне софта — для «Медленного потока»</td></tr>
+  <tr><td class="p1">обязательно</td><td>Вумек, Джонс. «Бережливое производство» (1996)</td><td>Lean из первоисточника</td></tr>
+  <tr><td class="p1">обязательно</td><td>Диксон и др. The Effortless Experience (2013)</td><td>Данные о том, почему уходят клиенты</td></tr>
+  <tr><td class="p1">обязательно</td><td>Полейн, Лёвлие, Ризон. Service Design (2013)</td><td>Сервис-дизайн как практика от исследования до внедрения</td></tr>
+  <tr><td class="p1">обязательно</td><td>Калбах. Mapping Experiences — сжать файл</td><td>Карты опыта и пути</td></tr>
+  <tr><td class="p2">важно</td><td>Маргретта. Understanding Michael Porter (2011) или Портер</td><td>Коммодитизация и маржа</td></tr>
+  <tr><td class="p2">важно</td><td>Хелмер. 7 Powers (2016)</td><td>Устойчивое преимущество</td></tr>
+  <tr><td class="p2">важно</td><td>Остервальдер, Пинье. «Построение бизнес-моделей», Value Proposition Design</td><td>Бизнес-модели и Lean Canvas</td></tr>
+  <tr><td class="p2">важно</td><td>Доэрр. «Измеряйте самое важное»; Вудке. Radical Focus</td><td>OKR — честно, в паре с уже прочитанной критикой целей</td></tr>
+  <tr><td class="p2">важно</td><td>Михайлова. Contrasts in Culture (2000), статья</td><td>Почему западные изменения буксуют в российских компаниях</td></tr>
+  <tr><td class="p2">важно</td><td>Леденёва. Can Russia Modernise? (2013)</td><td>Неформальное управление, продолжение</td></tr>
+  <tr><td class="p2">важно</td><td>Design Council. Systemic Design Framework (2021)</td><td>Системный дизайн, бесплатный PDF</td></tr>
+  <tr><td class="p3">по желанию</td><td>Кауфман «Личный MBA» — полный файл; Каган Inspired, 2-е изд.; Бриджес «Управляя переходами»; Шейн Process Consultation Revisited</td><td>Дополнения к уже прочитанному</td></tr>
+</table>
+
+<h2>Решения, которые за вами</h2>
+<div class="grid">
+  <div class="item"><span class="who you">вы</span><h3>Как подключать ИИ в приложение</h3><p>Ключ API или подписка через Claude Code. От этого зависит версия 0.3.</p></div>
+  <div class="item"><span class="who you">вы</span><h3>Проверить черновые описания</h3><p>Распределение категорий по контурам бизнеса и уровни новой оси «доверие и связность» в <code>taxonomy.md</code> — сейчас черновик.</p></div>
+</div>
+
+<footer>Design Tools · план на ноябрь 2026 · подробности в ROADMAP.md и gaps.md</footer>
+</div>
+</body>
+</html>

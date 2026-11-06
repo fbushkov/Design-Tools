@@ -108,10 +108,22 @@ export default function App() {
         <div className="mt-auto space-y-0.5">
           <NavItem item={{ label: 'Настройки', icon: SettingsIcon }} active={view === 'settings'} onPress={() => setView('settings')} />
           <div className="flex items-center justify-between px-2 pt-2">
-            <span className="text-[11px] text-default-400 flex items-center gap-1.5">
-              <span className={`size-1.5 rounded-full ${ready ? (base.library.ok ? 'bg-success' : 'bg-warning') : 'bg-danger'}`} />
-              {ready ? (base.library.ok ? 'база и книги подключены' : 'книги не подключены') : 'база не найдена'}
-            </span>
+            <Tooltip
+              delay={200}
+              className="max-w-xs"
+              content={
+                ready
+                  ? base.library.ok
+                    ? 'Карточки базы и тексты книг на месте.'
+                    : 'Карточки базы есть, но не найдена приватная Design-tools-library: ссылки на страницы книг и сохранение разборов не работают. Нажмите, чтобы подключить.'
+                  : 'Не найдена папка Design-Tools. Нажмите, чтобы указать.'
+              }
+            >
+              <button onClick={() => setView('settings')} className="text-[11px] text-default-400 hover:text-foreground flex items-center gap-1.5 text-left">
+                <span className={`size-1.5 rounded-full shrink-0 ${ready ? (base.library.ok ? 'bg-success' : 'bg-warning') : 'bg-danger'}`} />
+                {ready ? (base.library.ok ? 'база и книги подключены' : 'библиотека не подключена →') : 'база не найдена →'}
+              </button>
+            </Tooltip>
             <div className="flex">
               <Tooltip content="Перечитать файлы базы" delay={300}>
                 <Button size="sm" variant="light" isIconOnly aria-label="Перечитать базу" onPress={reload}>
