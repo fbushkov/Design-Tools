@@ -21,6 +21,8 @@ await win.waitForSelector('text=Разбор', { timeout: 30000 });
 await win.waitForTimeout(1500);
 const snap = (n) => win.screenshot({ path: path.join(shots, n + '.png') });
 
+await win.getByRole('button', { name: 'Новый' }).click();
+await win.waitForTimeout(300);
 await snap('01-analysis');
 await win.getByLabel('Ситуация словами заказчика').fill(
   'Сеть сервисных центров. Ввели KPI по времени ответа и количеству звонков, премии привязаны к плану. Цифры зелёные, клиенты жалуются, менеджеры подгоняют отчёты. Отделы не стыкуются между собой.'
