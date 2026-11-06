@@ -65,7 +65,7 @@ export function parseTaxonomy(md) {
   }
   const directions = [];
   for (const m of md.matchAll(/^-\s*`([a-z-]+)`\s*—\s*(.+)$/gm)) {
-    if (/scale|model|offer|market/.test(m[1])) continue;
+    if (/scale|model|offer|market|strategic|operational|product/.test(m[1])) continue;
     directions.push({ id: m[1], title: m[2].trim() });
   }
   const axes = [];
@@ -80,7 +80,14 @@ export function parseTaxonomy(md) {
     const line = md.split('\n').find((l) => l.startsWith('- `' + k + '`')) || '';
     return [...line.replace(/^- `[a-z]+`\s*—\s*/, '').matchAll(/`([a-z-]+)`(?:\s*\(([^)]*)\))?/g)].map((x) => ({ id: x[1], note: x[2] || '' }));
   };
+  const contours = [];
+  const categoryContours = {};
+  const cb = md.split('## Контуры бизнеса')[1]?.split('\n## ')[0] || '';
+  for (const m of cb.matchAll(/^-\s*`([a-z-]+)`\s*—\s*(.+)$/gm)) contours.push({ id: m[1], title: m[2].split(':')[0].trim(), note: m[2].trim() });
+  for (const m of cb.matchAll(/^\|\s*`([a-z-]+)`\s*\|\s*([^|]+)\|/gm)) categoryContours[m[1]] = m[2].split(',').map((x) => x.trim());
   return {
+    contours,
+    categoryContours,
     categories,
     directions,
     axes,
@@ -215,6 +222,16 @@ export function maturityFit(approach, maturity) {
   return { ok: gaps.length === 0, gaps };
 }
 
+// Органично или вредно на уровне management по полям stages_fit / stages_harm.
+export function stageFit(approach, level) {
+  if (!level) return null;
+  const fit = [].concat(approach.data.stages_fit || []).map(Number);
+  const harm = [].concat(approach.data.stages_harm || []).map(Number);
+  if (harm.includes(Number(level))) return 'harm';
+  if (fit.includes(Number(level))) return 'fit';
+  return null;
+}
+
 export function rankApproaches(base, selectedProblems, query, maturity) {
   const byId = new Map(base.approaches.map((a) => [a.id, a]));
   const counts = new Map();
@@ -234,7 +251,9 @@ export function rankApproaches(base, selectedProblems, query, maturity) {
       let text = 0;
       for (const w of q) if (st.has(w)) text += 1;
       const fit = maturityFit(a, maturity);
-      return { approach: a, score: c * 3 + text - (fit.ok ? 0 : 2), refs: c, fit };
+      const stage = stageFit(a, maturity.management);
+      const bonus = stage === 'harm' ? -6 : stage === 'fit' ? 2 : 0;
+      return { approach: a, score: c * 3 + text - (fit.ok ? 0 : 2) + bonus, refs: c, fit, stage };
     })
     .filter(Boolean)
     .sort((x, y) => y.score - x.score);

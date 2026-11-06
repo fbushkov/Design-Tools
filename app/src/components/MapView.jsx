@@ -1,14 +1,15 @@
 import { useMemo, useState } from 'react';
-import { Accordion, AccordionItem, Chip, Select, SelectItem } from '@heroui/react';
+import { Accordion, AccordionItem, Chip, Select, SelectItem, Tabs, Tab } from '@heroui/react';
 import { Layers, AlertTriangle, Compass, Wrench, Target } from 'lucide-react';
 import { useApp } from '../state.jsx';
 import Markdown from './Markdown.jsx';
-import { sections, sectionStarting, listItems, maturityFit } from '../lib/base.js';
+import { sections, sectionStarting, listItems, maturityFit, stageFit } from '../lib/base.js';
 
 // Карта: стадия зрелости -> направление -> проблема -> подход (авторы, годы) -> инструменты -> результат.
 export default function MapView() {
   const { base, taxonomy, byId, openCard } = useApp();
   const [stage, setStage] = useState('2');
+  const [groupBy, setGroupBy] = useState(taxonomy.contours.length ? 'contour' : 'direction');
   const lvl = Number(stage);
   const g = taxonomy.greiner.find((x) => x.level === lvl);
   const axis = taxonomy.axes.find((a) => a.id === 'management');
@@ -22,13 +23,18 @@ export default function MapView() {
     };
     const byDir = {};
     for (const p of base.problems.filter(fits)) {
-      const dir = [].concat(p.data.directions || ['без направления'])[0];
-      (byDir[dir] ||= []).push(p);
+      const cat = [].concat(p.data.category || [])[0];
+      const key =
+        groupBy === 'contour'
+          ? (taxonomy.categoryContours[cat] || ['без контура'])[0]
+          : [].concat(p.data.directions || ['без направления'])[0];
+      (byDir[key] ||= []).push(p);
     }
     return byDir;
-  }, [base, lvl]);
+  }, [base, lvl, groupBy, taxonomy]);
 
-  const dirTitle = (id) => taxonomy.directions.find((d) => d.id === id)?.title || id;
+  const dirTitle = (id) =>
+    (groupBy === 'contour' ? taxonomy.contours.find((d) => d.id === id)?.title : taxonomy.directions.find((d) => d.id === id)?.title) || id;
 
   return (
     <div className="h-full overflow-auto p-4 space-y-4">
@@ -46,6 +52,10 @@ export default function MapView() {
             </SelectItem>
           ))}
         </Select>
+        <Tabs aria-label="Группировка" selectedKey={groupBy} onSelectionChange={setGroupBy} size="sm">
+          <Tab key="contour" title="По контурам бизнеса" />
+          <Tab key="direction" title="По направлениям работы" />
+        </Tabs>
         {g && (
           <div className="text-sm text-default-600 max-w-2xl">
             <Markdown text={`**Фаза по Грейнеру:** ${g.phase}. **Назревает:** ${g.crisis}`} card={byId.get('greiner-1972-evolution-revolution')} compact />
@@ -54,7 +64,7 @@ export default function MapView() {
       </div>
       <p className="text-xs text-default-500">
         Проблемы отобраны по полю зрелости управления в карточке; карточки без него показаны на всех стадиях. Пометка «рано» — подход требует
-        зрелости выше выбранной.
+        зрелости выше выбранной; «вредно» и «органично» — из полей стадий подхода (размечаются по источникам).
       </p>
       {Object.entries(tree).map(([dir, problems]) => (
         <section key={dir} className="space-y-2">
@@ -76,6 +86,7 @@ export default function MapView() {
                       {approaches.map((a) => {
                         const as = sections(a.body);
                         const fit = maturityFit(a, { management: lvl });
+                        const st = stageFit(a, lvl);
                         const authors = (a.data.sources || [])
                           .map((id) => byId.get(id))
                           .filter(Boolean)
@@ -91,6 +102,16 @@ export default function MapView() {
                                 {!fit.ok && (
                                   <Chip size="sm" color="warning" variant="flat">
                                     рано
+                                  </Chip>
+                                )}
+                                {st === 'harm' && (
+                                  <Chip size="sm" color="danger" variant="flat">
+                                    вредно на этой стадии
+                                  </Chip>
+                                )}
+                                {st === 'fit' && (
+                                  <Chip size="sm" color="success" variant="flat">
+                                    органично
                                   </Chip>
                                 )}
                               </span>

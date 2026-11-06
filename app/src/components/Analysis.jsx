@@ -273,7 +273,7 @@ export default function Analysis() {
             <p className="text-sm text-default-500">
               Подходы из выбранных проблем. Выше те, на которые ссылается больше проблем и чьи условия совпадают с описанием. Решение за вами.
             </p>
-            {recs.slice(0, 10).map(({ approach: a, refs, fit }) => {
+            {recs.slice(0, 10).map(({ approach: a, refs, fit, stage }) => {
               const s = sections(a.body);
               const pro = (a.data.sources || []).map((id) => byId.get(id)?.data.cite).filter(Boolean);
               const contra = citesIn(s['Где ломается'], citeIndex)
@@ -290,6 +290,16 @@ export default function Analysis() {
                       </div>
                     </div>
                     <div className="flex gap-2 items-center">
+                      {stage === 'harm' && (
+                        <Chip size="sm" color="danger" variant="flat" startContent={<AlertTriangle size={12} />}>
+                          вредно на стадии {f.maturity.management}
+                        </Chip>
+                      )}
+                      {stage === 'fit' && (
+                        <Chip size="sm" color="success" variant="flat">
+                          органично на стадии {f.maturity.management}
+                        </Chip>
+                      )}
                       {!fit.ok && (
                         <Chip size="sm" color="warning" variant="flat" startContent={<AlertTriangle size={12} />}>
                           рано: {fit.gaps.join(', ')}
@@ -315,6 +325,11 @@ export default function Analysis() {
                       <AccordionItem key="when" title="Когда работает">
                         <Markdown text={s['Когда работает']} card={a} compact />
                       </AccordionItem>
+                      {s['На каких стадиях'] ? (
+                        <AccordionItem key="stages" title="На каких стадиях">
+                          <Markdown text={s['На каких стадиях']} card={a} compact />
+                        </AccordionItem>
+                      ) : null}
                       <AccordionItem key="breaks" title={`Где ломается и кто спорит${contra.length ? ': ' + contra.join(', ') : ''}`}>
                         <Markdown text={s['Где ломается']} card={a} compact />
                       </AccordionItem>

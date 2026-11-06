@@ -20,6 +20,18 @@ def taxonomy():
     return codes("Направления"), codes("Категории проблем")
 
 
+def contours():
+    """Категории, у которых в таблице контуров указан контур, и допустимые коды контуров."""
+    text = (ROOT / "taxonomy.md").read_text()
+    m = re.search(r"^## Контуры бизнеса.*?$(.*?)(?=^## |\Z)", text, re.S | re.M)
+    if not m:
+        return set(), {}
+    block = m.group(1)
+    codes = set(re.findall(r"^- `([a-z-]+)`", block, re.M))
+    rows = {c: [x.strip() for x in d.split(",")] for c, d in re.findall(r"^\| `([a-z-]+)` \| ([^|]+)\|", block, re.M)}
+    return codes, rows
+
+
 def load():
     cards, errors = {}, []
     for kind in KINDS:
@@ -41,7 +53,17 @@ def as_list(v):
 
 def main():
     directions, categories = taxonomy()
+    contour_codes, contour_rows = contours()
     cards, errors = load()
+    for c in sorted(categories):
+        if contour_codes and c not in contour_rows:
+            errors.append(f"taxonomy.md: у категории «{c}» нет контура в таблице контуров")
+    for c, ds in contour_rows.items():
+        if c not in categories:
+            errors.append(f"taxonomy.md: в таблице контуров неизвестная категория «{c}»")
+        for d in ds:
+            if d not in contour_codes:
+                errors.append(f"taxonomy.md: у категории «{c}» неизвестный контур «{d}»")
     ids = {k: {i for (kk, i) in cards if kk == k} for k in KINDS}
     # Поле, на какой тип карточек ссылается, и обратное поле, которое должно ссылаться назад.
     links = {
@@ -58,6 +80,14 @@ def main():
         for c in as_list(meta.get("category")) + as_list(meta.get("categories")):
             if c not in categories:
                 errors.append(f"{where}: категории «{c}» нет в taxonomy.md")
+        if kind == "approaches":
+            fit, harm = as_list(meta.get("stages_fit")), as_list(meta.get("stages_harm"))
+            for v in fit + harm:
+                if v not in (1, 2, 3, 4):
+                    errors.append(f"{where}: в stages_fit/stages_harm значение «{v}», нужны уровни 1–4")
+            both = set(fit) & set(harm)
+            if both:
+                errors.append(f"{where}: уровни {sorted(both)} одновременно в stages_fit и stages_harm")
         for field, (target, back) in links[kind].items():
             for ref in as_list(meta.get(field)):
                 if ref not in ids[target]:
