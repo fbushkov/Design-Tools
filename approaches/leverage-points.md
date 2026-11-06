@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [busy-no-result, method-cargo, decision-bottleneck]
 sources: [meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, senge-1990-fifth-discipline, goldratt-1984-the-goal]
 maturity_min: { management: 2 }
+stages_fit: []
+stages_harm: []
 tags: [системное-мышление, точки-влияния, обратная-связь, информационные-потоки]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Хроническая проблема, которую годами лечат сменой людей, нормативов и бюджетов. Руководство обсуждает цифры плана, а не устройство работы. Подходит как рамка для разговора о том, почему прошлые меры не сработали.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

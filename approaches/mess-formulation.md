@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [busy-no-result, silo-service, metrics-as-target]
 sources: [ackoff-1981-creating-corporate-future, meadows-2008-thinking-in-systems, ackoff-emery-1972-purposeful-systems, seddon-2003-freedom-from-command, rumelt-2011-good-bad-strategy, prigozhin-2003-org-development-methods, goldratt-1984-the-goal, senge-1990-fifth-discipline]
 maturity_min: { data: 1 }
+stages_fit: []
+stages_harm: []
 tags: [диагностика, системное-мышление, референтная-проекция, акофф, медоуз]
 status: draft
 ---
@@ -28,6 +30,10 @@ status: draft
 ## Когда работает
 
 Собственник видит много разрозненных проблем и хочет решать их по очереди. Компания реагирует на события и каждый квартал объясняет результат новой причиной. Нужны данные хотя бы за несколько периодов и доступ к людям, которые помнят историю.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

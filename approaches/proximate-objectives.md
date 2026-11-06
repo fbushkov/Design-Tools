@@ -5,6 +5,8 @@ directions: [strategy]
 solves: [busy-no-result, product-direction]
 sources: [rumelt-2011-good-bad-strategy, kotter-1996-leading-change, minto-1981-pyramid-principle, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, perri-2018-build-trap]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [стратегия, цели, фокус, быстрые-победы]
 status: draft
 ---
@@ -22,6 +24,10 @@ status: draft
 ## Когда работает
 
 Стратегия есть, но команда не понимает, что делать в этом квартале. Цели сформулированы как направления («стать лидером», «повысить качество»). Длинное изменение, где люди устали и не видят продвижения.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

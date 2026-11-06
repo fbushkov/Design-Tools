@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [resistance, busy-no-result]
 sources: [block-1981-flawless-consulting, minto-1981-pyramid-principle, schein-2013-humble-inquiry, kaner-1996-facilitators-guide, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, hdl-2011-in-studio]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [консалтинг, обратная-связь, подача-выводов, решения]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Диагностика закончена, и выводы неприятны руководству или собственнику. Отчёт консультанта уже был, его приняли вежливо, и ничего не произошло.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

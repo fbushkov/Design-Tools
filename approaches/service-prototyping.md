@@ -5,6 +5,8 @@ directions: [service-design, strategy]
 solves: [silo-service, resistance, product-direction]
 sources: [stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, meadows-2008-thinking-in-systems, poister-2014-managing-measuring-performance, hill-2012-dark-matter, kaufman-2010-personal-mba, shostack-1984-designing-services, hdl-2011-in-studio, cagan-2008-inspired, perri-2018-build-trap, torres-2021-continuous-discovery, downe-2020-good-services]
 maturity_min: { product: 2 }
+stages_fit: []
+stages_harm: []
 tags: [прототип, пилот, эксперимент, сервис-дизайн]
 status: draft
 ---
@@ -28,6 +30,10 @@ status: draft
 ## Когда работает
 
 Новый сервис или серьёзное изменение старого, когда неясно, нужна ли идея клиенту и приживётся ли она в организации. Особенно когда влиятельный человек продвигает своё решение, а спорить с ним бесполезно.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

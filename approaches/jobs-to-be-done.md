@@ -2,7 +2,7 @@
 id: jobs-to-be-done
 title: Работа, которую клиент нанимает продукт сделать (JTBD)
 directions: [strategy, service-design, diagnostics]
-solves: [product-direction, silo-service]
+solves: [product-direction, silo-service, churn]
 sources: [christensen-2016-competing-against-luck, hall-2013-just-enough-research, torres-2021-continuous-discovery, cagan-2008-inspired, perri-2018-build-trap]
 maturity_min: {}
 stages_fit: []
@@ -37,7 +37,7 @@ status: draft
 
 ## На каких стадиях
 
-Не размечено, поля `stages_fit` и `stages_harm` заполняются отдельным проходом.
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

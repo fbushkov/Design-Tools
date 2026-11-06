@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [resistance, method-cargo]
 sources: [block-1981-flawless-consulting, schein-2013-humble-inquiry, minto-1981-pyramid-principle, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization, adizes-1988-corporate-lifecycles]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [консалтинг, контрактация, внутренний-консультант, постановка-задачи]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Первая встреча с собственником или руководителем, который пришёл с готовым запросом. Внутренний консультант или HR, ИТ, финансы, которых «назначили» помогать подразделению. Повторный заход после проекта, который не взлетел, когда надо понять, что не договорили в прошлый раз.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

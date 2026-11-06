@@ -5,6 +5,8 @@ directions: [team-ai, service-design]
 solves: [ai-no-effect, employee-experience, control-surveillance]
 sources: [amershi-2019-human-ai-guidelines, parasuraman-2000-levels-of-automation, brynjolfsson-2025-genai-at-work, bainbridge-1983-ironies-of-automation, kellogg-2020-algorithms-at-work]
 maturity_min: { ai: 2 }
+stages_fit: []
+stages_harm: []
 tags: [ии, интерфейс, эвристическая-оценка, доверие, объяснимость, чек-лист]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 До и после запуска ИИ-функции или внутреннего ассистента, когда люди говорят «не понимаю, зачем он» или «стал другим», или пользуются им меньше, чем ожидали. Также как быстрый аудит чужого ИИ-продукта, который клиент собирается купить.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

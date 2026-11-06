@@ -2,9 +2,11 @@
 id: experience-journey-map
 title: Карта пути клиента от опыта, на исследовании, а не на догадках
 directions: [service-design, diagnostics]
-solves: [silo-service]
+solves: [silo-service, churn]
 sources: [stickdorn-2018-sd-doing, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, torres-2021-continuous-discovery, christensen-2016-competing-against-luck]
 maturity_min: { process: 1 }
+stages_fit: []
+stages_harm: []
 tags: [journey-map, исследование, триангуляция, сервис-дизайн]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Сервис разорван между отделами, NPS или жалобы показывают размер проблемы, но не её причину (Стикдорн, с. 30–32, 37, 39–40). Также в начале проекта, когда нужно договориться о проблеме между подразделениями с разным языком.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

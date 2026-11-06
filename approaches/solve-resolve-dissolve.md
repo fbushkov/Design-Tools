@@ -5,6 +5,8 @@ directions: [strategy, diagnostics, service-design]
 solves: [busy-no-result, silo-service, resistance]
 sources: [ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, dorst-2015-frame-innovation, deming-1982-out-of-crisis, senge-1990-fifth-discipline]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [системное-мышление, допущения, конфликт, акофф]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Задачу годами оптимизируют, а она возвращается. Два подразделения конфликтуют, и каждое предлагает победить другое. Клиент приходит с «очевидным» ограничением, которое никто не проверял.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

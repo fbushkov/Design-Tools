@@ -5,6 +5,8 @@ directions: [diagnostics, strategy, team-ai]
 solves: [resistance]
 sources: [block-1981-flawless-consulting, schein-2013-humble-inquiry, kotter-1996-leading-change, muller-2018-tyranny-of-metrics, stickdorn-2018-sd-doing, senge-1990-fifth-discipline, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization, kaner-1996-facilitators-guide, edmondson-2018-fearless-organization]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [сопротивление, консалтинг, изменения, психологическая-безопасность]
 status: draft
 ---
@@ -32,6 +34,10 @@ status: draft
 ## Когда работает
 
 Разговор с руководителем или командой застрял: возражения повторяются, ответы короткие, согласие без энергии. Изменение требует от людей нового навыка, и они его избегают.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

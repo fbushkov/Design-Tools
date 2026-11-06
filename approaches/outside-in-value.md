@@ -2,9 +2,11 @@
 id: outside-in-value
 title: Ценность снаружи и цепочка внутренних потребителей
 directions: [strategy, service-design, diagnostics]
-solves: [silo-service]
+solves: [silo-service, churn]
 sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, poister-2014-managing-measuring-performance, ackoff-1981-creating-corporate-future, christensen-2016-competing-against-luck, downe-2020-good-services, skelton-pais-2019-team-topologies]
 maturity_min: { product: 1 }
+stages_fit: []
+stages_harm: []
 tags: [ценность, клиент, внутренний-клиент, друкер]
 status: draft
 ---
@@ -28,6 +30,10 @@ status: draft
 ## Когда работает
 
 Подразделения хорошо выполняют свои показатели, а клиент проваливается между ними. Сотрудники описывают свою работу через действия, а не через то, кому и зачем она нужна. В транспортной компании Деминга 35 водителей дали 32 разных ответа на вопрос о сути бизнеса (с. 140–142).
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

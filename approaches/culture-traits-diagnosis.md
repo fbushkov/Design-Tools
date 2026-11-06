@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [silo-service, resistance, method-cargo, decision-bottleneck]
 sources: [fey-denison-2003-culture-russia, kerr-1975-folly-of-rewarding, greiner-1972-evolution-revolution, auzan-2022-cultural-codes, forsgren-2018-accelerate, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [организационная-культура, модель-денисона, субкультуры, опрос, интервью, российский-контекст]
 status: draft
 ---
@@ -28,6 +30,10 @@ status: draft
 ## Когда работает
 
 Перед внедрением методологии или изменения, чтобы понять, на какую культуру оно ляжет. При разрыве между офисом и производством, центром и регионами, старыми и новыми сотрудниками. Когда руководство уверено, что «все согласны», а изменения не идут.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

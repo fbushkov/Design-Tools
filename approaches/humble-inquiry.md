@@ -5,6 +5,8 @@ directions: [diagnostics, strategy, team-ai]
 solves: [resistance, decision-bottleneck, control-surveillance]
 sources: [schein-2013-humble-inquiry, block-1981-flawless-consulting, ledeneva-2006-how-russia-works, kotter-1996-leading-change, bernstein-2012-transparency-paradox, fey-denison-2003-culture-russia, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, hall-2013-just-enough-research, kaner-1996-facilitators-guide, prigozhin-2003-org-development-methods]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [вопросы, интервью, психологическая-безопасность, доверие, консалтинг]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Интервью сотрудников на диагностике. Руководитель хочет понять, почему до него не доходят плохие новости. Совещания, где решение повисает, а причину никто не называет. Разборы после инцидентов, которые сейчас превращаются в поиск виноватого.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

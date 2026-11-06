@@ -5,7 +5,7 @@ directions: [diagnostics, team-ai]
 solves: [control-surveillance, resistance, employee-experience]
 sources: [prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, edmondson-2018-fearless-organization, kordonsky-2008-estate-structure]
 maturity_min: {}
-stages_fit: []
+stages_fit: [3, 4]
 stages_harm: []
 tags: [наказания, мотивация, приказы, страх, россия]
 status: draft
@@ -32,7 +32,7 @@ status: draft
 
 ## На каких стадиях
 
-Не размечено, поля `stages_fit` и `stages_harm` заполняются отдельным проходом.
+**Гипотеза: органичен на уровнях 3–4.** Пригожин о стадии не пишет. Основание: метод считает взыскания и поощрения по приказам первого руководителя за полгода–год (Пригожин 2007, с. 148), то есть требует письменного распорядительного управления с несколькими уровнями. На уровне 1, где решения не оформляют приказами, считать нечего, и вопрос о балансе наказаний и поощрений придётся задавать иначе — например, опросом Эдмондсон (с. 200).
 
 ## Где ломается
 

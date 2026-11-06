@@ -5,6 +5,8 @@ directions: [team-ai]
 solves: [ai-no-effect, resistance, control-surveillance]
 sources: [mollick-2024-co-intelligence, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, ledeneva-2006-how-russia-works]
 maturity_min: { ai: 2 }
+stages_fit: []
+stages_harm: []
 tags: [ии, shadow-ai, user-innovation, доверие, внедрение]
 status: draft
 ---
@@ -22,6 +24,10 @@ status: draft
 ## Когда работает
 
 ИИ формально запрещён или «внедряется» сверху, а эффекта нет. Руководство подозревает, что сотрудники пользуются ИИ тайком. Перед пилотом ИИ, чтобы найти задачи, где люди уже нашли пользу, см. [ai-task-frontier-mapping](ai-task-frontier-mapping.md).
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

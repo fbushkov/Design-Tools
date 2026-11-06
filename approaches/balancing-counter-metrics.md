@@ -5,6 +5,8 @@ directions: [strategy, diagnostics]
 solves: [metrics-as-target, control-surveillance]
 sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, meadows-2008-thinking-in-systems, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, ordonez-2009-goals-gone-wild, perri-2018-build-trap, torres-2021-continuous-discovery, forsgren-2018-accelerate]
 maturity_min: { data: 2 }
+stages_fit: []
+stages_harm: []
 tags: [kpi, подмена-цели, противовес, goodhart-law]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Система показателей уже есть, её не отменят, а подгонка видна. Вопрос «что будет при выполнении до предела» полезен в любом лагере, в том числе для диагностических дашбордов без наград.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

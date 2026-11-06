@@ -5,6 +5,8 @@ directions: [team-ai, strategy, diagnostics]
 solves: [control-surveillance, resistance, employee-experience]
 sources: [kellogg-2020-algorithms-at-work, bernstein-2012-transparency-paradox, bainbridge-1983-ironies-of-automation, austin-1996-measuring-managing-performance, amershi-2019-human-ai-guidelines, mollick-2024-co-intelligence, prigozhin-2007-disorganization]
 maturity_min: { data: 3 }
+stages_fit: []
+stages_harm: []
 tags: [алгоритмический-контроль, наблюдение, рейтинги, надлежащая-процедура, приватность, чек-лист]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Компания уже собирает показатели автоматически или собирается внедрить трекер, скоринг, рейтинги клиентов по сотрудникам, ИИ-ассистента с подсказками. Люди говорят о слежке, «подкручивают» ввод, договариваются с клиентами о пятёрках, выключают приложение. Минимум — данные по людям уже есть, иначе аудировать нечего.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

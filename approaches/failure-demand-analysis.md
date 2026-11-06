@@ -2,9 +2,11 @@
 id: failure-demand-analysis
 title: Анализ спроса-сбоя
 directions: [service-design, diagnostics]
-solves: [busy-no-result, silo-service, routine-load, ai-no-effect]
+solves: [busy-no-result, silo-service, routine-load, ai-no-effect, slow-flow, churn]
 sources: [seddon-2003-freedom-from-command, brynjolfsson-2025-genai-at-work, downe-2020-good-services, forsgren-2018-accelerate]
 maturity_min: { process: 1 }
+stages_fit: []
+stages_harm: []
 tags: [lean-service, спрос, колл-центр, потери]
 status: draft
 ---
@@ -20,6 +22,10 @@ status: draft
 ## Когда работает
 
 Сервис с повторяющимся входящим потоком: поддержка, колл-центр, обработка заявок, ремонт, бухгалтерское обслуживание. Особенно когда нагрузка растёт, а клиенты недовольны, или когда собираются нанимать, автоматизировать или отдавать поток на аутсорс. Седдон отдельно предупреждает, что аутсорс колл-центра в этой логике переносит потери к подрядчику, который получает деньги за обработку спроса-сбоя (с. 38–41, 186–188).
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

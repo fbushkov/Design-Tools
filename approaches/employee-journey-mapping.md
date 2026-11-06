@@ -5,6 +5,8 @@ directions: [service-design, team-ai]
 solves: [employee-experience, control-surveillance]
 sources: [stickdorn-2018-sd-doing, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, brynjolfsson-2025-genai-at-work, amershi-2019-human-ai-guidelines, ackoff-emery-1972-purposeful-systems, skelton-pais-2019-team-topologies]
 maturity_min: { process: 1 }
+stages_fit: []
+stages_harm: []
 tags: [путь-сотрудника, внутренний-сервис, сервис-дизайн, онбординг]
 status: draft
 ---
@@ -22,6 +24,10 @@ status: draft
 ## Когда работает
 
 Внутренние процессы и инструменты мешают людям работать, а руководство видит «проблему с людьми». Также перед запуском нового внутреннего инструмента, включая ИИ-ассистента, и при высокой текучести новичков.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

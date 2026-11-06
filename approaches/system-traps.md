@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [metrics-as-target, resistance, busy-no-result, control-surveillance]
 sources: [meadows-2008-thinking-in-systems, auzan-2022-cultural-codes, poister-2014-managing-measuring-performance, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, kaufman-2010-personal-mba, ledeneva-2006-how-russia-works, kerr-1975-folly-of-rewarding, bernstein-2012-transparency-paradox, senge-1990-fifth-discipline, goldratt-1984-the-goal, kordonsky-2008-estate-structure, prigozhin-2007-disorganization]
 maturity_min: { management: 2 }
+stages_fit: []
+stages_harm: []
 tags: [системное-мышление, системные-архетипы, обход-правил, подмена-цели]
 status: draft
 ---
@@ -39,6 +41,10 @@ status: draft
 ## Когда работает
 
 Проблема возвращается после каждого решения, давление сверху даёт обратный эффект, показатели выполняются, а цель нет. Хорошо работает как язык диагностики, чтобы перевести разговор с виноватых на структуру.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

@@ -2,9 +2,11 @@
 id: design-against-demand
 title: Проектирование работы против спроса
 directions: [service-design]
-solves: [silo-service, busy-no-result]
+solves: [silo-service, busy-no-result, slow-flow]
 sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis]
 maturity_min: { process: 2 }
+stages_fit: []
+stages_harm: []
 tags: [lean-service, поток, первый-контакт, разнообразие]
 status: draft
 ---
@@ -18,6 +20,10 @@ status: draft
 ## Когда работает
 
 После [failure-demand-analysis](failure-demand-analysis.md), когда типы спроса понятны. Клиент переходит между отделами, обращение проходит через много рук, сроки растут, а каждое подразделение по своим показателям работает хорошо.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

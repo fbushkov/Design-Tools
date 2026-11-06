@@ -2,9 +2,11 @@
 id: purpose-derived-measures
 title: Показатели от цели, результат вместо усилий
 directions: [strategy, diagnostics, service-design]
-solves: [metrics-as-target, busy-no-result]
+solves: [metrics-as-target, busy-no-result, churn]
 sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, meadows-2008-thinking-in-systems, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, poister-2014-managing-measuring-performance, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kaufman-2010-personal-mba, kerr-1975-folly-of-rewarding, goldratt-1984-the-goal, forsgren-2018-accelerate, christensen-2016-competing-against-luck, downe-2020-good-services, senge-1990-fifth-discipline, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods]
 maturity_min: { management: 2, data: 2 }
+stages_fit: []
+stages_harm: []
 tags: [kpi, цель, миссия, измерение-результата]
 status: draft
 ---
@@ -34,6 +36,10 @@ status: draft
 ## Когда работает
 
 Компания считает активность (звонки, встречи, задачи, часы), а не то, что получил клиент, или показатели взяты из учебника и чужой отрасли. Подходит на этапе, когда у ролей и подразделений уже формулируется результат, то есть рядом с ЦКП.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

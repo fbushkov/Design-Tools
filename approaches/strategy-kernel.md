@@ -5,6 +5,8 @@ directions: [strategy, diagnostics]
 solves: [product-direction, busy-no-result, method-cargo]
 sources: [rumelt-2011-good-bad-strategy, kotter-1996-leading-change, magretta-2002-what-management-is, ackoff-1981-creating-corporate-future, dorst-2015-frame-innovation, perri-2018-build-trap]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [strategy-kernel, стратегия, диагноз, фокус, гипотеза]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Есть стратегический документ, но он не меняет решений. Компания «делает всё сразу», и непонятно, от чего отказаться. Собственник просит стратегию, а под ней понимает цели на год. Проверка чужого плана перед тем, как его исполнять.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

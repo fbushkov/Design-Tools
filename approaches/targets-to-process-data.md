@@ -5,6 +5,8 @@ directions: [strategy, diagnostics, service-design]
 solves: [metrics-as-target, busy-no-result]
 sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate]
 maturity_min: { data: 2 }
+stages_fit: []
+stages_harm: []
 tags: [цели, kpi, нормы, системное-мышление]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Есть план, норма выработки или KPI, которые выполняются или проваливаются без понятной причины, и вокруг них идёт подгонка. Нужна готовность руководства какое-то время смотреть на работу без цели, а дальше управлять по данным о процессе (см. [process-behavior-chart](process-behavior-chart.md)).
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

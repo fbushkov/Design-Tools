@@ -5,6 +5,8 @@ directions: [strategy, diagnostics]
 solves: [busy-no-result, product-direction]
 sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes, ackoff-emery-1972-purposeful-systems, rumelt-2011-good-bad-strategy, kaufman-2010-personal-mba, epstein-manzoni-2006-performance-measurement, cagan-2008-inspired, christensen-2016-competing-against-luck, adizes-1988-corporate-lifecycles]
 maturity_min: { management: 2 }
+stages_fit: []
+stages_harm: []
 tags: [стратегия, портер, друкер, фокус, 80-20]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Компания делает много направлений, продуктов и проектов, все заняты, а результат не растёт. Бюджет режут пропорционально. Новые инициативы добавляются, старые не закрываются.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

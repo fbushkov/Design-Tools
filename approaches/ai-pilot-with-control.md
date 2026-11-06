@@ -5,6 +5,8 @@ directions: [team-ai, diagnostics]
 solves: [ai-no-effect]
 sources: [dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, seddon-2003-freedom-from-command, stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, metr-2025-ai-developer-productivity, dellacqua-2025-cybernetic-teammate, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods]
 maturity_min: { data: 2, ai: 2 }
+stages_fit: []
+stages_harm: []
 tags: [ии, эксперимент, измерение, пилот]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Перед покупкой или масштабированием ИИ-инструмента, когда эффект обещают в процентах экономии времени. И после внедрения, когда собственник спрашивает, окупилось ли.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

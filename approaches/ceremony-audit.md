@@ -5,6 +5,8 @@ directions: [diagnostics, strategy, team-ai]
 solves: [method-cargo, metrics-as-target, routine-load]
 sources: [epstein-manzoni-2006-performance-measurement, ledeneva-2006-how-russia-works, mollick-2024-co-intelligence, kaufman-2010-personal-mba, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, kordonsky-2008-estate-structure]
 maturity_min: {}
+stages_fit: [3, 4]
+stages_harm: []
 tags: [церемония, рационализированный-миф, двойной-учёт, бюрократия, обход-правил]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Методология или система показателей внедрена, отчёты сдаются, а решения принимаются как раньше. Перед автоматизацией или ИИ, чтобы не автоматизировать церемонию. Подозрение, что цифры для руководства и цифры для работы разные.
+
+## На каких стадиях
+
+**Органичен на уровнях 3–4**, где формальных систем уже много. На фазе 4 у Грейнера систем становится больше, чем пользы от них, процедуры важнее решения задач (Грейнер, с. 7). У Адизеса форма разрастается сама: каждый новый контроль выявляет новые отклонения, и под них вводят следующий (Адизес, с. 261–264). Уровни 1–2 не размечены: методологию и там бывает вводит сам собственник (см. [method-cargo](../problems/method-cargo.md)), но стадийной опоры нет.
 
 ## Где ломается
 

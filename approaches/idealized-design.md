@@ -5,6 +5,8 @@ directions: [strategy, diagnostics]
 solves: [decision-bottleneck, resistance, method-cargo]
 sources: [ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, seddon-2003-freedom-from-command, auzan-2022-cultural-codes]
 maturity_min: { management: 2 }
+stages_fit: []
+stages_harm: []
 tags: [интерактивное-планирование, идеал, участие, акофф]
 status: draft
 ---
@@ -22,6 +24,10 @@ status: draft
 ## Когда работает
 
 Компания застряла в спорах о средствах, каждое подразделение тянет своё, а собственник решает всё сам. Нужна готовность первого лица отдать часть выбора участникам. Хорошо работает в паре с [mess-formulation](mess-formulation.md), которая показывает, куда организация придёт без изменений.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

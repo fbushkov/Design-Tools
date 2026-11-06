@@ -5,6 +5,8 @@ directions: [strategy, service-design]
 solves: [product-direction]
 sources: [kaufman-2010-personal-mba, magretta-2002-what-management-is, rumelt-2011-good-bad-strategy, torres-2021-continuous-discovery, perri-2018-build-trap, hall-2013-just-enough-research, christensen-2016-competing-against-luck, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, goldratt-1984-the-goal, prigozhin-2003-org-development-methods, cagan-2008-inspired]
 maturity_min: { product: 1 }
+stages_fit: []
+stages_harm: []
 tags: [допущения, эксперимент, гипотеза, продукт, исследование]
 status: draft
 ---
@@ -28,6 +30,10 @@ status: draft
 ## Когда работает
 
 Новый продукт, услуга или направление, в которые собираются вложиться. Продукт «делают, что просят», и непонятно, за что клиенты готовы платить. Опрос клиентов показывает, что им важно всё.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

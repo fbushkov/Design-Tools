@@ -5,6 +5,8 @@ directions: [strategy, team-ai]
 solves: [control-surveillance, resistance]
 sources: [auzan-2022-cultural-codes, ackoff-emery-1972-purposeful-systems, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, bernstein-2012-transparency-paradox, kellogg-2020-algorithms-at-work, edmondson-2018-fearless-organization, prigozhin-2003-org-development-methods]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [доверие, российский-контекст, контроль, прозрачность]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Собственник или руководитель не доверяет команде и хочет видеть всё, а команда отвечает формальным выполнением. Особенно в российских компаниях с высокой дистанцией власти и в отношениях между подразделениями или с подрядчиками.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

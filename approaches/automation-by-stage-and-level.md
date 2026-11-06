@@ -5,6 +5,8 @@ directions: [team-ai]
 solves: [ai-no-effect, routine-load, employee-experience]
 sources: [parasuraman-2000-levels-of-automation, amershi-2019-human-ai-guidelines, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, kaufman-2010-personal-mba, mollick-2024-co-intelligence, bainbridge-1983-ironies-of-automation, kellogg-2020-algorithms-at-work, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods]
 maturity_min: { ai: 2, process: 2 }
+stages_fit: []
+stages_harm: []
 tags: [ии, автоматизация, распределение-функций, доверие, sheridan-scale, ирония-автоматизации, утрата-навыка]
 status: draft
 ---
@@ -30,6 +32,10 @@ status: draft
 ## Когда работает
 
 Команда решает, что отдать ИИ-ассистенту или автоматизации, или уже отдала и не понимает, почему эффекта нет или почему ошибки стали дороже. Нужен разобранный процесс, хотя бы на уровне стадий.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

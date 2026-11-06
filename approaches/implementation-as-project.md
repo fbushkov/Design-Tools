@@ -5,6 +5,8 @@ directions: [service-design, strategy, team-ai]
 solves: [resistance, method-cargo, employee-experience]
 sources: [stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, block-1981-flawless-consulting, kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization]
 maturity_min: { management: 2 }
+stages_fit: []
+stages_harm: []
 tags: [внедрение, изменения, поведение, сервис-дизайн]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Решение спроектировано и даже проверено пилотом, а дальше нужно, чтобы с ним работали сотни людей, которые его не придумывали. Также когда предыдущее внедрение «не взлетело» и непонятно, почему.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

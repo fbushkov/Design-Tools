@@ -2,7 +2,7 @@
 id: four-key-delivery-metrics
 title: Четыре показателя поставки
 directions: [diagnostics, team-ai]
-solves: [metrics-as-target, busy-no-result, decision-bottleneck]
+solves: [metrics-as-target, busy-no-result, decision-bottleneck, slow-flow]
 sources: [forsgren-2018-accelerate, skelton-pais-2019-team-topologies, metr-2025-ai-developer-productivity]
 maturity_min: {}
 stages_fit: []
@@ -34,7 +34,7 @@ status: draft
 
 ## На каких стадиях
 
-Не размечено, поля `stages_fit` и `stages_harm` заполняются отдельным проходом.
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

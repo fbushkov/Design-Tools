@@ -5,6 +5,8 @@ directions: [diagnostics, service-design]
 solves: [metrics-as-target, ai-no-effect]
 sources: [deming-1982-out-of-crisis, berman-knight-2006-financial-intelligence, dellacqua-2026-jagged-frontier, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, kaufman-2010-personal-mba, metr-2025-ai-developer-productivity, forsgren-2018-accelerate]
 maturity_min: { process: 2 }
+stages_fit: []
+stages_harm: []
 tags: [измерение, качество, определения, деминг]
 status: draft
 ---
@@ -30,6 +32,10 @@ Accelerate: разные команды называют «lead time» разн�
 ## Когда работает
 
 Перед введением любого показателя или цели, при споре «кто виноват» между подразделениями и в услугах, где качество описано прилагательными. Это дешёвый первый шаг, который не требует статистики.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

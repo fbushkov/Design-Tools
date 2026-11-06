@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [control-surveillance, method-cargo, metrics-as-target]
 sources: [ledeneva-2006-how-russia-works, block-1981-flawless-consulting, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, bernstein-2012-transparency-paradox, prigozhin-2007-disorganization, kordonsky-2008-estate-structure, edmondson-2018-fearless-organization, senge-1990-fifth-discipline]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [российский-контекст, правила, избирательное-применение-правил, подвешенное-наказание, контроль]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Сотрудники говорят, что «по регламенту работать невозможно». Наказывают выборочно, и люди объясняют это отношением начальника. Новая система контроля добавляется поверх старых, а старые не отменяют.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

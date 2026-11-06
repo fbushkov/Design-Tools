@@ -2,9 +2,11 @@
 id: chain-link-campaigns
 title: Кампании по слабому звену и пять шагов теории ограничений
 directions: [strategy, diagnostics]
-solves: [busy-no-result]
+solves: [busy-no-result, slow-flow]
 sources: [rumelt-2011-good-bad-strategy, kaufman-2010-personal-mba, dorst-2015-frame-innovation, goldratt-1984-the-goal, skelton-pais-2019-team-topologies]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [узкое-место, теория-ограничений, фокус, системное-мышление]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Улучшения в отдельных отделах не меняют общий результат. Компания одновременно чинит продажи, качество и сроки, и ничего не доводит. Перед покупкой дополнительной мощности, людей или ИТ.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

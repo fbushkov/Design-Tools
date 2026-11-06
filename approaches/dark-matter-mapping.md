@@ -5,6 +5,8 @@ directions: [strategy, service-design, diagnostics]
 solves: [method-cargo, resistance, silo-service]
 sources: [hill-2012-dark-matter, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, ledeneva-2006-how-russia-works, hdl-2011-in-studio, kordonsky-2008-estate-structure, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods]
 maturity_min: { management: 2 }
+stages_fit: []
+stages_harm: []
 tags: [организационная-культура, системное-мышление, стратегический-дизайн, внедрение]
 status: draft
 ---
@@ -28,6 +30,10 @@ status: draft
 ## Когда работает
 
 Перед внедрением новой системы, методологии, инструмента или сервиса, особенно если предыдущие попытки «не прижились». И при разборе, почему методология внедрена, а решения принимаются как раньше.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

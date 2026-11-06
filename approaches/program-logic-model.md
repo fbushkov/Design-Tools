@@ -5,6 +5,8 @@ directions: [strategy, diagnostics]
 solves: [metrics-as-target, busy-no-result]
 sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, seddon-2003-freedom-from-command, abd-elrahman-2025-holistic-performance, epstein-manzoni-2006-performance-measurement, perri-2018-build-trap, torres-2021-continuous-discovery]
 maturity_min: { management: 2, data: 2 }
+stages_fit: []
+stages_harm: []
 tags: [logic-model, теория-изменений, outcomes, показатели]
 status: draft
 ---
@@ -28,6 +30,10 @@ Abd-Elrahman и соавторы строят похожую цепочку дл
 ## Когда работает
 
 Компания считает активность (звонки, встречи, мероприятия) и не может сказать, что из этого меняется у клиента. Перед построением системы показателей, особенно для программ, проектов и некоммерческой работы, где выручки как проверки нет.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

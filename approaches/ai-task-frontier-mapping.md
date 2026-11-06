@@ -5,6 +5,8 @@ directions: [team-ai, diagnostics]
 solves: [ai-no-effect, routine-load]
 sources: [dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, parasuraman-2000-levels-of-automation, seddon-2003-freedom-from-command, deming-1982-out-of-crisis, mollick-2024-co-intelligence, metr-2025-ai-developer-productivity, dellacqua-2025-cybernetic-teammate, bainbridge-1983-ironies-of-automation]
 maturity_min: { ai: 2 }
+stages_fit: []
+stages_harm: []
 tags: [ии, jagged-frontier, overreliance, разметка-задач]
 status: draft
 ---
@@ -26,6 +28,10 @@ status: draft
 ## Когда работает
 
 Команда пользуется ИИ «вообще», а эффект неясен или смешанный. Перед пилотом, чтобы разделить задачи процесса на группы и мерить их отдельно (см. [ai-pilot-with-control](ai-pilot-with-control.md)). При обучении команды, чтобы учить не только промптам, но и проверке.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

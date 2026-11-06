@@ -2,7 +2,7 @@
 id: throughput-accounting
 title: Проход, запасы, операционные расходы — учёт по ограничению
 directions: [diagnostics, strategy]
-solves: [metrics-as-target, busy-no-result]
+solves: [metrics-as-target, busy-no-result, slow-flow]
 sources: [goldratt-1984-the-goal, adizes-1988-corporate-lifecycles]
 maturity_min: {}
 stages_fit: []
@@ -31,7 +31,7 @@ status: draft
 
 ## На каких стадиях
 
-Не размечено, поля `stages_fit` и `stages_harm` заполняются отдельным проходом.
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

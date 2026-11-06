@@ -2,10 +2,10 @@
 id: team-cognitive-load-check
 title: Проверка когнитивной нагрузки команды
 directions: [diagnostics, team-ai]
-solves: [busy-no-result, employee-experience, routine-load]
+solves: [busy-no-result, employee-experience, routine-load, slow-flow]
 sources: [skelton-pais-2019-team-topologies, forsgren-2018-accelerate]
 maturity_min: {}
-stages_fit: []
+stages_fit: [2, 3]
 stages_harm: []
 tags: [команды, нагрузка, узкое-место, выгорание, оргдизайн]
 status: draft
@@ -31,7 +31,7 @@ Accelerate смотрит на то же со стороны выгорания:
 
 ## На каких стадиях
 
-Не размечено, поля `stages_fit` и `stages_harm` заполняются отдельным проходом.
+**Гипотеза: органичен на уровнях 2–3.** Прямой опоры на стадию нет. Основание косвенное: признаки, что продукт перерос одну команду, — стартап больше 15 человек, задачи по компоненту всегда достаются одним и тем же людям, другие ждут одну команду (Скелтон и Паис, с. 235–236), — появляются, когда компания выходит из одной команды. На уровне 1 нагрузка сходится на основателе, и это скорее [decision-bottleneck](../problems/decision-bottleneck.md), чем граница доменов между командами. Уровень 4 не размечен.
 
 ## Где ломается
 

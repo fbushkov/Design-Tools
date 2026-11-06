@@ -5,6 +5,8 @@ directions: [diagnostics, strategy]
 solves: [busy-no-result, product-direction]
 sources: [minto-1981-pyramid-principle, rumelt-2011-good-bad-strategy, dorst-2015-frame-innovation, seddon-2003-freedom-from-command, meadows-2008-thinking-in-systems, hall-2013-just-enough-research]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [постановка-задачи, диагностика, гипотеза, логическое-дерево, консалтинг]
 status: draft
 ---
@@ -24,6 +26,10 @@ status: draft
 ## Когда работает
 
 Заказчик приходит с перечнем тревог, а не с проблемой. Диагностика рискует превратиться в «соберём всё о компании». Нужно быстро понять, какие данные нужны, а какие нет.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

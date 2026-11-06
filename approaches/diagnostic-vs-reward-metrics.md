@@ -5,6 +5,8 @@ directions: [strategy, diagnostics, team-ai]
 solves: [metrics-as-target, resistance, control-surveillance]
 sources: [muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, poister-2014-managing-measuring-performance, stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, brynjolfsson-2025-genai-at-work, auzan-2022-cultural-codes, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kaufman-2010-personal-mba, abd-elrahman-2025-holistic-performance, kerr-1975-folly-of-rewarding, ordonez-2009-goals-gone-wild, bernstein-2012-transparency-paradox, kellogg-2020-algorithms-at-work, forsgren-2018-accelerate, hall-2013-just-enough-research, adizes-1988-corporate-lifecycles, goldratt-1984-the-goal, perri-2018-build-trap, prigozhin-2003-org-development-methods, cagan-2008-inspired]
 maturity_min: { data: 2 }
+stages_fit: [2, 3, 4]
+stages_harm: []
 tags: [kpi, goodhart-law, campbell-law, pay-for-performance, чек-лист]
 status: draft
 ---
@@ -30,6 +32,10 @@ status: draft
 ## Когда работает
 
 Перед введением KPI, премий по показателям, рейтингов и дашбордов, а также когда существующие показатели уже выполняются, а клиенту и бизнесу хуже. Хорошо ложится на ситуацию, где цифры собираются автоматически и люди чувствуют слежку.
+
+## На каких стадиях
+
+**Органичен на уровнях 2–4**, там, где появляются премии по цифрам. Акцент вознаграждения у Грейнера идёт от доли в собственности на фазе 1 к окладу на фазе 2, личному бонусу на фазе 3 и участию в прибыли на фазе 4 (Грейнер, с. 10). Адизес: стимулы требуют ясных обязанностей, полномочий и информационных систем, без них участие в прибыли — нечаянная удача или подкуп (Адизес, с. 176); с Юности бюджет как основа наград учит занижать цели (с. 255–256); в Go-Go платят премии за продажи, когда компания в убытке (с. 507–508). Уровень 1 не размечен. Соответствие стадий Адизеса уровням оси `management` предварительное (предложение из конспекта Адизеса), оси не менялись, решение за автором.
 
 ## Где ломается
 

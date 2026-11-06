@@ -5,6 +5,8 @@ directions: [strategy, diagnostics, service-design]
 solves: [busy-no-result, method-cargo, product-direction]
 sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, magretta-2002-what-management-is, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, block-1981-flawless-consulting, minto-1981-pyramid-principle, rumelt-2011-good-bad-strategy, schein-2013-humble-inquiry, hdl-2011-in-studio, prigozhin-2003-org-development-methods, cagan-2008-inspired, perri-2018-build-trap, torres-2021-continuous-discovery, christensen-2016-competing-against-luck, hall-2013-just-enough-research]
 maturity_min: {}
+stages_fit: []
+stages_harm: []
 tags: [постановка-задачи, бриф, рефрейминг, стратегический-дизайн]
 status: draft
 ---
@@ -34,6 +36,10 @@ Helsinki Design Lab переворачивает отношение к бриф�
 ## Когда работает
 
 Клиент приходит с готовым решением или узкой задачей («сделайте сайт», «внедрите KPI», «уберите насилие в квартале»), а прошлые попытки не сработали. Нужен доступ к тому, кто может изменить бриф.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

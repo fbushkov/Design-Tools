@@ -2,9 +2,11 @@
 id: service-blueprint
 title: Service blueprint — шаги клиента и то, что они запускают внутри
 directions: [service-design, diagnostics]
-solves: [silo-service, employee-experience]
+solves: [silo-service, employee-experience, churn]
 sources: [stickdorn-2018-sd-doing, seddon-2003-freedom-from-command, kaufman-2010-personal-mba, shostack-1984-designing-services, downe-2020-good-services]
 maturity_min: { process: 1 }
+stages_fit: []
+stages_harm: []
 tags: [blueprint, сервис-дизайн, бэкофис, карта, внедрение, fail-points, line-of-visibility, tangible-evidence]
 status: draft
 ---
@@ -26,6 +28,10 @@ Blueprint связывает каждый шаг клиента с тем, чт�
 ## Когда работает
 
 Клиент проваливается между отделами, а каждый отдел по своим показателям работает хорошо. Подходит и для запуска нового сервиса, когда нужно понять, что изменится в работе фронт- и бэкофиса. Минимум — один исследованный путь клиента и доступ к людям, которые делают внутренние шаги.
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 

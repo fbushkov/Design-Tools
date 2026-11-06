@@ -5,6 +5,8 @@ directions: [team-ai]
 solves: [ai-no-effect, silo-service]
 sources: [dellacqua-2025-cybernetic-teammate, dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, metr-2025-ai-developer-productivity, mollick-2024-co-intelligence]
 maturity_min: { ai: 2 }
+stages_fit: []
+stages_harm: []
 tags: [ии, командная-работа, кросс-функциональность, экспертиза, эксперимент]
 status: draft
 ---
@@ -22,6 +24,10 @@ status: draft
 ## Когда работает
 
 Работа держится на кросс-функциональных парах или группах, которым трудно найти время на встречу и между функциями разрыв (у P&G это и было поводом, с. 10–11). Задачи — генерация и упаковка идей, то есть внутри границы возможностей ИИ (см. [ai-task-frontier-mapping](ai-task-frontier-mapping.md)). Подходит для схемы пилота с двумя осями: ИИ и состав (см. [ai-pilot-with-control](ai-pilot-with-control.md)).
+
+## На каких стадиях
+
+Не размечено: в источниках карточки куратор не нашёл опоры на размер или стадию компании (пятый проход). Пустые поля значат «не размечено», а не «подходит везде».
 
 ## Где ломается
 
