@@ -1,7 +1,7 @@
 {
   "name": "design-tools-app",
   "productName": "Design Tools",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Рабочее место для разборов по базе Design Tools",
   "private": true,
   "main": "electron/main.cjs",

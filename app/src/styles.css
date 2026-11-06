@@ -41,7 +41,14 @@ body {
 .md a.ext-link { color: hsl(var(--heroui-primary)); }
 
 /* Чтение страницы книги. */
-.reader { font-family: 'Literata Variable', Georgia, serif; font-size: 1.02rem; line-height: 1.75; white-space: pre-wrap; max-width: 68ch; margin: 0 auto; }
+.reader { font-family: 'Literata Variable', Georgia, serif; font-size: 1.02rem; line-height: 1.75; max-width: 68ch; margin: 0 auto; }
+.reader p { margin: 0 0 0.9em; }
+.reader h1, .reader h2, .reader h3, .reader h4 { font-family: inherit; font-weight: 600; font-size: 1.12rem; line-height: 1.4; margin: 1.1em 0 0.6em; }
+.reader ul, .reader ol { padding-left: 1.3em; margin: 0 0 0.9em; }
+.reader ul { list-style: disc; } .reader ol { list-style: decimal; }
+.reader li { margin: 0.2em 0; }
+.reader blockquote { border-left: 3px solid hsl(var(--heroui-default-200)); padding-left: 1em; color: hsl(var(--heroui-default-600)); }
+.reader table { font-size: 0.9rem; border-collapse: collapse; } .reader td, .reader th { border: 1px solid hsl(var(--heroui-default-200)); padding: 2px 6px; }
 
 .tabular { font-variant-numeric: tabular-nums; }
 button:focus-visible, a:focus-visible, [role="checkbox"]:focus-visible { outline: 2px solid hsl(var(--heroui-focus)); outline-offset: 2px; }

@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Chip, ScrollShadow, Textarea, addToast, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Tooltip } from '@heroui/react';
 import { FileText, UploadCloud, FolderOpen, Play, Trash2, FlaskConical, BadgeCheck, Save } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import Markdown from './Markdown.jsx';
 import { useApp } from '../state.jsx';
 import { EmptyState, Segmented, Panel } from './ui.jsx';
 import { STATE_RE, decodeState } from './Analysis.jsx';
@@ -202,9 +201,7 @@ export default function Analyses() {
               </div>
             </Panel>
 
-            <div className="md">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
-            </div>
+            <Markdown text={body} card={{ kind: 'analysis', id: cur.file, data: { sources: [] } }} />
           </div>
         ) : (
           <EmptyState title="Выберите разбор слева" />

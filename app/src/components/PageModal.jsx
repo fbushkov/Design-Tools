@@ -55,7 +55,9 @@ export default function PageModal() {
           {data?.ok && (
             <Tabs aria-label="Страница или карта книги" variant="underlined" size="sm">
               <Tab key="text" title="Текст страницы">
-                <div className="reader py-2">{data.text || 'Страница пустая.'}</div>
+                <div className="reader py-2">
+                  {data.text ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{data.text.replace(/<!--[^>]*-->/g, '')}</ReactMarkdown> : 'Страница пустая.'}
+                </div>
               </Tab>
               <Tab
                 key="map"
