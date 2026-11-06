@@ -3,16 +3,21 @@ import remarkGfm from 'remark-gfm';
 import { useApp } from '../state.jsx';
 import { linkifyCitations } from '../lib/base.js';
 
+export const headingId = (text) => 'h-' + String(text).toLowerCase().replace(/[^a-zа-яё0-9]+/gi, '-');
+
 // Markdown карточки: ссылки на другие карточки и на страницы книг кликабельны.
-export default function Markdown({ text, card, compact }) {
+export default function Markdown({ text, card, compact, className = '' }) {
   const { openCard, openPage, cardIds, citeIndex } = useApp();
   const src = card && citeIndex ? linkifyCitations(text || '', card, citeIndex) : text || '';
   return (
-    <div className={'md' + (compact ? ' text-sm' : '')}>
+    <div className={`md${compact ? ' compact' : ''} ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         urlTransform={(u) => u}
         components={{
+          h2({ children }) {
+            return <h2 id={headingId(String(children))}>{children}</h2>;
+          },
           a({ href = '', children }) {
             if (href.startsWith('cite:')) {
               const [, id, page] = href.split(':');

@@ -1,4 +1,4 @@
-// Дымовой тест: запускает Electron, проходит по экранам, открывает ссылку на страницу книги, делает снимки.
+// Дымовой тест: запускает Electron, проходит по экранам, открывает страницу книги, делает снимки.
 import { _electron as electron } from 'playwright-core';
 import { mkdirSync } from 'fs';
 import path from 'path';
@@ -8,35 +8,37 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const shots = path.join(root, 'tests', 'screens');
 mkdirSync(shots, { recursive: true });
 
-const app = await electron.launch({
-  args: [root, '--no-sandbox'],
-  env: { ...process.env, ELECTRON_DISABLE_SECURITY_WARNINGS: '1' },
-});
+const app = await electron.launch({ args: [root, '--no-sandbox'], env: { ...process.env, ELECTRON_DISABLE_SECURITY_WARNINGS: '1' } });
 const win = await app.firstWindow();
 const errors = [];
 win.on('pageerror', (e) => errors.push(String(e)));
 win.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+win.on('dialog', (d) => d.accept());
 await win.setViewportSize({ width: 1440, height: 900 });
-await win.waitForSelector('text=Разбор', { timeout: 30000 });
-await win.waitForTimeout(1500);
+await win.waitForSelector('text=Новый разбор', { timeout: 30000 });
+await win.waitForTimeout(1200);
 const snap = (n) => win.screenshot({ path: path.join(shots, n + '.png') });
+const step = async (name) => {
+  await win.getByRole('button', { name, exact: true }).last().click();
+  await win.waitForTimeout(700);
+};
 
-await win.getByRole('button', { name: 'Новый' }).click();
-await win.waitForTimeout(300);
-await snap('01-analysis');
-await win.getByLabel('Ситуация словами заказчика').fill(
-  'Сеть сервисных центров. Ввели KPI по времени ответа и количеству звонков, премии привязаны к плану. Цифры зелёные, клиенты жалуются, менеджеры подгоняют отчёты. Отделы не стыкуются между собой.'
+await win.getByRole('button', { name: 'Новый', exact: true }).click();
+await win.waitForTimeout(400);
+await win.getByLabel('Ситуация', { exact: true }).fill(
+  'Сеть сервисных центров на 300 человек. Ввели KPI по времени ответа и количеству звонков, премии привязаны к плану. Цифры зелёные, клиенты жалуются, менеджеры подгоняют отчёты. Отделы не стыкуются между собой.'
 );
-await win.getByLabel('Название разбора').fill('Тест KPI в сервисной сети');
-await win.getByRole('button', { name: 'Подобрать проблемы' }).click();
-await win.waitForTimeout(800);
-await win.locator('label:has-text("Показатель стал целью")').first().click();
+await win.getByLabel('Название разбора').fill('Тест: KPI в сервисной сети');
+await win.getByRole('radiogroup', { name: 'управление' }).getByRole('radio', { name: '1' }).click();
+await win.waitForTimeout(400);
+await snap('01-situation');
+await step('Проблемы и вопросы');
+await win.getByRole('checkbox', { name: /Показатель стал целью/ }).first().click();
 await win.waitForTimeout(500);
 await snap('02-problems');
-await win.getByRole('button', { name: 'К рекомендациям' }).click();
-await win.waitForTimeout(800);
+await step('Рекомендации');
 await snap('03-recs');
-await win.getByRole('button', { name: /Выбрать и собрать регламент/ }).first().click();
+await win.getByRole('button', { name: 'Выбрать', exact: true }).first().click();
 await win.waitForTimeout(800);
 await snap('04-plan');
 const cite = win.locator('a.cite-link').first();
@@ -48,18 +50,30 @@ if (await cite.count()) {
   await win.waitForTimeout(400);
 } else errors.push('нет ссылок на страницы в регламенте');
 
-await win.getByRole('button', { name: 'Карта' }).click();
-await win.waitForTimeout(1000);
+await win.getByRole('button', { name: 'Карта' }).first().click();
+await win.waitForTimeout(800);
+await win.getByRole('button', { name: /Показатель стал целью/ }).first().click();
+await win.waitForTimeout(600);
 await snap('06-map');
-await win.getByRole('button', { name: 'Подходы' }).click();
+await win.getByRole('button', { name: /^Подходы/ }).first().click();
 await win.waitForTimeout(800);
-await win.getByRole('option').first().click();
-await win.waitForTimeout(800);
-await snap('07-card');
-await win.keyboard.press('Escape');
-await win.getByRole('button', { name: 'Разборы' }).click();
-await win.waitForTimeout(800);
-await snap('08-analyses');
+await snap('07-library');
+await win.keyboard.press('Control+k');
+await win.waitForTimeout(400);
+await win.keyboard.type('Голдратт');
+await win.waitForTimeout(400);
+await snap('08-palette');
+await win.keyboard.press('Enter');
+await win.waitForTimeout(600);
+await snap('09-source');
+await win.getByRole('button', { name: /Мои разборы/ }).click();
+await win.waitForTimeout(600);
+await snap('10-analyses');
+await win.getByRole('button', { name: 'Сменить тему' }).click();
+await win.getByRole('button', { name: /Новый разбор/ }).click();
+await win.waitForTimeout(600);
+await snap('11-dark');
+await win.getByRole('button', { name: 'Сменить тему' }).click();
 
 const counts = await win.evaluate(async () => {
   const b = await window.dt.loadBase();

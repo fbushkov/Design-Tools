@@ -1,24 +1,48 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/literata";
 @plugin './hero.mjs';
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
 
 html, body, #root { height: 100%; }
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+body {
+  font-family: 'Inter Variable', system-ui, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+* { scrollbar-width: thin; scrollbar-color: hsl(var(--heroui-default-300)) transparent; }
 
-.md { line-height: 1.6; font-size: 0.95rem; }
-.md h1 { font-size: 1.4rem; font-weight: 700; margin: 1.2rem 0 .6rem; }
-.md h2 { font-size: 1.15rem; font-weight: 650; margin: 1.4rem 0 .5rem; }
-.md h3 { font-size: 1rem; font-weight: 650; margin: 1rem 0 .4rem; }
-.md p { margin: .5rem 0; }
-.md ul { list-style: disc; padding-left: 1.3rem; margin: .4rem 0; }
-.md ol { list-style: decimal; padding-left: 1.3rem; margin: .4rem 0; }
-.md li { margin: .2rem 0; }
-.md code { font-size: .85em; padding: 0 .25rem; border-radius: 4px; background: hsl(var(--heroui-default-100)); }
-.md table { border-collapse: collapse; width: 100%; margin: .6rem 0; font-size: .85rem; }
-.md th, .md td { border: 1px solid hsl(var(--heroui-default-200)); padding: .35rem .5rem; vertical-align: top; text-align: left; }
-.md th { background: hsl(var(--heroui-default-100)); }
-.md blockquote { border-left: 3px solid hsl(var(--heroui-default-300)); padding-left: .8rem; color: hsl(var(--heroui-default-600)); margin: .5rem 0; }
-.md a.card-link { color: hsl(var(--heroui-primary)); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
-.md a.cite-link { color: hsl(var(--heroui-secondary)); border-bottom: 1px dashed currentColor; cursor: pointer; }
+/* Текст карточек: читаемая ширина и ритм. */
+.md { line-height: 1.65; font-size: 0.9rem; color: hsl(var(--heroui-foreground)); }
+.md > :first-child { margin-top: 0; }
+.md h1 { font-size: 1.35rem; font-weight: 650; margin: 1.4rem 0 .6rem; letter-spacing: -0.01em; }
+.md h2 { font-size: 1.05rem; font-weight: 650; margin: 1.8rem 0 .5rem; letter-spacing: -0.005em; scroll-margin-top: 80px; }
+.md h3 { font-size: .95rem; font-weight: 650; margin: 1.2rem 0 .4rem; }
+.md p { margin: .55rem 0; }
+.md ul { list-style: disc; padding-left: 1.2rem; margin: .45rem 0; }
+.md ol { list-style: decimal; padding-left: 1.2rem; margin: .45rem 0; }
+.md li { margin: .25rem 0; }
+.md li::marker { color: hsl(var(--heroui-default-400)); }
+.md strong { font-weight: 620; }
+.md code { font-size: .82em; padding: .05rem .3rem; border-radius: 5px; background: hsl(var(--heroui-default-100)); }
+.md table { border-collapse: separate; border-spacing: 0; width: 100%; margin: .8rem 0; font-size: .82rem; border: 1px solid hsl(var(--heroui-default-200)); border-radius: 10px; overflow: hidden; }
+.md th, .md td { border-bottom: 1px solid hsl(var(--heroui-default-200)); padding: .5rem .65rem; vertical-align: top; text-align: left; }
+.md tr:last-child td { border-bottom: 0; }
+.md th { background: hsl(var(--heroui-default-50)); font-weight: 600; color: hsl(var(--heroui-default-600)); font-size: .78rem; }
+.md blockquote { border-left: 3px solid hsl(var(--heroui-primary-200)); padding: .1rem 0 .1rem .9rem; color: hsl(var(--heroui-default-600)); margin: .7rem 0; }
+.md.compact { font-size: .85rem; line-height: 1.55; }
+.md.compact p { margin: .3rem 0; }
+.md a.card-link { color: hsl(var(--heroui-primary)); text-decoration: none; border-bottom: 1px solid hsl(var(--heroui-primary-200)); cursor: pointer; }
+.md a.card-link:hover { border-bottom-color: hsl(var(--heroui-primary)); }
+.md a.cite-link { color: hsl(var(--heroui-secondary)); text-decoration: none; border-bottom: 1px dotted currentColor; cursor: pointer; font-variant-numeric: tabular-nums; border-radius: 3px; padding: 0 1px; }
+.md a.cite-link:hover { background: hsl(var(--heroui-secondary-50)); }
 .md a.ext-link { color: hsl(var(--heroui-primary)); }
+
+/* Чтение страницы книги. */
+.reader { font-family: 'Literata Variable', Georgia, serif; font-size: 1.02rem; line-height: 1.75; white-space: pre-wrap; max-width: 68ch; margin: 0 auto; }
+
+.tabular { font-variant-numeric: tabular-nums; }
+button:focus-visible, a:focus-visible, [role="checkbox"]:focus-visible { outline: 2px solid hsl(var(--heroui-focus)); outline-offset: 2px; }
+button:focus:not(:focus-visible) { outline: none; }

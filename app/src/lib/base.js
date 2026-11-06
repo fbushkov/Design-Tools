@@ -60,16 +60,16 @@ export function firstParagraph(md, max = 420) {
 export function parseTaxonomy(md) {
   const categories = [];
   for (const m of md.matchAll(/^\|\s*`([a-z-]+)`\s*—\s*([^|]+)\|\s*([^|]*)\|\s*([^|]*)\|/gm)) {
-    if (/^(management|process|product|data|ai)$/.test(m[1])) continue;
+    if (/^(management|process|product|data|ai|integration)$/.test(m[1])) continue;
     categories.push({ id: m[1], title: m[2].trim(), directions: m[3].trim(), symptoms: m[4].trim() });
   }
   const directions = [];
   for (const m of md.matchAll(/^-\s*`([a-z-]+)`\s*—\s*(.+)$/gm)) {
-    if (/scale|model|offer|market|strategic|operational|product/.test(m[1])) continue;
+    if (/^(scale|model|offer|market|strategic|operational|product|growing|aging)$/.test(m[1])) continue;
     directions.push({ id: m[1], title: m[2].trim() });
   }
   const axes = [];
-  for (const m of md.matchAll(/^\|\s*`(management|process|product|data|ai)`\s*—\s*([^|]+)\|([^\n]+)$/gm)) {
+  for (const m of md.matchAll(/^\|\s*`(management|process|product|data|ai|integration)`\s*—\s*([^|]+)\|([^\n]+)$/gm)) {
     const levels = m[3].split('|').map((s) => s.trim()).filter(Boolean);
     axes.push({ id: m[1], title: m[2].trim(), levels });
   }
@@ -253,7 +253,8 @@ export function rankApproaches(base, selectedProblems, query, maturity) {
       const fit = maturityFit(a, maturity);
       const stage = stageFit(a, maturity.management);
       const bonus = stage === 'harm' ? -6 : stage === 'fit' ? 2 : 0;
-      return { approach: a, score: c * 3 + text - (fit.ok ? 0 : 2) + bonus, refs: c, fit, stage };
+      const refs = selectedProblems.filter((p) => (p.data.approaches || []).includes(id)).length;
+      return { approach: a, score: c * 3 + text - (fit.ok ? 0 : 2) + bonus, refs, fit, stage };
     })
     .filter(Boolean)
     .sort((x, y) => y.score - x.score);
