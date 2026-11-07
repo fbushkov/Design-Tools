@@ -25,17 +25,30 @@ jobs:
           cache: npm
           cache-dependency-path: app/package-lock.json
       - run: npm ci
-      # При ручном запуске метки ещё нет: создать её из версии в package.json.
-      # GitHub не публикует выпуск без метки.
-      - name: Метка версии
+      # Выпуск создаётся заранее черновиком: иначе electron-builder при параллельной
+      # загрузке файлов создаёт два выпуска с одной меткой, и автообновление ломается.
+      - name: Метка и черновик выпуска
         shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TAG="v$(node -p "require('./package.json').version")"
-          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
-            echo "Метка $TAG уже есть"
-          else
+          V="$(node -p "require('./package.json').version")"
+          TAG="v$V"
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+          if ! git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
             git tag "$TAG" && git push origin "$TAG"
+          fi
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --draft --title "$V" --notes "Design Tools $V"
           fi
       - run: npm run release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Опубликовать выпуск
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view "$TAG" --json assets --jq '.assets[].name'
+          gh release view "$TAG" --json assets --jq '.assets[].name' | grep -qx latest.yml
+          gh release edit "$TAG" --draft=false --latest

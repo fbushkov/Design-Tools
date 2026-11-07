@@ -1,7 +1,7 @@
 {
   "name": "design-tools-app",
   "productName": "Design Tools",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Рабочее место для разборов по базе Design Tools",
   "private": true,
   "main": "electron/main.cjs",
@@ -43,7 +43,7 @@
         "provider": "github",
         "owner": "fbushkov",
         "repo": "Design-Tools",
-        "releaseType": "release"
+        "releaseType": "draft"
       }
     ]
   },
