@@ -67,11 +67,14 @@ for (const sc of SCENARIOS) {
   await win.getByRole('button', { name: /Новый разбор/ }).click();
   await win.getByRole('button', { name: 'Новый', exact: true }).click();
   await win.waitForTimeout(400);
+  // Если в черновике была несохранённая работа, программа спросит — подтверждаем.
+  if (await win.getByRole('button', { name: 'Начать новый' }).count()) await win.getByRole('button', { name: 'Начать новый' }).click();
+  await win.waitForTimeout(400);
   await win.getByLabel('Название разбора').fill(sc.title);
   await win.getByLabel('Ситуация', { exact: true }).fill(sc.situation);
   await win.getByRole('switch').first().click();
-  await win.getByRole('button', { name: /Что продают/ }).click();
-  await win.getByRole('option', { name: sc.offer }).click();
+  await win.locator('button[data-slot="trigger"][aria-label="Что продают"]').click();
+  await win.getByRole('option', { name: new RegExp('^' + sc.offer, 'i') }).click();
   for (const [axis, lvl] of Object.entries(sc.maturity)) await win.getByRole('radiogroup', { name: axis }).getByRole('radio', { name: lvl }).click();
   if (sc.trajectory) await win.getByRole('radiogroup', { name: 'Траектория' }).getByRole('radio', { name: sc.trajectory }).click();
   const items = win.locator('section', { hasText: 'Уточнение' }).locator('button[data-slot="trigger"]');
@@ -115,6 +118,8 @@ await win.waitForTimeout(400);
 await snap('t-list');
 // Продолжить последний тестовый разбор и проверить, что регламент восстановился.
 await win.getByRole('button', { name: 'Продолжить' }).click();
+await win.waitForTimeout(400);
+if (await win.getByRole('button', { name: 'Открыть без сохранения' }).count()) await win.getByRole('button', { name: 'Открыть без сохранения' }).click();
 await win.waitForTimeout(900);
 const restored = await win.getByText('Тестовый разбор: проверка формата регламента').count();
 await snap('t-continue');

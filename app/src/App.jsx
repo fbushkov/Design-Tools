@@ -1,4 +1,4 @@
-import { Button, Drawer, DrawerContent, DrawerHeader, DrawerBody, Spinner, Tooltip } from '@heroui/react';
+import { Button, Drawer, DrawerContent, DrawerHeader, DrawerBody, Spinner, Tooltip, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from '@heroui/react';
 import {
   ClipboardList,
   Network,
@@ -63,7 +63,7 @@ function NavItem({ item, active, disabled, onPress, count }) {
 }
 
 export default function App() {
-  const { base, loading, view, setView, cardStack, closeCard, closeAllCards, byId, reload, setPalette, theme, setTheme, goToCard } = useApp();
+  const { dialog, base, loading, view, setView, cardStack, closeCard, closeAllCards, byId, reload, setPalette, theme, setTheme, goToCard } = useApp();
   const top = cardStack.length ? byId.get(cardStack[cardStack.length - 1]) : null;
   const ready = base?.ok;
   return (
@@ -179,6 +179,22 @@ export default function App() {
       </Drawer>
       <PageModal />
       <CommandPalette />
+      <Modal isOpen={!!dialog} onClose={() => dialog?.done(false)} size="md">
+        <ModalContent>
+          <ModalHeader>{dialog?.title}</ModalHeader>
+          <ModalBody>
+            <p className="text-sm">{dialog?.text}</p>
+          </ModalBody>
+          <ModalFooter>
+            <Button variant="light" onPress={() => dialog?.done(false)}>
+              Отмена
+            </Button>
+            <Button color={dialog?.danger ? 'danger' : 'primary'} onPress={() => dialog?.done(true)}>
+              {dialog?.action || 'Продолжить'}
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }

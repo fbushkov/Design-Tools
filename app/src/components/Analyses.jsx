@@ -10,6 +10,7 @@ const fmtDate = (d) => {
   const t = d instanceof Date ? d : new Date(String(d || ''));
   return isNaN(t) ? '' : t.toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', year: 'numeric' }).replace(' г.', '');
 };
+const cap = (s) => String(s).charAt(0).toUpperCase() + String(s).slice(1);
 const titleOf = (a) => (a.body.match(/^# (.+)$/m) || [])[1] || a.file.replace(/\.md$/, '');
 
 // Сохранённые разборы из приватной библиотеки (analyses/): просмотр, продолжение, итог, удаление.
@@ -173,8 +174,8 @@ export default function Analyses() {
       <div className="overflow-auto min-h-0 bg-content1">
         {cur ? (
           <div className="px-10 py-8 max-w-[860px] space-y-5">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
+            <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
+              <div className="min-w-0 flex-1 basis-72">
                 <div className="flex items-center gap-2 text-xs text-default-500 mb-1">
                   {cur.data.real === false ? (
                     <Chip size="sm" variant="flat" color="warning" startContent={<FlaskConical size={11} />} className="h-5 text-[11px]">
@@ -194,7 +195,7 @@ export default function Analyses() {
                 <div className="flex flex-wrap gap-1 mt-2">
                   {[].concat(cur.data.categories || []).map((c) => (
                     <Chip key={c} size="sm" variant="flat" className="h-6">
-                      {catTitle(c)}
+                      {cap(catTitle(c))}
                     </Chip>
                   ))}
                 </div>

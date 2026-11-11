@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../state.jsx';
 import Markdown from './Markdown.jsx';
-import { Panel, Segmented, Meter, Hotkey, KindIcon, EmptyState } from './ui.jsx';
+import { Panel, Segmented, Meter, Hotkey, KindIcon, EmptyState, Help, FieldLabel } from './ui.jsx';
 import { sections, sectionStarting, tableRows, listItems, firstParagraph, scoreProblems, rankApproaches, citesIn, slug } from '../lib/base.js';
 
 const EMPTY = {
@@ -38,7 +38,7 @@ const EMPTY = {
   situation: '',
   mode: 'quick',
   scale: '',
-  model: '',
+  model: [],
   offer: '',
   market: '',
   maturity: {},
@@ -58,7 +58,12 @@ const EMPTY = {
 };
 
 // Черновик всегда собирается одинаково, чтобы отпечатки совпадали.
-export const makeDraft = (obj) => ({ ...EMPTY, ...obj });
+export const makeDraft = (obj) => {
+  const d = { ...EMPTY, ...obj };
+  // В старых разборах модель — одна строка; теперь можно выбрать несколько.
+  if (!Array.isArray(d.model)) d.model = d.model ? [d.model] : [];
+  return d;
+};
 // Отпечаток содержимого разбора без служебных полей.
 export const sigOf = (f) => JSON.stringify({ ...f, savedAt: '', savedSig: '', file: '' });
 export const hasContent = (f) => !!(f.situation || '').trim();
@@ -80,28 +85,46 @@ const STEPS = [
 ];
 
 const TYPE_LABEL = { scale: 'Масштаб', model: 'Модель', offer: 'Что продают', market: 'Рынок' };
-const TYPE_HUMAN = {
-  micro: 'до 15 человек',
-  small: 'до 100',
-  mid: 'до 1000',
-  large: 'больше 1000',
-  b2b: 'B2B',
-  b2c: 'B2C',
-  b2g: 'B2G',
-  marketplace: 'маркетплейс',
-  service: 'услуга',
-  product: 'продукт',
-  'it-product': 'ИТ-продукт',
-  production: 'производство',
-  retail: 'розница',
-  ru: 'Россия',
-  global: 'глобальный',
+// Как значения словаря называются в интерфейсе и что они значат.
+const TYPE_INFO = {
+  micro: ['До 15 человек', 'Все знают всех, решения принимает один человек'],
+  small: ['До 100 человек', 'Появляются отделы и первые руководители'],
+  mid: ['До 1000 человек', 'Несколько уровней управления, регламенты, отдельные функции'],
+  large: ['Больше 1000 человек', 'Корпорация: подразделения, центр и филиалы'],
+  b2b: ['B2B — компаниям', 'Клиент — другая компания. Покупают несколько человек, сделка долгая'],
+  b2c: ['B2C — частным людям', 'Клиент — человек, покупает для себя. Много клиентов, небольшой чек'],
+  b2g: ['B2G — государству', 'Клиент — госорган или госкомпания. Закупки по конкурсу и регламенту'],
+  b2b2c: ['B2B2C — через партнёров', 'Продаёт компании-партнёру, а пользуется конечный клиент: банк и страховая, производитель и сеть'],
+  marketplace: ['Маркетплейс, площадка', 'Сводит продавцов и покупателей, зарабатывает на комиссии'],
+  internal: ['Внутренний заказчик', 'Служба внутри компании работает на другие подразделения: ИТ, HR, общий центр обслуживания'],
+  service: ['Услуга', 'Результат создаётся вместе с клиентом в момент оказания: ремонт, обучение, консалтинг'],
+  product: ['Товар', 'Свой физический продукт под своей маркой'],
+  'it-product': ['ИТ-продукт', 'Программа, приложение или цифровой сервис'],
+  production: ['Производство', 'Изготовление серийно или под заказ для других компаний'],
+  retail: ['Розница', 'Перепродажа чужих товаров конечному покупателю'],
+  ru: ['Россия', 'Учитывается российская специфика: к разбору подключается справка о местных условиях'],
+  global: ['Другие страны', 'Западный или международный рынок, российская справка не применяется'],
+};
+const TYPE_HELP = {
+  scale: 'Сколько человек работает в компании. От масштаба зависит, какие подходы уместны: что работает на 30 человек, ломается на 1000.',
+  model: 'Кому компания продаёт. Если клиентов несколько типов, отметьте все.',
+  offer: 'Что именно получает клиент. От этого зависят подходы: приёмы для разработки ПО не подходят сервису и производству.',
+  market: 'Где работает компания. Для России к разбору добавляются местные условия: неформальные практики, право, особенности управления.',
+};
+const typeName = (id) => TYPE_INFO[id]?.[0] || id;
+const AXIS_HELP = {
+  management: 'Как принимаются решения и кто их принимает: от «всё решает собственник» до согласованной работы центра и подразделений. Стадии — по Грейнеру и Адизесу.',
+  process: 'Насколько работа описана и повторяема: от «каждый делает по-своему» до процессов, которые сами себя улучшают.',
+  product: 'Как решают, что делать для клиента: от «делаем, что просят» до проверки гипотез и решений по данным.',
+  data: 'Чем подкрепляются решения: от ощущений до показателей, которым доверяют и по которым действуют.',
+  ai: 'Как команда использует ИИ: от личных экспериментов до встроенных в работу инструментов с проверкой результата.',
+  integration: 'Насколько люди и подразделения доверяют друг другу и работают как одно целое.',
 };
 
 const loadDraft = readDraft;
 
 export default function Analysis() {
-  const { base, taxonomy, byId, citeIndex, reload } = useApp();
+  const { base, taxonomy, byId, citeIndex, reload, ask } = useApp();
   const [f, setF] = useState(loadDraft);
   const [tab, setTab] = useState(() => (loadDraft().approach ? 'plan' : 'situation'));
   useEffect(() => {
@@ -246,11 +269,10 @@ export default function Analysis() {
             size="sm"
             variant="light"
             startContent={<Plus size={15} />}
-            onPress={() => {
-              if (!dirty || window.confirm('В разборе есть изменения, которых нет в библиотеке. Начать новый разбор и потерять их?')) {
-                setF(EMPTY);
-                setTab('situation');
-              }
+            onPress={async () => {
+              if (dirty && !(await ask({ title: 'Начать новый разбор?', text: 'В текущем разборе есть изменения, которых нет в библиотеке. Они пропадут.', action: 'Начать новый', danger: true }))) return;
+              setF(EMPTY);
+              setTab('situation');
             }}
           >
             Новый
@@ -360,7 +382,13 @@ function StepSituation({ f, set, toggle, taxonomy, intakeQs, required, unanswere
           variant="bordered"
         />
         <div className="flex items-center justify-between mt-3">
-          <span className="text-xs text-default-500">Режим разбора</span>
+          <span className="flex items-center gap-1.5 text-[13px] font-medium">
+            Режим разбора
+            <Help label="Что такое режим разбора">
+              <p><b>Быстрый</b> — подготовка к первой встрече: достаточно ответов на вопросы 1–4 в «Уточнении».</p>
+              <p><b>Полный</b> — диагностика: нужны ответы или «не знаю» по всем восьми вопросам.</p>
+            </Help>
+          </span>
           <Segmented
             ariaLabel="Режим"
             allowEmpty={false}
@@ -375,24 +403,36 @@ function StepSituation({ f, set, toggle, taxonomy, intakeQs, required, unanswere
       </Panel>
 
       <Panel title="Бизнес" subtitle="Тип бизнеса из словаря: от него зависит, какие подходы уместны." icon={Building2}>
-        <div className="grid grid-cols-2 gap-3">
-          {['scale', 'model', 'offer', 'market'].map((k) => (
-            <Select
-              key={k}
-              size="sm"
-              variant="bordered"
-              label={TYPE_LABEL[k]}
-              selectedKeys={f[k] ? [f[k]] : []}
-              onSelectionChange={(s) => set(k, [...s][0] || '')}
-            >
-              {taxonomy[k].map((o) => (
-                <SelectItem key={o.id} textValue={TYPE_HUMAN[o.id] || o.id}>
-                  {TYPE_HUMAN[o.id] || o.id}
-                  {o.note && <span className="text-default-400"> · {o.note}</span>}
-                </SelectItem>
-              ))}
-            </Select>
-          ))}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-4">
+          {['scale', 'model', 'offer', 'market'].map((k) => {
+            const multi = k === 'model';
+            return (
+              <div key={k}>
+                <FieldLabel help={TYPE_HELP[k]} note={multi ? 'можно несколько' : undefined}>
+                  {TYPE_LABEL[k]}
+                </FieldLabel>
+                <Select
+                  aria-label={TYPE_LABEL[k]}
+                  size="md"
+                  variant="bordered"
+                  placeholder="Не выбрано"
+                  selectionMode={multi ? 'multiple' : 'single'}
+                  selectedKeys={multi ? f.model : f[k] ? [f[k]] : []}
+                  onSelectionChange={(s) => set(k, multi ? [...s] : [...s][0] || '')}
+                  renderValue={(items) => items.map((i) => typeName(i.key).split(' — ')[0]).join(', ')}
+                  listboxProps={{ itemClasses: { base: 'py-2' } }}
+                  scrollShadowProps={{ isEnabled: false }}
+                  classNames={{ listboxWrapper: 'max-h-[420px]' }}
+                >
+                  {taxonomy[k].map((o) => (
+                    <SelectItem key={o.id} textValue={typeName(o.id)} description={TYPE_INFO[o.id]?.[1]} classNames={{ description: 'whitespace-normal text-default-500 leading-snug', title: 'font-medium' }}>
+                      {typeName(o.id)}
+                    </SelectItem>
+                  ))}
+                </Select>
+              </div>
+            );
+          })}
         </div>
       </Panel>
 
@@ -403,9 +443,9 @@ function StepSituation({ f, set, toggle, taxonomy, intakeQs, required, unanswere
             const g = ax.id === 'management' && v ? taxonomy.greiner[v - 1] : null;
             return (
               <div key={ax.id} className="py-3 first:pt-0 grid grid-cols-[180px_1fr] gap-4 items-start">
-                <div>
-                  <div className="text-[13px] font-medium">{ax.title}</div>
-                  <code className="text-[11px] text-default-400">{ax.id}</code>
+                <div className="flex items-center gap-1.5 pt-1">
+                  <div className="text-[13px] font-medium first-letter:uppercase">{ax.title}</div>
+                  {AXIS_HELP[ax.id] && <Help label={`Что такое «${ax.title}»`}>{AXIS_HELP[ax.id]}</Help>}
                 </div>
                 <div className="space-y-1.5">
                   <Segmented
@@ -423,9 +463,12 @@ function StepSituation({ f, set, toggle, taxonomy, intakeQs, required, unanswere
             );
           })}
           <div className="py-3 grid grid-cols-[180px_1fr] gap-4 items-start">
-            <div>
+            <div className="flex items-center gap-1.5 pt-1">
               <div className="text-[13px] font-medium">Траектория</div>
-              <div className="text-[11px] text-default-400">по Адизесу</div>
+              <Help label="Что такое траектория">
+                <p>Компания растёт или стареет — по Адизесу. От этого зависит, что менять: в растущей — стиль и роли руководителя, в стареющей — систему полномочий, информации и вознаграждения.</p>
+                <p>Признаки старения: растёт доля административных расходов, падает доля выручки от новинок, вопросы «как и кто» вытесняют «зачем и что».</p>
+              </Help>
             </div>
             <div className="space-y-1.5">
               <Segmented
@@ -665,7 +708,7 @@ function StepProblems({ f, toggle, set, ranked, questions, query }) {
 
 /* ---------- Шаг 3 ---------- */
 
-function RecCard({ r, f, set, byId, citeIndex, onChosen }) {
+function RecCard({ r, f, set, byId, citeIndex, onChosen, lead }) {
   const { approach: a, refs, fit, stage, itOnly } = r;
   const s = sections(a.body);
   const pro = (a.data.sources || []).map((id) => byId.get(id)?.data.cite).filter(Boolean);
@@ -711,7 +754,7 @@ function RecCard({ r, f, set, byId, citeIndex, onChosen }) {
         <Button
           size="sm"
           color={chosen ? 'success' : 'primary'}
-          variant={chosen ? 'flat' : 'solid'}
+          variant={chosen || !lead ? 'flat' : 'solid'}
           startContent={chosen ? <Check size={14} /> : null}
           onPress={() => {
             set('approach', a.id);
@@ -726,7 +769,10 @@ function RecCard({ r, f, set, byId, citeIndex, onChosen }) {
         <div className="grid grid-cols-2 gap-3 mt-3 text-xs">
           <div>
             <div className="text-default-400 mb-1">Опора</div>
-            <div className="text-default-700">{pro.join(', ') || '—'}</div>
+            <div className="text-default-700" title={pro.length > 6 ? pro.join(', ') : undefined}>
+              {pro.slice(0, 6).join(', ') || '—'}
+              {pro.length > 6 && <span className="text-default-400"> и ещё {pro.length - 6}</span>}
+            </div>
           </div>
           <div>
             <div className="text-default-400 mb-1">Спорят и уточняют</div>
@@ -773,8 +819,8 @@ function StepRecs({ f, set, recs, byId, citeIndex, onChosen }) {
           </p>
         )}
       </div>
-      {good.map((r) => (
-        <RecCard key={r.approach.id} r={r} f={f} set={set} byId={byId} citeIndex={citeIndex} onChosen={onChosen} />
+      {good.map((r, i) => (
+        <RecCard key={r.approach.id} r={r} f={f} set={set} byId={byId} citeIndex={citeIndex} onChosen={onChosen} lead={!f.approach && i === 0} />
       ))}
       {bad.length > 0 && (
         <>
@@ -861,7 +907,7 @@ function aiContext(f, { approach, selected, questions, intakeQs, contextRu }) {
   return {
     situation: f.situation,
     scale: f.scale,
-    model: f.model,
+    model: [].concat(f.model || []).join(', '),
     offer: f.offer,
     market: f.market,
     maturity: Object.entries(f.maturity)
@@ -968,7 +1014,7 @@ function AddLine({ placeholder, onAdd }) {
 }
 
 function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
-  const { openCard, setView, byId } = useApp();
+  const { openCard, setView, byId, ask } = useApp();
   const [ai, setAi] = useState(null);
   const [busy, setBusy] = useState(false);
   useEffect(() => {
@@ -983,7 +1029,7 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
   const touched = planTouched(plan);
 
   const runAI = async () => {
-    if (touched && !window.confirm('Заменить текущий регламент черновиком от ИИ? Отметки и заметки будут потеряны.')) return;
+    if (touched && !(await ask({ title: 'Заменить регламент черновиком от ИИ?', text: 'Отметки, заметки и ваши правки в текущем регламенте пропадут.', action: 'Заменить', danger: true }))) return;
     setBusy(true);
     const r = await window.dt.ai.plan(aiContext());
     setBusy(false);
@@ -1014,7 +1060,7 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
                 size="sm"
                 variant="light"
                 startContent={<RotateCcw size={14} />}
-                onPress={() => (!touched || window.confirm('Собрать регламент заново из базы? Правки, отметки и заметки будут потеряны.')) && rebuild()}
+                onPress={async () => (!touched || (await ask({ title: 'Собрать регламент заново?', text: 'Регламент будет собран из карточек базы. Отметки, заметки и ваши правки пропадут.', action: 'Собрать заново', danger: true }))) && rebuild()}
               >
                 Из базы
               </Button>
@@ -1084,7 +1130,7 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
                       <IconButtonSm
                         label="Удалить шаг"
                         icon={Trash2}
-                        onPress={() => window.confirm(`Удалить шаг «${st.title}»?`) && setPlan((p) => ({ ...p, steps: p.steps.filter((x) => x.id !== st.id) }))}
+                        onPress={async () => (await ask({ title: 'Удалить шаг?', text: `Шаг «${st.title}» и его пункты будут удалены из регламента.`, action: 'Удалить', danger: true })) && setPlan((p) => ({ ...p, steps: p.steps.filter((x) => x.id !== st.id) }))}
                       />
                     </span>
                   </div>
@@ -1179,7 +1225,7 @@ function PlanGoals({ f }) {
 
 function Summary({ f, set, toggle, taxonomy, selected, approach, planTotal, planDone, unanswered, setTab }) {
   const { openCard } = useApp();
-  const ctx = ['scale', 'model', 'offer', 'market'].filter((k) => f[k]);
+  const ctx = ['scale', 'model', 'offer', 'market'].flatMap((k) => [].concat(f[k] || []));
   return (
     <aside className="border-l border-default-200/70 overflow-auto min-h-0 bg-content1/50">
       <div className="p-5 space-y-5 text-[13px]">
@@ -1191,9 +1237,9 @@ function Summary({ f, set, toggle, taxonomy, selected, approach, planTotal, plan
           <div className="text-xs text-default-500 mb-1.5">Бизнес</div>
           <div className="flex flex-wrap gap-1">
             {ctx.length ? (
-              ctx.map((k) => (
-                <Chip key={k} size="sm" variant="flat" className="h-6">
-                  {TYPE_HUMAN[f[k]] || f[k]}
+              ctx.map((id) => (
+                <Chip key={id} size="sm" variant="flat" className="h-6">
+                  {typeName(id).split(' — ')[0]}
                 </Chip>
               ))
             ) : (
@@ -1297,7 +1343,7 @@ function toMarkdown(f, { selected, questions, approach, intakeQs }, { forClient 
       `date: ${date}`,
       `mode: ${f.mode}`,
       `scale: ${f.scale || ''}`,
-      `model: ${f.model || ''}`,
+      `model: [${[].concat(f.model || []).join(', ')}]`,
       `offer: ${f.offer || ''}`,
       `market: ${f.market || ''}`,
       `maturity: { ${Object.entries(f.maturity)

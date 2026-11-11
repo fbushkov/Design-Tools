@@ -270,32 +270,43 @@ cd Design-tools-library
 git sparse-checkout set --no-cone /catalog.yml
 git checkout main
 git config core.quotepath false; git config http.postBuffer 524288000</pre>
-<p><b>Каждый раз.</b> Обновить клон:</p>
+<p><b>Каждый раз.</b> Сценарий сам сверяет папку с книгами с библиотекой в GitHub <b>по содержимому файлов</b>, а не по именам: книга, которая уже есть под другим именем, повторно не загрузится. Блоки вставляются целиком, по порядку.</p>
+<p>1. Перейти в клон и обновить его:</p>
 <pre>cd C:\Work\Design-tools-library
 [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
 git pull</pre>
-<p>Скопировать книги, которых ещё нет (блок вставляется целиком; путь к папке — из адресной строки Проводника):</p>
+<p>2. Сравнить папку с библиотекой. Ничего не копирует — только показывает список. В первой строке путь к вашей папке с книгами:</p>
 <pre>$src  = "C:\Users\eXC24\Desktop\Книги по менеджменту и управлению"
-$exts = '.pdf','.epub','.fb2','.djvu','.doc','.docx'
-$have = git ls-tree -r --name-only HEAD | ForEach-Object { Split-Path $_ -Leaf }
-$list = @(); $skip = @()
-foreach ($f in Get-ChildItem $src -Recurse -File) {
-  if ($exts -notcontains $f.Extension.ToLower()) { continue }
-  if ($have -contains $f.Name)         { $skip += "уже в библиотеке: $($f.Name)"; continue }
-  if ($f.Length -gt 95MB)              { $skip += "больше 95 МБ: $($f.Name)"; continue }
-  if (Test-Path (Join-Path . $f.Name)) { $skip += "одинаковое имя: $($f.FullName)"; continue }
-  Copy-Item -LiteralPath $f.FullName -Destination .
-  $list += "$($f.Name)`t$($f.Directory.Name)"
+$exts = '.pdf','.epub','.fb2','.djvu','.doc','.docx','.mobi'
+$byHash = @{}; $byName = @{}
+foreach ($line in (git -c core.quotepath=false ls-tree -r HEAD)) {
+  $meta, $path = $line -split "`t", 2
+  $byHash[($meta -split ' ')[2]] = $path
+  $byName[[IO.Path]::GetFileName($path)] = $true
 }
-$list | Set-Content -Encoding utf8 upload-list.tsv
-"Скопировано: $($list.Count)"
-$skip</pre>
-<p>Отправить:</p>
-<pre>git add --sparse .
+$new = @(); $same = 0; $other = @(); $big = @()
+foreach ($f in Get-ChildItem -LiteralPath $src -Recurse -File) {
+  if ($exts -notcontains $f.Extension.ToLower()) { continue }
+  if ($f.Length -gt 95MB) { $big += $f.Name; continue }
+  $hash = git hash-object -- $f.FullName
+  if ($byHash.ContainsKey($hash)) { $same++; continue }
+  if ($byName.ContainsKey($f.Name) -or ($new | Where-Object Name -eq $f.Name)) { $other += $f.FullName; continue }
+  $new += $f
+}
+"Уже в библиотеке: $same"
+"Новых: $($new.Count)"
+$new | ForEach-Object { "  + {0}  ({1:N1} МБ)" -f $_.Name, ($_.Length / 1MB) }
+if ($other) { "То же имя, но другое содержимое (не загружаю):"; $other }
+if ($big)   { "Больше 95 МБ (GitHub не примет):"; $big }</pre>
+<p>3. Если список новых верный — скопировать их в клон и отправить:</p>
+<pre>$new | ForEach-Object { Copy-Item -LiteralPath $_.FullName -Destination . }
+$new | ForEach-Object { "$($_.Name)`t$($_.Directory.Name)" } | Set-Content -Encoding utf8 upload-list.tsv
+git add --sparse .
 git commit -m "Новые книги"
 git push origin main</pre>
+<p class="muted">Если клон у вас лежит в другой папке (например, <code>upload-library</code> на рабочем столе), в первой команде укажите её. Проверить, что папка — клон библиотеки: <code>git status</code> должен ответить «On branch main».</p>
 <p>Затем напишите Claude «загрузил книги». Порядок работы: библиотекарь принимает файлы и переводит в текст → конспекторы пишут карточки источников и карты → куратор связывает с подходами и проблемами. После этого в программе — «Обновить с GitHub».</p>
-<div class="note">Файлы больше 95 МБ GitHub не примет — сценарий их пропустит и выведет списком. Книги, уже лежащие под другим именем, скопируются повторно; библиотекарь найдёт дубли по каталогу.</div>
+<div class="note">Файлы больше 95 МБ GitHub не примет — сценарий их пропустит и выведет списком. Папка с загруженными файлами — рабочая: программа к ней не подключается, в ней видны только те книги, что вы загружали с этого компьютера.</div>
 
 <h2 id="ai"><span class="n">8</span>ИИ-помощник — по желанию</h2>
 <p>Без ИИ всё работает: регламент собирается из карточек, вы правите его вручную. Модель подключается в <b>Настройки → ИИ-помощник → Добавить модель</b>. Можно добавить несколько и выбрать активную кружком слева; строка «Без ИИ» выключает помощника.</p>
@@ -341,7 +352,7 @@ git push origin main</pre>
   <tr><td>«Отправить в GitHub» с ошибкой</td><td>Нужен вход в GitHub в git. Запустите в PowerShell <code>git push</code> в папке библиотеки — откроется окно входа.</td></tr>
 </table>
 
-<footer>Design Tools · регламент к версии 0.3 · 6 ноября 2026</footer>
+<footer>Design Tools · регламент к версии 0.3.4 · 11 ноября 2026</footer>
 </div>
 </body>
 </html>

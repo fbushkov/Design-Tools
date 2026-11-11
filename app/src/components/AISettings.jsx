@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button, Input, Select, SelectItem, Chip, addToast, Tooltip } from '@heroui/react';
 import { Plus, Trash2, Pencil, PlugZap, KeyRound, ShieldCheck } from 'lucide-react';
-import { Panel } from './ui.jsx';
+import { Panel, FieldLabel } from './ui.jsx';
+import { useApp } from '../state.jsx';
 
 const CLAUDE_MODELS = [
   { id: 'claude-opus-5-5', label: 'Claude Opus 5.5 — по умолчанию' },
@@ -28,44 +29,61 @@ function Editor({ cfg, initial, onDone }) {
   const valid = p.name && p.model && (isClaude || p.baseURL) && (!preset?.needsKey || key || p.hasKey || /localhost|127\.0\.0\.1/.test(p.baseURL));
   return (
     <div className="rounded-large border border-primary-200 bg-primary-50/40 p-4 space-y-3">
-      <div className="grid grid-cols-2 gap-3">
-        <Select size="sm" variant="bordered" label="Сервис" selectedKeys={preset ? [preset.name] : []} onSelectionChange={(k) => choosePreset([...k][0])}>
-          {cfg.presets.map((x) => (
-            <SelectItem key={x.name}>{x.name}</SelectItem>
-          ))}
-        </Select>
-        <Input size="sm" variant="bordered" label="Название в списке" value={p.name || ''} onValueChange={(v) => setP({ ...p, name: v })} />
-        {isClaude ? (
-          <Select size="sm" variant="bordered" label="Модель" selectedKeys={p.model ? [p.model] : []} onSelectionChange={(k) => setP({ ...p, model: [...k][0] || '' })}>
-            {CLAUDE_MODELS.map((m) => (
-              <SelectItem key={m.id} description={m.id}>
-                {m.label}
-              </SelectItem>
+      <div className="grid grid-cols-2 gap-x-4 gap-y-4">
+        <div>
+          <FieldLabel help="Чей ИИ подключить. Claude, OpenAI и OpenRouter работают через интернет и требуют ключ. Ollama и LM Studio — программы на вашем компьютере: бесплатно и без интернета, но слабее.">Сервис</FieldLabel>
+          <Select aria-label="Сервис" size="md" variant="bordered" placeholder="Не выбран" selectedKeys={preset ? [preset.name] : []} onSelectionChange={(k) => choosePreset([...k][0])}>
+            {cfg.presets.map((x) => (
+              <SelectItem key={x.name}>{x.name}</SelectItem>
             ))}
           </Select>
-        ) : (
-          <Input size="sm" variant="bordered" label="Модель" placeholder="например gpt-5 или qwen3:14b" value={p.model || ''} onValueChange={(v) => setP({ ...p, model: v })} />
-        )}
+        </div>
+        <div>
+          <FieldLabel help="Как эта модель будет называться в списке настроек. Любое удобное вам имя.">Название в списке</FieldLabel>
+          <Input aria-label="Название в списке" size="md" variant="bordered" value={p.name || ''} onValueChange={(v) => setP({ ...p, name: v })} />
+        </div>
+        <div>
+          <FieldLabel help={isClaude ? 'Более сильная модель точнее работает с источниками, но стоит дороже и отвечает дольше.' : 'Точное название модели у выбранного сервиса, как в его документации: например gpt-5 или qwen3:14b.'}>Модель</FieldLabel>
+          {isClaude ? (
+            <Select aria-label="Модель" size="md" variant="bordered" placeholder="Не выбрана" selectedKeys={p.model ? [p.model] : []} onSelectionChange={(k) => setP({ ...p, model: [...k][0] || '' })}>
+              {CLAUDE_MODELS.map((m) => (
+                <SelectItem key={m.id} description={m.id}>
+                  {m.label}
+                </SelectItem>
+              ))}
+            </Select>
+          ) : (
+            <Input aria-label="Модель" size="md" variant="bordered" placeholder="например gpt-5 или qwen3:14b" value={p.model || ''} onValueChange={(v) => setP({ ...p, model: v })} />
+          )}
+        </div>
         {isClaude ? (
-          <Select size="sm" variant="bordered" label="Глубина рассуждения" selectedKeys={[p.effort || 'high']} onSelectionChange={(k) => setP({ ...p, effort: [...k][0] || 'high' })}>
-            {EFFORT.map((m) => (
-              <SelectItem key={m.id}>{m.label}</SelectItem>
-            ))}
-          </Select>
+          <div>
+            <FieldLabel help="Сколько модель думает перед ответом. Выше — точнее и аккуратнее с источниками, но дольше и дороже. Для регламента подходит «высокая».">Глубина рассуждения</FieldLabel>
+            <Select aria-label="Глубина рассуждения" size="md" variant="bordered" selectedKeys={[p.effort || 'high']} onSelectionChange={(k) => setP({ ...p, effort: [...k][0] || 'high' })}>
+              {EFFORT.map((m) => (
+                <SelectItem key={m.id}>{m.label}</SelectItem>
+              ))}
+            </Select>
+          </div>
         ) : (
-          <Input size="sm" variant="bordered" label="Адрес сервиса (base URL)" placeholder="https://…/v1" value={p.baseURL || ''} onValueChange={(v) => setP({ ...p, baseURL: v })} />
+          <div>
+            <FieldLabel help="Интернет-адрес, по которому программа обращается к сервису. Для готовых сервисов подставляется сам. Заканчивается на /v1.">Адрес сервиса</FieldLabel>
+            <Input aria-label="Адрес сервиса" size="md" variant="bordered" placeholder="https://…/v1" value={p.baseURL || ''} onValueChange={(v) => setP({ ...p, baseURL: v })} />
+          </div>
         )}
-        <Input
-          size="sm"
-          variant="bordered"
-          type="password"
-          label="Ключ API"
-          className="col-span-2"
-          placeholder={p.hasKey ? 'ключ сохранён — введите новый, чтобы заменить' : preset?.needsKey === false ? 'для локальной модели не нужен' : ''}
-          value={key}
-          onValueChange={setKey}
-          startContent={<KeyRound size={14} className="text-default-400" />}
-        />
+        <div className="col-span-2">
+          <FieldLabel help="Секретная строка из личного кабинета сервиса: по ней сервис понимает, с чьего счёта списывать оплату. Хранится только на этом компьютере в зашифрованном виде. Локальным моделям ключ не нужен.">Ключ API</FieldLabel>
+          <Input
+            aria-label="Ключ API"
+            size="md"
+            variant="bordered"
+            type="password"
+            placeholder={p.hasKey ? 'Ключ сохранён — введите новый, чтобы заменить' : preset?.needsKey === false ? 'Для локальной модели не нужен' : 'Вставьте ключ'}
+            value={key}
+            onValueChange={setKey}
+            startContent={<KeyRound size={14} className="text-default-400" />}
+          />
+        </div>
       </div>
       <div className="flex justify-end gap-2">
         <Button size="sm" variant="light" onPress={() => onDone(null)}>
@@ -85,6 +103,7 @@ export default function AISettings() {
   const [edit, setEdit] = useState(null);
   const [testing, setTesting] = useState('');
   const [result, setResult] = useState({});
+  const { ask } = useApp();
   useEffect(() => {
     window.dt.ai.config().then(setCfg);
   }, []);
@@ -165,7 +184,7 @@ export default function AISettings() {
                   variant="light"
                   isIconOnly
                   aria-label="Удалить"
-                  onPress={async () => window.confirm(`Удалить «${p.name}» и её ключ?`) && setCfg(await window.dt.ai.remove(p.id))}
+                  onPress={async () => (await ask({ title: 'Удалить модель?', text: `«${p.name}» и её ключ будут удалены с этого компьютера.`, action: 'Удалить', danger: true })) && setCfg(await window.dt.ai.remove(p.id))}
                 >
                   <Trash2 size={15} />
                 </Button>

@@ -24,13 +24,15 @@ const check = (name, cond, extra = '') => {
 const nav = (re) => win.locator('nav').getByRole('button', { name: re }).click();
 const count = async () => Number((await win.locator('nav').getByRole('button', { name: /Мои разборы/ }).innerText()).match(/\d+/)?.[0] || 0);
 const title = () => win.getByLabel('Название разбора').inputValue();
-const header = () => win.locator('div.px-8.pt-6').innerText();
+const header = async () => (await win.locator('div.px-8.pt-6').innerText()).replace(/\u00a0/g, ' ');
 const wait = (ms = 500) => win.waitForTimeout(ms);
 
 // 1. Сохранение: разбор сразу в списке, статус меняется.
 await win.getByRole('button', { name: 'Новый', exact: true }).click();
+await win.waitForTimeout(400);
+// Если в черновике была несохранённая работа, программа спросит — подтверждаем.
+if (await win.getByRole('button', { name: 'Начать новый' }).count()) await win.getByRole('button', { name: 'Начать новый' }).click();
 await wait(300);
-dialogs.length = 0; // вопрос при «Новый» поверх старого черновика — ожидаемый
 await win.getByLabel('Название разбора').fill('Проверка сохранности');
 await win.locator('textarea').first().fill('Собственник сам согласует все решения, отделы не стыкуются, клиенты уходят.');
 await wait(300);

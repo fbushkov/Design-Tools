@@ -1,5 +1,6 @@
-import { Button, Tooltip } from '@heroui/react';
-import { AlertTriangle, BookOpen, Compass, FileText, Inbox } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Button, Popover, PopoverContent, PopoverTrigger, Tooltip } from '@heroui/react';
+import { AlertTriangle, BookOpen, CircleHelp, Compass, FileText, Inbox } from 'lucide-react';
 
 export const KIND = {
   problem: { label: 'Проблема', plural: 'Проблемы', icon: AlertTriangle, color: 'danger', tint: 'text-danger' },
@@ -114,5 +115,63 @@ export function IconButton({ label, icon: I, onPress, ...rest }) {
         <I size={16} />
       </Button>
     </Tooltip>
+  );
+}
+
+// Значок «?» с пояснением: для полей и терминов, которые без пояснения непонятны.
+// Открывается наведением, щелчком и с клавиатуры; щелчок закрепляет подсказку, пока не щёлкнуть мимо.
+export function Help({ children, label = 'Пояснение' }) {
+  const [open, setOpen] = useState(false);
+  const timer = useRef(null);
+  const hover = useRef(false);
+  const pinned = useRef(false);
+  const show = () => {
+    hover.current = true;
+    clearTimeout(timer.current);
+    setOpen(true);
+  };
+  const hide = () => {
+    hover.current = false;
+    if (pinned.current) return;
+    timer.current = setTimeout(() => setOpen(false), 160);
+  };
+  const change = (next) => {
+    if (!next && hover.current && !pinned.current) {
+      pinned.current = true; // щелчок по уже открытой наведением подсказке закрепляет её
+      return;
+    }
+    pinned.current = next;
+    setOpen(next);
+  };
+  return (
+    <Popover isOpen={open} onOpenChange={change} placement="top-start" offset={6} triggerScaleOnOpen={false}>
+      <PopoverTrigger>
+        <button
+          type="button"
+          aria-label={label}
+          onMouseEnter={show}
+          onMouseLeave={hide}
+          className="text-default-400 hover:text-foreground data-[focus-visible=true]:text-foreground rounded-full shrink-0 cursor-help outline-offset-2"
+        >
+          <CircleHelp size={14} />
+        </button>
+      </PopoverTrigger>
+      <PopoverContent onMouseEnter={show} onMouseLeave={hide} className="max-w-xs px-3 py-2.5">
+        <div className="text-xs leading-relaxed space-y-1.5 text-default-700">{children}</div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
+// Подпись поля снаружи: название, необязательная пометка и «?».
+export function FieldLabel({ children, help, note, htmlFor, className = '' }) {
+  return (
+    <div className={`flex items-center gap-1.5 mb-1.5 ${className}`}>
+      <label htmlFor={htmlFor} className="text-[13px] font-medium text-foreground">
+        {children}
+      </label>
+      {help && <Help label={`Что такое «${typeof children === 'string' ? children : 'поле'}»`}>{help}</Help>}
+      {note && <span className="text-[11px] text-default-400">{note}</span>}
+    </div>
   );
 }

@@ -25,6 +25,9 @@ const step = async (name) => {
 
 await win.getByRole('button', { name: 'Новый', exact: true }).click();
 await win.waitForTimeout(400);
+// Если в черновике была несохранённая работа, программа спросит — подтверждаем.
+if (await win.getByRole('button', { name: 'Начать новый' }).count()) await win.getByRole('button', { name: 'Начать новый' }).click();
+await win.waitForTimeout(400);
 await win.getByLabel('Ситуация', { exact: true }).fill(
   'Сеть сервисных центров на 300 человек. Ввели KPI по времени ответа и количеству звонков, премии привязаны к плану. Цифры зелёные, клиенты жалуются, менеджеры подгоняют отчёты. Отделы не стыкуются между собой.'
 );

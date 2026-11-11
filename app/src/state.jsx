@@ -91,6 +91,21 @@ export function AppProvider({ children }) {
   const closeCard = useCallback(() => setCardStack((s) => s.slice(0, -1)), []);
   const closeAllCards = useCallback(() => setCardStack([]), []);
   const openPage = useCallback((id, p) => setPage({ id, page: p }), []);
+  // Вопрос пользователю в окне программы вместо системного окна Windows. Возвращает true или false.
+  const [dialog, setDialog] = useState(null);
+  const ask = useCallback(
+    (opts) =>
+      new Promise((resolve) => {
+        setDialog({
+          ...opts,
+          done: (answer) => {
+            setDialog(null);
+            resolve(answer);
+          },
+        });
+      }),
+    []
+  );
 
   const value = {
     base,
@@ -116,6 +131,8 @@ export function AppProvider({ children }) {
     setPalette,
     theme,
     setTheme,
+    dialog,
+    ask,
   };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

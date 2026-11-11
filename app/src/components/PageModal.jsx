@@ -53,7 +53,7 @@ export default function PageModal() {
           {!data && <Spinner className="my-10" />}
           {data && !data.ok && <p className="text-danger py-6">{data.error}</p>}
           {data?.ok && (
-            <Tabs aria-label="Страница или карта книги" variant="underlined" size="sm">
+            <Tabs aria-label="Страница или карта книги" variant="underlined" size="sm" disabledKeys={data.map.length ? [] : ['map']}>
               <Tab key="text" title="Текст страницы">
                 <div className="reader py-2">
                   {data.text ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{data.text.replace(/<!--[^>]*-->/g, '')}</ReactMarkdown> : 'Страница пустая.'}
@@ -64,7 +64,7 @@ export default function PageModal() {
                 title={
                   <span className="flex items-center gap-1.5">
                     <MapIcon size={14} />
-                    Карта книги{data.map.length ? '' : ' — нет'}
+                    Карта книги{data.map.length ? '' : ' (для этой страницы нет)'}
                   </span>
                 }
               >

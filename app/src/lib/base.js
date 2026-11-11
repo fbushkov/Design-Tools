@@ -78,7 +78,7 @@ export function parseTaxonomy(md) {
   if (g) for (const r of tableRows(g)) if (/^\d$/.test(r[0])) greiner.push({ level: Number(r[0]), phase: r[1], crisis: r[2] });
   const typeLine = (k) => {
     const line = md.split('\n').find((l) => l.startsWith('- `' + k + '`')) || '';
-    return [...line.replace(/^- `[a-z]+`\s*—\s*/, '').matchAll(/`([a-z-]+)`(?:\s*\(([^)]*)\))?/g)].map((x) => ({ id: x[1], note: x[2] || '' }));
+    return [...line.replace(/^- `[a-z]+`\s*—\s*/, '').matchAll(/`([a-z0-9-]+)`(?:\s*\(([^)]*)\))?/g)].map((x) => ({ id: x[1], note: x[2] || '' }));
   };
   const contours = [];
   const categoryContours = {};

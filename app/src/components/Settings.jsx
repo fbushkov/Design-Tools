@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, Input, Code, addToast } from '@heroui/react';
 import { FolderOpen, Download, RefreshCw, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useApp } from '../state.jsx';
-import { PageHeader, Panel } from './ui.jsx';
+import { PageHeader, Panel, FieldLabel } from './ui.jsx';
 import AISettings from './AISettings.jsx';
 import UpdatePanel from './UpdatePanel.jsx';
 
@@ -39,8 +39,10 @@ export default function Settings() {
         <Panel title="Папки базы" subtitle="Карточки берутся из Design-Tools, тексты книг, карты и разборы — из приватной Design-tools-library.">
           <div className="space-y-4">
             <div className="space-y-1.5">
+              <FieldLabel help="Папка с карточками базы: проблемы, подходы, источники, словарь. В ней лежит файл taxonomy.md. Обычно C:\\Users\\<имя>\\Design-Tools.">Папка базы Design-Tools</FieldLabel>
               <Input
-                label="Design-Tools"
+                aria-label="Папка базы Design-Tools"
+                placeholder="Не выбрана"
                 variant="bordered"
                 value={s.baseDir}
                 onValueChange={(v) => setS({ ...s, baseDir: v })}
@@ -58,8 +60,10 @@ export default function Settings() {
               />
             </div>
             <div className="space-y-1.5">
+              <FieldLabel help="Приватная папка с текстами книг, картами книг и вашими разборами. В ней лежат подпапки md, maps и analyses. Без неё не открываются страницы книг и не сохраняются разборы.">Папка библиотеки Design-tools-library</FieldLabel>
               <Input
-                label="Design-tools-library"
+                aria-label="Папка библиотеки Design-tools-library"
+                placeholder="Не выбрана"
                 variant="bordered"
                 value={s.libDir}
                 onValueChange={(v) => setS({ ...s, libDir: v })}
@@ -98,7 +102,10 @@ export default function Settings() {
               <li>Если папки уже есть, они не перезаписываются.</li>
             </ol>
             <div className="flex items-end gap-2">
-              <Input label="Ветка" size="sm" variant="bordered" className="max-w-[200px]" value={s.branch || 'main'} onValueChange={(v) => setS({ ...s, branch: v })} />
+              <div>
+                <FieldLabel help="Версия базы в GitHub, которую скачать. Основная называется main — менять её нужно, только если Claude попросит.">Ветка</FieldLabel>
+                <Input aria-label="Ветка" size="md" variant="bordered" className="w-[200px]" value={s.branch || 'main'} onValueChange={(v) => setS({ ...s, branch: v })} />
+              </div>
               <Button
                 color="primary"
                 startContent={busy !== 'setup' && <Download size={15} />}

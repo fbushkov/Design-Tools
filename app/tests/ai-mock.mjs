@@ -48,8 +48,12 @@ await win.screenshot({ path: path.join(root, 'tests', 'screens', 'ai-settings.pn
 await win.getByRole('button', { name: /Мои разборы/ }).click();
 await win.waitForTimeout(600);
 await win.getByRole('button', { name: 'Продолжить' }).click();
+await win.waitForTimeout(400);
+if (await win.getByRole('button', { name: 'Открыть без сохранения' }).count()) await win.getByRole('button', { name: 'Открыть без сохранения' }).click();
 await win.waitForTimeout(900);
 await win.getByRole('button', { name: 'Черновик с ИИ' }).click();
+await win.waitForTimeout(400);
+if (await win.getByRole('button', { name: 'Заменить', exact: true }).count()) await win.getByRole('button', { name: 'Заменить', exact: true }).click();
 await win.waitForTimeout(2000);
 const ok = (await win.getByText('Выгрузить 200 обращений').count()) + (await win.locator('input[value="Разметить обращения"]').count());
 await win.screenshot({ path: path.join(root, 'tests', 'screens', 'ai-plan.png') });
