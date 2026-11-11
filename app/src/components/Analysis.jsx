@@ -53,7 +53,24 @@ const EMPTY = {
   file: '',
   outcome: '',
   savedAt: '',
+  planStash: {}, // регламенты по другим подходам: при смене подхода правки не теряются
+  savedSig: '', // отпечаток содержимого на момент последнего сохранения в библиотеку
 };
+
+// Черновик всегда собирается одинаково, чтобы отпечатки совпадали.
+export const makeDraft = (obj) => ({ ...EMPTY, ...obj });
+// Отпечаток содержимого разбора без служебных полей.
+export const sigOf = (f) => JSON.stringify({ ...f, savedAt: '', savedSig: '', file: '' });
+export const hasContent = (f) => !!(f.situation || '').trim();
+// Есть ли в черновике работа, которой нет в файле библиотеки.
+export const isDirty = (f) => hasContent(f) && sigOf(f) !== f.savedSig;
+export function readDraft() {
+  try {
+    return makeDraft(JSON.parse(localStorage.getItem('dt-draft') || '{}'));
+  } catch (e) {
+    return makeDraft({});
+  }
+}
 
 const STEPS = [
   { key: 'situation', label: 'Ситуация', icon: PenLine },
@@ -81,16 +98,10 @@ const TYPE_HUMAN = {
   global: 'глобальный',
 };
 
-function loadDraft() {
-  try {
-    return { ...EMPTY, ...JSON.parse(localStorage.getItem('dt-draft') || '{}') };
-  } catch (e) {
-    return EMPTY;
-  }
-}
+const loadDraft = readDraft;
 
 export default function Analysis() {
-  const { base, taxonomy, byId, citeIndex } = useApp();
+  const { base, taxonomy, byId, citeIndex, reload } = useApp();
   const [f, setF] = useState(loadDraft);
   const [tab, setTab] = useState(() => (loadDraft().approach ? 'plan' : 'situation'));
   useEffect(() => {
@@ -124,8 +135,23 @@ export default function Analysis() {
     [selected]
   );
   // Регламент хранится в самом разборе и редактируется; из базы собирается при выборе подхода.
+  // При смене подхода прежний регламент откладывается и возвращается, если подход выбрать снова.
   useEffect(() => {
-    if (approach && f.plan?.approach !== approach.id) set('plan', planFromBase(approach, selected, questions, f.questions, unanswered));
+    if (!approach || f.plan?.approach === approach.id) return;
+    const prev = f.plan;
+    const touched = prev && planTouched(prev);
+    const stash = { ...(f.planStash || {}) };
+    if (touched) stash[prev.approach] = prev;
+    const restored = stash[approach.id];
+    delete stash[approach.id];
+    setF((s) => ({ ...s, planStash: stash, plan: restored || planFromBase(approach, selected, questions, f.questions, unanswered) }));
+    if (touched)
+      addToast({
+        title: 'Прежний регламент отложен',
+        description: `Правки по подходу «${byId.get(prev.approach)?.data.title?.split(' — ')[0] || prev.approach}» сохранены и вернутся, если выбрать его снова.`,
+        color: 'default',
+      });
+    else if (restored) addToast({ title: 'Регламент возвращён', description: 'Открыт регламент с вашими прежними правками.', color: 'default' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [approach?.id]);
   const plan = f.plan?.approach === approach?.id ? f.plan : null;
@@ -138,10 +164,16 @@ export default function Analysis() {
       return;
     }
     const name = f.file || `${new Date().toISOString().slice(0, 10)}-${slug(f.title)}.md`;
-    const r = await window.dt.saveAnalysis(name, toMarkdown(f, { selected, questions, approach, intakeQs }), !!f.file);
-    if (r.ok) setF((s) => ({ ...s, file: r.name, savedAt: new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }) }));
+    const stamp = { savedSig: sigOf(f), savedAt: new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }) };
+    // В файл состояние пишется уже с отпечатком: при «Продолжить» разбор откроется как сохранённый.
+    const r = await window.dt.saveAnalysis(name, toMarkdown({ ...f, ...stamp, file: f.file || name }, { selected, questions, approach, intakeQs }), !!f.file);
+    if (r.ok) {
+      // Если за время записи разбор успели поправить, отпечаток не совпадёт и статус останется «не сохранено».
+      setF((s) => ({ ...s, file: r.name, ...stamp }));
+      reload(); // чтобы разбор сразу появился в «Моих разборах»
+    }
     addToast({ title: r.ok ? 'Разбор сохранён' : 'Не удалось сохранить', description: r.ok ? `analyses/${r.name}` : r.error, color: r.ok ? 'success' : 'danger' });
-  }, [f, selected, questions, approach, intakeQs]);
+  }, [f, selected, questions, approach, intakeQs, reload]);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -153,6 +185,8 @@ export default function Analysis() {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [save]);
+
+  const dirty = useMemo(() => isDirty(f), [f]);
 
   const stepDone = {
     situation: !!f.situation.trim(),
@@ -176,14 +210,26 @@ export default function Analysis() {
             onChange={(e) => set('title', e.target.value)}
             className="w-full bg-transparent outline-none text-xl font-semibold tracking-tight placeholder:text-default-300 rounded-medium -mx-2 px-2 py-0.5 hover:bg-default-100 focus:bg-default-100 transition-colors"
           />
-          <div className="text-xs text-default-500 mt-1 flex items-center gap-2">
-            <span>Черновик сохраняется автоматически</span>
-            <span className="text-default-300">·</span>
-            <span>{f.savedAt ? `сохранён в ${f.savedAt}` : f.file ? 'открыт из библиотеки' : 'в библиотеку ещё не сохранён'}</span>
+          <div className="text-xs text-default-500 mt-1 flex items-center gap-2 min-w-0">
+            {dirty ? (
+              <Tooltip content="Черновик хранится на этом компьютере и не пропадёт при закрытии. В библиотеку и в GitHub он попадёт после «Сохранить»." delay={300} className="max-w-xs">
+                <span className="flex items-center gap-1.5 text-warning-600 font-medium whitespace-nowrap">
+                  <span className="size-1.5 rounded-full bg-warning" />
+                  {f.file ? 'Есть несохранённые изменения' : 'В библиотеку ещё не сохранён'}
+                </span>
+              </Tooltip>
+            ) : (
+              <span className="flex items-center gap-1.5 whitespace-nowrap">
+                {f.file && <Check size={12} className="text-success" />}
+                {f.file ? `Сохранён в библиотеке${f.savedAt ? ' в ' + f.savedAt : ''}` : 'Новый разбор'}
+              </span>
+            )}
             {f.file && (
               <>
                 <span className="text-default-300">·</span>
-                <code className="text-[11px]">{f.file}</code>
+                <code className="text-[11px] truncate min-w-0" title={f.file}>
+                  {f.file}
+                </code>
               </>
             )}
           </div>
@@ -201,7 +247,7 @@ export default function Analysis() {
             variant="light"
             startContent={<Plus size={15} />}
             onPress={() => {
-              if (!f.situation.trim() || window.confirm('Начать новый разбор? Текущий черновик будет очищен.')) {
+              if (!dirty || window.confirm('В разборе есть изменения, которых нет в библиотеке. Начать новый разбор и потерять их?')) {
                 setF(EMPTY);
                 setTab('situation');
               }
@@ -223,9 +269,9 @@ export default function Analysis() {
               <Copy size={15} />
             </Button>
           </Tooltip>
-          <Tooltip content="Сохранить в библиотеку · Ctrl+S" delay={300}>
-            <Button size="sm" color="primary" startContent={<Save size={15} />} onPress={save}>
-              Сохранить
+          <Tooltip content={dirty ? 'Сохранить в библиотеку · Ctrl+S' : 'Всё сохранено · Ctrl+S'} delay={300}>
+            <Button size="sm" color="primary" variant={dirty ? 'solid' : 'flat'} startContent={<Save size={15} />} onPress={save}>
+              {dirty ? 'Сохранить' : 'Сохранено'}
             </Button>
           </Tooltip>
         </div>
@@ -796,6 +842,11 @@ export function planFromBase(approach, selected, questions, checked, unanswered)
   return { approach: approach.id, source: 'base', summary: '', steps };
 }
 
+// Есть ли в регламенте ручная работа: отметки, заметки, свои или изменённые пункты, черновик ИИ.
+export function planTouched(plan) {
+  return plan.source === 'ai' || plan.edited || plan.steps.some((st) => st.note || st.items.some((i) => i.done));
+}
+
 function planFromAI(approach, data, model) {
   const mk = (title, hint, texts) => ({ id: uid(), title, hint, card: approach.id, note: '', items: texts.map((text) => ({ id: uid(), text, done: false })) });
   const steps = [];
@@ -927,9 +978,9 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
   const pct = total ? Math.round((done / total) * 100) : 0;
   const s = sections(approach.body);
 
-  const setPlan = (fn) => set('plan', fn(plan));
+  const setPlan = (fn) => set('plan', { ...fn(plan), edited: true });
   const setStep = (id, fn) => setPlan((p) => ({ ...p, steps: p.steps.map((st) => (st.id === id ? fn(st) : st)) }));
-  const touched = plan.steps.some((st) => st.items.some((i) => i.done) || st.note);
+  const touched = planTouched(plan);
 
   const runAI = async () => {
     if (touched && !window.confirm('Заменить текущий регламент черновиком от ИИ? Отметки и заметки будут потеряны.')) return;

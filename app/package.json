@@ -1,7 +1,7 @@
 {
   "name": "design-tools-app",
   "productName": "Design Tools",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Рабочее место для разборов по базе Design Tools",
   "private": true,
   "main": "electron/main.cjs",
@@ -11,7 +11,8 @@
     "start": "vite build && electron .",
     "dist": "vite build && electron-builder --win nsis",
     "test:ui": "vite build && node tests/smoke.mjs",
-    "release": "vite build && electron-builder --win nsis --publish always"
+    "release": "vite build && electron-builder --win nsis --publish always",
+    "test:git": "node tests/git.test.cjs"
   },
   "build": {
     "appId": "ru.bushkovstudio.designtools",

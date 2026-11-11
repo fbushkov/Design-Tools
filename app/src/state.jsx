@@ -32,10 +32,13 @@ export function AppProvider({ children }) {
     } catch (e) {}
   }, [theme]);
 
+  // Спиннер на весь экран — только при первой загрузке. Дальше данные обновляются на месте,
+  // чтобы экран не сбрасывал выбор и прокрутку.
   const reload = useCallback(async () => {
-    setLoading(true);
-    setBase(await window.dt.loadBase());
+    const next = await window.dt.loadBase();
+    setBase(next);
     setLoading(false);
+    return next;
   }, []);
   useEffect(() => {
     reload();

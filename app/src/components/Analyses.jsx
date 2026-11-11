@@ -4,7 +4,7 @@ import { FileText, UploadCloud, FolderOpen, Play, Trash2, FlaskConical, BadgeChe
 import Markdown from './Markdown.jsx';
 import { useApp } from '../state.jsx';
 import { EmptyState, Segmented, Panel } from './ui.jsx';
-import { STATE_RE, decodeState } from './Analysis.jsx';
+import { STATE_RE, decodeState, makeDraft, sigOf, isDirty, readDraft } from './Analysis.jsx';
 
 const fmtDate = (d) => {
   const t = d instanceof Date ? d : new Date(String(d || ''));
@@ -25,6 +25,7 @@ export default function Analyses() {
   const [outcome, setOutcome] = useState('');
   const [confirm, setConfirm] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [ask, setAsk] = useState(null); // { kind: 'continue' | 'push', draft }
   useEffect(() => setOutcome(cur?.data.outcome || ''), [cur?.file]);
 
   if (!base.library.ok)
@@ -55,13 +56,45 @@ export default function Analyses() {
     addToast({ title: r.ok ? msg : 'Не удалось сохранить', description: r.error, color: r.ok ? 'success' : 'danger' });
     reload();
   };
-  const cont = () => {
+  const draftTitle = (d) => d.title || 'без названия';
+  // Открыть разбор в редакторе. Несохранённая работа в редакторе не затирается без вопроса.
+  const openInEditor = () => {
     const st = stateOf(cur);
     if (!st) return;
+    const draft = makeDraft({ ...st, file: cur.file, outcome: cur.data.outcome || st.outcome || '', real: cur.data.real !== false, savedAt: '' });
+    draft.savedSig = sigOf(draft);
     try {
-      localStorage.setItem('dt-draft', JSON.stringify({ ...st, file: cur.file, outcome: cur.data.outcome || st.outcome || '', real: cur.data.real !== false }));
+      localStorage.setItem('dt-draft', JSON.stringify(draft));
     } catch (e) {}
+    setAsk(null);
     setView('analysis');
+  };
+  const cont = () => {
+    const d = readDraft();
+    if (isDirty(d)) {
+      if (d.file === cur.file) {
+        // В редакторе уже открыт этот разбор с более свежими правками — показываем их, а не файл.
+        addToast({ title: 'Открыт черновик этого разбора', description: 'В нём есть изменения, которых ещё нет в библиотеке.', color: 'warning' });
+        setView('analysis');
+        return;
+      }
+      setAsk({ kind: 'continue', draft: d });
+      return;
+    }
+    openInEditor();
+  };
+  const push = async () => {
+    setAsk(null);
+    setBusy(true);
+    const r = await window.dt.pushAnalyses('Разборы из приложения');
+    setBusy(false);
+    addToast({
+      title: r.status === 'pushed' ? 'Разборы отправлены в GitHub' : r.status === 'nothing' ? 'Отправлять нечего' : 'Не удалось отправить',
+      description: r.message,
+      color: r.ok ? 'success' : 'danger',
+      timeout: r.ok ? 4000 : 12000,
+    });
+    if (r.ok) reload(); // при отправке могли подтянуться изменения из GitHub
   };
   const body = cur ? cur.body.replace(STATE_RE, '').replace(/^# .+\n/m, '') : '';
   const counts = { all: base.analyses.length, real: base.analyses.filter((a) => a.data.real !== false).length, test: base.analyses.filter((a) => a.data.real === false).length };
@@ -126,12 +159,10 @@ export default function Analyses() {
             fullWidth
             isLoading={busy}
             startContent={!busy && <UploadCloud size={15} />}
-            onPress={async () => {
-              setBusy(true);
-              const log = await window.dt.pushAnalyses('Разборы из приложения');
-              setBusy(false);
-              const ok = !/ошибка/.test(log);
-              addToast({ title: ok ? 'Разборы отправлены в GitHub' : 'Не удалось отправить', description: ok ? undefined : log.slice(0, 200), color: ok ? 'success' : 'danger' });
+            onPress={() => {
+              const d = readDraft();
+              if (isDirty(d)) setAsk({ kind: 'push', draft: d });
+              else push();
             }}
           >
             Отправить все в GitHub
@@ -207,6 +238,42 @@ export default function Analyses() {
           <EmptyState title="Выберите разбор слева" />
         )}
       </div>
+
+      <Modal isOpen={!!ask} onClose={() => setAsk(null)} size="lg">
+        <ModalContent>
+          <ModalHeader>{ask?.kind === 'push' ? 'В редакторе есть несохранённый разбор' : 'В редакторе есть несохранённая работа'}</ModalHeader>
+          <ModalBody>
+            {ask?.kind === 'push' ? (
+              <p className="text-sm">
+                Разбор «{ask && draftTitle(ask.draft)}» {ask?.draft.file ? 'изменён после последнего сохранения' : 'ещё ни разу не сохранён в библиотеку'}. В GitHub уйдут только
+                сохранённые версии — без этих изменений.
+              </p>
+            ) : (
+              <p className="text-sm">
+                Разбор «{ask && draftTitle(ask.draft)}» {ask?.draft.file ? 'изменён после последнего сохранения' : 'ещё не сохранён в библиотеку'}. Если открыть другой разбор, эти
+                изменения пропадут.
+              </p>
+            )}
+          </ModalBody>
+          <ModalFooter>
+            <Button variant="light" onPress={() => setAsk(null)}>
+              Отмена
+            </Button>
+            <Button variant="flat" color={ask?.kind === 'push' ? 'default' : 'danger'} onPress={ask?.kind === 'push' ? push : openInEditor}>
+              {ask?.kind === 'push' ? 'Отправить как есть' : 'Открыть без сохранения'}
+            </Button>
+            <Button
+              color="primary"
+              onPress={() => {
+                setAsk(null);
+                setView('analysis');
+              }}
+            >
+              К черновику
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
 
       <Modal isOpen={confirm} onClose={() => setConfirm(false)} size="sm">
         <ModalContent>

@@ -1,9 +1,9 @@
 const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { execFile } = require('child_process');
 const { loadBase, bookPage, saveAnalysis, deleteAnalysis, updateAnalysisMeta } = require('./data.cjs');
 const ai = require('./ai.cjs');
+const { git, hasGit, pullAll, pushAnalyses, NO_GIT } = require('./git.cjs');
 
 const REPOS = {
   base: 'https://github.com/fbushkov/Design-Tools.git',
@@ -42,16 +42,9 @@ function writeSettings(s) {
   fs.writeFileSync(settingsFile(), JSON.stringify(s, null, 2));
 }
 
-function git(args, cwd) {
-  return new Promise((resolve) => {
-    execFile('git', args, { cwd, maxBuffer: 1 << 24 }, (err, stdout, stderr) => {
-      resolve({ ok: !err, out: (stdout || '') + (stderr || ''), error: err ? err.message : null });
-    });
-  });
-}
-
 async function setupRepos(parentDir, branch) {
   const log = [];
+  if (!(await hasGit())) return { ok: false, log: NO_GIT };
   const baseDir = path.join(parentDir, 'Design-Tools');
   const libDir = path.join(parentDir, 'Design-tools-library');
   if (!fs.existsSync(baseDir)) {
@@ -122,29 +115,9 @@ ipcMain.handle('ai:test', (_e, id) => ai.test(id));
 ipcMain.handle('ai:plan', (_e, ctx) => ai.plan(ctx));
 ipcMain.handle('git:pull', async () => {
   const s = readSettings();
-  const out = [];
-  for (const dir of [s.baseDir, s.libDir].filter(Boolean)) {
-    const r = await git(['pull', '--ff-only'], dir);
-    out.push(`${path.basename(dir)}: ${r.ok ? 'обновлено' : 'ошибка'}\n${r.out}`);
-  }
-  return out.join('\n');
+  return pullAll([s.baseDir, s.libDir]);
 });
-ipcMain.handle('git:push-analyses', async (_e, message) => {
-  const s = readSettings();
-  if (!s.libDir) return 'Не указана папка библиотеки.';
-  const steps = [
-    ['add', '--sparse', '-A', 'analyses'],
-    ['commit', '-m', message || 'Разбор из приложения'],
-    ['push'],
-  ];
-  const out = [];
-  for (const a of steps) {
-    const r = await git(a, s.libDir);
-    out.push(`git ${a[0]}: ${r.ok ? 'ок' : 'ошибка'}\n${r.out}`);
-    if (!r.ok) break;
-  }
-  return out.join('\n');
-});
+ipcMain.handle('git:push-analyses', async (_e, message) => pushAnalyses(readSettings().libDir, message));
 ipcMain.handle('git:setup', async (_e, parentDir, branch) => {
   const r = await setupRepos(parentDir, branch || 'main');
   if (r.ok) writeSettings({ ...readSettings(), baseDir: r.baseDir, libDir: r.libDir, branch: branch || 'main' });

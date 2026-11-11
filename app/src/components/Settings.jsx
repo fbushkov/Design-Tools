@@ -78,11 +78,11 @@ export default function Settings() {
               isLoading={busy === 'pull'}
               onPress={async () => {
                 setBusy('pull');
-                const out = await window.dt.pull();
-                setLog(out);
+                const r = await window.dt.pull();
+                setLog(r.ok ? '' : r.log);
                 setBusy('');
                 reload();
-                addToast({ title: /ошибка/.test(out) ? 'Обновление с ошибкой' : 'База обновлена', color: /ошибка/.test(out) ? 'danger' : 'success' });
+                addToast({ title: r.ok ? 'База обновлена' : 'Не удалось обновить', description: r.message, color: r.ok ? 'success' : 'danger' });
               }}
             >
               Обновить с GitHub
