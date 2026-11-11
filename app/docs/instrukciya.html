@@ -284,11 +284,12 @@ foreach ($line in (git -c core.quotepath=false ls-tree -r HEAD)) {
   $byHash[($meta -split ' ')[2]] = $path
   $byName[[IO.Path]::GetFileName($path)] = $true
 }
-$new = @(); $same = 0; $other = @(); $big = @()
+$new = @(); $same = 0; $other = @(); $big = @(); $failed = @()
 foreach ($f in Get-ChildItem -LiteralPath $src -Recurse -File) {
   if ($exts -notcontains $f.Extension.ToLower()) { continue }
   if ($f.Length -gt 95MB) { $big += $f.Name; continue }
-  $hash = git hash-object -- $f.FullName
+  $hash = git hash-object -- $f.FullName 2>$null
+  if (-not $hash) { $failed += $f.FullName; continue }
   if ($byHash.ContainsKey($hash)) { $same++; continue }
   if ($byName.ContainsKey($f.Name) -or ($new | Where-Object Name -eq $f.Name)) { $other += $f.FullName; continue }
   $new += $f
@@ -297,7 +298,9 @@ foreach ($f in Get-ChildItem -LiteralPath $src -Recurse -File) {
 "Новых: $($new.Count)"
 $new | ForEach-Object { "  + {0}  ({1:N1} МБ)" -f $_.Name, ($_.Length / 1MB) }
 if ($other) { "То же имя, но другое содержимое (не загружаю):"; $other }
-if ($big)   { "Больше 95 МБ (GitHub не примет):"; $big }</pre>
+if ($big)   { "Больше 95 МБ (GitHub не примет):"; $big }
+if ($failed) { "Не удалось сравнить — слишком длинный путь, укоротите имя файла:"; $failed }</pre>
+<p class="muted">Перед шагом 3 просмотрите список новых: книга в другом формате или другом издании считается новой. Лишнее убирается командой вида <code>$new = $new | Where-Object { $_.Name -notmatch '^Начало имени' }</code>.</p>
 <p>3. Если список новых верный — скопировать их в клон и отправить:</p>
 <pre>$new | ForEach-Object { Copy-Item -LiteralPath $_.FullName -Destination . }
 $new | ForEach-Object { "$($_.Name)`t$($_.Directory.Name)" } | Set-Content -Encoding utf8 upload-list.tsv
