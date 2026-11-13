@@ -3,7 +3,7 @@ id: psych-safety-toolkit
 title: Психологическая безопасность команды — замер и инструмент руководителя
 directions: [team-ai, diagnostics]
 solves: [resistance, control-surveillance, employee-experience, metrics-as-target]
-sources: [edmondson-2018-fearless-organization, forsgren-2018-accelerate, kaner-1996-facilitators-guide, senge-1990-fifth-discipline, bernstein-2012-transparency-paradox, prigozhin-2007-disorganization]
+sources: [edmondson-2018-fearless-organization, forsgren-2018-accelerate, kaner-1996-facilitators-guide, senge-1990-fifth-discipline, bernstein-2012-transparency-paradox, prigozhin-2007-disorganization, kegan-2009-immunity-to-change]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -62,3 +62,4 @@ status: draft
 - Вопрос «безопасно ли было на этой неделе» (с. 180) и «что сказал несогласный?» (с. 196).
 - Две доли провалов: заслуживающих обвинения и обвиняемых (с. 200).
 - Матрица «стандарты × безопасность» (с. 41–43).
+- Явные нормы для работы с личным в команде: использовать чужую цель развития как дубинку — нарушение правила группы, материалы работы не попадают в личные дела (Киган и Лейхи, с. 456–458).

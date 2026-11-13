@@ -8,7 +8,7 @@ type: book        # book, paper, article, course, talk
 language: en
 link:
 directions: [strategy, diagnostics, team-ai]
-approaches: [diagnostic-vs-reward-metrics, balancing-counter-metrics, purpose-derived-measures, targets-to-process-data, system-before-person, trust-ladder, measure-vs-delegate-matrix, algorithmic-control-audit]
+approaches: [diagnostic-vs-reward-metrics, balancing-counter-metrics, purpose-derived-measures, targets-to-process-data, system-before-person, trust-ladder, measure-vs-delegate-matrix, algorithmic-control-audit, customer-effort-score, next-issue-avoidance, give-control-to-get-control]
 categories: [metrics-as-target, control-surveillance, resistance, method-cargo]
 read: true
 rating:

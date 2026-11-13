@@ -3,7 +3,7 @@ id: balancing-counter-metrics
 title: Противовесы к показателю против подмены цели
 directions: [strategy, diagnostics]
 solves: [metrics-as-target, control-surveillance]
-sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, meadows-2008-thinking-in-systems, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, ordonez-2009-goals-gone-wild, perri-2018-build-trap, torres-2021-continuous-discovery, forsgren-2018-accelerate]
+sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, meadows-2008-thinking-in-systems, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, ordonez-2009-goals-gone-wild, perri-2018-build-trap, torres-2021-continuous-discovery, forsgren-2018-accelerate, dixon-2013-effortless-experience]
 maturity_min: { data: 2 }
 stages_fit: []
 stages_harm: []
@@ -52,3 +52,5 @@ status: draft
 ## Инструменты
 
 Проверочный вопрос для каждого показателя (Пойстер, гл. 15, с. 436) и шаблон оценки кандидатов в показатели с критерием устойчивости к подмене цели (гл. 5).
+
+- Пример из контакт-центров: AHT убран с уровня оператора, введена доля доступного времени ATP = (разговор + простой) / (смена − перерывы), AHT оставлен в фоне для крайних случаев (Диксон и др., с. 168–170, 221–222).

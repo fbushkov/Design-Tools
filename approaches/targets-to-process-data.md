@@ -3,7 +3,7 @@ id: targets-to-process-data
 title: Вместо плана и нормы — данные о самой работе
 directions: [strategy, diagnostics, service-design]
 solves: [metrics-as-target, busy-no-result]
-sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate]
+sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate, dixon-2013-effortless-experience]
 maturity_min: { data: 2 }
 stages_fit: []
 stages_harm: []
@@ -24,6 +24,8 @@ status: draft
 Ордоньес и соавторы собирают поведенческие данные о том же. Трудная конкретная цель сужает внимание (Ford Pinto), толкает к риску (Continental Illinois) и к обману двух видов, нечестному способу и приписке результата (механики Sears при норме 147 долларов в час, отгрузка кирпичей вместо дисков в Miniscribe) (Ордоньес и др., с. 4–5, 10–13). Цель работает как потолок, а не как пол: таксисты в дождь быстрее набирают дневную сумму и уезжают домой, когда спрос выше всего (с. 9–10). В сложной задаче цель на результат мешает учиться, и в меняющейся среде авторы советуют по умолчанию ставить цели на обучение (с. 14–15).
 
 Сенге даёт лабораторию Hanover. В ответ на рост заявок менеджеры поднимают выработку, очередь нормализуется, но время на дело падает на 7 %, выплаты растут и не возвращаются, а новички принимают низкую планку как норму (Сенге, с. 301–305). Очередь не говорит, хватает ли мощности, а внимание к легко измеримому ведёт к тому, чтобы «выглядеть хорошо, не будучи хорошим» (с. 308–309). Голдратт: данные без гипотезы бесполезны, информация — ответ на заданный вопрос (Голдратт, с. 289, 291–302).
+
+Диксон приводит компании, убравшие норматив времени разговора (AHT) с уровня оператора: после долгого звонка оператор больше не комкает следующий, повторных звонков стало меньше, а эффективность держат долей доступного времени и AHT в фоне (Диксон и др., с. 168–170, 221–222). Это кейсы без контрольных групп (см. карточку источника).
 
 ## Когда работает
 

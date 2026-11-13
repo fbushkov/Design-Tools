@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [dark-matter-mapping, design-against-demand, diagnostic-vs-reward-metrics, embedded-strategic-design, failure-demand-analysis, it-after-improvement, outside-in-value, process-behavior-chart, purpose-derived-measures, strategic-tradeoffs, system-before-person, targets-to-process-data, vanguard-check, ai-pilot-with-control, ai-task-frontier-mapping, balancing-counter-metrics, employee-journey-mapping, experience-journey-map, idealized-design, implementation-as-project, leverage-points, mess-formulation, program-logic-model, service-blueprint, system-traps, eight-stage-change, layers-of-analysis, measure-vs-delegate-matrix, problem-definition-framework, proximate-objectives]
+approaches: [dark-matter-mapping, design-against-demand, diagnostic-vs-reward-metrics, embedded-strategic-design, failure-demand-analysis, it-after-improvement, outside-in-value, process-behavior-chart, purpose-derived-measures, strategic-tradeoffs, system-before-person, targets-to-process-data, vanguard-check, ai-pilot-with-control, ai-task-frontier-mapping, balancing-counter-metrics, employee-journey-mapping, experience-journey-map, idealized-design, implementation-as-project, leverage-points, mess-formulation, program-logic-model, service-blueprint, system-traps, eight-stage-change, layers-of-analysis, measure-vs-delegate-matrix, problem-definition-framework, proximate-objectives, customer-effort-score, next-issue-avoidance, give-control-to-get-control]
 categories: [metrics-as-target, busy-no-result, silo-service, control-surveillance, method-cargo, resistance, churn]
 read: true
 rating:

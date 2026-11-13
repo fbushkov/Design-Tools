@@ -3,7 +3,7 @@ id: humble-inquiry
 title: Смиренный вопрос — спрашивать так, чтобы было безопасно сказать правду
 directions: [diagnostics, strategy, team-ai]
 solves: [resistance, decision-bottleneck, control-surveillance]
-sources: [schein-2013-humble-inquiry, block-1981-flawless-consulting, ledeneva-2006-how-russia-works, kotter-1996-leading-change, bernstein-2012-transparency-paradox, fey-denison-2003-culture-russia, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, hall-2013-just-enough-research, kaner-1996-facilitators-guide, prigozhin-2003-org-development-methods]
+sources: [schein-2013-humble-inquiry, block-1981-flawless-consulting, ledeneva-2006-how-russia-works, kotter-1996-leading-change, bernstein-2012-transparency-paradox, fey-denison-2003-culture-russia, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, hall-2013-just-enough-research, kaner-1996-facilitators-guide, prigozhin-2003-org-development-methods, kegan-2009-immunity-to-change]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -56,3 +56,4 @@ status: draft
 - Четыре типа вопросов (Шейн, с. 44–55) и вопрос себе перед конфронтирующим вопросом: любопытство это или проверка готового ответа.
 - «Расскажите всю историю того дня» вместо «кто виноват» (Шейн, с. 49–52).
 - Вопросник Леденёвой, где неписаные правила выясняют через примеры нарушений, а доверие — через вопросы о партнёрах и спорах (Леденёва, прил. 6, с. 222–225).
+- Вопрос руководителю к себе: «не я ли тот начальник, под которого всем приходится подстраиваться?» У каждого был такой руководитель, и кто-то так же переживает нас (Киган и Лейхи, с. 134).

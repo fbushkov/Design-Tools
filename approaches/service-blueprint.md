@@ -3,7 +3,7 @@ id: service-blueprint
 title: Service blueprint — шаги клиента и то, что они запускают внутри
 directions: [service-design, diagnostics]
 solves: [silo-service, employee-experience, churn]
-sources: [stickdorn-2018-sd-doing, seddon-2003-freedom-from-command, kaufman-2010-personal-mba, shostack-1984-designing-services, downe-2020-good-services]
+sources: [stickdorn-2018-sd-doing, seddon-2003-freedom-from-command, kaufman-2010-personal-mba, shostack-1984-designing-services, downe-2020-good-services, dixon-2013-effortless-experience]
 maturity_min: { process: 1 }
 stages_fit: []
 stages_harm: []
@@ -62,3 +62,5 @@ Blueprint связывает каждый шаг клиента с тем, чт�
 - Blueprint для внедрения. Для каждого действия сотрудника на схеме «как будет» спросить, чем оно отличается от нынешнего, какая поддержка нужна и что может пойти не так (Стикдорн, с. 465–470; см. [implementation-as-project](implementation-as-project.md)). Схему как бумажный прототип проверяют на потенциальных клиентах (Шостак, с. 139).
 
 Шаблоны карт есть в бумажном издании Стикдорна и на сайте книги.
+
+- Карта «вопрос — канал» с баллом «усилие × затраты» и аудит по каналам (Диксон и др., с. 249–250, 266–268), см. [channel-stickiness](channel-stickiness.md).

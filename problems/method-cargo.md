@@ -5,7 +5,7 @@ directions: [strategy]
 category: [method-cargo]
 maturity: { management: [2, 3], process: [2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes]
+approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge]
 cases: []
 tags: [внедрение, мода, ритуал, системное-мышление]
 status: draft
@@ -56,6 +56,11 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 | Как оценивают прогресс: по уровню зрелости и установленным инструментам или по способностям, привязанным к результату? | Руководителям | Модель зрелости уводит от улучшения | Форсгрен, с. 38–40 (вопрос выведен куратором) |
 | Готовы ли вы, чтобы работу контролировали и улучшали те, кто её делает? Готовы ли изменить собственную роль, держаться этого, когда наверху диктуют цифры, и приносить плохие новости? | Первому лицу | Метод хотят внедрить, не меняя роли и привычек руководства | Седдон, с. 193–194 |
 | Откуда пришёл бриф и кто будет это внедрять? | Себе и заказчику на старте проекта | У проекта нет владельца внедрения, и он кончится концептом | Стикдорн, с. 565 |
+| Согласны ли все, что мы делаем это плохо и что проблема в основном в нас, а не во внешних силах? | Команде | Своей роли в проблеме никто не признаёт, методология остаётся ритуалом | Киган и Лейхи, с. 408–410 |
+| Как, по-вашему, правильно — и как мы делаем на деле? | Тем, кто работает по методологии, опросом | Разрыв между словами и делом не назван самими участниками | Киган и Лейхи, с. 174–177 |
+| Каков ваш вклад, если он есть, в трудности команды? | Каждому члену команды, включая руководителя | Методологию внедряли для других, свою часть никто не берёт | Киган и Лейхи, с. 257–258 |
+| Что ваша система обучения предполагает об уме сотрудника — набор навыков, который пополняют, или систему, которая может перестроиться? | Руководителю, HR | Методологию внедряли курсом как технический вызов, а он адаптивный | Киган и Лейхи, с. 440 |
+| Как разбирают работу: коучинг по свежим случаям на рабочем месте или плановые разборы плохих случаев? | Руководителям команд | Новое поведение вводят обучением и разбором ошибок, а не коучингом | Диксон и др., с. 213–218 |
 
 ## Что делать в зависимости от зрелости
 
@@ -85,6 +90,10 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 - **Форма обогнала функцию.** Проверить, не выдавила ли административная роль предпринимательскую ([paei-role-gap](../approaches/paei-role-gap.md)).
 
 Где расходятся источники пятого прохода. Почему импортные методы не приживаются, источники объясняют по-разному. Кордонский — тем, что импортные понятия описывают другое общество, а новации меняют распределение ресурсов (Кордонский, с. 125, 142–152). Пригожин — культурой «к начальнику, а не к правилу» и советским наследием (Пригожин 2003, с. 3, 719, 723), что ближе к Аузану. Скелтон и Паис приводят кейс, где технологию внедряли ради смены организации (Скелтон и Паис, с. 221–222), против порядка «сначала улучшение, потом ИТ» у Седдона.
+
+**Подходы шестого прохода.**
+
+- **Методологии обучили, а поведение не изменилось.** Проверить, не решали ли адаптивный вызов курсом ([technical-vs-adaptive-challenge](../approaches/technical-vs-adaptive-challenge.md)), и построить коллективную карту от «мы все»: что делаем вопреки цели и чего боимся ([immunity-to-change-map](../approaches/immunity-to-change-map.md)).
 
 ## Как понять, что стало лучше
 

@@ -5,7 +5,7 @@ directions: [strategy, team-ai]
 category: [control-surveillance]
 maturity: { management: [1, 2, 3], data: [2, 3] }
 scale: [small, mid, large]
-approaches: [diagnostic-vs-reward-metrics, trust-ladder, rules-for-top-first, balancing-counter-metrics, system-traps, system-before-person, employee-journey-mapping, human-ai-heuristic-review, humble-inquiry, measure-vs-delegate-matrix, rule-feasibility-check, shadow-ai-amnesty, algorithmic-control-audit, growth-phase-diagnosis, decision-implementability-audit, nominal-vs-real-allocation, psych-safety-toolkit, sanctions-ratio-audit]
+approaches: [diagnostic-vs-reward-metrics, trust-ladder, rules-for-top-first, balancing-counter-metrics, system-traps, system-before-person, employee-journey-mapping, human-ai-heuristic-review, humble-inquiry, measure-vs-delegate-matrix, rule-feasibility-check, shadow-ai-amnesty, algorithmic-control-audit, growth-phase-diagnosis, decision-implementability-audit, nominal-vs-real-allocation, psych-safety-toolkit, sanctions-ratio-audit, give-control-to-get-control]
 cases: []
 tags: [контроль, доверие, kpi, слежка, российский-контекст]
 status: draft
@@ -60,6 +60,8 @@ status: draft
 | Оценивают ли людей по использованию системы или по результату на выходе? | Руководителю внедрения, сотрудникам | Контроль за инструментом рождает сокрытие и искажение отчётности | Пригожин 2007, с. 374, 378 |
 | Кому и в чём руководитель доверяет, а где проверяет всё? | Руководителю, анонимно сотрудникам | Сверхконтроль из подозрительности толкает к искажению отчётности | Пригожин 2003, с. 748–752 |
 | Что нужно, чтобы здесь была среда заботы и уважения? | Сотрудникам | Прямой вопрос о безопасности не работает, нужна переформулировка | Эдмондсон, с. 164 |
+| Чувствуют ли сотрудники, что им доверяют? (а не «доверяете ли вы им») | Сотрудникам, анонимно | Руководство уверено в доверии, а среда построена на контроле | Диксон и др., с. 163 |
+| Какие пункты чек-листа качества противоречат тому, что нужно клиенту? | Операторам и супервайзерам | Контроль производит механический сервис | Диксон и др., с. 164–165 |
 
 ## Что делать в зависимости от зрелости
 
@@ -87,6 +89,10 @@ status: draft
 - **Люди молчат и прячут информацию.** Инструмент руководителя из трёх частей и замер по командам ([psych-safety-toolkit](../approaches/psych-safety-toolkit.md)).
 
 Где расходятся источники пятого прохода. Accelerate советует вывешивать дефекты на общих досках и упоминает отслеживание общения по трафику и тональности писем (Форсгрен, с. 113, 207–208), Эдмондсон приводит Bridgewater с публичными оценками (Эдмондсон, с. 133–134). Бернстайн показывает, что полная видимость заставляет прятать лучшие приёмы (Бернстайн, с. 10–17, 21–29), и сама Эдмондсон оговаривает, что полная прозрачность нужна не везде (с. 222). Пригожин отвечает на дефект контроля исполнения ещё одной службой контроля качества решений (Пригожин 2007, с. 260), Деминг и Седдон искали бы причину в системе. Кордонский видит в контроле служение с планом по нарушениям (Кордонский, с. 93–94), Пригожин — черту вертикальной культуры (Пригожин 2003, с. 748–750).
+
+**Подходы шестого прохода.**
+
+- **Линейный персонал под таймером, прослушкой и чек-листом.** Отдать контроль, чтобы получить контроль: доверие суждению оператора, понимание целей, поддержка коллег ([give-control-to-get-control](../approaches/give-control-to-get-control.md)). Диксон при этом оставляет рамку уровней и еженедельную оценку звонков (Диксон и др., с. 165–168, 228), с чем не согласились бы Деминг и Седдон.
 
 ## Как понять, что стало лучше
 

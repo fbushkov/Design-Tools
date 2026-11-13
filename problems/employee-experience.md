@@ -5,7 +5,7 @@ directions: [service-design, team-ai]
 category: [employee-experience]
 maturity: { process: [1, 2, 3], management: [2, 3], ai: [1, 2, 3] }
 scale: [small, mid, large]
-approaches: [employee-journey-mapping, service-blueprint, implementation-as-project, system-before-person, automation-by-stage-and-level, human-ai-heuristic-review, algorithmic-control-audit, psych-safety-toolkit, sanctions-ratio-audit, team-cognitive-load-check]
+approaches: [employee-journey-mapping, service-blueprint, implementation-as-project, system-before-person, automation-by-stage-and-level, human-ai-heuristic-review, algorithmic-control-audit, psych-safety-toolkit, sanctions-ratio-audit, team-cognitive-load-check, experience-engineering, give-control-to-get-control]
 cases: []
 tags: [внутренний-сервис, сотрудники, онбординг, инструменты]
 status: draft
@@ -47,6 +47,9 @@ status: draft
 | Что нужно, чтобы здесь была среда заботы и уважения? | Сотрудникам | Мешают мелочи условий труда, о которых не спрашивали | Эдмондсон, с. 164 |
 | Легко ли подключить нового человека к внутренним инструментам? | Новичкам, владельцам платформы | Внутренний инструмент не ведут как продукт | Скелтон и Паис, с. 156–159 (вопрос выведен куратором) |
 | Для каждого действия сотрудника на blueprint: чем оно будет отличаться от нынешнего, какая поддержка понадобится, что может пойти не так? | Сотрудникам, которые знают текущую работу, на воркшопе | Новый сервис спроектирован без учёта того, что он меняет в работе персонала | Стикдорн, с. 468 |
+| Что вам больше всего нравится в работе? | Операторам | Если отвечают про график и соцпакет, а не про доверие и свободу, среды доверия нет | Диксон и др., с. 158–159 |
+| В каких ситуациях вы чаще всего говорите клиенту «нет», какие частые звонки самые трудные? | Операторам | Трудные разговоры не подготовлены, вся тяжесть на человеке | Диксон и др., с. 128; прил. C, с. 256 |
+| Есть ли у операторов время и площадка для обмена опытом вне контроля руководства? | Операторам | Нет поддержки коллег, одного из условий устойчивости | Диксон и др., с. 176–179 |
 
 ## Что делать в зависимости от зрелости
 
@@ -66,6 +69,10 @@ status: draft
 - **Атмосфера взысканий.** Подсчёт взысканий и поощрений ([sanctions-ratio-audit](../approaches/sanctions-ratio-audit.md)).
 
 Где расходятся источники пятого прохода. Скелтон и Паис советуют верить ощущению команды о своей нагрузке (Скелтон и Паис, с. 84), а METR показывает, что ощущения о собственной продуктивности систематически ошибаются (METR, с. 1–2, 8–10). Нагрузка и скорость — разные вещи, но ощущение стоит сверять с потоком.
+
+**Подходы шестого прохода.**
+
+- **Операторы выгорают от трудных разговоров.** Подготовить десять частых ситуаций «нет» и дать формулировки ([experience-engineering](../approaches/experience-engineering.md)), форум и комитет операторов, коучинг вместо разборов плохих звонков ([give-control-to-get-control](../approaches/give-control-to-get-control.md)).
 
 ## Как понять, что стало лучше
 

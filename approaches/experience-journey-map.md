@@ -3,7 +3,7 @@ id: experience-journey-map
 title: Карта пути клиента от опыта, на исследовании, а не на догадках
 directions: [service-design, diagnostics]
 solves: [silo-service, churn]
-sources: [stickdorn-2018-sd-doing, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, torres-2021-continuous-discovery, christensen-2016-competing-against-luck]
+sources: [stickdorn-2018-sd-doing, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, torres-2021-continuous-discovery, christensen-2016-competing-against-luck, dixon-2013-effortless-experience]
 maturity_min: { process: 1 }
 stages_fit: []
 stages_harm: []
@@ -55,3 +55,4 @@ status: draft
 - Превращение черновика в исследованную карту. Короткие петли исследования, выборка до насыщения, смешение методов и исследователей. Цифры показывают, где проблема, качественные данные объясняют почему (Стикдорн, с. 164–191, 196–197, 204). Желания выводятся из выбора в ситуации, а не из ответов на вопрос «что для вас важно» (Акофф и Эмери, с. 104–106; Пойстер, гл. 13, с. 354–375).
 - Трёхслойное хранение результатов: сырые материалы, инсайты, выжимка. Каждый шаг карты подписан ссылкой на исследование (Стикдорн, с. 80, 185, 228–230, 817–824). Срок годности персон около года (с. 209–210).
 - Список решений по карте «как есть» против «как будет» в три столбца: исправить, оптимизировать, изменить (Стикдорн, с. 251–258).
+- Мыслить событиями клиента, а не звонками: одно событие порождает цепочку «решённых с первого раза» обращений в разные места (Диксон и др., с. 97–100). Путь по каналам с усилием в каждом: в кейсе Acme нормальные NPS и CES скрывали, что половина начавших на сайте обращается снова, в основном по телефону (с. 191–199). Стартовое упражнение «делал / чувствовал / усилие» (с. 219).

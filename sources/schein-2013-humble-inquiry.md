@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, team-ai]
-approaches: [system-before-person, reframe-the-brief, embedded-strategic-design, consulting-contract, eight-stage-change, humble-inquiry, layers-of-analysis, meeting-for-action, name-the-resistance]
+approaches: [system-before-person, reframe-the-brief, embedded-strategic-design, consulting-contract, eight-stage-change, humble-inquiry, layers-of-analysis, meeting-for-action, name-the-resistance, immunity-to-change-map]
 categories: [resistance, decision-bottleneck, control-surveillance]
 read: true
 rating:

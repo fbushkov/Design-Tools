@@ -5,7 +5,7 @@ directions: [diagnostics]
 category: [busy-no-result]
 maturity: { management: [1, 2, 3], process: [1, 2] }
 scale: [micro, small, mid]
-approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting]
+approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge]
 cases: []
 tags: [потери, фокус, диагностика]
 status: draft
@@ -60,6 +60,8 @@ status: draft
 | Почему собственные механизмы коррекции системы не работают, что им мешает и как сделать их сильнее? | Собственнику и руководителям, до того как брать решение на себя | Вмешательство со стороны подменило способность системы справляться самой, и зависимость от него растёт | Медоуз, с. 175 |
 | Если бы вы ещё не были в этом бизнесе или направлении, вошли бы в него сегодня? | Собственнику | Ресурсы заняты вчерашними приоритетами, от которых не отказываются | Магретта, с. 166 |
 | Ясно ли, чего организация хочет добиться, и донесено ли это до всех? Подходит ли замысел к цели, конкуренции и собственным возможностям? Даёт ли менеджмент обещанный результат? | Собственнику и руководителям | Сбой сидит в цели, в замысле или в исполнении, и лечить их надо по-разному | Магретта, с. 191–192 |
+| Сколько времени за полгода ушло на три занятия, которые руководитель считает своей настоящей работой, и чему служит остальное? | Руководителю, по календарю | Занятость обслуживает скрытое обязательство, а не цель | Киган и Лейхи, с. 211 |
+| Может ли любой сотрудник назвать, в чём он сейчас растёт, как над этим работает, кто знает его цель и почему это ему важно? | Случайно выбранным сотрудникам | Процессы улучшают, людей не развивают | Киган и Лейхи, с. 447–448 |
 
 ## Что делать в зависимости от зрелости
 
@@ -91,6 +93,10 @@ status: draft
 - **Много идей, сорваны сроки, или наоборот.** Проверить недостающую управленческую роль ([paei-role-gap](../approaches/paei-role-gap.md)).
 
 Где расходятся источники пятого прохода. Голдратт считает цель компании одной — деньги — и отвергает рабочие места как цель (Голдратт, с. 46–47, 50), Деминг ставит целью долгую жизнь компании через продукт и людей, Седдон задаёт цель глазами клиента. Голдратт обещает за многими бедами одну или несколько коренных причин (с. 342), Акофф описывает месиво взаимосвязанных проблем. Голдратт гасит разброс запасом мощности и буфером (с. 146–147, 333–334), Деминг сокращает сам разброс.
+
+**Подходы шестого прохода.**
+
+- **Руководитель занят, а на главное времени нет.** Анализ календаря по трём «правильным» занятиям и вопрос, чему служит остальное ([technical-vs-adaptive-challenge](../approaches/technical-vs-adaptive-challenge.md)). Опора — один кейс (Киган и Лейхи, с. 211).
 
 ## Как понять, что стало лучше
 

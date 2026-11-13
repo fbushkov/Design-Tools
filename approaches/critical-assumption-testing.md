@@ -3,7 +3,7 @@ id: critical-assumption-testing
 title: Проверка критически важных допущений продажей, а не опросом
 directions: [strategy, service-design]
 solves: [product-direction]
-sources: [kaufman-2010-personal-mba, magretta-2002-what-management-is, rumelt-2011-good-bad-strategy, torres-2021-continuous-discovery, perri-2018-build-trap, hall-2013-just-enough-research, christensen-2016-competing-against-luck, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, goldratt-1984-the-goal, prigozhin-2003-org-development-methods, cagan-2008-inspired]
+sources: [kaufman-2010-personal-mba, magretta-2002-what-management-is, rumelt-2011-good-bad-strategy, torres-2021-continuous-discovery, perri-2018-build-trap, hall-2013-just-enough-research, christensen-2016-competing-against-luck, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, goldratt-1984-the-goal, prigozhin-2003-org-development-methods, cagan-2008-inspired, kegan-2009-immunity-to-change]
 maturity_min: { product: 1 }
 stages_fit: []
 stages_harm: []
@@ -26,6 +26,8 @@ status: draft
 Перри даёт виды экспериментов: консьерж, «волшебник страны Оз», концепт-тест с «запросом» к клиенту — обязательством, деньгами или временем, A/B-тест только при ясном направлении и достаточном трафике (Перри, с. 139–147). Экспериментировать нужно не везде: если задача не ядро ценностного предложения и лучшая практика известна, её внедряют и меряют (с. 117, 143).
 
 Холл начинает исследование с риска допущений: что случится, если через полгода окажется, что решали не ту задачу или переоценили поддержку внутри организации (Холл, с. 48–49), и советует ставить рядом с «валидировать» слова «или опровергнуть» (с. 39–40). Кристенсен ссылается на discovery-driven planning: что должно оказаться правдой, чтобы это сработало (Кристенсен, с. 69–70). Эдмондсон предлагает держать стратегию гипотезой и рассматривать отставание от плана сначала как данные о стратегии и только потом как плохую работу людей (Эдмондсон, с. 94–95). Сенге приводит сценарии Shell, где спрашивали, какие допущения должны быть верны для «беспроблемного» будущего (Сенге, с. 163–166). Голдратт: данные без гипотезы бесполезны, информация — ответ на заданный вопрос (Голдратт, с. 289, 291–302). Для изменений в организации есть решающий эксперимент с контрольным объектом (Пригожин 2003, с. 861–868), см. [ai-pilot-with-control](ai-pilot-with-control.md).
+
+Ту же логику Киган и Лейхи применяют к допущениям о себе. Проверка нужна ради данных, а не ради улучшения, она должна быть безопасной, выполнимой за неделю и способной допущение опровергнуть (Киган и Лейхи, с. 368, 374–383). См. [big-assumption-test](big-assumption-test.md).
 
 ## Когда работает
 

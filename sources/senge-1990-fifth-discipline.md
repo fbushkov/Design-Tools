@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, team-ai, service-design]
-approaches: [system-traps, leverage-points, system-before-person, mess-formulation, name-the-resistance, humble-inquiry, critical-assumption-testing, purpose-derived-measures, targets-to-process-data, decision-rights-clarity, solve-resolve-dissolve, rule-feasibility-check, initiative-triage, eight-stage-change, growth-phase-diagnosis, layers-of-analysis, participation-diamond, psych-safety-toolkit]
+approaches: [system-traps, leverage-points, system-before-person, mess-formulation, name-the-resistance, humble-inquiry, critical-assumption-testing, purpose-derived-measures, targets-to-process-data, decision-rights-clarity, solve-resolve-dissolve, rule-feasibility-check, initiative-triage, eight-stage-change, growth-phase-diagnosis, layers-of-analysis, participation-diamond, psych-safety-toolkit, immunity-to-change-map]
 categories: [busy-no-result, resistance, silo-service, method-cargo, metrics-as-target, decision-bottleneck]
 read: true
 rating:
