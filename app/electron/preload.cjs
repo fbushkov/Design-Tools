@@ -5,7 +5,7 @@ contextBridge.exposeInMainWorld('dt', {
   setSettings: (s) => ipcRenderer.invoke('settings:set', s),
   pickFolder: () => ipcRenderer.invoke('dialog:folder'),
   loadBase: () => ipcRenderer.invoke('base:load'),
-  bookPage: (id, page) => ipcRenderer.invoke('book:page', id, page),
+  bookPage: (id, page, chapter) => ipcRenderer.invoke('book:page', id, page, chapter),
   saveAnalysis: (name, content, overwrite) => ipcRenderer.invoke('analysis:save', name, content, overwrite),
   deleteAnalysis: (name) => ipcRenderer.invoke('analysis:delete', name),
   analysisMeta: (name, patch) => ipcRenderer.invoke('analysis:meta', name, patch),
@@ -16,6 +16,7 @@ contextBridge.exposeInMainWorld('dt', {
     setActive: (id) => ipcRenderer.invoke('ai:active', id),
     test: (id) => ipcRenderer.invoke('ai:test', id),
     plan: (ctx) => ipcRenderer.invoke('ai:plan', ctx),
+    cancel: () => ipcRenderer.invoke('ai:cancel'),
   },
   update: {
     state: () => ipcRenderer.invoke('update:state'),

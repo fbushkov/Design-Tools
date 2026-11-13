@@ -45,6 +45,14 @@ const GROUPS = [
   },
 ];
 
+// Когда базу последний раз скачивали с GitHub.
+function fmtPull(iso) {
+  const t = iso ? new Date(iso) : null;
+  if (!t || isNaN(t)) return 'с GitHub ещё не скачивалась';
+  const day = new Date().toDateString() === t.toDateString() ? 'сегодня' : t.toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' }).replace('.', '');
+  return `скачана ${day} в ${t.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })}`;
+}
+
 function NavItem({ item, active, disabled, onPress, count }) {
   const I = item.icon;
   return (
@@ -63,7 +71,7 @@ function NavItem({ item, active, disabled, onPress, count }) {
 }
 
 export default function App() {
-  const { dialog, base, loading, view, setView, cardStack, closeCard, closeAllCards, byId, reload, setPalette, theme, setTheme, goToCard } = useApp();
+  const { dialog, base, loading, view, setView, cardStack, closeCard, closeAllCards, byId, updateBase, updating, setPalette, theme, setTheme, goToCard } = useApp();
   const top = cardStack.length ? byId.get(cardStack[cardStack.length - 1]) : null;
   const ready = base?.ok;
   return (
@@ -107,6 +115,27 @@ export default function App() {
         ))}
         <div className="mt-auto space-y-0.5">
           <NavItem item={{ label: 'Настройки', icon: SettingsIcon }} active={view === 'settings'} onPress={() => setView('settings')} />
+          <Tooltip
+            delay={300}
+            placement="right"
+            className="max-w-xs"
+            content="Скачивает с GitHub новые карточки, книги и карты и перечитывает файлы. Ваши разборы и черновик не затрагиваются."
+          >
+            <button
+              onClick={updateBase}
+              disabled={updating}
+              aria-label="Обновить базу"
+              className="group w-full flex items-center gap-2.5 px-3 py-1.5 rounded-medium text-[13px] text-default-600 hover:bg-default-100 transition-colors disabled:opacity-60 text-left"
+            >
+              <RefreshCw size={16} className={`text-default-400 group-hover:text-default-600 shrink-0 ${updating ? 'animate-spin' : ''}`} />
+              <span className="min-w-0">
+                <span className="block">{updating ? 'Обновляю…' : 'Обновить базу'}</span>
+                <span className="block text-[11px] text-default-400 truncate" data-testid="last-pull">
+                  {fmtPull(base?.lastPull)}
+                </span>
+              </span>
+            </button>
+          </Tooltip>
           <div className="flex items-center justify-between px-2 pt-2">
             <Tooltip
               delay={200}
@@ -124,18 +153,11 @@ export default function App() {
                 {ready ? (base.library.ok ? 'база и книги подключены' : 'библиотека не подключена →') : 'база не найдена →'}
               </button>
             </Tooltip>
-            <div className="flex">
-              <Tooltip content="Перечитать файлы базы" delay={300}>
-                <Button size="sm" variant="light" isIconOnly aria-label="Перечитать базу" onPress={reload}>
-                  <RefreshCw size={14} />
-                </Button>
-              </Tooltip>
-              <Tooltip content={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'} delay={300}>
-                <Button size="sm" variant="light" isIconOnly aria-label="Сменить тему" onPress={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-                  {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
-                </Button>
-              </Tooltip>
-            </div>
+            <Tooltip content={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'} delay={300}>
+              <Button size="sm" variant="light" isIconOnly aria-label="Сменить тему" onPress={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+              </Button>
+            </Tooltip>
           </div>
         </div>
       </nav>

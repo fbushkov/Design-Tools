@@ -143,14 +143,17 @@ function resolveAuthor(index, text, preferIds) {
   return null;
 }
 
-// Превращает «(Румельт, с. 9, 15–17)» и «с. 12» в ссылки cite:<id>:<page>.
+// Превращает «(Румельт, с. 9, 15–17)», «с. 12» и «гл. 6» в ссылки cite:<id>:<page> и cite:<id>:ch<N>.
+// Страница после главы («гл. 9, с. 263») несёт номер главы: cite:<id>:263:ch9 — для книг без номеров страниц.
 export function linkifyCitations(body, card, index) {
   const preferIds = [...(card.data.sources || []), card.kind === 'source' ? card.id : null].filter(Boolean);
   const fallback = card.kind === 'source' ? card.id : (card.data.sources || [])[0] || null;
-  const re = /(с\.\s*)(\d+(?:\s*[–-]\s*\d+)?(?:\s*,\s*\d+(?:\s*[–-]\s*\d+)?)*)/g;
+  const nums = '\\d+(?:\\s*[–-]\\s*\\d+)?(?:\\s*,\\s*\\d+(?:\\s*[–-]\\s*\\d+)?)*';
+  const re = new RegExp(`(?<![a-zа-яё])(с\\.\\s*|[Гг]л\\.\\s*)(${nums})`, 'g');
   let out = '';
   let last = 0;
   let paraAuthor = null;
+  let chapter = null; // { id, n, end } — последняя глава в этой же скобке
   let m;
   while ((m = re.exec(body))) {
     const before = body.slice(last, m.index);
@@ -159,13 +162,20 @@ export function linkifyCitations(body, card, index) {
     const cut = Math.max(window.lastIndexOf('('), window.lastIndexOf(';'), window.lastIndexOf('|'), window.lastIndexOf('\n'));
     const seg = window.slice(cut + 1);
     const insideLink = /\]\([^)]*$/.test(window) || /`[^`]*$/.test(window);
-    let id = insideLink ? null : resolveAuthor(index, seg, preferIds);
+    let id = insideLink ? null : resolveAuthor(index, seg.replace(/\[[^\]]*\]\([^)]*\)/g, ''), preferIds);
     if (id) paraAuthor = id;
     else if (!insideLink) id = paraAuthor || fallback;
     out += before + m[1];
-    if (id) {
-      out += m[2].replace(/(\d+)(\s*[–-]\s*\d+)?/g, (all, a) => `[${all}](cite:${id}:${a})`);
-    } else out += m[2];
+    const isChapter = /^[Гг]л/.test(m[1]);
+    if (!id) out += m[2];
+    else if (isChapter) {
+      out += m[2].replace(/(\d+)(\s*[–-]\s*\d+)?/g, (all, a) => `[${all}](cite:${id}:ch${a})`);
+      chapter = { id, n: m[2].match(/\d+/)[0], end: m.index + m[0].length };
+    } else {
+      // Глава относится к странице, если стоит прямо перед ней: «гл. 9, с. 263».
+      const near = chapter && chapter.id === id && /^[\s,]*$/.test(body.slice(chapter.end, m.index)) ? `:ch${chapter.n}` : '';
+      out += m[2].replace(/(\d+)(\s*[–-]\s*\d+)?/g, (all, a) => `[${all}](cite:${id}:${a}${near})`);
+    }
     last = m.index + m[0].length;
   }
   return out + body.slice(last);

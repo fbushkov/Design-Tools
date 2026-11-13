@@ -16,7 +16,7 @@ function Status({ ok, okText, badText }) {
 }
 
 export default function Settings() {
-  const { reload, base } = useApp();
+  const { reload, base, updateBase, updating, pullLog } = useApp();
   const [s, setS] = useState(null);
   const [log, setLog] = useState('');
   const [busy, setBusy] = useState('');
@@ -76,21 +76,12 @@ export default function Settings() {
               />
               <Status ok={base?.library?.ok} okText="тексты книг доступны — ссылки на страницы работают" badText="без библиотеки ссылки на страницы книг не откроются" />
             </div>
-            <Button
-              variant="flat"
-              startContent={busy !== 'pull' && <RefreshCw size={15} />}
-              isLoading={busy === 'pull'}
-              onPress={async () => {
-                setBusy('pull');
-                const r = await window.dt.pull();
-                setLog(r.ok ? '' : r.log);
-                setBusy('');
-                reload();
-                addToast({ title: r.ok ? 'База обновлена' : 'Не удалось обновить', description: r.message, color: r.ok ? 'success' : 'danger' });
-              }}
-            >
-              Обновить с GitHub
-            </Button>
+            <div className="flex items-center gap-3">
+              <Button variant="flat" startContent={!updating && <RefreshCw size={15} />} isLoading={updating} onPress={updateBase}>
+                Обновить базу
+              </Button>
+              <span className="text-xs text-default-500">Скачивает новое с GitHub и перечитывает файлы. Та же кнопка есть внизу меню.</span>
+            </div>
           </div>
         </Panel>
 
@@ -131,10 +122,10 @@ export default function Settings() {
         <AISettings />
         <UpdatePanel />
 
-        {log && (
+        {(log || pullLog) && (
           <Panel title="Журнал git">
             <Code className="whitespace-pre-wrap block p-3 text-xs w-full" size="sm">
-              {log}
+              {[pullLog, log].filter(Boolean).join('\n\n')}
             </Code>
           </Panel>
         )}

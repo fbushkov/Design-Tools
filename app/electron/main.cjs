@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { loadBase, bookPage, saveAnalysis, deleteAnalysis, updateAnalysisMeta } = require('./data.cjs');
+const { loadBase, bookPage, clearBookCache, saveAnalysis, deleteAnalysis, updateAnalysisMeta } = require('./data.cjs');
 const ai = require('./ai.cjs');
 const { git, hasGit, pullAll, pushAnalyses, NO_GIT } = require('./git.cjs');
 
@@ -101,11 +101,17 @@ ipcMain.handle('dialog:folder', async () => {
 });
 ipcMain.handle('base:load', () => {
   const s = readSettings();
-  return loadBase(s.baseDir, s.libDir);
+  clearBookCache(); // файлы могли измениться: текст книг читается заново
+  return { ...loadBase(s.baseDir, s.libDir), lastPull: s.lastPull || '' };
 });
-ipcMain.handle('book:page', (_e, id, page) => bookPage(readSettings().libDir, id, page));
+ipcMain.handle('book:page', (_e, id, page, chapter) => bookPage(readSettings().libDir, id, page, chapter));
 ipcMain.handle('analysis:save', (_e, filename, content, overwrite) => saveAnalysis(readSettings().libDir, filename, content, overwrite));
-ipcMain.handle('analysis:delete', (_e, filename) => deleteAnalysis(readSettings().libDir, filename));
+ipcMain.handle('analysis:delete', (_e, filename) =>
+  deleteAnalysis(readSettings().libDir, filename, {
+    trash: process.env.DT_NO_TRASH ? null : (f) => shell.trashItem(f),
+    spareDir: path.join(app.getPath('userData'), 'deleted-analyses'),
+  })
+);
 ipcMain.handle('analysis:meta', (_e, filename, patch) => updateAnalysisMeta(readSettings().libDir, filename, patch));
 ipcMain.handle('ai:config', () => ai.publicConfig());
 ipcMain.handle('ai:save', (_e, provider, key) => ai.saveProvider(provider, key));
@@ -113,9 +119,19 @@ ipcMain.handle('ai:remove', (_e, id) => ai.removeProvider(id));
 ipcMain.handle('ai:active', (_e, id) => ai.setActive(id));
 ipcMain.handle('ai:test', (_e, id) => ai.test(id));
 ipcMain.handle('ai:plan', (_e, ctx) => ai.plan(ctx));
+ipcMain.handle('ai:cancel', () => ai.cancel());
 ipcMain.handle('git:pull', async () => {
   const s = readSettings();
-  return pullAll([s.baseDir, s.libDir]);
+  const r = await pullAll([s.baseDir, s.libDir]);
+  // Дата последнего удачного скачивания — показывается под кнопкой «Обновить базу».
+  if (r.ok) {
+    let saved = {};
+    try {
+      saved = JSON.parse(fs.readFileSync(settingsFile(), 'utf8'));
+    } catch (e) {}
+    writeSettings({ ...saved, lastPull: new Date().toISOString() });
+  }
+  return r;
 });
 ipcMain.handle('git:push-analyses', async (_e, message) => pushAnalyses(readSettings().libDir, message));
 ipcMain.handle('git:setup', async (_e, parentDir, branch) => {

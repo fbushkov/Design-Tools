@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { addToast } from '@heroui/react';
 import { buildCiteIndex, parseTaxonomy } from './lib/base.js';
 
 const Ctx = createContext(null);
@@ -20,7 +21,7 @@ export function AppProvider({ children }) {
   const [view, setView] = useState('analysis');
   const [selected, setSelected] = useState({}); // выбранная карточка в каждом разделе справочника
   const [cardStack, setCardStack] = useState([]); // карточки поверх других экранов
-  const [page, setPage] = useState(null); // { id, page }
+  const [page, setPage] = useState(null); // { id, page, chapter }
   const [palette, setPalette] = useState(false);
   const [theme, setTheme] = useState(() => stored('dt-theme', 'light'));
 
@@ -42,6 +43,29 @@ export function AppProvider({ children }) {
   }, []);
   useEffect(() => {
     reload();
+  }, [reload]);
+
+  // «Обновить базу»: скачать новое с GitHub и перечитать файлы. Если скачать не вышло,
+  // файлы всё равно перечитываются — правки, сделанные на этом компьютере, станут видны.
+  const [updating, setUpdating] = useState(false);
+  const [pullLog, setPullLog] = useState('');
+  const updateBase = useCallback(async () => {
+    setUpdating(true);
+    let r;
+    try {
+      r = await window.dt.pull();
+    } catch (e) {
+      r = { ok: false, message: String(e?.message || e), log: '' };
+    }
+    await reload();
+    setUpdating(false);
+    setPullLog(r.ok ? '' : r.log || '');
+    addToast(
+      r.ok
+        ? { title: r.changed ? 'База обновлена' : 'База уже свежая', description: r.changed ? 'Скачаны новые карточки и книги с GitHub.' : 'Новых изменений в GitHub нет. Файлы перечитаны.', color: 'success' }
+        : { title: 'Скачать с GitHub не удалось', description: `${r.message} Файлы на компьютере перечитаны.`, color: 'warning', timeout: 12000 }
+    );
+    return r;
   }, [reload]);
 
   useEffect(() => {
@@ -90,7 +114,7 @@ export function AppProvider({ children }) {
   );
   const closeCard = useCallback(() => setCardStack((s) => s.slice(0, -1)), []);
   const closeAllCards = useCallback(() => setCardStack([]), []);
-  const openPage = useCallback((id, p) => setPage({ id, page: p }), []);
+  const openPage = useCallback((id, p, chapter = 0) => setPage({ id, page: p, chapter }), []);
   // Вопрос пользователю в окне программы вместо системного окна Windows. Возвращает true или false.
   const [dialog, setDialog] = useState(null);
   const ask = useCallback(
@@ -111,6 +135,9 @@ export function AppProvider({ children }) {
     base,
     loading,
     reload,
+    updateBase,
+    updating,
+    pullLog,
     view,
     setView,
     selected,

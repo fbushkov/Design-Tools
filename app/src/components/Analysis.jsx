@@ -27,6 +27,11 @@ import {
   Wand2,
   RotateCcw,
   FlaskConical,
+  ChevronDown,
+  ChevronRight,
+  PanelRightClose,
+  PanelRightOpen,
+  RefreshCw,
 } from 'lucide-react';
 import { useApp } from '../state.jsx';
 import Markdown from './Markdown.jsx';
@@ -53,6 +58,7 @@ const EMPTY = {
   file: '',
   outcome: '',
   savedAt: '',
+  goals: {}, // отмеченные критерии «как понять, что стало лучше»: { 'проблема#номер': true }
   planStash: {}, // регламенты по другим подходам: при смене подхода правки не теряются
   savedSig: '', // отпечаток содержимого на момент последнего сохранения в библиотеку
 };
@@ -65,7 +71,11 @@ export const makeDraft = (obj) => {
   return d;
 };
 // Отпечаток содержимого разбора без служебных полей.
-export const sigOf = (f) => JSON.stringify({ ...f, savedAt: '', savedSig: '', file: '' });
+// Пустой список отмеченных критериев в отпечаток не входит: так разборы прежних версий не выглядят изменёнными.
+export const sigOf = (f) => {
+  const { goals, ...rest } = f;
+  return JSON.stringify({ ...rest, savedAt: '', savedSig: '', file: '', ...(goals && Object.keys(goals).length ? { goals } : {}) });
+};
 export const hasContent = (f) => !!(f.situation || '').trim();
 // Есть ли в черновике работа, которой нет в файле библиотеки.
 export const isDirty = (f) => hasContent(f) && sigOf(f) !== f.savedSig;
@@ -127,6 +137,22 @@ export default function Analysis() {
   const { base, taxonomy, byId, citeIndex, reload, ask } = useApp();
   const [f, setF] = useState(loadDraft);
   const [tab, setTab] = useState(() => (loadDraft().approach ? 'plan' : 'situation'));
+  // Сводка справа сворачивается; в узком окне по умолчанию свёрнута.
+  const [summary, setSummary] = useState(() => {
+    try {
+      const v = localStorage.getItem('dt-summary');
+      return v ? v === '1' : window.innerWidth >= 1280;
+    } catch (e) {
+      return true;
+    }
+  });
+  const toggleSummary = () =>
+    setSummary((v) => {
+      try {
+        localStorage.setItem('dt-summary', v ? '0' : '1');
+      } catch (e) {}
+      return !v;
+    });
   useEffect(() => {
     try {
       localStorage.setItem('dt-draft', JSON.stringify(f));
@@ -224,8 +250,8 @@ export default function Analysis() {
   return (
     <div className="h-full flex flex-col min-h-0">
       {/* Шапка разбора */}
-      <div className="px-8 pt-6 pb-3 flex items-start justify-between gap-6">
-        <div className="min-w-0 flex-1">
+      <div className="px-8 pt-6 pb-3 flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+        <div className="min-w-0 flex-1 basis-80">
           <input
             aria-label="Название разбора"
             placeholder="Название разбора — коротко о ситуации, без названия компании"
@@ -233,7 +259,7 @@ export default function Analysis() {
             onChange={(e) => set('title', e.target.value)}
             className="w-full bg-transparent outline-none text-xl font-semibold tracking-tight placeholder:text-default-300 rounded-medium -mx-2 px-2 py-0.5 hover:bg-default-100 focus:bg-default-100 transition-colors"
           />
-          <div className="text-xs text-default-500 mt-1 flex items-center gap-2 min-w-0">
+          <div className="text-xs text-default-500 mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 min-w-0">
             {dirty ? (
               <Tooltip content="Черновик хранится на этом компьютере и не пропадёт при закрытии. В библиотеку и в GitHub он попадёт после «Сохранить»." delay={300} className="max-w-xs">
                 <span className="flex items-center gap-1.5 text-warning-600 font-medium whitespace-nowrap">
@@ -257,7 +283,7 @@ export default function Analysis() {
             )}
           </div>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 ml-auto">
           <Tooltip content="Тестовые разборы отмечены в списке и не превращаются в кейсы" delay={300} className="max-w-xs">
             <div>
               <Switch size="sm" isSelected={f.real === false} onValueChange={(v) => set('real', !v)} thumbIcon={<FlaskConical size={10} />}>
@@ -296,22 +322,28 @@ export default function Analysis() {
               {dirty ? 'Сохранить' : 'Сохранено'}
             </Button>
           </Tooltip>
+          <Tooltip content={summary ? 'Скрыть сводку' : 'Показать сводку разбора'} delay={300}>
+            <Button size="sm" variant="light" isIconOnly aria-label={summary ? 'Скрыть сводку' : 'Показать сводку'} onPress={toggleSummary}>
+              {summary ? <PanelRightClose size={16} /> : <PanelRightOpen size={16} />}
+            </Button>
+          </Tooltip>
         </div>
       </div>
 
       {/* Шаги */}
-      <ol className="px-8 pb-4 flex items-center gap-2" aria-label="Шаги разбора">
+      <ol className="px-8 pb-4 flex items-center gap-1 xl:gap-2" aria-label="Шаги разбора">
         {STEPS.map((s, i) => {
           const active = s.key === tab;
           const done = stepDone[s.key];
           const enabled = stepEnabled[s.key];
           return (
-            <li key={s.key} className="flex items-center gap-2 flex-1 min-w-0">
+            <li key={s.key} className="flex items-center gap-1 xl:gap-2 flex-1 min-w-0">
               <button
                 onClick={() => enabled && setTab(s.key)}
                 disabled={!enabled}
                 aria-current={active ? 'step' : undefined}
-                className={`flex items-center gap-2.5 h-10 px-3 rounded-medium w-full text-left transition-colors ${
+                title={s.label}
+                className={`flex items-center gap-2 xl:gap-2.5 h-10 px-2 xl:px-3 rounded-medium w-full text-left transition-colors ${
                   active ? 'bg-primary-50' : 'hover:bg-default-100'
                 } ${!enabled ? 'opacity-40 cursor-not-allowed' : ''}`}
               >
@@ -322,17 +354,17 @@ export default function Analysis() {
                 >
                   {done ? <Check size={13} strokeWidth={3} /> : i + 1}
                 </span>
-                <span className={`text-[13px] truncate ${active ? 'font-medium' : 'text-default-600'}`}>{s.label}</span>
+                <span className={`text-[12px] xl:text-[13px] leading-tight line-clamp-2 ${active ? 'font-medium' : 'text-default-600'}`}>{s.label}</span>
               </button>
-              {i < STEPS.length - 1 && <span className="h-px w-4 bg-default-200 shrink-0" />}
+              {i < STEPS.length - 1 && <span className="h-px w-4 bg-default-200 shrink-0 hidden xl:block" />}
             </li>
           );
         })}
       </ol>
 
-      <div className="flex-1 min-h-0 grid grid-cols-[1fr_300px] border-t border-default-200/70">
+      <div className={`flex-1 min-h-0 grid ${summary ? 'grid-cols-[minmax(0,1fr)_260px] xl:grid-cols-[minmax(0,1fr)_300px]' : 'grid-cols-[minmax(0,1fr)]'} border-t border-default-200/70`}>
         <div className="overflow-auto min-h-0">
-          <div className="max-w-[860px] mx-auto px-8 py-6 space-y-4">
+          <div className="max-w-[860px] mx-auto px-5 xl:px-8 py-6 space-y-4">
             {tab === 'situation' && <StepSituation f={f} set={set} toggle={toggle} taxonomy={taxonomy} intakeQs={intakeQs} required={required} unanswered={unanswered} />}
             {tab === 'problems' && <StepProblems f={f} toggle={toggle} set={set} ranked={ranked} questions={questions} query={query} />}
             {tab === 'recs' && <StepRecs f={f} set={set} recs={recs} byId={byId} citeIndex={citeIndex} onChosen={() => setTab('plan')} />}
@@ -345,6 +377,7 @@ export default function Analysis() {
                 total={planTotal}
                 done={planDone}
                 rebuild={() => set('plan', planFromBase(approach, selected, questions, f.questions, unanswered))}
+                diff={planDiff(plan, questions, f.questions, unanswered)}
                 aiContext={() => aiContext(f, { approach, selected, questions, intakeQs, contextRu: base.contextRu })}
               />
             )}
@@ -361,7 +394,7 @@ export default function Analysis() {
             </div>
           </div>
         </div>
-        <Summary f={f} set={set} toggle={toggle} taxonomy={taxonomy} selected={selected} approach={approach} planTotal={planTotal} planDone={planDone} unanswered={unanswered} setTab={setTab} />
+        {summary && <Summary f={f} set={set} toggle={toggle} taxonomy={taxonomy} selected={selected} approach={approach} planTotal={planTotal} planDone={planDone} unanswered={unanswered} setTab={setTab} />}
       </div>
     </div>
   );
@@ -857,26 +890,30 @@ const WHO_GROUPS = [
 const WHO_ORDER = ['Собственник и первые лица', 'Руководители среднего звена', 'Сотрудники и команды', 'Клиенты', 'Данные и документы', 'Прочее'];
 const whoGroup = (who) => (WHO_GROUPS.find((g) => g.re.test(who || '')) || { title: 'Прочее' }).title;
 
+const INTAKE_TITLE = 'Уточнить у заказчика';
+const diagTitle = (g) => `Диагностика: ${g.toLowerCase()}`;
+const qText = (q) => `${q.q}${q.who ? ` — _${q.who}_` : ''}${q.src ? ` (${q.src})` : ''}`;
+// Пункт регламента. src — откуда он взят («q:<вопрос>» или «intake:<номер>»), чтобы регламент можно было дополнять без потери правок.
+const mkItem = (x) => (typeof x === 'string' ? { id: uid(), text: x, done: false } : { id: uid(), text: x.text, done: false, src: x.src });
+const mkStep = (title, hint, card, items, extra = {}) => ({ id: uid(), title, hint, card, note: '', items: items.map(mkItem), ...extra });
+
 // Черновик регламента из карточек базы: подход + выбранные проблемы + отмеченные вопросы.
 export function planFromBase(approach, selected, questions, checked, unanswered) {
   const s = sections(approach.body);
   const steps = [];
-  const mk = (title, hint, card, texts) => ({ id: uid(), title, hint, card, note: '', items: texts.map((text) => ({ id: uid(), text, done: false })) });
-  if (unanswered.length) steps.push(mk('Уточнить у заказчика', 'Вопросы уточнения без ответа', approach.id, unanswered.map((x) => x.q)));
+  if (unanswered.length) steps.push(mkStep(INTAKE_TITLE, 'Вопросы уточнения без ответа', approach.id, unanswered.map((x) => ({ text: x.q, src: `intake:${x.n}` })), { group: 'intake' }));
   const qs = questions.filter((q) => checked.includes(q.key));
   const useQs = qs.length ? qs : questions.slice(0, 6);
   const byGroup = {};
   for (const q of useQs) (byGroup[whoGroup(q.who)] ||= []).push(q);
   for (const g of WHO_ORDER)
     if (byGroup[g])
-      steps.push(
-        mk(`Диагностика: ${g.toLowerCase()}`, 'Вопросы и проверяемые гипотезы', byGroup[g][0].problem.id, byGroup[g].map((q) => `${q.q}${q.who ? ` — _${q.who}_` : ''}${q.src ? ` (${q.src})` : ''}`))
-      );
+      steps.push(mkStep(diagTitle(g), 'Вопросы и проверяемые гипотезы', byGroup[g][0].problem.id, byGroup[g].map((q) => ({ text: qText(q), src: `q:${q.key}` })), { group: g }));
   const tools = listItems(s['Инструменты'] || '').filter((t) => !/шаблона пока нет/i.test(t));
   const useEssence = tools.length < 2;
   const apply = useEssence ? [...tools, ...(s['Суть'] || '').split(/\n\s*\n/).map((x) => x.trim()).filter((x) => x && !x.startsWith('|'))] : tools;
   steps.push(
-    mk(
+    mkStep(
       `Применить: ${approach.data.title.split(' — ')[0]}`,
       useEssence ? 'Инструменты в карточке ещё не описаны — шаги собраны из раздела «Суть», уточните их' : 'Инструменты подхода',
       approach.id,
@@ -884,8 +921,54 @@ export function planFromBase(approach, selected, questions, checked, unanswered)
     )
   );
   const risks = listItems(s['Где ломается']);
-  if (risks.length) steps.push(mk('Проверить риски', 'Где подход ломается', approach.id, risks));
+  if (risks.length) steps.push(mkStep('Проверить риски', 'Где подход ломается', approach.id, risks));
   return { approach: approach.id, source: 'base', summary: '', steps };
+}
+
+// Чем регламент отстал от разбора: add — отмеченные вопросы и уточнения, которых в нём нет;
+// drop — невыполненные пункты, чьи вопросы сняты или на которые уже есть ответ.
+export function planDiff(plan, questions, checked, unanswered) {
+  if (!plan || plan.source === 'ai') return { add: [], drop: [] };
+  const items = plan.steps.flatMap((st) => st.items);
+  const have = new Set(items.map((i) => i.src).filter(Boolean));
+  const texts = new Set(items.map((i) => i.text));
+  const skipped = new Set(plan.skipped || []);
+  const expected = [
+    ...unanswered.map((x) => ({ src: `intake:${x.n}`, text: x.q, group: 'intake' })),
+    ...(checked.length ? questions.filter((q) => checked.includes(q.key)).map((q) => ({ src: `q:${q.key}`, text: qText(q), group: whoGroup(q.who), card: q.problem.id })) : []),
+  ];
+  const want = new Set(expected.map((e) => e.src));
+  return {
+    add: expected.filter((e) => !have.has(e.src) && !texts.has(e.text) && !skipped.has(e.src)),
+    drop: items.filter((i) => i.src && !i.done && !want.has(i.src) && !skipped.has(i.src) && (i.src.startsWith('intake:') || checked.length > 0)),
+  };
+}
+
+// Дополнить регламент по разнице: новые пункты встают в свои шаги, лишние невыполненные уходят. Остальное не трогается.
+export function applyPlanDiff(plan, { add, drop }, approachId) {
+  const gone = new Set(drop.map((i) => i.id));
+  let steps = plan.steps.map((st) => ({ ...st, items: st.items.filter((i) => !gone.has(i.id)) }));
+  // Шаг, собранный из базы и оставшийся пустым без заметки, не нужен.
+  steps = steps.filter((st, i) => st.items.length || st.note || !plan.steps[i].items.length || !(st.group || st.title === INTAKE_TITLE || st.title.startsWith('Диагностика:')));
+  for (const e of add) {
+    const title = e.group === 'intake' ? INTAKE_TITLE : diagTitle(e.group);
+    let st = steps.find((x) => x.group === e.group || x.title === title);
+    if (!st) {
+      st = mkStep(title, e.group === 'intake' ? 'Вопросы уточнения без ответа' : 'Вопросы и проверяемые гипотезы', e.card || approachId, [], { group: e.group });
+      if (e.group === 'intake') steps.unshift(st);
+      else {
+        // После шагов уточнения и диагностики, в принятом порядке адресатов.
+        const rank = (x) => (x.group === 'intake' || x.title === INTAKE_TITLE ? -1 : x.group || x.title.startsWith('Диагностика:') ? WHO_ORDER.indexOf(x.group || 'Прочее') : 99);
+        let at = 0;
+        steps.forEach((x, i) => {
+          if (rank(x) <= WHO_ORDER.indexOf(e.group)) at = i + 1;
+        });
+        steps.splice(at, 0, st);
+      }
+    }
+    st.items = [...st.items, mkItem(e)];
+  }
+  return { ...plan, steps };
 }
 
 // Есть ли в регламенте ручная работа: отметки, заметки, свои или изменённые пункты, черновик ИИ.
@@ -1013,7 +1096,7 @@ function AddLine({ placeholder, onAdd }) {
   );
 }
 
-function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
+function StepPlan({ f, set, approach, plan, total, done, rebuild, diff, aiContext }) {
   const { openCard, setView, byId, ask } = useApp();
   const [ai, setAi] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -1025,6 +1108,30 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
   const s = sections(approach.body);
 
   const setPlan = (fn) => set('plan', { ...fn(plan), edited: true });
+  // Свёрнутые шаги и «скрывать выполненное» — только вид на экране, в разбор не пишутся.
+  const [closed, setClosed] = useState(() => new Set());
+  const [hideDone, setHideDone] = useState(() => {
+    try {
+      return localStorage.getItem('dt-hide-done') === '1';
+    } catch (e) {
+      return false;
+    }
+  });
+  const isComplete = (st) => st.items.length > 0 && st.items.every((x) => x.done);
+  useEffect(() => {
+    // В длинном регламенте открыт только первый незаконченный шаг, в коротком — все незаконченные.
+    const firstOpen = plan.steps.find((st) => !isComplete(st));
+    setClosed(new Set(plan.steps.filter((st) => isComplete(st) || (total > 24 && st !== firstOpen)).map((st) => st.id)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [plan.approach, plan.source, plan.steps.length > 0]);
+  const toggleStep = (id) =>
+    setClosed((c) => {
+      const n = new Set(c);
+      n.has(id) ? n.delete(id) : n.add(id);
+      return n;
+    });
+  const anyClosed = plan.steps.some((st) => closed.has(st.id));
+  const stale = diff.add.length + diff.drop.length > 0;
   const setStep = (id, fn) => setPlan((p) => ({ ...p, steps: p.steps.map((st) => (st.id === id ? fn(st) : st)) }));
   const touched = planTouched(plan);
 
@@ -1033,6 +1140,10 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
     setBusy(true);
     const r = await window.dt.ai.plan(aiContext());
     setBusy(false);
+    if (r.cancelled) {
+      addToast({ title: 'Запрос к ИИ отменён', description: 'Регламент остался прежним.', color: 'default' });
+      return;
+    }
     if (!r.ok) {
       addToast({ title: 'ИИ не смог собрать регламент', description: r.error, color: 'danger' });
       return;
@@ -1044,8 +1155,8 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
   return (
     <>
       <div className="rounded-large bg-content1 border border-default-200/70 p-5">
-        <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0">
+        <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+          <div className="min-w-0 flex-1 basis-72">
             <div className="text-xs text-default-500">
               Регламент по выбранной рекомендации ·{' '}
               {plan.source === 'ai' ? `черновик ИИ (${plan.model || 'модель'}), проверьте` : 'собран из карточек базы'}
@@ -1054,7 +1165,7 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
               {approach.data.title}
             </button>
           </div>
-          <div className="flex items-center gap-1.5 shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0 ml-auto">
             <Tooltip content="Собрать заново из карточек базы" delay={300}>
               <Button
                 size="sm"
@@ -1084,6 +1195,11 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
                 </Button>
               </span>
             </Tooltip>
+            {busy && (
+              <Button size="sm" variant="flat" color="danger" startContent={<X size={14} />} onPress={() => window.dt.ai.cancel()}>
+                Отменить
+              </Button>
+            )}
           </div>
         </div>
         {plan.summary && <p className="text-sm text-default-600 mt-3">{plan.summary}</p>}
@@ -1093,15 +1209,73 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
             {done} из {total}
           </span>
         </div>
+        {busy && <p className="text-xs text-default-500 mt-2">Модель собирает черновик. Если ответа не будет 3 минуты, запрос остановится сам.</p>}
         <p className="text-[11px] text-default-400 mt-2">Двойной щелчок по пункту — изменить. Пункты, шаги и заметки можно добавлять вручную.</p>
       </div>
 
-      <PlanGoals f={f} />
+      {stale && (
+        <div className="rounded-large border border-warning-200 bg-warning-50 px-5 py-3 flex flex-wrap items-center gap-x-4 gap-y-2" data-testid="plan-stale">
+          <RefreshCw size={16} className="text-warning-600 shrink-0" />
+          <div className="flex-1 min-w-0 basis-64 text-sm">
+            <div className="font-medium">Разбор изменился после сборки регламента</div>
+            <div className="text-xs text-default-600 mt-0.5">
+              {[
+                diff.add.length ? `Новых вопросов, которых нет в регламенте: ${diff.add.length}.` : '',
+                diff.drop.length ? `Пунктов по снятым вопросам и уже отвеченным уточнениям: ${diff.drop.length}.` : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}{' '}
+              Отметки, заметки и ваши правки останутся.
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <Button size="sm" variant="light" onPress={() => setPlan((p) => ({ ...p, skipped: [...(p.skipped || []), ...diff.add.map((e) => e.src), ...diff.drop.map((i) => i.src)] }))}>
+              Оставить как есть
+            </Button>
+            <Button
+              size="sm"
+              color="warning"
+              variant="flat"
+              onPress={() => {
+                setPlan((p) => applyPlanDiff(p, diff, approach.id));
+                addToast({ title: 'Регламент дополнен', description: `Добавлено: ${diff.add.length}, убрано: ${diff.drop.length}.`, color: 'success' });
+              }}
+            >
+              {diff.add.length && diff.drop.length ? 'Обновить регламент' : diff.add.length ? `Добавить ${diff.add.length}` : `Убрать ${diff.drop.length}`}
+            </Button>
+          </div>
+        </div>
+      )}
+
+      <PlanGoals f={f} set={set} />
+
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-base font-semibold">Шаги</h2>
+        <div className="flex items-center gap-3">
+          <Switch
+            size="sm"
+            isSelected={hideDone}
+            onValueChange={(v) => {
+              setHideDone(v);
+              try {
+                localStorage.setItem('dt-hide-done', v ? '1' : '0');
+              } catch (e) {}
+            }}
+          >
+            <span className="text-xs text-default-600">Скрывать выполненное</span>
+          </Switch>
+          <Button size="sm" variant="light" onPress={() => setClosed(anyClosed ? new Set() : new Set(plan.steps.map((st) => st.id)))}>
+            {anyClosed ? 'Развернуть все' : 'Свернуть все'}
+          </Button>
+        </div>
+      </div>
 
       <ol className="relative space-y-4 before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-px before:bg-default-200">
         {plan.steps.map((st, i) => {
           const doneHere = st.items.filter((x) => x.done).length;
           const complete = doneHere === st.items.length && st.items.length > 0;
+          const open = !closed.has(st.id);
+          const shownItems = hideDone ? st.items.filter((x) => !x.done) : st.items;
           return (
             <li key={st.id} className="relative pl-11">
               <span
@@ -1112,7 +1286,15 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
                 {complete ? <Check size={14} strokeWidth={3} /> : i + 1}
               </span>
               <div className="group/step rounded-large bg-content1 border border-default-200/70">
-                <div className="flex items-start justify-between gap-2 px-5 pt-4 pb-1">
+                <div className={`flex items-start justify-between gap-2 pl-3 pr-5 pt-4 ${open ? 'pb-1' : 'pb-4'}`}>
+                  <button
+                    aria-label={open ? 'Свернуть шаг' : 'Развернуть шаг'}
+                    aria-expanded={open}
+                    onClick={() => toggleStep(st.id)}
+                    className="size-6 grid place-items-center rounded-small text-default-400 hover:bg-default-100 hover:text-default-700 shrink-0"
+                  >
+                    {open ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
+                  </button>
                   <div className="min-w-0 flex-1">
                     <input
                       aria-label="Название шага"
@@ -1135,17 +1317,20 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
                     </span>
                   </div>
                 </div>
+                {open && (
+                <>
                 <ul className="px-5 py-1">
-                  {st.items.map((it) => (
+                  {shownItems.map((it) => (
                     <PlanItem
                       key={it.id}
                       item={it}
                       card={byId.get(st.card)}
                       onChange={(n) => setStep(st.id, (x) => ({ ...x, items: x.items.map((y) => (y.id === it.id ? n : y)) }))}
-                      onDelete={() => setStep(st.id, (x) => ({ ...x, items: x.items.filter((y) => y.id !== it.id) }))}
+                      onDelete={() => setPlan((p) => ({ ...p, skipped: it.src ? [...(p.skipped || []), it.src] : p.skipped, steps: p.steps.map((x) => (x.id === st.id ? { ...x, items: x.items.filter((y) => y.id !== it.id) } : x)) }))}
                     />
                   ))}
                 </ul>
+                {hideDone && doneHere > 0 && <div className="px-5 pb-1 text-[11px] text-default-400">Скрыто выполненных: {doneHere}</div>}
                 <div className="px-5 pb-4 space-y-2">
                   <AddLine placeholder="Добавить пункт и нажать Enter" onAdd={(text) => setStep(st.id, (x) => ({ ...x, items: [...x.items, { id: uid(), text, done: false }] }))} />
                   <Input
@@ -1157,6 +1342,8 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
                     onValueChange={(v) => setStep(st.id, (x) => ({ ...x, note: v }))}
                   />
                 </div>
+                </>
+                )}
               </div>
             </li>
           );
@@ -1198,15 +1385,83 @@ function StepPlan({ f, set, approach, plan, total, done, rebuild, aiContext }) {
   );
 }
 
-function PlanGoals({ f }) {
+// Критерии «как понять, что стало лучше» из карточек выбранных проблем: [{ p, items: [{ key, text }] }].
+function goalGroups(selected) {
+  return selected
+    .map((p) => ({ p, items: listItems(sectionStarting(sections(p.body), 'Как понять') || '').map((text, i) => ({ key: `${p.id}#${i}`, text })) }))
+    .filter((g) => g.items.length);
+}
+
+function PlanGoals({ f, set }) {
   const { byId } = useApp();
   const selected = f.problems.map((id) => byId.get(id)).filter(Boolean);
-  const success = selected.map((p) => ({ p, t: sectionStarting(sections(p.body), 'Как понять') })).filter((x) => x.t);
+  const groups = goalGroups(selected);
+  const goals = f.goals || {};
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
+  const met = groups.reduce((n, g) => n + g.items.filter((x) => goals[x.key]).length, 0);
+  // Если критериев много, раскрыта только первая проблема.
+  const [open, setOpen] = useState(() => new Set(total > 8 ? groups.slice(0, 1).map((g) => g.p.id) : groups.map((g) => g.p.id)));
+  const flip = (id) =>
+    setOpen((o) => {
+      const n = new Set(o);
+      n.has(id) ? n.delete(id) : n.add(id);
+      return n;
+    });
+  const mark = (key, v) => {
+    const next = { ...goals };
+    if (v) next[key] = true;
+    else delete next[key];
+    set('goals', next);
+  };
   const maturityText = selected.map((p) => ({ p, t: sectionStarting(sections(p.body), 'Что делать') })).filter((x) => x.t);
   return (
     <>
-      <Panel title="Цель и как понять, что стало лучше" icon={Target}>
-        {success.length ? success.map(({ p, t }) => <Markdown key={p.id} text={t} card={p} compact />) : <p className="text-default-500 text-sm">В выбранных проблемах критерий не описан.</p>}
+      <Panel
+        title="Цель и как понять, что стало лучше"
+        subtitle="Критерии из карточек выбранных проблем. Отмечайте то, что уже наблюдается."
+        icon={Target}
+        actions={
+          total > 0 && (
+            <Chip size="sm" variant="flat" color={met === total ? 'success' : 'default'}>
+              {met} из {total}
+            </Chip>
+          )
+        }
+      >
+        {groups.length ? (
+          <div className="divide-y divide-default-100 -mx-2">
+            {groups.map(({ p, items }) => {
+              const on = open.has(p.id);
+              const k = items.filter((x) => goals[x.key]).length;
+              return (
+                <div key={p.id} className="py-1">
+                  <button onClick={() => flip(p.id)} aria-expanded={on} className="w-full flex items-center gap-2 px-2 py-1.5 rounded-medium hover:bg-default-50 text-left">
+                    {on ? <ChevronDown size={15} className="text-default-400 shrink-0" /> : <ChevronRight size={15} className="text-default-400 shrink-0" />}
+                    <KindIcon kind="problem" size={13} />
+                    <span className="flex-1 min-w-0 text-[13px] font-medium truncate">{p.data.title.split(' — ')[0]}</span>
+                    <span className="text-xs text-default-400 tabular">
+                      {k}/{items.length}
+                    </span>
+                  </button>
+                  {on && (
+                    <ul className="px-2 pb-1">
+                      {items.map((x) => (
+                        <li key={x.key} className="flex gap-3 items-start py-1.5 pl-6">
+                          <Checkbox size="sm" aria-label="Критерий выполнен" isSelected={!!goals[x.key]} onValueChange={(v) => mark(x.key, v)} className="mt-px" />
+                          <div className={`flex-1 min-w-0 ${goals[x.key] ? 'opacity-55' : ''}`}>
+                            <Markdown text={x.text} card={p} compact />
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="text-default-500 text-sm">В выбранных проблемах критерий не описан.</p>
+        )}
       </Panel>
       {maturityText.length > 0 && (
         <Accordion variant="splitted" className="px-0" itemClasses={{ base: 'shadow-none border border-default-200/70', title: 'text-[0.95rem] font-semibold' }}>
@@ -1379,7 +1634,17 @@ function toMarkdown(f, { selected, questions, approach, intakeQs }, { forClient 
       out.push('');
     });
   }
-  if (f.outcome) out.push('## Итог', '', f.outcome, '');
+  const goals = goalGroups(selected);
+  if (approach && goals.length) {
+    out.push('## Как понять, что стало лучше', '');
+    for (const g of goals) {
+      out.push(`**${g.p.data.title.split(' — ')[0]}**`, '');
+      g.items.forEach((x) => out.push(`- [${f.goals?.[x.key] ? 'x' : ' '}] ${x.text}`));
+      out.push('');
+    }
+  }
+  // Итог в файле живёт только в шапке (его правят в «Моих разборах»); в текст он идёт лишь в копию для клиента.
+  if (f.outcome && forClient) out.push('## Итог', '', f.outcome, '');
   if (!forClient) out.push(`<!-- dt-state:${encodeState(f)} -->`, '');
   return out.join('\n');
 }

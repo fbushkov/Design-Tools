@@ -55,6 +55,19 @@ export default function Analyses() {
   const meta = async (patch, msg) => {
     const r = await window.dt.analysisMeta(cur.file, patch);
     addToast({ title: r.ok ? msg : 'Не удалось сохранить', description: r.error, color: r.ok ? 'success' : 'danger' });
+    if (r.ok) {
+      // Этот же разбор может быть открыт в редакторе: его черновик получает ту же пометку и итог,
+      // чтобы следующее сохранение из редактора не вернуло старые значения.
+      const d = readDraft();
+      if (d.file === cur.file) {
+        const clean = !isDirty(d);
+        const next = { ...d, ...patch };
+        if (clean) next.savedSig = sigOf(next);
+        try {
+          localStorage.setItem('dt-draft', JSON.stringify(next));
+        } catch (e) {}
+      }
+    }
     reload();
   };
   const draftTitle = (d) => d.title || 'без названия';
@@ -62,7 +75,7 @@ export default function Analyses() {
   const openInEditor = () => {
     const st = stateOf(cur);
     if (!st) return;
-    const draft = makeDraft({ ...st, file: cur.file, outcome: cur.data.outcome || st.outcome || '', real: cur.data.real !== false, savedAt: '' });
+    const draft = makeDraft({ ...st, file: cur.file, outcome: cur.data.outcome || '', real: cur.data.real !== false, savedAt: '' });
     draft.savedSig = sigOf(draft);
     try {
       localStorage.setItem('dt-draft', JSON.stringify(draft));
@@ -97,11 +110,12 @@ export default function Analyses() {
     });
     if (r.ok) reload(); // при отправке могли подтянуться изменения из GitHub
   };
-  const body = cur ? cur.body.replace(STATE_RE, '').replace(/^# .+\n/m, '') : '';
+  // Итог хранится в шапке файла и показан в блоке выше; раздел «Итог» из текста старых файлов не дублируем.
+  const body = cur ? cur.body.replace(STATE_RE, '').replace(/^# .+\n/m, '').replace(/\n## Итог\n[\s\S]*?(?=\n## |$)/, '\n') : '';
   const counts = { all: base.analyses.length, real: base.analyses.filter((a) => a.data.real !== false).length, test: base.analyses.filter((a) => a.data.real === false).length };
 
   return (
-    <div className="h-full grid grid-cols-[340px_1fr] min-h-0">
+    <div className="h-full grid grid-cols-[270px_minmax(0,1fr)] xl:grid-cols-[340px_minmax(0,1fr)] min-h-0">
       <aside className="border-r border-default-200/70 flex flex-col min-h-0">
         <div className="px-5 pt-6 pb-3 space-y-3">
           <div>
@@ -173,7 +187,7 @@ export default function Analyses() {
 
       <div className="overflow-auto min-h-0 bg-content1">
         {cur ? (
-          <div className="px-10 py-8 max-w-[860px] space-y-5">
+          <div className="px-6 xl:px-10 py-8 max-w-[860px] space-y-5">
             <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
               <div className="min-w-0 flex-1 basis-72">
                 <div className="flex items-center gap-2 text-xs text-default-500 mb-1">
@@ -200,7 +214,7 @@ export default function Analyses() {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
+              <div className="flex flex-wrap items-center gap-1.5">
                 <Tooltip content={stateOf(cur) ? 'Открыть в редакторе разбора' : 'Разбор сохранён старой версией — продолжить нельзя'} delay={300}>
                   <span>
                     <Button size="sm" color="primary" startContent={<Play size={14} />} isDisabled={!stateOf(cur)} onPress={cont}>
@@ -281,8 +295,8 @@ export default function Analyses() {
           <ModalHeader>Удалить разбор?</ModalHeader>
           <ModalBody>
             <p className="text-sm">
-              «{cur && titleOf(cur)}» будет удалён из папки analyses на этом компьютере. Если разбор уже отправлен в GitHub, после «Отправить все в GitHub» он
-              удалится и там; прежние версии останутся в истории git.
+              «{cur && titleOf(cur)}» уйдёт из папки analyses в корзину Windows — оттуда его можно вернуть. Если разбор уже отправлен в GitHub, после
+              «Отправить все в GitHub» он удалится и там; прежние версии останутся в истории git.
             </p>
           </ModalBody>
           <ModalFooter>
@@ -294,12 +308,26 @@ export default function Analyses() {
               onPress={async () => {
                 const r = await window.dt.deleteAnalysis(cur.file);
                 setConfirm(false);
-                addToast({ title: r.ok ? 'Разбор удалён' : 'Не удалось удалить', description: r.error, color: r.ok ? 'success' : 'danger' });
+                addToast({
+                  title: r.ok ? (r.where === 'trash' ? 'Разбор перемещён в корзину' : 'Разбор убран из библиотеки') : 'Не удалось удалить',
+                  description: !r.ok ? r.error : r.where === 'trash' ? 'Вернуть можно из корзины Windows: «Восстановить».' : `Корзина недоступна, файл перенесён в ${r.dest}`,
+                  color: r.ok ? 'success' : 'danger',
+                  timeout: r.ok && r.where !== 'trash' ? 15000 : 6000,
+                });
+                if (r.ok) {
+                  // Черновик этого разбора в редакторе остаётся, но уже как несохранённый: файла больше нет.
+                  const d = readDraft();
+                  if (d.file === cur.file) {
+                    try {
+                      localStorage.setItem('dt-draft', JSON.stringify({ ...d, file: '', savedSig: '', savedAt: '' }));
+                    } catch (e) {}
+                  }
+                }
                 setSel(null);
                 reload();
               }}
             >
-              Удалить
+              В корзину
             </Button>
           </ModalFooter>
         </ModalContent>

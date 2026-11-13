@@ -20,9 +20,12 @@ export default function Markdown({ text, card, compact, className = '' }) {
           },
           a({ href = '', children }) {
             if (href.startsWith('cite:')) {
-              const [, id, page] = href.split(':');
+              // cite:<id>:<страница>[:ch<глава>] или cite:<id>:ch<глава>
+              const [, id, a, b] = href.split(':');
+              const ch = [a, b].find((x) => /^ch\d+$/.test(x || ''));
+              const page = /^\d+$/.test(a) ? Number(a) : 0;
               return (
-                <a className="cite-link" title="Открыть страницу книги" onClick={() => openPage(id, Number(page))}>
+                <a className="cite-link" title={page ? 'Открыть страницу книги' : 'Открыть главу книги'} onClick={() => openPage(id, page, ch ? Number(ch.slice(2)) : 0)}>
                   {children}
                 </a>
               );

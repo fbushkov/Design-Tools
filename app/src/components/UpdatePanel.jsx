@@ -24,7 +24,7 @@ export default function UpdatePanel() {
   return (
     <Panel
       title="Программа"
-      subtitle={`Версия ${st.current}. Установленная программа сама проверяет обновления при запуске. База знаний обновляется отдельно — кнопкой «Обновить с GitHub» выше.`}
+      subtitle={`Версия ${st.current}. Установленная программа сама проверяет обновления при запуске. База знаний обновляется отдельно — кнопкой «Обновить базу».`}
       actions={
         st.status === 'ready' ? (
           <Button size="sm" color="primary" startContent={<Rocket size={14} />} onPress={() => window.dt.update.install()}>

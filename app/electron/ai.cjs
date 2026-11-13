@@ -148,7 +148,7 @@ function extractJSON(text) {
   throw new Error('Модель вернула не JSON');
 }
 
-async function callAnthropic(p, key, system, user, { test } = {}) {
+async function callAnthropic(p, key, system, user, { test, signal } = {}) {
   const client = new Anthropic({ apiKey: key, ...(p.baseURL ? { baseURL: p.baseURL } : {}) });
   const fallback = FALLBACK_MODELS.has(p.model);
   const params = {
@@ -159,7 +159,7 @@ async function callAnthropic(p, key, system, user, { test } = {}) {
     output_config: { effort: test ? 'low' : p.effort || 'high', ...(test ? {} : { format: betaJSONSchemaOutputFormat(PLAN_SCHEMA) }) },
     ...(fallback ? { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' } : {}),
   };
-  const res = test ? await client.beta.messages.create(params) : await client.beta.messages.parse(params);
+  const res = test ? await client.beta.messages.create(params, { signal }) : await client.beta.messages.parse(params, { signal });
   if (res.stop_reason === 'refusal') throw new Error('Модель отказалась отвечать' + (res.stop_details?.explanation ? `: ${res.stop_details.explanation}` : ''));
   if (res.stop_reason === 'max_tokens') throw new Error('Ответ обрезан по длине — попробуйте ещё раз');
   if (test) return { text: res.content.filter((b) => b.type === 'text').map((b) => b.text).join(''), model: res.model };
@@ -167,7 +167,7 @@ async function callAnthropic(p, key, system, user, { test } = {}) {
   return { data: res.parsed_output, model: res.model };
 }
 
-async function callOpenAI(p, key, system, user, { test } = {}) {
+async function callOpenAI(p, key, system, user, { test, signal } = {}) {
   if (!p.baseURL) throw new Error('Не указан адрес сервиса (base URL)');
   if (!p.model) throw new Error('Не указана модель');
   const body = {
@@ -182,6 +182,7 @@ async function callOpenAI(p, key, system, user, { test } = {}) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(key ? { Authorization: `Bearer ${key}` } : {}) },
     body: JSON.stringify(body),
+    signal,
   });
   const j = await r.json().catch(() => ({}));
   if (!r.ok) throw new Error(`Сервис ответил ${r.status}: ${j.error?.message || JSON.stringify(j).slice(0, 200)}`);
@@ -213,22 +214,47 @@ async function run(id, system, user, opts) {
   return p.kind === 'anthropic' ? callAnthropic(p, key, system, user, opts) : callOpenAI(p, key, system, user, opts);
 }
 
-async function test(id) {
+// Запрос к модели можно отменить, и он не длится дольше отведённого времени.
+const PLAN_TIMEOUT = Number(process.env.DT_AI_TIMEOUT_MS) || 3 * 60 * 1000;
+const TEST_TIMEOUT = 60 * 1000;
+let current = null; // { ctrl, why }
+async function limited(ms, fn) {
+  const job = { ctrl: new AbortController(), why: '' };
+  current = job;
+  const timer = setTimeout(() => {
+    job.why = 'timeout';
+    job.ctrl.abort();
+  }, ms);
   try {
-    const r = await run(id, 'Ответь одним словом.', 'Скажи «работает».', { test: true });
+    return await fn(job.ctrl.signal);
+  } catch (e) {
+    if (job.why === 'timeout') return { ok: false, timeout: true, error: `Модель не ответила за ${Math.round(ms / 60000) || 1} мин. Запрос остановлен — проверьте связь или выберите модель быстрее.`, message: 'Модель не ответила за минуту.' };
+    if (job.why === 'cancel') return { ok: false, cancelled: true, error: 'Запрос отменён.', message: 'Проверка отменена.' };
+    return { ok: false, error: humanError(e), message: humanError(e) };
+  } finally {
+    clearTimeout(timer);
+    if (current === job) current = null;
+  }
+}
+function cancel() {
+  if (!current) return { ok: false };
+  current.why = 'cancel';
+  current.ctrl.abort();
+  return { ok: true };
+}
+
+function test(id) {
+  return limited(TEST_TIMEOUT, async (signal) => {
+    const r = await run(id, 'Ответь одним словом.', 'Скажи «работает».', { test: true, signal });
     return { ok: true, message: `Подключено: ${r.model}. Ответ: ${r.text.trim().slice(0, 60)}` };
-  } catch (e) {
-    return { ok: false, message: humanError(e) };
-  }
+  });
 }
 
-async function plan(ctx) {
-  try {
-    const r = await run(null, SYSTEM, userPrompt(ctx));
+function plan(ctx) {
+  return limited(PLAN_TIMEOUT, async (signal) => {
+    const r = await run(null, SYSTEM, userPrompt(ctx), { signal });
     return { ok: true, plan: r.data, model: r.model };
-  } catch (e) {
-    return { ok: false, error: humanError(e) };
-  }
+  });
 }
 
-module.exports = { publicConfig, saveProvider, removeProvider, setActive, test, plan };
+module.exports = { publicConfig, saveProvider, removeProvider, setActive, test, plan, cancel };
