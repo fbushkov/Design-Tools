@@ -5,7 +5,7 @@ directions: [strategy]
 category: [method-cargo]
 maturity: { management: [2, 3], process: [2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge]
+approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions]
 cases: []
 tags: [внедрение, мода, ритуал, системное-мышление]
 status: draft
@@ -62,6 +62,9 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 | Что ваша система обучения предполагает об уме сотрудника — набор навыков, который пополняют, или систему, которая может перестроиться? | Руководителю, HR | Методологию внедряли курсом как технический вызов, а он адаптивный | Киган и Лейхи, с. 440 |
 | Как разбирают работу: коучинг по свежим случаям на рабочем месте или плановые разборы плохих случаев? | Руководителям команд | Новое поведение вводят обучением и разбором ошибок, а не коучингом | Диксон и др., с. 213–218 |
 | Всерьёз ли в компании относятся к качеству? Есть ли у статистической и аналитической работы постоянная роль при высшем руководстве? | Руководству и кандидату в лидеры методологии | Без постоянной роли и серьёзного намерения руководства методы вспыхивают и гаснут | Деминг, с. 331, 343 |
+| Улучшения шли по отдельным участкам или по замыслу всего потока? Что стало со сквозным сроком после них? | Руководителю, команде улучшений | «Острова» улучшений без замысла потока; программа сменяется следующей, денег не приносит | Ротер и Шук, с. 5–6, 89 |
+| Где называют вытягиванием то, что на деле выталкивание по своему графику? | Тем, кто внедрял lean, и исполнителям | Термины внедрены, логика потока прежняя | Ротер и Шук, с. 37 |
+| Кто ведёт улучшения — руководитель, который отвечает за поток, или специалисты по lean и консультанты? | Руководителю | Улучшение делегировано, руководство метода не знает и не может учить ему в ежедневной работе | Ротер и Шук, с. 104–107 |
 
 ## Что делать в зависимости от зрелости
 
@@ -95,6 +98,10 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 **Подходы шестого прохода.**
 
 - **Методологии обучили, а поведение не изменилось.** Проверить, не решали ли адаптивный вызов курсом ([technical-vs-adaptive-challenge](../approaches/technical-vs-adaptive-challenge.md)), и построить коллективную карту от «мы все»: что делаем вопреки цели и чего боимся ([immunity-to-change-map](../approaches/immunity-to-change-map.md)).
+
+**Подходы седьмого прохода.**
+
+- **Lean внедрён как «охота за потерями» на участках.** Начать с замысла потока по восьми вопросам, улучшения процессов — последним вопросом и под объявленную дату изменения потока ([future-state-questions](../approaches/future-state-questions.md)). Ротер и Шук прямо описывают «острова» улучшений и смену программ как следствие пропущенного картирования (Ротер и Шук, с. 5–6).
 
 ## Как понять, что стало лучше
 

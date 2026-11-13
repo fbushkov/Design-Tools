@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [service-design, diagnostics]
-approaches: [customer-effort-score, channel-stickiness, next-issue-avoidance, experience-engineering, give-control-to-get-control, failure-demand-analysis, experience-journey-map, outside-in-value, operational-definitions, diagnostic-vs-reward-metrics, balancing-counter-metrics, targets-to-process-data, system-before-person, service-blueprint, eight-stage-change, purpose-derived-measures, design-against-demand]
+approaches: [customer-effort-score, channel-stickiness, next-issue-avoidance, experience-engineering, give-control-to-get-control, failure-demand-analysis, experience-journey-map, outside-in-value, operational-definitions, diagnostic-vs-reward-metrics, balancing-counter-metrics, targets-to-process-data, system-before-person, service-blueprint, eight-stage-change, purpose-derived-measures, design-against-demand, blueprint-business-case, service-safari]
 categories: [churn, silo-service, metrics-as-target, control-surveillance, employee-experience]
 read: true
 rating:

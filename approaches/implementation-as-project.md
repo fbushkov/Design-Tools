@@ -3,7 +3,7 @@ id: implementation-as-project
 title: Внедрение как отдельный проект, где аудитория — сотрудники
 directions: [service-design, strategy, team-ai]
 solves: [resistance, method-cargo, employee-experience]
-sources: [stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, block-1981-flawless-consulting, kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization]
+sources: [stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, block-1981-flawless-consulting, kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization, rother-1999-learning-to-see, polaine-2013-service-design]
 maturity_min: { management: 2 }
 stages_fit: []
 stages_harm: []
@@ -54,3 +54,5 @@ status: draft
 - Проверка влияния нового сервиса по blueprint. Для каждого действия сотрудника спросить, чем оно отличается от нынешнего, какая поддержка нужна и что может пойти не так (Стикдорн, с. 465–470, см. [service-blueprint](service-blueprint.md)).
 - Три вопроса о плохом выборе (привычка, знание, ценность) и три вида сообщения (информация, инструкция, мотивация) по Акоффу и Эмери (с. 43–51, 144–147).
 - Стратегии Пойстера против типовых провалов, например давать исполнителям первыми увидеть и прокомментировать свои данные и обещать, что из-за системы не будет сокращений (гл. 15).
+- Внедрение по петлям потока: годовой план с измеримыми целями и проверяющими в бюджете, разбор с проваленных пунктов вопросом «что нужно, чтобы вернуть в график» (Ротер и Шук, с. 94–102), см. [future-state-questions](future-state-questions.md).
+- Пилот как доказательство бизнес-кейса перед масштабированием (Полейн и др., с. 158, 196–197), см. [blueprint-business-case](blueprint-business-case.md). Оговорки Стикдорна о «пилоте-обманке» (Стикдорн, с. 459–463) у Полейна нет.

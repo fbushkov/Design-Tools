@@ -3,7 +3,7 @@ id: four-key-delivery-metrics
 title: Четыре показателя поставки
 directions: [diagnostics, team-ai]
 solves: [metrics-as-target, busy-no-result, decision-bottleneck, slow-flow]
-sources: [forsgren-2018-accelerate, skelton-pais-2019-team-topologies, metr-2025-ai-developer-productivity]
+sources: [forsgren-2018-accelerate, skelton-pais-2019-team-topologies, metr-2025-ai-developer-productivity, rother-1999-learning-to-see]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -44,6 +44,8 @@ status: draft
 - **Не независимое подтверждение.** Скелтон и Паис опираются на Accelerate (закон Конвея, слабая связанность), их выводы — не вторая проверка.
 - **Устаревание.** Данные 2014–2017 годов, пороги кластеров меняются от года к году (с. 52–53, 57).
 - **Вне софта** четыре показателя напрямую не переносятся, аналог для сервиса придётся строить заново (по общим знаниям).
+
+- **Граница меры.** Ротер и Шук меряют время выполнения от сырья до отгрузки и переводят запас в дни ожидания (запас / дневной спрос), поток проектирования прямо оставляют за рамками (Ротер и Шук, с. 13, 40–43). Вместе с Accelerate путь «от идеи до запуска» не покрыт, переносится только приём «ожидание = очередь / темп спроса». См. [value-stream-map-current](value-stream-map-current.md).
 
 ## Как я его адаптирую
 

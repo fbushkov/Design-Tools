@@ -5,7 +5,7 @@ directions: [strategy, diagnostics]
 category: [decision-bottleneck]
 maturity: { management: [1, 2] }
 scale: [micro, small, mid]
-approaches: [rules-for-top-first, idealized-design, decision-record, leverage-points, humble-inquiry, decision-rights-clarity, culture-traits-diagnosis, growth-phase-diagnosis, decision-implementability-audit, four-key-delivery-metrics, paei-role-gap, participation-diamond, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, big-assumption-test]
+approaches: [rules-for-top-first, idealized-design, decision-record, leverage-points, humble-inquiry, decision-rights-clarity, culture-traits-diagnosis, growth-phase-diagnosis, decision-implementability-audit, four-key-delivery-metrics, paei-role-gap, participation-diamond, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, big-assumption-test, value-stream-manager]
 cases: []
 tags: [собственник, полномочия, преемственность, российский-контекст]
 status: draft
@@ -62,6 +62,7 @@ status: draft
 | Какое одно улучшение руководителя сильнее всего изменит работу команды? | Его руководителю, коллегам, подчинённым | Узкое место в поведении руководителя, но цель никто не назвал | Киган и Лейхи, с. 110, 333–335 |
 | Не я ли тот начальник, под которого все подстраиваются и которого обходят? | Собственнику, себе | Узкое место — сам собственник, а не подчинённые | Киган и Лейхи, с. 134 |
 | Что вы потеряете, если отдадите это решение? Чего боитесь? | Собственнику | Не делегирует, потому что делегирование задевает идентичность или страх, а не из-за нехватки навыка | Киган и Лейхи, с. 189–195, 345–346 |
+| Кто ниже первого лица отвечает за стоимость, качество и срок продукта от начала до конца? | Первому лицу и руководителям функций | Сквозные вопросы решаются только наверху, потому что ниже у потока нет хозяина | Ротер и Шук, с. 17–18, 106 |
 
 ## Что делать в зависимости от зрелости
 
@@ -92,6 +93,10 @@ status: draft
 **Подходы шестого прохода.**
 
 - **Собственник хочет делегировать и не может.** Личная карта иммунитета: делегирование может задевать идентичность, как у руководителя, для которого отдать работу значило предать рабочие корни (Киган и Лейхи, с. 189–195) ([immunity-to-change-map](../approaches/immunity-to-change-map.md)). Затем проверки допущения о том, что случится, если отдать решение ([big-assumption-test](../approaches/big-assumption-test.md)). Прежде проверить, не держит ли решения наверху система полномочий, а не страх собственника ([decision-rights-clarity](../approaches/decision-rights-clarity.md)).
+
+**Подходы седьмого прохода.**
+
+- **Сквозные вопросы о сроке и качестве продукта поднимаются к первому лицу.** Назначить менеджера потока — линейного, подчинённого первому лицу, с полномочиями поперёк функций ([value-stream-manager](../approaches/value-stream-manager.md)). На уровне 1 оси `management` роль совпадает с собственником (гипотеза).
 
 ## Как понять, что стало лучше
 

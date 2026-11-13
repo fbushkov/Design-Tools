@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, service-design, diagnostics, team-ai]
-approaches: [business-model-as-story, service-prototyping, service-blueprint, strategic-tradeoffs, system-before-person, diagnostic-vs-reward-metrics, purpose-derived-measures, operational-definitions, automation-by-stage-and-level, it-after-improvement, system-traps, ceremony-audit, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, initiative-triage, opportunity-solution-tree]
+approaches: [business-model-as-story, service-prototyping, service-blueprint, strategic-tradeoffs, system-before-person, diagnostic-vs-reward-metrics, purpose-derived-measures, operational-definitions, automation-by-stage-and-level, it-after-improvement, system-traps, ceremony-audit, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, initiative-triage, opportunity-solution-tree, value-stream-map-current]
 categories: [product-direction, busy-no-result, metrics-as-target, decision-bottleneck, churn, resistance, routine-load]
 read: true
 rating: 3

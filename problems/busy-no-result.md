@@ -5,7 +5,7 @@ directions: [diagnostics]
 category: [busy-no-result]
 maturity: { management: [1, 2, 3], process: [1, 2] }
 scale: [micro, small, mid]
-approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge]
+approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge, value-stream-map-current, future-state-questions]
 cases: []
 tags: [потери, фокус, диагностика]
 status: draft
@@ -65,6 +65,7 @@ status: draft
 | Есть ли у компании постоянная цель? Меняется ли она с каждым новым руководителем, знают ли её все и скольким она помогает работать лучше? | Собственнику и сотрудникам | Нет постоянства цели, усилия тянутся за текущим результатом | Деминг, с. 117 |
 | Как вы узнаёте, что процесс стабилен? Почему усилия в начале улучшений дали много, а потом застопорились, и кто отвечает за улучшение стабильного процесса? | Руководителю | Очевидные особые причины убраны, дальше нужна работа руководства над системой, а не призывы к людям | Деминг, с. 117, 123 |
 | По каким правилам вы отличаете системные проблемы от особых случаев? (Ответ «полагаемся на опыт» — тревожный сигнал.) | Руководителю или менеджеру по качеству | Без правил различения на обычный разброс реагируют как на ЧП, и проблем не убывает | Деминг, с. 224, 281 |
+| Сколько работы сделано раньше, чем она нужна следующему шагу или клиенту, и что с ней потом происходит: хранят, перекладывают, переделывают? | Руководителям участков, по месту | Люди заняты перепроизводством, оно порождает хранение, сортировку и переделку и прячет брак | Ротер и Шук, с. 51–52, 60, 116 |
 
 ## Что делать в зависимости от зрелости
 
@@ -100,6 +101,10 @@ status: draft
 **Подходы шестого прохода.**
 
 - **Руководитель занят, а на главное времени нет.** Анализ календаря по трём «правильным» занятиям и вопрос, чему служит остальное ([technical-vs-adaptive-challenge](../approaches/technical-vs-adaptive-challenge.md)). Опора — один кейс (Киган и Лейхи, с. 211).
+
+**Подходы седьмого прохода.**
+
+- **Все заняты, а работа ждёт между шагами.** Карта текущего состояния покажет перепроизводство и долю ожидания в сроке ([value-stream-map-current](../approaches/value-stream-map-current.md)); будущее состояние строят от потока, а улучшения участков ставят последними ([future-state-questions](../approaches/future-state-questions.md)).
 
 ## Как понять, что стало лучше
 

@@ -3,7 +3,7 @@ id: decision-rights-clarity
 title: Права на решение — кто решает, с кем советуются, кого информируют, и замысел вместо инструкции
 directions: [diagnostics, strategy]
 solves: [decision-bottleneck, slow-flow]
-sources: [epstein-manzoni-2006-performance-measurement, kaufman-2010-personal-mba, ledeneva-2006-how-russia-works, rumelt-2011-good-bad-strategy, fey-denison-2003-culture-russia, greiner-1972-evolution-revolution, kaner-1996-facilitators-guide, cagan-2008-inspired, adizes-1988-corporate-lifecycles, forsgren-2018-accelerate, perri-2018-build-trap, christensen-2016-competing-against-luck, senge-1990-fifth-discipline, skelton-pais-2019-team-topologies, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods]
+sources: [epstein-manzoni-2006-performance-measurement, kaufman-2010-personal-mba, ledeneva-2006-how-russia-works, rumelt-2011-good-bad-strategy, fey-denison-2003-culture-russia, greiner-1972-evolution-revolution, kaner-1996-facilitators-guide, cagan-2008-inspired, adizes-1988-corporate-lifecycles, forsgren-2018-accelerate, perri-2018-build-trap, christensen-2016-competing-against-luck, senge-1990-fifth-discipline, skelton-pais-2019-team-topologies, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, rother-1999-learning-to-see]
 maturity_min: { management: 2 }
 stages_fit: [2, 3]
 stages_harm: [1]
@@ -32,6 +32,8 @@ status: draft
 Другие источники пятого прохода говорят о том же в разных местах организации. Каган сводит продуктовые решения в совет с четырьмя воротами — какие возможности оценивать, начинать ли discovery, разработку, запуск — и советует узнать, кто те один-два человека, без которых решение не проходит (Каган, с. 104–109, 185). Адизес строит управление Расцвета на письменной «конституции»: какие форумы решений, кто в них, какие полномочия, как меняются сами правила (Адизес, с. 203–204). По Accelerate самый сильный фактор поставки — может ли команда менять устройство своей системы без разрешения извне, а внешнее согласование каждого изменения не повышает стабильность (Форсгрен, с. 97–98, 114–117). Перри лечит разрыв согласованности тем, что каждый уровень сам решает, как достичь намерения уровня выше (Перри, с. 83–88), Кристенсен — «замыслом командира», который даёт ясная работа клиента (Кристенсен, с. 221–233). Сенге: до первого лица должны доходить только дилеммные вопросы, двадцать проблем в день — признак недоделегирования (Сенге, с. 279). Скелтон и Паис: каждой частью системы владеет ровно одна команда (Скелтон и Паис, с. 74).
 
 Пригожин даёт российский замер. Из 320 заданий в приказах директора за полгода 91 % адресован начальникам цехов, через две головы, и такие приказы готовит само среднее звено, чтобы не распоряжаться от своего имени (Пригожин 2007, с. 263, 266–267). Ответ «это от меня не зависит» объясняется отсутствием полномочий, а не нежеланием (с. 113, 115). Чем больше исполнителей участвует в выработке решения, тем выше его осуществимость (Пригожин 2003, с. 248–249).
+
+Ротер и Шук добавляют хозяина сквозного потока. На вопрос, кто отвечает за стоимость, качество и срок продукта от начала до конца, обычно перечисляют отделы, то есть не отвечает никто. Нужен линейный руководитель, подчинённый первому лицу, с полномочиями поперёк функций (Ротер и Шук, с. 17–18, 106), см. [value-stream-manager](value-stream-manager.md).
 
 ## Когда работает
 

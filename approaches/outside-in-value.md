@@ -3,7 +3,7 @@ id: outside-in-value
 title: Ценность снаружи и цепочка внутренних потребителей
 directions: [strategy, service-design, diagnostics]
 solves: [silo-service, churn]
-sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, poister-2014-managing-measuring-performance, ackoff-1981-creating-corporate-future, christensen-2016-competing-against-luck, downe-2020-good-services, skelton-pais-2019-team-topologies, dixon-2013-effortless-experience]
+sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, poister-2014-managing-measuring-performance, ackoff-1981-creating-corporate-future, christensen-2016-competing-against-luck, downe-2020-good-services, skelton-pais-2019-team-topologies, dixon-2013-effortless-experience, polaine-2013-service-design]
 maturity_min: { product: 1 }
 stages_fit: []
 stages_harm: []
@@ -28,6 +28,8 @@ status: draft
 Кристенсен опирается на тот же тезис Друкера, что и Магретта, — клиент редко покупает то, что компания думает, что продаёт (Кристенсен, с. 201, 254), — и делает из него метод, см. [jobs-to-be-done](jobs-to-be-done.md). Дауни: сервис определяет пользователь, у которого есть цель, а каждый владелец шага называет «сервисом» свою часть (Дауни, с. 18–19, 26–29). Пользователь ищет действие, а организация называет сервис существительным из своего обихода (с. 45–55). Ожидания бывают универсальные, предполагаемые и выбивающиеся, и выбивающиеся быстро становятся нормой (с. 70–73, 88; влит кандидат `expectation-types`). Скелтон и Паис строят основную команду вокруг потока ценности — продукта, пути пользователя, сегмента (Скелтон и Паис, с. 129–131).
 
 Диксон показывает тот же разрыв на сервисе. Переводом компания считает то, что зафиксировала АТС, а клиент — и уход из чата на телефон. Решение с первого обращения компании оценивают в 70–80%, клиенты — в 40% (Диксон и др., с. 43–44, 92–93).
+
+Полейн и соавторы: если повернуть схему силосов на 90 градусов, сверху окажется клиент, а каналы — между ним и предприятием (Полейн и др., с. 105–106). Исполнение сервиса меряют наружу, по тому, что получил клиент, и внутрь, по тому, во что это обошлось (с. 46–48). Если база измерения — опыт клиента, эффективность и опыт редко противоречат: быстрое урегулирование убытка сокращает и число контактов, и сумму претензий (с. 167–168).
 
 ## Когда работает
 

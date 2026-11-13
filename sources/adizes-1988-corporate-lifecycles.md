@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [growth-phase-diagnosis, system-before-person, decision-rights-clarity, decision-record, initiative-triage, strategic-tradeoffs, diagnostic-vs-reward-metrics, it-after-improvement, rules-for-top-first, consulting-contract, decision-implementability-audit, eight-stage-change, nominal-vs-real-allocation, paei-role-gap, positional-analysis, throughput-accounting]
+approaches: [growth-phase-diagnosis, system-before-person, decision-rights-clarity, decision-record, initiative-triage, strategic-tradeoffs, diagnostic-vs-reward-metrics, it-after-improvement, rules-for-top-first, consulting-contract, decision-implementability-audit, eight-stage-change, nominal-vs-real-allocation, paei-role-gap, positional-analysis, throughput-accounting, service-safari]
 categories: [decision-bottleneck, resistance, method-cargo, metrics-as-target, busy-no-result, product-direction, silo-service]
 read: true
 rating:

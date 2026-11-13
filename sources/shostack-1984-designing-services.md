@@ -8,7 +8,7 @@ type: article
 language: en
 link:
 directions: [service-design, diagnostics]
-approaches: [service-blueprint, system-before-person, service-prototyping, experience-engineering, give-control-to-get-control]
+approaches: [service-blueprint, system-before-person, service-prototyping, experience-engineering, give-control-to-get-control, blueprint-business-case]
 categories: [silo-service, churn, product-direction]
 read: true
 rating:

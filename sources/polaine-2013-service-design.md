@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [service-design, strategy, diagnostics]
-approaches: [blueprint-business-case, service-ecology-map, research-depth-levels, service-safari, customer-as-coproducer]
+approaches: [blueprint-business-case, service-ecology-map, research-depth-levels, service-safari, service-blueprint, experience-journey-map, service-prototyping, employee-journey-mapping, outside-in-value, failure-demand-analysis, purpose-derived-measures, implementation-as-project, program-logic-model, diagnostic-vs-reward-metrics, customer-effort-score]
 categories: [silo-service, churn, product-direction, employee-experience, metrics-as-target]
 read: true
 rating:

@@ -5,7 +5,7 @@ directions: [service-design]
 category: [silo-service]
 maturity: { process: [1, 2, 3], management: [2, 3] }
 scale: [small, mid, large]
-approaches: [outside-in-value, failure-demand-analysis, design-against-demand, dark-matter-mapping, matter-meta-zoom, experience-journey-map, mess-formulation, service-blueprint, service-prototyping, solve-resolve-dissolve, ai-team-composition, culture-traits-diagnosis, studio-week, jobs-to-be-done, team-types-and-interaction-modes, customer-effort-score, channel-stickiness, next-issue-avoidance]
+approaches: [outside-in-value, failure-demand-analysis, design-against-demand, dark-matter-mapping, matter-meta-zoom, experience-journey-map, mess-formulation, service-blueprint, service-prototyping, solve-resolve-dissolve, ai-team-composition, culture-traits-diagnosis, studio-week, jobs-to-be-done, team-types-and-interaction-modes, customer-effort-score, channel-stickiness, next-issue-avoidance, value-stream-map-current, value-stream-manager, blueprint-business-case, service-ecology-map, service-safari]
 cases: []
 tags: [межфункциональное-взаимодействие, клиентский-путь, поток]
 status: draft
@@ -63,6 +63,10 @@ status: draft
 | Есть ли особое отношение ко второму звонку, владеет ли оператор вопросом до конца, не просят ли данные, которые уже есть, тёплый ли перевод? | Первой линии, по чек-листу | Клиент проваливается на передачах между людьми и каналами | Диксон и др., прил. F, с. 268 |
 | Сколько сотрудников видели следующую операцию — своего потребителя — и готовый продукт? Понимают ли они требования следующей операции, и учитывает ли их обучение? | Руководителям подразделений и сотрудникам | Стадии работают вслепую относительно того, кто использует их результат | Деминг, с. 118–119, 179 |
 | Обмениваетесь ли вы с поставщиком данными о качестве в виде карт? Почему вы не получаете карты от него? | Руководителю закупок | Поставщик и заказчик видят качество каждый со своей стороны, общих данных о процессе нет | Деминг, с. 297 |
+| Где качество скачет между точками контакта? Каких точек не хватает, какие лишние? | Клиентам, фронту, по исследованию | Точки контакта проектируют по отдельности, сервис целиком никто | Полейн и др., с. 60 |
+| Кто проектирует переходы между точками контакта — от сайта к звонку, от звонка к визиту? | Руководителям каналов | Сервис ломается на стрелках, а не на коробках: щели между силосами складываются для клиента в пропасть | Полейн и др., с. 101–105 |
+| Где каналы и технологии работают вместе, а где против друг друга? | Руководителям каналов, ИТ | Каналы оптимизированы порознь, бэкофис говорит не тем языком, что сайт | Полейн и др., с. 110, 153 |
+| Какие части экосистемы сервиса вне вашего контроля и как вы смягчаете их сбои? | Руководителю сервиса, партнёрам | Клиент проваливается на участке партнёра, за который никто не отвечает | Полейн и др., с. 137 |
 
 ## Что делать в зависимости от зрелости
 
@@ -91,6 +95,15 @@ status: draft
 
 - **Клиент меняет каналы и повторяет историю заново.** Профиль усилия по каналам и аудит ([customer-effort-score](../approaches/customer-effort-score.md)), карта «вопрос — канал» ([channel-stickiness](../approaches/channel-stickiness.md)).
 - **Каждый отдел «решил с первого раза», а клиент звонит снова.** Мыслить событиями клиента и предупреждать следующий вопрос ([next-issue-avoidance](../approaches/next-issue-avoidance.md)).
+
+**Подходы седьмого прохода.**
+
+- **Сервис зависит от участников вне компании.** Карта экосистемы: участники, потоки ценности в обе стороны, границы проекта ([service-ecology-map](../approaches/service-ecology-map.md)).
+- **Руководство давно не было в роли клиента.** Сервис-сафари по своим и чужим сервисам перед воркшопом ([service-safari](../approaches/service-safari.md)).
+- **Сквозной проект не получает денег.** Разложить затраты и выручку по стадиям и каналам blueprint и назвать поведения клиента, которые изменятся ([blueprint-business-case](../approaches/blueprint-business-case.md)).
+- **Внутренний поток к клиенту рвётся между функциями.** Карта текущего состояния потока ([value-stream-map-current](../approaches/value-stream-map-current.md)) и хозяин потока ([value-stream-manager](../approaches/value-stream-manager.md)).
+
+Где расходятся источники седьмого прохода. Полейн и соавторы противопоставляют сервис-дизайн бережливым программам: «лин редко улучшает опыт» (Полейн и др., с. 167), а у Седдона lean service строится от спроса клиента (Седдон, с. 24–31), см. [design-against-demand](../approaches/design-against-demand.md). Ротер и Шук переносят карту потока на сервис без примеров (Ротер и Шук, с. 108), Седдон против (Седдон, с. 222–287).
 
 ## Как понять, что стало лучше
 

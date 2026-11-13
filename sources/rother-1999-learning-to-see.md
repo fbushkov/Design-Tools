@@ -8,8 +8,8 @@ type: book
 language: en
 link:
 directions: [diagnostics, service-design]
-approaches: [value-stream-map-current, future-state-questions, value-stream-manager, value-stream-loop-plan]
-categories: [slow-flow, silo-service, busy-no-result, method-cargo]
+approaches: [value-stream-map-current, future-state-questions, value-stream-manager, chain-link-campaigns, throughput-accounting, purpose-derived-measures, diagnostic-vs-reward-metrics, system-before-person, design-against-demand, decision-rights-clarity, four-key-delivery-metrics, implementation-as-project]
+categories: [slow-flow, silo-service, busy-no-result, method-cargo, decision-bottleneck]
 read: true
 rating:
 tags: [бережливое-производство, lean, toyota, карта-потока-ценности, vsm, поток, такт, вытягивание, запасы, время-выполнения, перепроизводство]

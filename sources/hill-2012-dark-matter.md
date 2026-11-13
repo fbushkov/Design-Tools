@@ -8,7 +8,7 @@ type: book        # эссе на 90 страниц, Strelka Press
 language: en
 link:
 directions: [strategy, service-design]
-approaches: [business-model-as-story, dark-matter-mapping, embedded-strategic-design, frame-creation, it-after-improvement, matter-meta-zoom, reframe-the-brief, intermediate-institutions, service-prototyping, studio-week]
+approaches: [business-model-as-story, dark-matter-mapping, embedded-strategic-design, frame-creation, it-after-improvement, matter-meta-zoom, reframe-the-brief, intermediate-institutions, service-prototyping, studio-week, service-ecology-map]
 categories: [method-cargo, resistance, silo-service]
 read: true
 rating:

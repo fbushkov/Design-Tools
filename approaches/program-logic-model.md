@@ -3,7 +3,7 @@ id: program-logic-model
 title: Логическая модель — от ресурсов через выходы к результатам
 directions: [strategy, diagnostics]
 solves: [metrics-as-target, busy-no-result]
-sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, seddon-2003-freedom-from-command, abd-elrahman-2025-holistic-performance, epstein-manzoni-2006-performance-measurement, perri-2018-build-trap, torres-2021-continuous-discovery]
+sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, seddon-2003-freedom-from-command, abd-elrahman-2025-holistic-performance, epstein-manzoni-2006-performance-measurement, perri-2018-build-trap, torres-2021-continuous-discovery, polaine-2013-service-design]
 maturity_min: { management: 2, data: 2 }
 stages_fit: []
 stages_harm: []
@@ -26,6 +26,8 @@ status: draft
 Abd-Elrahman и соавторы строят похожую цепочку для коммерческой компании: капиталы (финансово-материальный, человеческий, структурный, отношенческий) дают качество сервиса, а качество — результаты по четырём перспективам BSC. Результаты BSC, по их словам, не показывают, за счёт чего получены, и рядом с ними надо измерять капиталы (Абд-Эльрахман и др., с. 124). По их данным около 60 % влияния капиталов на результаты идёт через качество сервиса, а структурный капитал важнее человеческого, отсюда совет переводить знания людей в процессы и системы компании (с. 132–135). Модель — рамка, индикаторы организация выбирает сама (с. 135). Эпштейн в своём сборнике оценивает последствия решений заранее по цепочке «входы — процессы — выходы — результаты» (Эпштейн, с. 25–30). Claes показывает, что показатель приживается, когда обсуждают его смысл и драйверы, а не формулу: в Akzo Nobel сработала игра про драйверы стоимости (Claes, с. 294–296).
 
 Перри разводит выход (функции, релизы, скорость команды) и результат (что изменилось, когда проблема клиента решена) и называет подмену второго первым ловушкой производства (Перри, с. 19, 25–30). Торрес делит результаты на три уровня — бизнес-результат, продуктовый результат и метрику использования функции — и считает связь продуктового результата с бизнес-результатом теорией, которую проверяют со временем и меняют, если она не подтверждается (Торрес, с. 39–44, 152–161). См. [outcome-strategy-cascade](outcome-strategy-cascade.md).
+
+Схема Make it Work у Полейна и соавторов — цепочка стадий пути к работе с промежуточными результатами и экономией на каждой стадии (Полейн и др., с. 199–200). Сходство с логической моделью — вывод куратора по общим знаниям о подходе, сами авторы её не называют. См. [blueprint-business-case](blueprint-business-case.md).
 
 ## Когда работает
 

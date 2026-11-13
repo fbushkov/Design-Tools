@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, service-design, diagnostics]
-approaches: [outside-in-value, critical-assumption-testing, experience-journey-map, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, decision-rights-clarity, jobs-to-be-done, experience-engineering]
+approaches: [outside-in-value, critical-assumption-testing, experience-journey-map, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, decision-rights-clarity, jobs-to-be-done, experience-engineering, value-stream-manager]
 categories: [product-direction, churn, silo-service, metrics-as-target, busy-no-result]
 read: true
 rating: 4
