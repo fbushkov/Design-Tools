@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [service-design, strategy, diagnostics]
-approaches: [map-type-selection, alignment-diagram, journey-management-readiness, customer-employee-alignment-map, job-map, journey-stage-grading, hypothesis-map-workshop, barrier-analysis, organize-around-journey]
+approaches: [map-type-selection, journey-management-readiness, whole-product-journey-scorecard, experience-journey-map, employee-journey-mapping, jobs-to-be-done, service-ecology-map, research-depth-levels, service-blueprint, opportunity-solution-tree, customer-effort-score, service-prototyping, critical-assumption-testing, leverage-points, service-safari, ai-task-frontier-mapping, strategy-kernel, team-types-and-interaction-modes]
 categories: [silo-service, churn, employee-experience, product-direction, method-cargo]
 read: true
 rating:

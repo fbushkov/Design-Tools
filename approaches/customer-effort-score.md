@@ -3,7 +3,7 @@ id: customer-effort-score
 title: Усилие клиента — показатель CES и аудит источников усилия
 directions: [service-design, diagnostics]
 solves: [churn, silo-service]
-sources: [dixon-2013-effortless-experience, stickdorn-2018-sd-doing, downe-2020-good-services, seddon-2003-freedom-from-command, austin-1996-measuring-managing-performance, polaine-2013-service-design]
+sources: [dixon-2013-effortless-experience, stickdorn-2018-sd-doing, downe-2020-good-services, seddon-2003-freedom-from-command, austin-1996-measuring-managing-performance, polaine-2013-service-design, kalbach-2016-mapping-experiences]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -69,3 +69,5 @@ status: draft
 - **Вопрос для руководителей.** Вспомнить свой худший сервисный опыт как клиента и отметить, через что из этого компания проводит своих клиентов (с. 41).
 
 Дальше по источникам усилия: [channel-stickiness](channel-stickiness.md), [next-issue-avoidance](next-issue-avoidance.md), [experience-engineering](experience-engineering.md), [give-control-to-get-control](give-control-to-get-control.md).
+
+Калбах включает CES в таблицу метрик ROI картирования (Калбах, с. 204–205), а усилие — в пять барьеров на стадиях пути (с. 339–341), см. [experience-journey-map](experience-journey-map.md).

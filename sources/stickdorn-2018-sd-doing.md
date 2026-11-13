@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [service-design, strategy]
-approaches: [reframe-the-brief, embedded-strategic-design, outside-in-value, purpose-derived-measures, vanguard-check, service-blueprint, experience-journey-map, service-prototyping, implementation-as-project, employee-journey-mapping, ai-pilot-with-control, diagnostic-vs-reward-metrics, name-the-resistance, customer-effort-score, blueprint-business-case, service-ecology-map, research-depth-levels]
+approaches: [reframe-the-brief, embedded-strategic-design, outside-in-value, purpose-derived-measures, vanguard-check, service-blueprint, experience-journey-map, service-prototyping, implementation-as-project, employee-journey-mapping, ai-pilot-with-control, diagnostic-vs-reward-metrics, name-the-resistance, customer-effort-score, blueprint-business-case, service-ecology-map, research-depth-levels, map-type-selection]
 categories: [silo-service, churn, employee-experience, method-cargo, resistance, product-direction]
 read: true
 rating:

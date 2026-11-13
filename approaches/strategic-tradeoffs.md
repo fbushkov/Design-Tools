@@ -3,7 +3,7 @@ id: strategic-tradeoffs
 title: Стратегические компромиссы и умение отказываться
 directions: [strategy, diagnostics]
 solves: [busy-no-result, product-direction]
-sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes, ackoff-emery-1972-purposeful-systems, rumelt-2011-good-bad-strategy, kaufman-2010-personal-mba, epstein-manzoni-2006-performance-measurement, cagan-2008-inspired, christensen-2016-competing-against-luck, adizes-1988-corporate-lifecycles]
+sources: [magretta-2002-what-management-is, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, auzan-2022-cultural-codes, ackoff-emery-1972-purposeful-systems, rumelt-2011-good-bad-strategy, kaufman-2010-personal-mba, epstein-manzoni-2006-performance-measurement, cagan-2008-inspired, christensen-2016-competing-against-luck, adizes-1988-corporate-lifecycles, womack-1996-lean-thinking]
 maturity_min: { management: 2 }
 stages_fit: []
 stages_harm: []
@@ -39,6 +39,7 @@ status: draft
 - Примеры американские и рубежа 2000 года (Walmart, Dell, Enterprise).
 - Принцип «80/20» легко превратить в отсечение неудобных, но важных клиентов. Седдон предупреждает, что сегментация по ценности клиента может маскировать то, что сервис плохо спроектирован для всех (Седдон, с. 195–219). Дорст добавляет, что эффективность обманчива и легко приводит к тому, что бесполезные меры выполняются очень эффективно (Дорст, с. 140).
 - Отказ требует длинного горизонта. По Аузану, в российских компаниях горизонт около трёх лет из-за непредсказуемости, и вложения, которые окупаются через десять лет, проигрывают быстрым результатам (Аузан, гл. 5, 6, см. [rules-for-top-first](rules-for-top-first.md)).
+- **Операционная эффективность или позиция.** У Вумека и Джонса Porsche, увидев, что затраты можно резко снизить, отказалась от отступления в верхний сегмент (Вумек и Джонс, с. 251). Showa получила прибыль только от новой стратегии (с. 267–269). При этом авторы считают, что лин и есть стратегия (с. 173, 300–301). Магретта и Румельт ставят выбор позиции раньше эффективности; разницу между операционной эффективностью и стратегией у Портера база знает только по общим знаниям, его книги в базе нет.
 
 ## Как я его адаптирую
 

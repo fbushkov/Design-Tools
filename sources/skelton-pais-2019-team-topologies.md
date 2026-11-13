@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics, service-design]
-approaches: [decision-rights-clarity, chain-link-campaigns, system-before-person, growth-phase-diagnosis, outside-in-value, employee-journey-mapping, it-after-improvement, four-key-delivery-metrics, team-cognitive-load-check, team-types-and-interaction-modes, value-stream-manager]
+approaches: [decision-rights-clarity, chain-link-campaigns, system-before-person, growth-phase-diagnosis, outside-in-value, employee-journey-mapping, it-after-improvement, four-key-delivery-metrics, team-cognitive-load-check, team-types-and-interaction-modes, value-stream-manager, dedicated-product-team]
 categories: [silo-service, decision-bottleneck, busy-no-result, employee-experience, method-cargo]
 read: true
 rating:

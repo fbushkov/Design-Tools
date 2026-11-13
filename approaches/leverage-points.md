@@ -3,7 +3,7 @@ id: leverage-points
 title: Точки влияния — где вмешательство меняет систему, а где только параметры
 directions: [diagnostics, strategy]
 solves: [busy-no-result, method-cargo, decision-bottleneck]
-sources: [meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, senge-1990-fifth-discipline, goldratt-1984-the-goal]
+sources: [meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, seddon-2003-freedom-from-command, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, senge-1990-fifth-discipline, goldratt-1984-the-goal, kalbach-2016-mapping-experiences]
 maturity_min: { management: 2 }
 stages_fit: []
 stages_harm: []
@@ -53,3 +53,4 @@ status: draft
 - Поиск в большей системе. Для симптома спросить, где лежит его источник, если он проявляется не там, где возник; например, переналадки на производстве могут задаваться комиссионными продавцов (Акофф, с. 41–43). В операционных терминах перебрать системные условия: структура, политики, процедуры, показатели, ИТ, роли руководителей (Седдон, с. 155–166).
 - Проверка ограничения на «политику». Если узким местом названы ресурс или мощность, спросить, какое правило или показатель держат его таким; замена политики сильнее расширения ресурса (Голдратт, с. 343–346).
 - Поиск задержек: где причина и следствие разнесены во времени, потому что там лежат неочевидные рычаги (Сенге, с. 48–50, 56–57). Перед вмешательством «уловить ритм системы» — посмотреть, как она вела себя во времени (Медоуз, с. 248, первая из пятнадцати рекомендаций).
+- Точки рычага на экосистемной карте сервиса по Медоуз (Калбах, с. 174, 597–599), см. [service-ecology-map](service-ecology-map.md).

@@ -5,7 +5,7 @@ directions: [strategy]
 category: [method-cargo]
 maturity: { management: [2, 3], process: [2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions]
+approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions, map-type-selection, journey-management-readiness, lean-transition-roadmap]
 cases: []
 tags: [внедрение, мода, ритуал, системное-мышление]
 status: draft
@@ -65,6 +65,11 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 | Улучшения шли по отдельным участкам или по замыслу всего потока? Что стало со сквозным сроком после них? | Руководителю, команде улучшений | «Острова» улучшений без замысла потока; программа сменяется следующей, денег не приносит | Ротер и Шук, с. 5–6, 89 |
 | Где называют вытягиванием то, что на деле выталкивание по своему графику? | Тем, кто внедрял lean, и исполнителям | Термины внедрены, логика потока прежняя | Ротер и Шук, с. 37 |
 | Кто ведёт улучшения — руководитель, который отвечает за поток, или специалисты по lean и консультанты? | Руководителю | Улучшение делегировано, руководство метода не знает и не может учить ему в ежедневной работе | Ротер и Шук, с. 104–107 |
+| Что сделали с прошлыми картами пути и кто с ними работает? Доходят ли инсайты воркшопов до бэклога и бюджета, или мерой успеха служит стена стикеров? | Руководителю CX или продукта | «Кладбище воркшопов»: картирование стало ритуалом без последствий | Калбах, с. 75, 457–458 |
+| Для какого решения нужна эта карта — диагностики, стратегии или поиска возможностей — и кто её прочтёт? | Заказчику картирования, до начала | Карта заказана как артефакт без цели использования | Калбах, с. 122, 136–138 |
+| Есть ли постоянная функция улучшений? Кто отвечает за доработки после события? Говорят ли эксперты по качеству, обслуживанию и lean одно и то же разными словами? | Руководителю, специалистам по улучшениям | Разовые «блицы» без структуры теряются, методологии конкурируют | Вумек и Джонс, с. 162–163, 200–201, 307–308, 381–382 |
+| Где островки в море муда: ячейки и команды есть, а запасы на недели и работа по прогнозу остались? | Тем, кто внедрял lean, на месте | Внедрены отдельные техники, поток не изменился | Вумек и Джонс, с. 301–302 |
+| Делегировало ли первое лицо улучшения, продолжая «управлять по цифрам»? | Руководителям, специалистам по улучшениям | Главная причина провала перехода по Бирну из Wiremold | Вумек и Джонс, с. 156 |
 
 ## Что делать в зависимости от зрелости
 
@@ -102,6 +107,13 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 **Подходы седьмого прохода.**
 
 - **Lean внедрён как «охота за потерями» на участках.** Начать с замысла потока по восьми вопросам, улучшения процессов — последним вопросом и под объявленную дату изменения потока ([future-state-questions](../approaches/future-state-questions.md)). Ротер и Шук прямо описывают «острова» улучшений и смену программ как следствие пропущенного картирования (Ротер и Шук, с. 5–6).
+
+**Подходы восьмого прохода.**
+
+- **Карты рисуют, ничего не меняется.** Пять решений рамки и цель использования до начала ([map-type-selection](../approaches/map-type-selection.md)); перед покупкой платформы — тест готовности ([journey-management-readiness](../approaches/journey-management-readiness.md)).
+- **Lean внедрён событиями.** Пятилетний план с функцией улучшений, планом по каждому потоку и защитой занятости ([lean-transition-roadmap](../approaches/lean-transition-roadmap.md)).
+
+Где расходятся источники восьмого прохода. **Пересмотр 2003 года.** Вумек и Джонс сами признали, что последователи переняли «камикадзе-кайдзен» — разрозненные события без общего плана потока, не давшие ничего клиенту и прибыли (Вумек и Джонс, с. 372–374), и что недооценили менеджера потока: без ответственного и плана карты будущего состояния не воплощаются (с. 379–381). Это совпадает с Ротером и Шуком ([value-stream-manager](../approaches/value-stream-manager.md)) и смягчает их собственный рецепт 1996 года распустить функции. **Способ изменений.** Авторы делают ставку на сэнсэя и «убрать тормозящих» (с. 310–311, 321), Седдон — на переучивание руководителей на своих данных (Седдон, с. 140–142, 190–193). Позиции не сведены.
 
 ## Как понять, что стало лучше
 

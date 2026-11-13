@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy, service-design]
-approaches: [dedicated-product-team, lean-transition-roadmap, policy-deployment-matrix, level-demand-signals, whole-product-journey-scorecard, extended-value-stream-map, value-stream-costing, job-security-lines-of-defense, improvement-office]
+approaches: [dedicated-product-team, lean-transition-roadmap, level-demand-signals, whole-product-journey-scorecard, value-stream-map-current, future-state-questions, value-stream-manager, initiative-triage, outcome-strategy-cascade, throughput-accounting, outside-in-value, it-after-improvement, eight-stage-change, system-before-person, targets-to-process-data, strategy-kernel, strategic-tradeoffs, team-types-and-interaction-modes, experience-journey-map]
 categories: [slow-flow, silo-service, method-cargo, busy-no-result, resistance, metrics-as-target, product-direction]
 read: true
 rating:

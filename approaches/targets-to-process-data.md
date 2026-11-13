@@ -3,7 +3,7 @@ id: targets-to-process-data
 title: Вместо плана и нормы — данные о самой работе
 directions: [strategy, diagnostics, service-design]
 solves: [metrics-as-target, busy-no-result]
-sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate, dixon-2013-effortless-experience]
+sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate, dixon-2013-effortless-experience, womack-1996-lean-thinking]
 maturity_min: { data: 2 }
 stages_fit: []
 stages_harm: []
@@ -48,6 +48,7 @@ status: draft
 - **Цели после культуры.** Accelerate советует командам ставить цели по четырём показателям поставки (Форсгрен, с. 61), а руководству — измеримые, достижимые, ограниченные по сроку цели (с. 78), предупреждая со ссылкой на Деминга о страхе и ложных цифрах (с. 62). Вывод мягче, чем у Деминга и Седдона: сначала культура, потом цели. См. [four-key-delivery-metrics](four-key-delivery-metrics.md).
 - **Директивная цель как смекалка.** Герой Голдратта принимает цель «+15 % прибыли» и подгоняет под неё базу расчёта, и книга подаёт это как находчивость (Голдратт, с. 231–232, 250, 258–259).
 - **Лекарство Hanover.** Сенге выходит из ловушки ровным наймом, обучением и медленно поднимаемой планкой качества (Сенге, с. 309), Седдон сначала убрал бы спрос-сбой, а потом решал бы, нужны ли люди.
+- **Вумек и Джонс за и против.** За: табло команды с поиском первопричины при отклонении тренда (Вумек и Джонс, с. 160–161), табло видны всем, но не служат основой наград (с. 314–315), внутренний бенчмаркинг по скорости улучшения (с. 315). Против: многолетние числовые цели — дефекты минус 50% в год, производительность плюс 20%, ежегодное снижение цены каждой детали поставщика (с. 113–114, 160–161, 239, 282). В 2003 году авторы смягчились: план — лишь прогноз (с. 385–386).
 
 ## Как я его адаптирую
 

@@ -3,7 +3,7 @@ id: outside-in-value
 title: Ценность снаружи и цепочка внутренних потребителей
 directions: [strategy, service-design, diagnostics]
 solves: [silo-service, churn]
-sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, poister-2014-managing-measuring-performance, ackoff-1981-creating-corporate-future, christensen-2016-competing-against-luck, downe-2020-good-services, skelton-pais-2019-team-topologies, dixon-2013-effortless-experience, polaine-2013-service-design]
+sources: [magretta-2002-what-management-is, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, poister-2014-managing-measuring-performance, ackoff-1981-creating-corporate-future, christensen-2016-competing-against-luck, downe-2020-good-services, skelton-pais-2019-team-topologies, dixon-2013-effortless-experience, polaine-2013-service-design, womack-1996-lean-thinking]
 maturity_min: { product: 1 }
 stages_fit: []
 stages_harm: []
@@ -30,6 +30,8 @@ status: draft
 Диксон показывает тот же разрыв на сервисе. Переводом компания считает то, что зафиксировала АТС, а клиент — и уход из чата на телефон. Решение с первого обращения компании оценивают в 70–80%, клиенты — в 40% (Диксон и др., с. 43–44, 92–93).
 
 Полейн и соавторы: если повернуть схему силосов на 90 градусов, сверху окажется клиент, а каналы — между ним и предприятием (Полейн и др., с. 105–106). Исполнение сервиса меряют наружу, по тому, что получил клиент, и внутрь, по тому, во что это обошлось (с. 46–48). Если база измерения — опыт клиента, эффективность и опыт редко противоречат: быстрое урегулирование убытка сокращает и число контактов, и сумму претензий (с. 167–168).
+
+Вумек и Джонс (восьмой проход): ценность может определить только конечный клиент через конкретный продукт, цену и момент (Вумек и Джонс, с. 19). Правильно делать не то — тоже муда (с. 23). Тест ценности шага — заплатил бы клиент меньше без него (с. 440). Мера системы для клиента — время, хлопоты и затраты (с. 341, 344). Продукт целиком через все организации считает [whole-product-journey-scorecard](whole-product-journey-scorecard.md).
 
 ## Когда работает
 
@@ -58,3 +60,5 @@ status: draft
 ## Инструменты
 
 Вопросы Деминга (с. 74–75) и Магретты (с. 32–36) можно свести в одну анкету для сессии с отделом. Пока не оформлено.
+
+Вопрос Вумека и Джонса: можете ли вы встать на место проекта, заказа или изделия и описать, что с ним происходит на каждом шаге? Неловкое молчание значит, что ценность подменили финансами (Вумек и Джонс, с. 19–20).

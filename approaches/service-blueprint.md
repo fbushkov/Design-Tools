@@ -3,7 +3,7 @@ id: service-blueprint
 title: Service blueprint — шаги клиента и то, что они запускают внутри
 directions: [service-design, diagnostics]
 solves: [silo-service, employee-experience, churn]
-sources: [stickdorn-2018-sd-doing, seddon-2003-freedom-from-command, kaufman-2010-personal-mba, shostack-1984-designing-services, downe-2020-good-services, dixon-2013-effortless-experience, polaine-2013-service-design]
+sources: [stickdorn-2018-sd-doing, seddon-2003-freedom-from-command, kaufman-2010-personal-mba, shostack-1984-designing-services, downe-2020-good-services, dixon-2013-effortless-experience, polaine-2013-service-design, kalbach-2016-mapping-experiences]
 maturity_min: { process: 1 }
 stages_fit: []
 stages_harm: []
@@ -67,3 +67,4 @@ Blueprint связывает каждый шаг клиента с тем, чт�
 
 - Карта «вопрос — канал» с баллом «усилие × затраты» и аудит по каналам (Диксон и др., с. 249–250, 266–268), см. [channel-stickiness](channel-stickiness.md).
 - Построение по Полейну и соавторам (Полейн и др., с. 108–122): сверху фазы пути (по умолчанию узнать, присоединиться, пользоваться, развиваться, уйти); строками каналы, включая персонал, продукты, сторонние сервисы и других клиентов; внизу закулисье. Уровни детализации не смешивать. Сначала черновик на стикерах или в таблице, потом визуальная версия. Четыре среза как брифы: путь, фаза, канал, точка контакта (с. 134–141). До blueprint — карта участников и потоков ценности, [service-ecology-map](service-ecology-map.md).
+- Варианты по Калбаху: пять слоёв Bitner и вариант Flowers и Miller со «стопками», правилами, метриками и открытыми вопросами (Калбах, с. 168–171). Blueprint у Калбаха — схема потока: исследовать для него легко, но эмоций и контекста на нём нет (там же). Будущий blueprint и четыре причины рисовать его отдельной картой (с. 397). Выбор между blueprint и другими картами — [map-type-selection](map-type-selection.md).

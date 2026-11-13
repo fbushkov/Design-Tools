@@ -3,7 +3,7 @@ id: ai-task-frontier-mapping
 title: Разметка задач по «зубчатой границе» возможностей ИИ
 directions: [team-ai, diagnostics]
 solves: [ai-no-effect, routine-load]
-sources: [dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, parasuraman-2000-levels-of-automation, seddon-2003-freedom-from-command, deming-1982-out-of-crisis, mollick-2024-co-intelligence, metr-2025-ai-developer-productivity, dellacqua-2025-cybernetic-teammate, bainbridge-1983-ironies-of-automation]
+sources: [dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, parasuraman-2000-levels-of-automation, seddon-2003-freedom-from-command, deming-1982-out-of-crisis, mollick-2024-co-intelligence, metr-2025-ai-developer-productivity, dellacqua-2025-cybernetic-teammate, bainbridge-1983-ironies-of-automation, kalbach-2016-mapping-experiences]
 maturity_min: { ai: 2 }
 stages_fit: []
 stages_harm: []
@@ -63,3 +63,4 @@ status: draft
 - Режим работы на каждую группу задач: кентавр, когда задачи чётко поделены между человеком и ИИ, или киборг, когда работа переплетена на уровне шагов. Начинать с кентавра на неприятных, но легко проверяемых задачах (Моллик, с. 112–116).
 - Проверка на чрезмерное доверие для задач за границей и неясных. Правильность оценивается отдельно от убедительности, проверяющий не знает, где работали с ИИ (Делл'Аква и др., с. 13). Команде показывают реальные ошибки модели на её задачах, так доверие калибруется (Парасураман и др., с. 6–7). Задачи, где критична точность, не идут в работу без проверки человеком (Моллик, с. 83–84).
 - Дата пересмотра разметки. Граница сдвигается с каждой новой моделью, поэтому таблицу перепроверяют при смене модели (Делл'Аква и др., с. 3–4, 19).
+- Калбах предлагает искать места для ИИ по карте пути сотрудника: повторяющиеся задачи, информационные узкие места, решения без контекста. Он ссылается на «зубчатую границу» (Калбах, с. 524–525). Его тезис «ИИ не может сопереживать» — позиция без данных (с. 17, 54–56).

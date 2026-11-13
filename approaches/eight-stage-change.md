@@ -3,7 +3,7 @@ id: eight-stage-change
 title: Восемь стадий изменения Коттера и вопросы к процессу изменения
 directions: [strategy, diagnostics]
 solves: [resistance, method-cargo]
-sources: [kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, block-1981-flawless-consulting, seddon-2003-freedom-from-command, rumelt-2011-good-bad-strategy, deming-1982-out-of-crisis, schein-2013-humble-inquiry, fey-denison-2003-culture-russia, greiner-1972-evolution-revolution, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, edmondson-2018-fearless-organization, kaner-1996-facilitators-guide, prigozhin-2003-org-development-methods, adizes-1988-corporate-lifecycles, kegan-2009-immunity-to-change, dixon-2013-effortless-experience]
+sources: [kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, block-1981-flawless-consulting, seddon-2003-freedom-from-command, rumelt-2011-good-bad-strategy, deming-1982-out-of-crisis, schein-2013-humble-inquiry, fey-denison-2003-culture-russia, greiner-1972-evolution-revolution, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, edmondson-2018-fearless-organization, kaner-1996-facilitators-guide, prigozhin-2003-org-development-methods, adizes-1988-corporate-lifecycles, kegan-2009-immunity-to-change, dixon-2013-effortless-experience, womack-1996-lean-thinking]
 maturity_min: { management: 2 }
 stages_fit: [3, 4]
 stages_harm: [1]
@@ -48,6 +48,7 @@ status: draft
 - **Коалиция или узкая база.** Пригожин сходится с Коттером в «алармистской нити» и разделе угроз в отчёте (Пригожин 2003, с. 334) и в опоре на активное меньшинство (с. 439–441). Но он допускает узкую базу из одного добровольца (с. 854) и считает, что управленческая команда нужна не всем (с. 597–601). Видение у него — качественный образ «пунктиром»: чем точнее, тем менее достижимо (с. 464).
 - **Лидеры и менеджеры.** Адизес спорит с тезисом Коттера, что лидеры важнее менеджеров, и считает шоковую терапию для Бюрократии вредной (Адизес, с. 597, 745).
 - **Срочность не меняет поведения — Киган и Лейхи.** Из кардиологических больных, которым грозит смерть, образ жизни меняет примерно один из семи: предельная срочность, стимулы и ясность не объясняют, почему человек не меняется (Киган и Лейхи, с. 23–24). Давление лишь усиливает тревогу, которой управляет иммунитет. Коттер описывает уровень организации, Киган — внутренний механизм того, кто меняется, но рецепт «поднять срочность» у Кигана не работает по определению (Коттер, с. 67–79). См. [immunity-to-change-map](immunity-to-change-map.md).
+- **Старт и сроки у Вумека и Джонса.** С Коттером их роднят кризис как рычаг (Вумек и Джонс, с. 275, 299, 374) и пятилетний горизонт (с. 255). Расходятся они в старте: у авторов сразу видимое действие на важном и плохо работающем участке (с. 302–303), у Коттера сначала коалиция и видение. План с фазами, сроками и составом работ — [lean-transition-roadmap](lean-transition-roadmap.md).
 
 ## Как я его адаптирую
 
@@ -62,3 +63,4 @@ status: draft
 - Вопрос топ-команде: на сколько процентов пройдена каждая из восьми стадий (Коттер, с. 47–48).
 - Девять вопросов ведущему изменения (Манцони, с. 62).
 - «История перемен» Диксона из пяти частей близка к срочности и видению: что происходит, почему старый подход был разумен, почему он больше не работает на своих данных, что меняется (Диксон и др., с. 204–208). В отличие от Коттера она требует признать разумность старого подхода.
+- Вопросы Вумека и Джонса (влиты кандидаты `change-agent-system-builder-pair` и `crisis-subunit-start`). Кто встанет рядом с агентом изменений и превратит перемены в систему, когда он уйдёт (с. 371–372)? Если общего кризиса нет, есть ли подразделение в кризисе или бережливый конкурент для сравнения (с. 299)? Есть ли все три роли: носитель знания, агент изменений, покровитель наверху (с. 279)?

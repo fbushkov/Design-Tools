@@ -3,7 +3,7 @@ id: opportunity-solution-tree
 title: Дерево возможностей и решений
 directions: [strategy, diagnostics]
 solves: [product-direction, busy-no-result]
-sources: [torres-2021-continuous-discovery, perri-2018-build-trap, cagan-2008-inspired, kaufman-2010-personal-mba]
+sources: [torres-2021-continuous-discovery, perri-2018-build-trap, cagan-2008-inspired, kaufman-2010-personal-mba, kalbach-2016-mapping-experiences]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -50,3 +50,4 @@ status: draft
 - Структура дерева и правила для возможностей (Торрес, с. 27–36, 85–99).
 - Снимок интервью на одну страницу (с. 72–81).
 - Десять вопросов оценки возможности (Каган, с. 84).
+- Калбах ставит дерево Торрес следующим шагом после карты опыта: оно выбирает, что менять на карте (Калбах, с. 569–572).

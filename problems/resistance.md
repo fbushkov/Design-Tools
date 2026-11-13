@@ -5,7 +5,7 @@ directions: [strategy, team-ai]
 category: [resistance]
 maturity: { management: [1, 2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, frame-creation, vanguard-check, embedded-strategic-design, system-before-person, diagnostic-vs-reward-metrics, matter-meta-zoom, idealized-design, implementation-as-project, intermediate-institutions, service-prototyping, solve-resolve-dissolve, system-traps, trust-ladder, consulting-contract, name-the-resistance, humble-inquiry, layers-of-analysis, meeting-for-action, eight-stage-change, shadow-ai-amnesty, algorithmic-control-audit, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, nominal-vs-real-allocation, participation-diamond, positional-analysis, psych-safety-toolkit, sanctions-ratio-audit, immunity-to-change-map, big-assumption-test, technical-vs-adaptive-challenge, give-control-to-get-control]
+approaches: [dark-matter-mapping, frame-creation, vanguard-check, embedded-strategic-design, system-before-person, diagnostic-vs-reward-metrics, matter-meta-zoom, idealized-design, implementation-as-project, intermediate-institutions, service-prototyping, solve-resolve-dissolve, system-traps, trust-ladder, consulting-contract, name-the-resistance, humble-inquiry, layers-of-analysis, meeting-for-action, eight-stage-change, shadow-ai-amnesty, algorithmic-control-audit, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, nominal-vs-real-allocation, participation-diamond, positional-analysis, psych-safety-toolkit, sanctions-ratio-audit, immunity-to-change-map, big-assumption-test, technical-vs-adaptive-challenge, give-control-to-get-control, lean-transition-roadmap]
 cases: []
 tags: [изменения, внедрение, вовлечение, мотивация]
 status: draft
@@ -62,6 +62,8 @@ status: draft
 | Что мы все делаем или не делаем вопреки цели? | Группе, без указания на фракции | Поведение группы служит скрытому коллективному обязательству | Киган и Лейхи, с. 66, 144, 411 |
 | Чего вы больше всего боитесь, если начнёте делать наоборот? | Человеку или группе, после описи поступков | Поведение защищает от тревоги, и давление её только усилит | Киган и Лейхи, с. 146, 345–346 |
 | Что сотрудники больше не обязаны делать, раз от них требуют нового? | Руководителю, до запуска | Новое легло поверх старого и воспринимается как ещё одно требование | Диксон и др., с. 221–222 |
+| Что будет с людьми, освобождёнными улучшением? Сокращали одной волной или «по каплям» по участкам? Есть ли стратегия роста, которая поглотит высвобожденных? | Собственнику, затем сотрудникам | Люди тихо саботируют улучшение, которое их сокращает | Вумек и Джонс, с. 156, 163–164, 308–310 |
+| Кто встанет рядом с агентом изменений и превратит перемены в систему, когда он уйдёт? | Собственнику, агенту изменений | Перемены держатся на одном человеке и откатятся после его ухода | Вумек и Джонс, с. 371–372 |
 
 ## Что делать в зависимости от зрелости
 
@@ -101,6 +103,10 @@ status: draft
 - **Линейный персонал не принимает новый стандарт сервиса.** Вычитать старые требования вместо того, чтобы класть новые поверх, и внедрять коучингом ([give-control-to-get-control](../approaches/give-control-to-get-control.md)).
 
 Где расходятся источники шестого прохода. **О срочности.** Киган и Лейхи показывают, что даже угроза смерти меняет поведение у одного из семи больных (Киган и Лейхи, с. 23–24), то есть рецепт Коттера «поднять срочность» (Коттер, с. 67–79) не работает там, где действует иммунитет. Уровни разные — организация у Коттера, внутренний механизм у Кигана, — но средство расходится прямо. **Человек или система.** Киган и Лейхи ищут причину в установках человека, системные факторы у них только в коллективной карте (с. 160, 419–420); Седдон требует сначала вопросов о системе (Седдон, с. 170–181). До карты стоит проверить систему, см. [system-before-person](../approaches/system-before-person.md).
+
+**Подходы восьмого прохода.**
+
+- **Улучшения грозят сокращениями.** Одна волна сокращений, затем гарантия, пять линий обороны до увольнений и стратегия роста ([lean-transition-roadmap](../approaches/lean-transition-roadmap.md), раздел «Защита занятости»). Оговорка: Wiremold начала с сокращения на 30%, Pratt гарантию дать не смогла (Вумек и Джонс, с. 154, 199, 204).
 
 ## Как понять, что стало лучше
 

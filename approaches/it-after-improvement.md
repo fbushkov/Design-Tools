@@ -3,7 +3,7 @@ id: it-after-improvement
 title: Сначала улучшить работу, потом автоматизировать
 directions: [team-ai, service-design, diagnostics]
 solves: [method-cargo, ai-no-effect, routine-load]
-sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, hill-2012-dark-matter, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, ackoff-1981-creating-corporate-future, kaufman-2010-personal-mba, mollick-2024-co-intelligence, skelton-pais-2019-team-topologies, adizes-1988-corporate-lifecycles]
+sources: [seddon-2003-freedom-from-command, deming-1982-out-of-crisis, hill-2012-dark-matter, brynjolfsson-2025-genai-at-work, dellacqua-2026-jagged-frontier, ackoff-1981-creating-corporate-future, kaufman-2010-personal-mba, mollick-2024-co-intelligence, skelton-pais-2019-team-topologies, adizes-1988-corporate-lifecycles, womack-1996-lean-thinking]
 maturity_min: { process: 2 }
 stages_fit: [1, 2, 3]
 stages_harm: []
@@ -20,6 +20,8 @@ status: draft
 Акофф пришёл к тому же порядку ещё в 1981 году. Он разбирает пять ложных предпосылок управленческих информационных систем: менеджерам не хватает информации, они знают, что им нужно, данные помогают сами по себе, больше общения всегда лучше, а понимать систему не обязательно. Отсюда вывод — сначала проектируют систему управления для одной области, а информационную подсистему делают последней (Акофф, с. 185–197). Автоматизация решений, по Акоффу, усложняет труд руководителя, а не упрощает (с. 181).
 
 Кауфман поддерживает порядок: автоматизируют чётко определённые повторяющиеся задачи, а чек-листы и стандартные процедуры готовят для этого почву (Кауфман, с. 465, 470–472).
+
+Вумек и Джонс (восьмой проход): в Lantech «демократичную» MRP и отдел ИТ из семи человек заменили белой доской по слотам такта (Вумек и Джонс, с. 129, 136–138). MRP свели к долгому планированию мощностей (с. 168, 216). ИТ — инструмент, который проверяют по потоку (с. 317), а централизованная ИТ-система бывает «монументом», требующим партий (с. 208). Если для улучшения нужны крупные вложения, это, скорее всего, не лин (с. 301).
 
 ## Когда работает
 
