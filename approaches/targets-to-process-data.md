@@ -3,7 +3,7 @@ id: targets-to-process-data
 title: Вместо плана и нормы — данные о самой работе
 directions: [strategy, diagnostics, service-design]
 solves: [metrics-as-target, busy-no-result]
-sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate, dixon-2013-effortless-experience, womack-1996-lean-thinking]
+sources: [deming-1982-out-of-crisis, seddon-2003-freedom-from-command, magretta-2002-what-management-is, poister-2014-managing-measuring-performance, meadows-2008-thinking-in-systems, berman-knight-2006-financial-intelligence, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, epstein-manzoni-2006-performance-measurement, ordonez-2009-goals-gone-wild, senge-1990-fifth-discipline, goldratt-1984-the-goal, forsgren-2018-accelerate, dixon-2013-effortless-experience, womack-1996-lean-thinking, wodtke-2016-radical-focus, doerr-2018-measure-what-matters]
 maturity_min: { data: 2 }
 stages_fit: []
 stages_harm: []
@@ -49,6 +49,8 @@ status: draft
 - **Директивная цель как смекалка.** Герой Голдратта принимает цель «+15 % прибыли» и подгоняет под неё базу расчёта, и книга подаёт это как находчивость (Голдратт, с. 231–232, 250, 258–259).
 - **Лекарство Hanover.** Сенге выходит из ловушки ровным наймом, обучением и медленно поднимаемой планкой качества (Сенге, с. 309), Седдон сначала убрал бы спрос-сбой, а потом решал бы, нужны ли люди.
 - **Вумек и Джонс за и против.** За: табло команды с поиском первопричины при отклонении тренда (Вумек и Джонс, с. 160–161), табло видны всем, но не служат основой наград (с. 314–315), внутренний бенчмаркинг по скорости улучшения (с. 315). Против: многолетние числовые цели — дефекты минус 50% в год, производительность плюс 20%, ежегодное снижение цены каждой детали поставщика (с. 113–114, 160–161, 239, 282). В 2003 году авторы смягчились: план — лишь прогноз (с. 385–386).
+
+- **Сторона «за» в OKR** (десятый проход; закрывает вопрос о переносе на OKR как оппонентскую позицию). Уодтке выбирает значение ключевого результата так, чтобы шанс был 50/50, спором и ощущением: «выложиться всем» — верно, «обречены» — слишком (Уодтке, с. 120–121, 134). Доэрр назначает цифры: 1000, затем 2000 побед в Intel (Доэрр, с. 110–111), «довольно произвольная» цель Chrome и торг вокруг 111 млн (с. 117, 119), миллиард часов просмотра YouTube (с. 126); опирается на Локка о трудных конкретных целях (с. 18–19). По Седдону это цели без метода установки (Седдон, с. 91–102), по Демингу — бессмысленные в стабильной системе (Деминг, с. 63, 66–67). Различения шума и сигнала нет ни у кого из двух. Смягчение у сторонников: провал ключевого результата — норма (Уодтке, с. 123, 141; Доэрр, с. 112), норма выполнения «70%» порождает подгонку (Уодтке, с. 153), обязательные цели отделены от амбициозных (Доэрр, с. 193; [committed-vs-aspirational-goals](committed-vs-aspirational-goals.md)). Совпадение с Демингом — отказ от аттестации и ранжирования (Доэрр, с. 133–137, 145; Деминг, с. 81–84).
 
 ## Как я его адаптирую
 

@@ -3,7 +3,7 @@ id: rule-feasibility-check
 title: Проверка выполнимости правил — можно ли соблюдать все регламенты и показатели одновременно
 directions: [diagnostics, strategy]
 solves: [control-surveillance, method-cargo, metrics-as-target]
-sources: [ledeneva-2006-how-russia-works, block-1981-flawless-consulting, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, bernstein-2012-transparency-paradox, prigozhin-2007-disorganization, kordonsky-2008-estate-structure, edmondson-2018-fearless-organization, senge-1990-fifth-discipline]
+sources: [ledeneva-2006-how-russia-works, block-1981-flawless-consulting, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, bernstein-2012-transparency-paradox, prigozhin-2007-disorganization, kordonsky-2008-estate-structure, edmondson-2018-fearless-organization, senge-1990-fifth-discipline, kaufman-2010-personal-mba]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -50,3 +50,14 @@ status: draft
 ## Инструменты
 
 - Вопросы: все ли регламенты и показатели роли выполнимы одновременно; кто решает, к кому их применять; что было с последним, кого наказали (вопросы выведены конспектором из Леденёвой, с. 26–27, 116–117).
+
+### Нулевая гипотеза до нового правила
+
+Кандидат Кауфмана 2020 `null-hypothesis-before-rule`, влит сюда, потому что это проверка правила до его появления (десятый проход). Склонность вмешиваться: после единичного инцидента хочется добавить согласований, отчётов и проверок, чтобы почувствовать контроль; итог — не рост пропускной способности, а рост накладных расходов (Кауфман, изд. 2020, с. 425–426).
+
+1. Перед новым правилом, проверкой или согласованием спросить: что будет, если ничего не менять или считать случай ошибкой? (с. 426)
+2. Проверить, массовое ли это явление или единичный случай (с. 426).
+3. Единичный случай решать разговором с конкретным человеком, а не правилом для всех. Пример автора: компания покупает сотрудникам любые книги без вопросов; один заказал сотни романов для себя. Согласование всех покупок проблему не решит, потому что она не массовая, но рассердит всех, кто честно пользуется правом (с. 426).
+4. Если правило всё же нужно, пройти проверку выполнимости выше и посчитать, сколько ёмкости оно отнимет ([ceremony-audit](ceremony-audit.md); Кауфман, изд. 2020, с. 440–441).
+
+Совпадает с логикой Деминга: не реагировать на единичное колебание как на системную причину ([process-behavior-chart](process-behavior-chart.md)). Данных у Кауфмана нет, пример выдуманный.

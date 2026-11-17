@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [okr-weekly-rhythm, okr-setting-session]
+approaches: [okr-weekly-rhythm, okr-setting-session, committed-vs-aspirational-goals, continuous-performance-conversations, outcome-strategy-cascade, balancing-counter-metrics, proximate-objectives, targets-to-process-data, diagnostic-vs-reward-metrics, dedicated-product-team, critical-assumption-testing, operational-definitions, initiative-triage, system-before-person, implementation-as-project]
 categories: [method-cargo, busy-no-result, metrics-as-target, product-direction]
 read: true
 rating:
@@ -69,7 +69,9 @@ tags: [okr, цели, фокус, ритм, растягивающие-цели,
   - Торрес (`torres-2021-continuous-discovery`). Совпадает: метрики здоровья рядом с целью (Торрес, с. 50), цель в зоне контроля команды (с. 39–44; Уодтке, с. 118–119), немного целей. Расходится: у Торрес цель согласуют с командой, решения не обещают, а для нового показателя ставят цель обучения. У Уодтке цель компании выбирает руководство, а растягивающая цель стоит у всех KR.
   - Перри (`perri-2018-build-trap`) и Каган (`cagan-2008-inspired`). Предисловие Кагана о «фабрике функций» и мере результатом, а не выпуском (с. 5), — тот же тезис, что ловушка производства у Перри. Глава Кагана о целях продуктовой команды (с. 124–127) совпадает с выделенной продуктовой командой ([dedicated-product-team](../approaches/dedicated-product-team.md)).
   - Коттер (`kotter-1996-leading-change`). «Когда устал повторять, люди только начинают слышать» (с. 59, 111) — тот же совет, что многократное повторение видения у Коттера. Бриджес относится к лозунгам с недоверием (`bridges-1991-managing-transitions`, с. 199–200).
-  - Доэрр (Measure What Matters) ещё не законспектирован. Уодтке называет его распространителем OKR из Intel (с. 164). Сверять с ним после конспекта.
+  - Доэрр (`doerr-2018-measure-what-matters`) законспектирован и сверен в десятом проходе куратора. Расхождения — одна цель против 3–5, все KR растягивающие против обязательных и амбициозных, «не менять посреди квартала» против «можно менять», «OKR — не всё» против «покрыть всю заметную работу» — записаны в [okr-setting-session](../approaches/okr-setting-session.md), [okr-weekly-rhythm](../approaches/okr-weekly-rhythm.md) и [committed-vs-aspirational-goals](../approaches/committed-vs-aspirational-goals.md).
 - **Нечитаемые места.** Эскизы квадрантов и карточка Kanban GatherContent (с. 77, 81, 82, 129, 133, 145) — картинки, в тексте пустые строки. Пример KR для MVP на с. 120 склеен в одну строку. Имена в тексте с опечатками: «Carvil» — по общим знаниям, Джеймс Карвилл.
 
 ## Где это пригодилось
+
+- Десятый проход куратора (2026-11-17): основа подходов [okr-weekly-rhythm](../approaches/okr-weekly-rhythm.md) и [okr-setting-session](../approaches/okr-setting-session.md), противоположная позиция в [committed-vs-aspirational-goals](../approaches/committed-vs-aspirational-goals.md), глава Пакнад — в [continuous-performance-conversations](../approaches/continuous-performance-conversations.md). Стадии каскада — в [outcome-strategy-cascade](../approaches/outcome-strategy-cascade.md); вопросы для диагностики в `method-cargo`, `metrics-as-target`, `busy-no-result`, `product-direction`, `silo-service`.

@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics]
-approaches: [committed-vs-aspirational-goals, continuous-performance-conversations, cross-team-dependency-review, staged-okr-rollout, sell-your-reds, okr-scoring-and-reflection]
+approaches: [okr-weekly-rhythm, okr-setting-session, committed-vs-aspirational-goals, continuous-performance-conversations, outcome-strategy-cascade, balancing-counter-metrics, diagnostic-vs-reward-metrics, targets-to-process-data, system-before-person, initiative-triage, proximate-objectives, ceremony-audit, implementation-as-project, psych-safety-toolkit, humble-inquiry]
 categories: [method-cargo, metrics-as-target, busy-no-result, product-direction, silo-service, employee-experience, control-surveillance]
 read: true
 rating:
@@ -76,3 +76,5 @@ tags: [okr, цели, фокус, растягивающие-цели, обяз�
 - **Каскад.** Доэрр критикует полный каскад (с. 68–74), но в Coursera строит каскад от ценностей к командным OKR (с. 163–164). Это ближе к ограничениям [outcome-strategy-cascade](../approaches/outcome-strategy-cascade.md), чем к его полной версии.
 
 ## Где это пригодилось
+
+- Десятый проход куратора (2026-11-17): основа [committed-vs-aspirational-goals](../approaches/committed-vs-aspirational-goals.md) и [continuous-performance-conversations](../approaches/continuous-performance-conversations.md); `okr-scoring-and-reflection` и `sell-your-reds` влиты в [okr-weekly-rhythm](../approaches/okr-weekly-rhythm.md) и [okr-setting-session](../approaches/okr-setting-session.md), `cross-team-dependency-review` — разделом в [outcome-strategy-cascade](../approaches/outcome-strategy-cascade.md), `staged-okr-rollout` — разделом в [implementation-as-project](../approaches/implementation-as-project.md). Вопросы для диагностики в семи проблемах.

@@ -5,7 +5,7 @@ directions: [service-design]
 category: [silo-service]
 maturity: { process: [1, 2, 3], management: [2, 3] }
 scale: [small, mid, large]
-approaches: [outside-in-value, failure-demand-analysis, design-against-demand, dark-matter-mapping, matter-meta-zoom, experience-journey-map, mess-formulation, service-blueprint, service-prototyping, solve-resolve-dissolve, ai-team-composition, culture-traits-diagnosis, studio-week, jobs-to-be-done, team-types-and-interaction-modes, customer-effort-score, channel-stickiness, next-issue-avoidance, value-stream-map-current, value-stream-manager, blueprint-business-case, service-ecology-map, service-safari, map-type-selection, journey-management-readiness, whole-product-journey-scorecard]
+approaches: [outside-in-value, failure-demand-analysis, design-against-demand, dark-matter-mapping, matter-meta-zoom, experience-journey-map, mess-formulation, service-blueprint, service-prototyping, solve-resolve-dissolve, ai-team-composition, culture-traits-diagnosis, studio-week, jobs-to-be-done, team-types-and-interaction-modes, customer-effort-score, channel-stickiness, next-issue-avoidance, value-stream-map-current, value-stream-manager, blueprint-business-case, service-ecology-map, service-safari, map-type-selection, journey-management-readiness, whole-product-journey-scorecard, outcome-strategy-cascade]
 cases: []
 tags: [межфункциональное-взаимодействие, клиентский-путь, поток]
 status: draft
@@ -72,6 +72,9 @@ status: draft
 | Нарисуйте по пустому шаблону, что вы знаете об опыте клиента. Где ваше знание кончается? | Внутренним стейкхолдерам, каждому отдельно | Каждый видит свой кусок пути, общей картины нет ни у кого | Калбах, с. 221 |
 | Звучат ли в ответ на предложение изучить путь клиента фразы «у каждого отдела своя карта процесса», «мы и так всё знаем», «я сам был клиентом», «маркетинг уже исследует»? | Руководству, по ходу обсуждения | Взгляд изнутри наружу: опыт клиента подменён знанием своих процессов | Калбах, с. 196–198 (табл. 5-1) |
 | Сколько организаций и отделов касается клиента на пути к результату, сколько очередей и одинаковых проверок он проходит, какая доля времени уходит на движение к результату? Почему клиент должен делать именно так, и знает ли кто-нибудь ответ? | Клиенту по хронологии одного случая, затем владельцам шагов | Каждый оптимизирует свой кусок, путь целиком никто не интегрирует | Вумек и Джонс, с. 40–43 |
+| Есть ли у участника продуктовой команды цели от функционального руководителя, которые тянут в другую сторону? | Участникам кросс-функциональных команд | Цели спускают по отделам, а не командам, и человек разрывается между ними | Уодтке, с. 125–126 (глава Кагана) |
+| Назовите сделку, где ваш отдел явно помог продажам. Как мы узнаем в конце квартала, что вы помогли? Согласовано ли это определение с продажами? | Руководителю сервисного или технического отдела | Вклад отдела в общий результат не определён и не согласован с соседями | Уодтке, с. 136–138 (глава Ламорта) |
+| Все ли получили нужную поддержку от других команд? Не перегружена ли какая-то команда? Как сделать её цели реалистичнее? | Руководителям команд на общей встрече | Неучтённые зависимости между командами — главная причина срывов | Доэрр, с. 76, 80–81 |
 
 ## Что делать в зависимости от зрелости
 
@@ -118,6 +121,8 @@ status: draft
 - **Структура против пути.** Калбах объясняет силосы финансовым скелетом R&D/GTM и предлагает команды и OKR по фазам пути (Калбах, с. 527–534); раздел в [team-types-and-interaction-modes](../approaches/team-types-and-interaction-modes.md).
 
 Где расходятся источники восьмого прохода. **Реорганизация по фазам пути.** Калбах подаёт команды по фазам пути как решение (Калбах, с. 528–531), не обсуждая цену и новые стыки между фазами. Скелтон и Паис требуют задавать режимы взаимодействия на каждом стыке (Скелтон и Паис, с. 129–145), Дауни считает погоню за идеальной структурой путём к вечной реорганизации (Дауни, с. 122–126). Позиции не сведены.
+
+**Подходы десятого прохода.** Команды срывают цели друг друга: раз в квартал сверить зависимости между командами — раздел «Сверка зависимостей» в [outcome-strategy-cascade](../approaches/outcome-strategy-cascade.md) (Доэрр, с. 76, 80–81). Цели ставить продуктовой команде, а не функциональному отделу (Каган у Уодтке, с. 125–127; [dedicated-product-team](../approaches/dedicated-product-team.md)). Где расходятся источники: Доэрр требует одного владельца у каждой цели (Доэрр, с. 81), что противоречит [system-before-person](../approaches/system-before-person.md) и общим целям команд у Кагана.
 
 ## Как понять, что стало лучше
 

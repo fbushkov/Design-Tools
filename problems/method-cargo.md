@@ -5,7 +5,7 @@ directions: [strategy]
 category: [method-cargo]
 maturity: { management: [2, 3], process: [2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions, map-type-selection, journey-management-readiness, lean-transition-roadmap, transition-three-phases, helping-mode-choice, client-map]
+approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions, map-type-selection, journey-management-readiness, lean-transition-roadmap, transition-three-phases, helping-mode-choice, client-map, okr-weekly-rhythm, okr-setting-session]
 cases: []
 tags: [внедрение, мода, ритуал, системное-мышление]
 status: draft
@@ -74,6 +74,11 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 | В чём проблема, кто так считает, на каких данных, что будет без изменения? Нет ли «пустой цели» — каприза, видимости активности, копии соседей, скрытой цели? | Заказчику изменения | Метод внедряют без проблемы, ради видимости или вслед за другими | Бриджес, с. 104–106 |
 | Ясна ли проблема и ясно ли решение? Кто ставил диагноз и верят ли ему те, кто будет внедрять? | Заказчику | Покупают экспертизу при неясной проблеме, и рецепт не внедрится | Шейн 1999, с. 24–33, 37–38 |
 | Чего на самом деле ждёт заказчик: оценить подчинённых, разобраться с «трудными людьми», продать уже принятое решение? Уверен ли он в ответе, ищет ли одобрения начатого? | Себе, после первой встречи | Консультанта зовут узаконить готовое решение | Шейн 1999, с. 243, 256 |
+| Назовите цели этого квартала. (Каждому отдельно, включая основателей) | Руководителям и основателям | Целей слишком много или о них забыли через неделю после постановки; OKR есть на бумаге, а не в работе | Уодтке, с. 75–76, 152; Доэрр, с. 48 |
+| Какую долю ключевых результатов выполнили в прошлом квартале? | Руководителю, ответственному за цели | Все — цели занижены из страха неудачи; ни одного — переобещание; не помнят — поставили и забыли до последней недели | Уодтке, с. 113, 152; Доэрр, с. 98 |
+| Есть ли у первого лица собственные OKR, или «все мои цели — командные»? | Собственнику, CEO | Первое лицо внедряет систему для других, а само в ней не участвует — красный флаг формального внедрения | Доэрр, с. 47, 63 |
+| Почему эта цель стоит в ваших OKR? Когда собирают цифры по целям и правят ли их задним числом? | Руководителям среднего звена; тому, кто ведёт систему | Цели декоративные: связь с работой не объясняют, цифры собирают перед советом директоров, «участие» высокое, ответственного за систему нет | Доэрр, с. 169 |
+| Сколько времени занимает постановка целей на квартал и сколько целей на команду? | Руководителю, HR | Постановка дольше двух недель — откладывание и нежелание выбирать; 30–40 целей на команду из десяти — перечень работы, а не фокус | Уодтке, с. 139–140; Доэрр, с. 124 |
 
 ## Что делать в зависимости от зрелости
 
@@ -122,6 +127,12 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 **Подходы девятого прохода.** Заказ «внедрить метод» на первой встрече: выяснить, ясны ли проблема и решение, и выбрать режим помощи ([helping-mode-choice](../approaches/helping-mode-choice.md)); разложить, кто контактный, основной и конечный клиент ([client-map](../approaches/client-map.md)). Метод уже внедряют: вести переход людей и сверить слова с наградами ([transition-three-phases](../approaches/transition-three-phases.md)).
 
 Где расходятся источники девятого прохода. Шейн против интервью и анкет по умолчанию и против модели «диагностика → рекомендации»: «чистой диагностики не бывает» (Шейн 1999, с. 32–35, 246–247). Блок строит работу на данных, собранных консультантом, и встрече с выводами (Блок, с. 162–174, 213–238). Подробнее в [consulting-contract](../approaches/consulting-contract.md).
+
+**Подходы десятого прохода.**
+
+- **OKR внедрены, но о них забыли.** Вернуть недельный ритм — понедельничные обязательства, пятничные победы, месячный разбор красных целей ([okr-weekly-rhythm](../approaches/okr-weekly-rhythm.md)); если цели плохие с самого начала, переставить их по процедуре и проверкам формулировок ([okr-setting-session](../approaches/okr-setting-session.md)). Перезапуск после формального внедрения — раздел в [implementation-as-project](../approaches/implementation-as-project.md), признаки карго-OKR — в [ceremony-audit](../approaches/ceremony-audit.md).
+
+Где расходятся источники десятого прохода. Уодтке ставит одну цель на компанию и считает, что OKR — не всё, что делает команда (Уодтке, с. 152, 161), Доэрр — 3–5 целей и тест «заметная работа не покрыта — добавьте» (Доэрр, с. 36, 52, 198). Уодтке запрещает менять цели посреди квартала (Уодтке, с. 123), Доэрр разрешает (Доэрр, с. 95–96, 207). Оба назначают цифры ключевых результатов без метода, против чего Седдон и Деминг (Седдон, с. 91–102; Деминг, с. 63, 66–67). Данных нет ни у одного: притча и истории успеха. Первое внедрение оба советуют начинать малым: одна OKR без каскада или пилот (Уодтке, с. 141–142; Доэрр, с. 63, 85–86), но Доэрр требует «без исключений» и приводит публичный список 13 опоздавших (Доэрр, с. 93–94), против чего Мюллер (Мюллер, с. 28–29).
 
 ## Как понять, что стало лучше
 

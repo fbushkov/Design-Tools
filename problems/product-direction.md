@@ -5,7 +5,7 @@ directions: [strategy]
 category: [product-direction]
 maturity: { product: [1, 2] }
 scale: [micro, small, mid]
-approaches: [business-model-as-story, strategic-tradeoffs, reframe-the-brief, service-prototyping, problem-definition-framework, strategy-kernel, proximate-objectives, critical-assumption-testing, jobs-to-be-done, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, service-ecology-map, research-depth-levels, dedicated-product-team]
+approaches: [business-model-as-story, strategic-tradeoffs, reframe-the-brief, service-prototyping, problem-definition-framework, strategy-kernel, proximate-objectives, critical-assumption-testing, jobs-to-be-done, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, service-ecology-map, research-depth-levels, dedicated-product-team, okr-setting-session]
 cases: []
 tags: [продукт, стратегия, бэклог, приоритеты]
 status: draft
@@ -74,6 +74,9 @@ status: draft
 | Сколько вариантов детали, опции или тарифа мы делаем, и замечает ли клиент разницу? | Продукту, инженерам, продажам | Варианты плодят по инженерной или отдельской логике, без голоса клиента | Вумек и Джонс, с. 195, 256–257 |
 | «Все в нашей отрасли знают, что…» — какое из этих допущений можно перевернуть? | Команде продукта на воркшопе | Продукт держится на неосознанных отраслевых нормах | Калбах, с. 372–373 |
 | Перед нами стратегия или список пожеланий отделов? Поддерживают ли стратегические активности ценный для клиента опыт, и что должно быть правдой, чтобы это сработало? | Руководству | План трат выдан за стратегию, связанных выборов нет | Калбах, с. 551–552, 563, 581–582 |
+| Есть ли у вас соответствие продукта рынку? | Основателям | Без него цели на квартал преждевременны, кроме одной — найти это соответствие; команде, которая не держит курс дольше недели, OKR рано | Уодтке, с. 152 |
+| Если бы совет поставил нового руководителя без груза истории, что бы он сделал? | Основателям, совету | Решение о развороте откладывают из-за прошлых вложений и обязательств (тест «вращающейся двери» Гроува и Мура) | Уодтке, с. 33 |
+| Нам нужно быть дерзкими или консервативными? Мы в режиме выживания или есть деньги на большие ставки? | Собственнику и руководству | Соотношение обязательств и ставок не выбрано сознательно; амбициозные цели ставят без запаса ресурсов | Доэрр, с. 109 |
 
 ## Что делать в зависимости от зрелости
 
@@ -104,6 +107,8 @@ status: draft
 - **Путь от идеи до запуска занимает годы при неделях работы.** Снять проекты, дать выделенные совмещённые команды первым в ранжированном списке, одного ответственного за продукт на весь срок жизни ([dedicated-product-team](../approaches/dedicated-product-team.md)). Опора — машиностроение, для цифрового продукта рядом нужны [critical-assumption-testing](../approaches/critical-assumption-testing.md) и [opportunity-solution-tree](../approaches/opportunity-solution-tree.md).
 
 Где расходятся источники восьмого прохода. **Лин и стратегия.** Вумек и Джонс утверждают, что лин и есть стратегия: сначала убрать муда, портфель обдумать потом (Вумек и Джонс, с. 173, 300–301). Их же кейс Showa показывает обратное: снижение затрат купило время, а прибыль дала только новая стратегия (с. 267–269). Румельт и Магретта ставят выбор позиции раньше эффективности, см. [strategy-kernel](../approaches/strategy-kernel.md) и [strategic-tradeoffs](../approaches/strategic-tradeoffs.md). Позиции не сведены.
+
+**Подходы десятого прохода.** Нет ответа, что сейчас самое важное: поставить одну цель на квартал с ключевыми результатами-противовесами ([okr-setting-session](../approaches/okr-setting-session.md)). Уодтке оговаривает, что до соответствия продукта рынку OKR, возможно, рано, кроме цели найти это соответствие (Уодтке, с. 152). Миссия у Уодтке идёт первым шагом без диагноза (Уодтке, с. 115–117), что расходится с Румельтом (Румельт, с. 93–108).
 
 ## Как понять, что стало лучше
 

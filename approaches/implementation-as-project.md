@@ -3,7 +3,7 @@ id: implementation-as-project
 title: Внедрение как отдельный проект, где аудитория — сотрудники
 directions: [service-design, strategy, team-ai]
 solves: [resistance, method-cargo, employee-experience]
-sources: [stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, block-1981-flawless-consulting, kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization, rother-1999-learning-to-see, polaine-2013-service-design, bridges-1991-managing-transitions]
+sources: [stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, poister-2014-managing-measuring-performance, seddon-2003-freedom-from-command, dorst-2015-frame-innovation, block-1981-flawless-consulting, kotter-1996-leading-change, epstein-manzoni-2006-performance-measurement, prigozhin-2003-org-development-methods, prigozhin-2007-disorganization, rother-1999-learning-to-see, polaine-2013-service-design, bridges-1991-managing-transitions, wodtke-2016-radical-focus, doerr-2018-measure-what-matters]
 maturity_min: { management: 2 }
 stages_fit: []
 stages_harm: []
@@ -58,3 +58,15 @@ status: draft
 - Стратегии Пойстера против типовых провалов, например давать исполнителям первыми увидеть и прокомментировать свои данные и обещать, что из-за системы не будет сокращений (гл. 15).
 - Внедрение по петлям потока: годовой план с измеримыми целями и проверяющими в бюджете, разбор с проваленных пунктов вопросом «что нужно, чтобы вернуть в график» (Ротер и Шук, с. 94–102), см. [future-state-questions](future-state-questions.md).
 - Пилот как доказательство бизнес-кейса перед масштабированием (Полейн и др., с. 158, 196–197), см. [blueprint-business-case](blueprint-business-case.md). Оговорки Стикдорна о «пилоте-обманке» (Стикдорн, с. 459–463) у Полейна нет.
+
+### Поэтапное внедрение OKR и перезапуск после формального
+
+Влит кандидат Доэрра `staged-okr-rollout` (десятый проход). Частный случай внедрения как проекта: система целей вводится по слоям, у неё есть ответственный, а провал первой попытки разбирают.
+
+1. **Убеждённость первых лиц и их собственные открытые OKR.** Красный флаг — CEO, у которого «все цели командные» (Доэрр, с. 47, 63).
+2. **По слоям:** сначала руководящая команда, через квартал следующий уровень, затем все (Nuna, Intuit; с. 63, 85–86). В Zume первые циклы цели пишут основатели, затем команда сама пишет ключевые результаты к ним; два квартала OKR только у руководителей (с. 152–155). У Уодтке три способа начать малым: одна OKR компании без каскада, один независимый пилотный отдел, OKR на отдельные проекты (Уодтке, с. 141–142).
+3. **Пилот и ответственный:** пилот на сотнях людей (Доэрр, с. 86), «пастух OKR» отвечает за работу системы (с. 93, 169). На освоение уходит 4–5 кварталов (с. 36); первый квартал, по Уодтке, проваливается у всех (Уодтке, с. 113).
+4. **Перезапуск после карго-OKR** (Lumeris, Доэрр, с. 169–172): признать провал и то, что третьего шанса не будет; назначить явного спонсора из руководства; сменить руководителей, которые не живут ценностями (с. 170); 60-дневный пилот на 100 человек, где руководитель сам спрашивает о целях подчинённых (с. 171); обучить всех 250 руководителей за пять недель малыми группами по темам «почему, что, как, когда» (с. 172).
+5. **До внедрения** снять барьеры доверия и подотчётности (с. 210).
+
+Где ломается. Доэрр требует внедрять «универсально, без исключений и отказов» (с. 93), а в Nuna CEO разослал всей компании письмо со списком 13 менеджеров, не поставивших OKR, с именами (с. 93–94). Мюллер считает публикацию цифр, привязанных к людям, механизмом вреда (Мюллер, с. 28–29); Бриджес предупреждает, что давление без работы с утратой рождает сопротивление ([transition-three-phases](transition-three-phases.md)). Мера успеха перезапуска в Lumeris — доля участия в системе, то есть мера внедрения, а не результата (Доэрр, с. 171–172). Связь с карго — [ceremony-audit](ceremony-audit.md).

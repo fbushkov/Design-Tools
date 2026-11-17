@@ -3,7 +3,7 @@ id: ceremony-audit
 title: Проверка церемонии — что из формальной системы работает, а что заполняют для отчёта
 directions: [diagnostics, strategy, team-ai]
 solves: [method-cargo, metrics-as-target, routine-load]
-sources: [epstein-manzoni-2006-performance-measurement, ledeneva-2006-how-russia-works, mollick-2024-co-intelligence, kaufman-2010-personal-mba, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, kordonsky-2008-estate-structure, schein-1999-process-consultation]
+sources: [epstein-manzoni-2006-performance-measurement, ledeneva-2006-how-russia-works, mollick-2024-co-intelligence, kaufman-2010-personal-mba, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, kordonsky-2008-estate-structure, schein-1999-process-consultation, doerr-2018-measure-what-matters]
 maturity_min: {}
 stages_fit: [3, 4]
 stages_harm: []
@@ -37,6 +37,9 @@ status: draft
 - Леденёва показывает, что двойной учёт одновременно уводил налоги и был одним из немногих источников инвестиций (с. 25–26). Обход — симптом дефекта правила и опора, на которой процесс держится. Ломать его без замены опасно, см. [rule-feasibility-check](rule-feasibility-check.md).
 - Внутри сборника Эпштейна и Манцони другие авторы (Буско, Лори, Pock и Westlund, Youssef) принимают BSC, ISO и «Шесть сигм» положительно, а Пибер и Пич называют их мифами. Позиция сборника не единая (см. «Что спорно» в карточке сборника).
 - Признаки мифа у Пибера и Пича выведены на одном кейсе австрийских университетов.
+
+- **Накладные расходы процессов** (Кауфман, изд. 2020, с. 440–441). Каждый процесс отнимает ёмкость, у процессов есть точка убывающей отдачи. Устаревшие отменяют, а менять их дают тем, кто ближе к работе, а не спускают сверху. Это довод в пользу аудита, но и предупреждение ему: аудит, спущенный сверху, сам становится процессом.
+- **Формальные OKR как церемония** (Доэрр, с. 92, 169, 194, 196). Признаки по Lumeris: руководитель не может объяснить, почему цель стоит в его OKR; сотрудники спрашивают «что мне с этого»; цифры собирают перед советом директоров и правят задним числом; высокое «участие» без связи с работой; нет ответственного за систему (с. 169). «Зомби-OKR» и цели «работа как обычно» — то же (с. 92, 194, 196). Перезапуск — раздел в [implementation-as-project](implementation-as-project.md).
 
 ## Как я его адаптирую
 

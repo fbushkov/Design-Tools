@@ -3,7 +3,7 @@ id: balancing-counter-metrics
 title: Противовесы к показателю против подмены цели
 directions: [strategy, diagnostics]
 solves: [metrics-as-target, control-surveillance]
-sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, meadows-2008-thinking-in-systems, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, ordonez-2009-goals-gone-wild, perri-2018-build-trap, torres-2021-continuous-discovery, forsgren-2018-accelerate, dixon-2013-effortless-experience]
+sources: [poister-2014-managing-measuring-performance, magretta-2002-what-management-is, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, deming-1982-out-of-crisis, seddon-2003-freedom-from-command, meadows-2008-thinking-in-systems, austin-1996-measuring-managing-performance, epstein-manzoni-2006-performance-measurement, kerr-1975-folly-of-rewarding, ordonez-2009-goals-gone-wild, perri-2018-build-trap, torres-2021-continuous-discovery, forsgren-2018-accelerate, dixon-2013-effortless-experience, wodtke-2016-radical-focus, doerr-2018-measure-what-matters]
 maturity_min: { data: 2 }
 stages_fit: []
 stages_harm: []
@@ -41,6 +41,8 @@ status: draft
 - Ордоньес и соавторы против Остина. «Всеобъемлющие» цели (Ордоньес и др., с. 27) — то самое добавление показателей, которое у Остина без полного покрытия не спасает (Остин, с. 65–67). Сами Ордоньес и соавторы признают, что сильнее всего цели вредят там, где наблюдать трудно (с. 19), то есть как раз там, где полного покрытия нет.
 - Ордоньес против Пойстера о stretch-целях. Пойстер по умолчанию советует SMART- и stretch-цели и управление по целям (Пойстер, гл. 4, 10, 15), Ордоньес и соавторы считают именно трудные цели источником риска и обмана, особенно при деньгах за выполнение и слабом надзоре (с. 10–13). Керр добавляет, что управление по целям само наказывает за недостижение смелых целей, которые просит ставить, а незаписанные цели не вознаграждаются (Керр, с. 775). Противовес к stretch-цели проблему трудности не снимает.
 - **Противовес против подлога.** Торрес считает метрики здоровья ответом на ловушку вроде Wells Fargo, а саму цель по числу счетов — верной (Торрес, с. 22–26, 50). Ордоньес, Керр и Деминг видят в Wells Fargo следствие трудной цели с наградой, и противовес этого не лечит.
+
+- **Противовесы в OKR** (десятый проход). Уодтке держит рядом с целью две метрики здоровья — то, что нельзя сломать, пока жмёшь на цель: отношения с ключевыми клиентами, стабильность кода, самочувствие команды (Уодтке, с. 79–80, 97, 129); в наборе ключевых результатов — противоположные силы, правило «использование + выручка + удовлетворённость» и не две денежные метрики, потому что погоня за выручкой ведёт к подгонке и бьёт по удержанию (с. 120, 134). Доэрр — парные ключевые результаты Гроува, «эффект и контрэффект», количество и качество (Доэрр, с. 50–51, 206); YouTube к цели по времени просмотра позже добавил удовлетворённость (с. 125–127, 131). Это те же метрики здоровья, что у Торрес, и под ту же критику Деминга и Седдона: противовес к произвольной цели не делает её менее произвольной.
 
 ## Как я его адаптирую
 

@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, service-design, diagnostics, team-ai]
-approaches: [business-model-as-story, service-prototyping, service-blueprint, strategic-tradeoffs, system-before-person, diagnostic-vs-reward-metrics, purpose-derived-measures, operational-definitions, automation-by-stage-and-level, it-after-improvement, system-traps, ceremony-audit, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, initiative-triage, opportunity-solution-tree, value-stream-map-current]
+approaches: [business-model-as-story, service-prototyping, service-blueprint, strategic-tradeoffs, system-before-person, diagnostic-vs-reward-metrics, purpose-derived-measures, operational-definitions, automation-by-stage-and-level, it-after-improvement, system-traps, ceremony-audit, chain-link-campaigns, critical-assumption-testing, decision-rights-clarity, initiative-triage, opportunity-solution-tree, value-stream-map-current, process-behavior-chart, trust-ladder, rule-feasibility-check, give-control-to-get-control]
 categories: [product-direction, busy-no-result, metrics-as-target, decision-bottleneck, churn, resistance, routine-load, control-surveillance]
 read: true
 rating: 3
@@ -41,7 +41,7 @@ tags: [general-management, business-basics, mental-models, theory-of-constraints
 
 **Перегрузка и полная загрузка — ложная эффективность.** Сверх некоторого числа задач человек хуже делает каждую, а переключение само отнимает силы на «загрузку контекста». Задачу можно не только выполнить, но и вычеркнуть, делегировать или отложить. Нужен незапланированный резерв, и тот же принцип Кауфман переносит на системы: запас в сроках и ресурсах нужен, хотя его вечно срезают (с. 305–310, 340–341, 375, 408).
 
-**Чем больше людей, тем дороже согласование, и у задачи должен быть один владелец.** Издержки коммуникации растут быстрее численности. Автор приводит восемь симптомов бюрократического сбоя по Сатклиффу (невидимые решения, много начатого и мало законченного, паралич согласований и другие) и рецепт — маленькую автономную команду. Поручение комитету не выполняется из-за эффекта свидетеля, поэтому задача получает одного владельца и срок (с. 362–364, 373–374).
+**Чем больше людей, тем дороже согласование, и у задачи должен быть один владелец.** Издержки коммуникации растут быстрее численности. Автор приводит восемь симптомов бюрократического сбоя (в издании 2010 приписаны Сатклиффу, в 2020 — Дереку Шину, см. «Что спорно»; невидимые решения, много начатого и мало законченного, паралич согласований и другие) и рецепт — маленькую автономную команду. Поручение комитету не выполняется из-за эффекта свидетеля, поэтому задача получает одного владельца и срок (с. 362–364, 373–374).
 
 **Делегируют замысел, а не инструкцию, а начальник живёт в пузыре.** Микроменеджмент не масштабируется и ломается при первом изменении обстановки. Исполнитель, который знает, зачем нужна задача, перестроится сам. Пример: поддержка у Ферриса решает проблемы клиентов до 400 долларов без владельца, и бизнес перестаёт зависеть от одного человека. Подчинённые фильтруют то, что сообщают руководителю, без данных побеждает мнение самого высокооплачиваемого, а чужой провал мы объясняем характером, хотя чаще виноваты обстоятельства (с. 371–372, 388, 393, 397–398, 420).
 
@@ -106,3 +106,5 @@ tags: [general-management, business-basics, mental-models, theory-of-constraints
 - **Пример с Toyota остался.** В издании 2020 пример отзыва Toyota в разделе об автоматизации сохранён (изд. 2020, с. 467, прим. 7 к гл. 4).
 
 ## Где это пригодилось
+
+- Десятый проход куратора (2026-11-17), изд. 2020: разброс и допуск — в [process-behavior-chart](../approaches/process-behavior-chart.md) и [operational-definitions](../approaches/operational-definitions.md); нулевая гипотеза — раздел в [rule-feasibility-check](../approaches/rule-feasibility-check.md); разделение обязанностей и «батарея доверия» — раздел в [trust-ladder](../approaches/trust-ladder.md); заданные границы — в [give-control-to-get-control](../approaches/give-control-to-get-control.md); накладные расходы процессов — в [ceremony-audit](../approaches/ceremony-audit.md). Атрибуция списка о бюрократии исправлена в [decision-rights-clarity](../approaches/decision-rights-clarity.md), снятый раздел Willpower Depletion отмечен в [system-before-person](../approaches/system-before-person.md). Из «49 вопросов» в проблемы взяты четыре (`busy-no-result`, `decision-bottleneck`).

@@ -5,7 +5,7 @@ directions: [diagnostics]
 category: [busy-no-result]
 maturity: { management: [1, 2, 3], process: [1, 2] }
 scale: [micro, small, mid]
-approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge, value-stream-map-current, future-state-questions, dedicated-product-team, level-demand-signals, group-process-observation]
+approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge, value-stream-map-current, future-state-questions, dedicated-product-team, level-demand-signals, group-process-observation, okr-weekly-rhythm, okr-setting-session, committed-vs-aspirational-goals]
 cases: []
 tags: [потери, фокус, диагностика]
 status: draft
@@ -72,6 +72,11 @@ status: draft
 | По какой информации поймём, что действия дают результат? Кто делает каждый шаг, какие критерии и сроки, кто приносит данные? | Группе, принявшей решение | Решение не передано исполнителям, второй цикл пропущен | Шейн 1999, с. 182–184 |
 | Когда вы последний раз столкнулись с этим? Что тогда происходило? Есть ещё примеры? Что у них общего? | Тому, кто жалуется | Проблема названа ярлыком или готовым решением, а не по случаям | Шейн 1999, с. 172–173 |
 | Сколько изменений идёт одновременно? Можно ли свести их к 2–4 общим смыслам? Не «подсели» ли руководители на кризис? | Руководству | Люди перегружены переменами, побочные изменения не отложены | Бриджес, с. 155–158 |
+| Что из запланированного на прошлой неделе не сделали и почему? | Командам, по статус-письму или на встрече | Причины несделанного показывают, что мешает организации, а не кто ленится | Уодтке, с. 149 |
+| Что сбило вас с главной цели в прошлом квартале: конференция, крупный клиент с особыми требованиями, проблемный сотрудник? | Руководителю и команде | Срочное и блестящее вытесняет важное; под главную цель не защищено время | Уодтке, с. 8, 10–11 |
+| На статус-встрече люди перечисляют всё, что сделали? | Участникам встреч | Встреча стала оправданием занятости, а не разговором о том, приведёт ли работа к результату | Уодтке, с. 81, 130, 148 |
+| Есть ли у вас актуальный список проектов и обязательств, и пересматриваете ли вы его регулярно? Спокойно ли вы говорите людям «нет»? | Собственнику, первому лицу | Перегрузка начинается с первого лица, которое не видит своего портфеля обязательств и не отказывает | Кауфман, изд. 2020, с. 462–463 (из «49 вопросов» для самопроверки, перенос на собственника сделан куратором) |
+| Большую часть времени вы работаете над одной задачей или переключаетесь между несколькими? Сколько времени уходит на размышление о целях и продвижении? | Собственнику, первому лицу | Руководитель дробит внимание, и на выбор главного времени не остаётся | Кауфман, изд. 2020, с. 462 (из «49 вопросов», перенос на собственника сделан куратором) |
 
 ## Что делать в зависимости от зрелости
 
@@ -118,6 +123,10 @@ status: draft
 - **Авралы и простои при ровном спросе.** Проверить, не создают ли колебания заказов сами продажи, акции и бонусы ([level-demand-signals](../approaches/level-demand-signals.md)).
 
 **Подходы девятого прохода.** Совещаний много, решений и действий мало: наблюдать, как группа работает, и восполнять недостающие функции, разбирать встречу в конце ([group-process-observation](../approaches/group-process-observation.md)); способ решения сделать явным ([decision-rights-clarity](../approaches/decision-rights-clarity.md)). Изменений слишком много: свести к нескольким смыслам и отложить побочные ([initiative-triage](../approaches/initiative-triage.md), вклад Бриджеса).
+
+**Подходы десятого прохода.** Целей много, о них не помнят, статус-встречи перечисляют сделанное: одна цель на квартал ([okr-setting-session](../approaches/okr-setting-session.md)) и недельный ритм вокруг неё ([okr-weekly-rhythm](../approaches/okr-weekly-rhythm.md)); ресурсы под обязательства и ставки — [committed-vs-aspirational-goals](../approaches/committed-vs-aspirational-goals.md).
+
+Где расходятся источники десятого прохода. Уодтке ставит одну цель на компанию и считает, что OKR — не всё, что делает команда (Уодтке, с. 152, 161), Доэрр — 3–5 целей и тест «заметная работа не покрыта — добавьте» (Доэрр, с. 36, 52, 198). Уодтке запрещает менять цели посреди квартала (Уодтке, с. 123), Доэрр разрешает (Доэрр, с. 95–96, 207). Оба назначают цифры ключевых результатов без метода, против чего Седдон и Деминг (Седдон, с. 91–102; Деминг, с. 63, 66–67). Данных нет ни у одного: притча и истории успеха.
 
 ## Как понять, что стало лучше
 

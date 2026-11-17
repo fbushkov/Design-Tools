@@ -3,7 +3,7 @@ id: give-control-to-get-control
 title: Отдать контроль, чтобы получить контроль — доверие операторам и внедрение коучингом
 directions: [service-design, team-ai]
 solves: [control-surveillance, employee-experience, metrics-as-target, resistance]
-sources: [dixon-2013-effortless-experience, seddon-2003-freedom-from-command, shostack-1984-designing-services, deming-1982-out-of-crisis, austin-1996-measuring-managing-performance, kotter-1996-leading-change]
+sources: [dixon-2013-effortless-experience, seddon-2003-freedom-from-command, shostack-1984-designing-services, deming-1982-out-of-crisis, austin-1996-measuring-managing-performance, kotter-1996-leading-change, kaufman-2010-personal-mba]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -66,3 +66,5 @@ CQ раскрывают три условия: доверие суждению �
 - **Два-три приёма на старт** (с. 222–224).
 - **Стартовые упражнения.** «Делал / чувствовал / усилие» о собственном опыте клиента, групповое прослушивание со своей формой оценки, дневник усилия (с. 219–220).
 - **«Симулятор полёта».** Отработка трудных звонков в тройках без начальства (с. 230).
+
+- **Заранее заданная граница вместо согласований** (Кауфман, изд. 2020, с. 370–372). Граница допустимого — определить, сообщить и быть готовым её отстоять (с. 371). Кодексы и формальные правила — граница на уровне организации; если правило задано заранее, проверять каждое действие не нужно, и оно само служит знаком доверия (с. 371–372). Ближе всего к рамке, внутри которой оператор решает сам. Граница работает в обе стороны: компания, которая ждёт бесплатных переработок, тоже её нарушает (с. 371).

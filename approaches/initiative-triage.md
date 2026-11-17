@@ -3,7 +3,7 @@ id: initiative-triage
 title: Разбор инициатив — «лучшее ли это использование времени» и список того, что прекратить
 directions: [diagnostics, strategy]
 solves: [busy-no-result, routine-load, slow-flow]
-sources: [epstein-manzoni-2006-performance-measurement, kaufman-2010-personal-mba, rumelt-2011-good-bad-strategy, adizes-1988-corporate-lifecycles, perri-2018-build-trap, kaner-1996-facilitators-guide, goldratt-1984-the-goal, senge-1990-fifth-discipline, womack-1996-lean-thinking, bridges-1991-managing-transitions]
+sources: [epstein-manzoni-2006-performance-measurement, kaufman-2010-personal-mba, rumelt-2011-good-bad-strategy, adizes-1988-corporate-lifecycles, perri-2018-build-trap, kaner-1996-facilitators-guide, goldratt-1984-the-goal, senge-1990-fifth-discipline, womack-1996-lean-thinking, bridges-1991-managing-transitions, wodtke-2016-radical-focus, doerr-2018-measure-what-matters]
 maturity_min: {}
 stages_fit: [1, 2]
 stages_harm: []
@@ -54,3 +54,5 @@ status: draft
 - Четыре исхода задачи: сделать, вычеркнуть, делегировать, отложить (Кауфман, с. 305–310).
 - Публичный список отложенного рядом с 3–4 задачами года; проекты снимают открыто, после разговора о реализуемости с командами (Вумек и Джонс, с. 113–115, 313).
 - Свести идущие изменения к 2–4 общим смыслам, назвать главу, которая кончается, и главу, которая начинается, побочные изменения отложить; спросить, сколько изменений идёт одновременно и не «подсели» ли руководители на кризис (Бриджес, с. 155–158, 197–198).
+
+- **Вопросы Доэрра к портфелю** (Доэрр, с. 52, 82, 87): что будет, если убрать это из дорожной карты в этом квартале; что убрать, чтобы освободить место под новую цель; если задача не ложится в OKR, зачем мы её делаем. Уодтке: «OKR — не всё, что вы делаете, а то, что вы обязаны сделать» (Уодтке, с. 161); в притче досрочно закрывают контракт дизайнера, чья работа не служит главной цели (с. 101–102). Тест Доэрра «заметная часть работы не покрыта OKR — добавьте» (Доэрр, с. 198) тянет в обратную сторону, см. [okr-setting-session](okr-setting-session.md).

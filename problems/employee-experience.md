@@ -5,7 +5,7 @@ directions: [service-design, team-ai]
 category: [employee-experience]
 maturity: { process: [1, 2, 3], management: [2, 3], ai: [1, 2, 3] }
 scale: [small, mid, large]
-approaches: [employee-journey-mapping, service-blueprint, implementation-as-project, system-before-person, automation-by-stage-and-level, human-ai-heuristic-review, algorithmic-control-audit, psych-safety-toolkit, sanctions-ratio-audit, team-cognitive-load-check, experience-engineering, give-control-to-get-control, transition-three-phases, loss-mapping, transition-monitoring-team]
+approaches: [employee-journey-mapping, service-blueprint, implementation-as-project, system-before-person, automation-by-stage-and-level, human-ai-heuristic-review, algorithmic-control-audit, psych-safety-toolkit, sanctions-ratio-audit, team-cognitive-load-check, experience-engineering, give-control-to-get-control, transition-three-phases, loss-mapping, transition-monitoring-team, continuous-performance-conversations]
 cases: []
 tags: [внутренний-сервис, сотрудники, онбординг, инструменты]
 status: draft
@@ -64,6 +64,10 @@ status: draft
 | Какие правила, порядки и устройство работы помогают, а какие мешают отпустить старое, пережить переходное время и начать новое? | Сотрудникам | Организация плохо приспособлена к переходам: узкие должности, нет ротаций | Бриджес, с. 173–175 |
 | Что получили оставшиеся после сокращения — информацию, поддержку, новую роль, признание потери? | Руководству, HR | Оставшиеся проживают потерю и тянут работу ушедших, а помощь досталась только уходящим | Бриджес, с. 202–205 |
 | Не забыта ли какая-то группа? Доходит ли коммуникация и верят ли ей? Какая информация, навыки и помощь нужны? | Команде мониторинга перехода или сотрудникам из разных слоёв | Опыт сотрудников в переходе не доходит до руководства по вертикали | Бриджес, с. 219 |
+| Над чем работаешь? Как идут цели? Что мешает? Что нужно от меня? Как тебе расти ради карьерных целей? | Руководителю — задать сотрудникам; сотрудникам — ответить | Разговор с руководителем идёт только назад, об оценке, а вперёд — о работе и росте — не идёт | Доэрр, с. 137 |
+| Сколько часов руководителя уходит на ежегодную аттестацию, и кто считает её полезной? | HR, руководителям | Аттестация дорогая и никому не помогает; цели пишут под неё, а не под работу | Доэрр, с. 133; Уодтке, с. 155–158 |
+| Что в моей работе вам помогает, что мешает, что я могу сделать иначе? | Руководителю — спросить подчинённых | Обратной связи снизу вверх нет, руководитель не знает, как сам влияет на опыт сотрудников | Доэрр, с. 202 |
+| Ясны ли цели, роли и план? Можно ли рисковать, не боясь показаться глупым? Можно ли рассчитывать друг на друга? Верите ли вы, что работа имеет значение? | Сотрудникам команды | Команда работает плохо не из-за состава, а из-за безопасности, ясности и смысла (вопросы проекта «Аристотель» в пересказе Доэрра) | Доэрр, с. 161 |
 
 ## Что делать в зависимости от зрелости
 
@@ -89,6 +93,8 @@ status: draft
 - **Операторы выгорают от трудных разговоров.** Подготовить десять частых ситуаций «нет» и дать формулировки ([experience-engineering](../approaches/experience-engineering.md)), форум и комитет операторов, коучинг вместо разборов плохих звонков ([give-control-to-get-control](../approaches/give-control-to-get-control.md)).
 
 **Подходы девятого прохода.** Реорганизация, сокращение или новая система меняют работу сотрудников: вести переход людей отдельно от изменения ([transition-three-phases](../approaches/transition-three-phases.md)), разобрать потери каждой группы ([loss-mapping](../approaches/loss-mapping.md)), завести временный канал сигналов снизу ([transition-monitoring-team](../approaches/transition-monitoring-team.md)). Опора — консалтинговый опыт Бриджеса без данных; карт пути сотрудника он не строит, связь с [employee-journey-mapping](../approaches/employee-journey-mapping.md) — по общим знаниям, не сверено.
+
+**Подходы десятого прохода.** Ежегодная аттестация, которой никто не верит: заменить её беседами, обратной связью и признанием ([continuous-performance-conversations](../approaches/continuous-performance-conversations.md)). Где расходятся источники: Доэрр совпадает с Демингом в отказе от рейтинга (Доэрр, с. 133–137; Деминг, с. 81–84), но привязывает признание к целям компании (Доэрр, с. 142), а данные о CFR частично от продавца платформы (с. 134, 139, 221).
 
 ## Как понять, что стало лучше
 
