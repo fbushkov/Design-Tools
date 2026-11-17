@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [diagnostics, strategy]
-approaches: [helping-mode-choice, client-map, share-the-problem, deliberate-feedback-rules, decision-method-choice, group-process-observation, dialogue-circle, future-framed-feedback, agenda-from-letters]
+approaches: [helping-mode-choice, client-map, group-process-observation, humble-inquiry, consulting-contract, meeting-for-action, decision-rights-clarity, psych-safety-toolkit, name-the-resistance, technical-vs-adaptive-challenge, reframe-the-brief, positional-analysis, participation-diamond, ceremony-audit, problem-definition-framework, operational-definitions]
 categories: [resistance, decision-bottleneck, busy-no-result, method-cargo]
 read: true
 rating:

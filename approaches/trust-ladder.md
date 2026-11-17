@@ -3,7 +3,7 @@ id: trust-ladder
 title: Лестница доверия — от жёстких гарантий к мягким
 directions: [strategy, team-ai]
 solves: [control-surveillance, resistance]
-sources: [auzan-2022-cultural-codes, ackoff-emery-1972-purposeful-systems, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, bernstein-2012-transparency-paradox, kellogg-2020-algorithms-at-work, edmondson-2018-fearless-organization, prigozhin-2003-org-development-methods]
+sources: [auzan-2022-cultural-codes, ackoff-emery-1972-purposeful-systems, berman-knight-2006-financial-intelligence, muller-2018-tyranny-of-metrics, austin-1996-measuring-managing-performance, ledeneva-2006-how-russia-works, bernstein-2012-transparency-paradox, kellogg-2020-algorithms-at-work, edmondson-2018-fearless-organization, prigozhin-2003-org-development-methods, bridges-1991-managing-transitions]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -22,6 +22,8 @@ status: draft
 Бернстайн показывает ступень, которую легко пропустить: дать группе видимую границу, а не наблюдать всё. Если организация не даёт видимой приватности, группа строит невидимую из кодов и спектакля, и реальных равновесий два: «всё видно, всё зашифровано» или «границы видимы, шифра нет» (Бернстайн, с. 37–39). Занавес вокруг линии при сохранённой видимости выработки поднял её на 10–15 %, а серьёзные проблемы по-прежнему поднимали наверх (с. 21–29).
 
 Эдмондсон разводит доверие и безопасность: доверять — значит давать другому презумпцию добросовестности, а безопасность — когда её дают тебе (Эдмондсон, с. 40–41). В Barry-Wehmiller убрали табельные часы и звонки на перерыв как практики, «разрушающие доверие», а на рудниках Anglo American доверие строили общим договором и правом рабочих остановить работу (с. 145, 164–165). Пригожин 2003: контроль и доверие ходят парой, консервативный контроль разрастается при большой дистанции власти и взаимной необязательности, а сверхконтроль толкает к искажению отчётности. Инструменты — матрица «кому и в чём доверять» и анонимные шкалы доверия по подразделениям (Пригожин 2003, с. 748–752).
+
+Бриджес (девятый проход) строит доверие в переходе конкретными действиями, главное из которых — говорить правду, и даёт чек-лист доверия (Бриджес, с. 165–168, 176–177; часть чек-листа на с. 176 потеряна при конвертации). Обещание «больше изменений не будет» и бодрый тон он относит к вредным решениям (с. 195–200).
 
 ## Когда работает
 

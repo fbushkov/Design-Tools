@@ -3,7 +3,7 @@ id: ceremony-audit
 title: Проверка церемонии — что из формальной системы работает, а что заполняют для отчёта
 directions: [diagnostics, strategy, team-ai]
 solves: [method-cargo, metrics-as-target, routine-load]
-sources: [epstein-manzoni-2006-performance-measurement, ledeneva-2006-how-russia-works, mollick-2024-co-intelligence, kaufman-2010-personal-mba, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, kordonsky-2008-estate-structure]
+sources: [epstein-manzoni-2006-performance-measurement, ledeneva-2006-how-russia-works, mollick-2024-co-intelligence, kaufman-2010-personal-mba, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, kordonsky-2008-estate-structure, schein-1999-process-consultation]
 maturity_min: {}
 stages_fit: [3, 4]
 stages_harm: []
@@ -50,3 +50,4 @@ status: draft
 - Четыре признака рационализированного мифа (Пибер, Пич, с. 400–401) как вопросы к внедрённой методологии.
 - Вопрос к каждому регулярному документу: кто его читает и какое решение по нему приняли за последний месяц (вопрос выведен из Моллика, с. 100–101).
 - Сравнить цифры, которые идут руководству, с цифрами, которыми пользуются в работе (вопрос выведен из Леденёвой, с. 161–162).
+- Повестка из хаоса и разбор встречи (Шейн 1999, с. 166–167, 215–218): спросить, как составляется повестка, сгруппировать пункты, отделить пожарное от стратегического; 15 минут в конце встречи на шкалы 1–7. Подробнее — [group-process-observation](group-process-observation.md).

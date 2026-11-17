@@ -5,7 +5,7 @@ directions: [service-design, team-ai]
 category: [employee-experience]
 maturity: { process: [1, 2, 3], management: [2, 3], ai: [1, 2, 3] }
 scale: [small, mid, large]
-approaches: [employee-journey-mapping, service-blueprint, implementation-as-project, system-before-person, automation-by-stage-and-level, human-ai-heuristic-review, algorithmic-control-audit, psych-safety-toolkit, sanctions-ratio-audit, team-cognitive-load-check, experience-engineering, give-control-to-get-control]
+approaches: [employee-journey-mapping, service-blueprint, implementation-as-project, system-before-person, automation-by-stage-and-level, human-ai-heuristic-review, algorithmic-control-audit, psych-safety-toolkit, sanctions-ratio-audit, team-cognitive-load-check, experience-engineering, give-control-to-get-control, transition-three-phases, loss-mapping, transition-monitoring-team]
 cases: []
 tags: [внутренний-сервис, сотрудники, онбординг, инструменты]
 status: draft
@@ -61,6 +61,9 @@ status: draft
 | С какого момента начинается путь сотрудника на вашей карте — с объявления о вакансии или с первого рабочего дня? | HR, руководителю | Охват урезан, возможности найма и ожиданий до прихода не видны | Калбах, с. 127 |
 | Заложена ли ориентация на клиента в найм, онбординг, карьеру и премии? Видит ли новичок живых клиентов в первые недели? | HR, руководителям | Клиентоцентричность декларирована, но не встроена в стадии пути сотрудника | Калбах, с. 520–523 |
 | Одинаковые ли нормы на разный по трудоёмкости труд? | Сотрудникам, руководителям участков | Нормы создают обиды и невидимые причины срывов | Вумек и Джонс, с. 90 |
+| Какие правила, порядки и устройство работы помогают, а какие мешают отпустить старое, пережить переходное время и начать новое? | Сотрудникам | Организация плохо приспособлена к переходам: узкие должности, нет ротаций | Бриджес, с. 173–175 |
+| Что получили оставшиеся после сокращения — информацию, поддержку, новую роль, признание потери? | Руководству, HR | Оставшиеся проживают потерю и тянут работу ушедших, а помощь досталась только уходящим | Бриджес, с. 202–205 |
+| Не забыта ли какая-то группа? Доходит ли коммуникация и верят ли ей? Какая информация, навыки и помощь нужны? | Команде мониторинга перехода или сотрудникам из разных слоёв | Опыт сотрудников в переходе не доходит до руководства по вертикали | Бриджес, с. 219 |
 
 ## Что делать в зависимости от зрелости
 
@@ -84,6 +87,8 @@ status: draft
 **Подходы шестого прохода.**
 
 - **Операторы выгорают от трудных разговоров.** Подготовить десять частых ситуаций «нет» и дать формулировки ([experience-engineering](../approaches/experience-engineering.md)), форум и комитет операторов, коучинг вместо разборов плохих звонков ([give-control-to-get-control](../approaches/give-control-to-get-control.md)).
+
+**Подходы девятого прохода.** Реорганизация, сокращение или новая система меняют работу сотрудников: вести переход людей отдельно от изменения ([transition-three-phases](../approaches/transition-three-phases.md)), разобрать потери каждой группы ([loss-mapping](../approaches/loss-mapping.md)), завести временный канал сигналов снизу ([transition-monitoring-team](../approaches/transition-monitoring-team.md)). Опора — консалтинговый опыт Бриджеса без данных; карт пути сотрудника он не строит, связь с [employee-journey-mapping](../approaches/employee-journey-mapping.md) — по общим знаниям, не сверено.
 
 ## Как понять, что стало лучше
 

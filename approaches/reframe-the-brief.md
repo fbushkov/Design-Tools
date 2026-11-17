@@ -3,7 +3,7 @@ id: reframe-the-brief
 title: Переформулировать исходный запрос
 directions: [strategy, diagnostics, service-design]
 solves: [busy-no-result, method-cargo, product-direction]
-sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, magretta-2002-what-management-is, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, block-1981-flawless-consulting, minto-1981-pyramid-principle, rumelt-2011-good-bad-strategy, schein-2013-humble-inquiry, hdl-2011-in-studio, prigozhin-2003-org-development-methods, cagan-2008-inspired, perri-2018-build-trap, torres-2021-continuous-discovery, christensen-2016-competing-against-luck, hall-2013-just-enough-research]
+sources: [hill-2012-dark-matter, dorst-2015-frame-innovation, magretta-2002-what-management-is, meadows-2008-thinking-in-systems, ackoff-1981-creating-corporate-future, ackoff-emery-1972-purposeful-systems, stickdorn-2018-sd-doing, block-1981-flawless-consulting, minto-1981-pyramid-principle, rumelt-2011-good-bad-strategy, schein-2013-humble-inquiry, hdl-2011-in-studio, prigozhin-2003-org-development-methods, cagan-2008-inspired, perri-2018-build-trap, torres-2021-continuous-discovery, christensen-2016-competing-against-luck, hall-2013-just-enough-research, schein-1999-process-consultation]
 maturity_min: {}
 stages_fit: []
 stages_harm: []
@@ -32,6 +32,8 @@ Helsinki Design Lab переворачивает отношение к бриф�
 Каган: клиент описывает решение, а продукт ищет проблему, и на первый вопрос оценки возможности «какую проблему решаем и для кого» обычно отвечают списком функций (Каган, с. 72, 84–85, 192–194). Перри: частая ошибка — назвать проблемой отсутствие функции (Перри, с. 130). Торрес советует тем, кому спускают готовые решения, работать назад — что решение даст клиенту и что бизнесу (Торрес, с. 186–187), а просьбу о функции переводить в нужду вопросом «что бы это вам дало?» (с. 74). Кристенсен: если кажется, что расти некуда, возможно, плохо определена работа клиента (Кристенсен, с. 100–103), см. [jobs-to-be-done](jobs-to-be-done.md).
 
 Холл проверяет заказ интервью стейкхолдеров поперёк подразделений: самое полезное там, где цели и убеждения отделов расходятся, а итог — постановка задачи, цели, метрики успеха и критерии завершения (Холл, с. 75–78, 86–90).
+
+Шейн 1999 (девятый проход): клиент часто знает только, что «что-то не так» (Шейн 1999, с. 22–23), а первая постановка проблемы — нередко проверка того, как отреагирует помогающий; настоящая проблема всплывает, когда появляется доверие (с. 53). Формулировку начинают с конкретных случаев раздражения, а не с выбора решения (рис. 8.2, с. 172–174). Кейсы, где заказ переформулировался по ходу: Ellison, Global Electric, Hansen (с. 27, 44–46, 78–80).
 
 ## Когда работает
 

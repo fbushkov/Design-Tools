@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics, team-ai]
-approaches: [immunity-to-change-map, big-assumption-test, technical-vs-adaptive-challenge, name-the-resistance, critical-assumption-testing, psych-safety-toolkit, humble-inquiry, system-before-person, eight-stage-change]
+approaches: [immunity-to-change-map, big-assumption-test, technical-vs-adaptive-challenge, name-the-resistance, critical-assumption-testing, psych-safety-toolkit, humble-inquiry, system-before-person, eight-stage-change, helping-mode-choice]
 categories: [resistance, decision-bottleneck, busy-no-result, method-cargo]
 read: true
 rating:

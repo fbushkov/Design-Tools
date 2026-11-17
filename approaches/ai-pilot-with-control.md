@@ -3,7 +3,7 @@ id: ai-pilot-with-control
 title: Пилот ИИ с базовым замером и контрольной группой
 directions: [team-ai, diagnostics]
 solves: [ai-no-effect]
-sources: [dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, seddon-2003-freedom-from-command, stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, metr-2025-ai-developer-productivity, dellacqua-2025-cybernetic-teammate, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods]
+sources: [dellacqua-2026-jagged-frontier, brynjolfsson-2025-genai-at-work, seddon-2003-freedom-from-command, stickdorn-2018-sd-doing, ackoff-1981-creating-corporate-future, metr-2025-ai-developer-productivity, dellacqua-2025-cybernetic-teammate, prigozhin-2007-disorganization, prigozhin-2003-org-development-methods, bridges-1991-managing-transitions]
 maturity_min: { data: 2, ai: 2 }
 stages_fit: []
 stages_harm: []
@@ -46,6 +46,7 @@ status: draft
 - METR против Делл'Аквы о задачах пилота. Синтетические задачи завышают пользу (Беккер и др., с. 3, 17–18), поэтому пилот на учебных задачах, как в экспериментах BCG и P&G, не переносится на реальный процесс с большим неявным контекстом. В Cybernetic Teammate задачи были реальными, но однодневными, онлайн и только на генерацию идей (Делл'Аква и др. 2025, с. 11–12, 22).
 - В Cybernetic Teammate цифра экономии времени в тексте (16,4 %) не сходится с таблицей (около 30 % по пересчёту конспектора), проверок устойчивости в рабочей версии нет, оценщики — студенты MBA с умеренным согласием (ICC2 0,45), четверо соавторов из P&G (Делл'Аква и др. 2025, с. 3, 17, 45, 50–51). Это рабочая версия HBS 25-043.
 - **Провал тиражирования объясняют людьми.** Неудачу на шести базах из семи Пригожин связывает с личными качествами директоров и слабой клиентской ориентацией компании (Пригожин 2007, с. 287–289; Пригожин 2003, с. 870), а не с устройством, что расходится с [system-before-person](system-before-person.md).
+- **Бриджес против пилотов.** Бриджес против дробления изменения на этапы и против модельной команды из лучших: она оголяет другие группы (Бриджес, с. 46, 70). Пилот с контрольной группой — ограниченный первый этап. Разница, вероятно, в предмете: пилот проверяет гипотезу до решения, а Бриджес говорит об окончании ролей после решения (вывод конспектора, автор различия не делает). Если пилот на деле уже меняет роли, его потери стоит разобрать через [loss-mapping](loss-mapping.md).
 
 ## Как я его адаптирую
 

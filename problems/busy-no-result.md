@@ -5,7 +5,7 @@ directions: [diagnostics]
 category: [busy-no-result]
 maturity: { management: [1, 2, 3], process: [1, 2] }
 scale: [micro, small, mid]
-approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge, value-stream-map-current, future-state-questions, dedicated-product-team, level-demand-signals]
+approaches: [failure-demand-analysis, vanguard-check, design-against-demand, process-behavior-chart, targets-to-process-data, purpose-derived-measures, strategic-tradeoffs, reframe-the-brief, frame-creation, leverage-points, mess-formulation, program-logic-model, solve-resolve-dissolve, system-traps, layers-of-analysis, meeting-for-action, pyramid-principle, problem-definition-framework, initiative-triage, strategy-kernel, proximate-objectives, chain-link-campaigns, hump-chart, decision-implementability-audit, four-key-delivery-metrics, opportunity-solution-tree, outcome-strategy-cascade, paei-role-gap, participation-diamond, team-cognitive-load-check, throughput-accounting, technical-vs-adaptive-challenge, value-stream-map-current, future-state-questions, dedicated-product-team, level-demand-signals, group-process-observation]
 cases: []
 tags: [потери, фокус, диагностика]
 status: draft
@@ -68,6 +68,10 @@ status: draft
 | Сколько работы сделано раньше, чем она нужна следующему шагу или клиенту, и что с ней потом происходит: хранят, перекладывают, переделывают? | Руководителям участков, по месту | Люди заняты перепроизводством, оно порождает хранение, сортировку и переделку и прячет брак | Ротер и Шук, с. 51–52, 60, 116 |
 | Зачем нам столько людей, площадей, оборудования и запасов, чтобы сделать так мало? | Первому лицу, руководителям | Ресурсы съедают ожидание и партии, а не работа | Вумек и Джонс, с. 199 (вопрос Бирна) |
 | Сколько разборов несоответствий или претензий в год, и какая доля кончается решением «принять как есть»? | Службе качества, по журналу | Работа ради работы: проверки и разборы ничего не меняют | Вумек и Джонс, с. 214–215 |
+| Что мы пытаемся сделать сегодня? Чего хотим добиться к концу встречи? Как составляется повестка? | Участникам совещания | Совещания без задачи и с повесткой из хаоса | Шейн 1999, с. 166–167 |
+| По какой информации поймём, что действия дают результат? Кто делает каждый шаг, какие критерии и сроки, кто приносит данные? | Группе, принявшей решение | Решение не передано исполнителям, второй цикл пропущен | Шейн 1999, с. 182–184 |
+| Когда вы последний раз столкнулись с этим? Что тогда происходило? Есть ещё примеры? Что у них общего? | Тому, кто жалуется | Проблема названа ярлыком или готовым решением, а не по случаям | Шейн 1999, с. 172–173 |
+| Сколько изменений идёт одновременно? Можно ли свести их к 2–4 общим смыслам? Не «подсели» ли руководители на кризис? | Руководству | Люди перегружены переменами, побочные изменения не отложены | Бриджес, с. 155–158 |
 
 ## Что делать в зависимости от зрелости
 
@@ -112,6 +116,8 @@ status: draft
 
 - **Проектов много, до запуска доходят единицы.** Снять проекты и дать выделенные команды первым в списке ([dedicated-product-team](../approaches/dedicated-product-team.md)).
 - **Авралы и простои при ровном спросе.** Проверить, не создают ли колебания заказов сами продажи, акции и бонусы ([level-demand-signals](../approaches/level-demand-signals.md)).
+
+**Подходы девятого прохода.** Совещаний много, решений и действий мало: наблюдать, как группа работает, и восполнять недостающие функции, разбирать встречу в конце ([group-process-observation](../approaches/group-process-observation.md)); способ решения сделать явным ([decision-rights-clarity](../approaches/decision-rights-clarity.md)). Изменений слишком много: свести к нескольким смыслам и отложить побочные ([initiative-triage](../approaches/initiative-triage.md), вклад Бриджеса).
 
 ## Как понять, что стало лучше
 

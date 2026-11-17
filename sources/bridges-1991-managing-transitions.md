@@ -8,7 +8,7 @@ type: book
 language: en
 link:
 directions: [strategy, diagnostics, team-ai]
-approaches: [transition-three-phases, loss-mapping, transition-monitoring-team, transition-readiness-audit, four-p-new-beginning, transition-leadership-acts]
+approaches: [transition-three-phases, loss-mapping, transition-monitoring-team, name-the-resistance, eight-stage-change, immunity-to-change-map, technical-vs-adaptive-challenge, growth-phase-diagnosis, initiative-triage, system-before-person, trust-ladder, participation-diamond, proximate-objectives, implementation-as-project, lean-transition-roadmap, ai-pilot-with-control]
 categories: [resistance, employee-experience, method-cargo, busy-no-result, decision-bottleneck]
 read: true
 rating:

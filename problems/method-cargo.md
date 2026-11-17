@@ -5,7 +5,7 @@ directions: [strategy]
 category: [method-cargo]
 maturity: { management: [2, 3], process: [2, 3] }
 scale: [small, mid, large]
-approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions, map-type-selection, journey-management-readiness, lean-transition-roadmap]
+approaches: [dark-matter-mapping, embedded-strategic-design, vanguard-check, it-after-improvement, reframe-the-brief, idealized-design, implementation-as-project, intermediate-institutions, leverage-points, rules-for-top-first, consulting-contract, eight-stage-change, strategy-kernel, ceremony-audit, rule-feasibility-check, culture-traits-diagnosis, growth-phase-diagnosis, studio-week, decision-implementability-audit, nominal-vs-real-allocation, outcome-strategy-cascade, paei-role-gap, positional-analysis, team-types-and-interaction-modes, immunity-to-change-map, technical-vs-adaptive-challenge, future-state-questions, map-type-selection, journey-management-readiness, lean-transition-roadmap, transition-three-phases, helping-mode-choice, client-map]
 cases: []
 tags: [внедрение, мода, ритуал, системное-мышление]
 status: draft
@@ -70,6 +70,10 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 | Есть ли постоянная функция улучшений? Кто отвечает за доработки после события? Говорят ли эксперты по качеству, обслуживанию и lean одно и то же разными словами? | Руководителю, специалистам по улучшениям | Разовые «блицы» без структуры теряются, методологии конкурируют | Вумек и Джонс, с. 162–163, 200–201, 307–308, 381–382 |
 | Где островки в море муда: ячейки и команды есть, а запасы на недели и работа по прогнозу остались? | Тем, кто внедрял lean, на месте | Внедрены отдельные техники, поток не изменился | Вумек и Джонс, с. 301–302 |
 | Делегировало ли первое лицо улучшения, продолжая «управлять по цифрам»? | Руководителям, специалистам по улучшениям | Главная причина провала перехода по Бирну из Wiremold | Вумек и Джонс, с. 156 |
+| Что мы говорим и что вознаграждаем: команду или личный вклад, клиента или «по правилам», риск или «без ошибок»? | Руководителю, HR | Новый метод противоречит наградам и не приживётся | Бриджес, с. 35, 45, 116–117 |
+| В чём проблема, кто так считает, на каких данных, что будет без изменения? Нет ли «пустой цели» — каприза, видимости активности, копии соседей, скрытой цели? | Заказчику изменения | Метод внедряют без проблемы, ради видимости или вслед за другими | Бриджес, с. 104–106 |
+| Ясна ли проблема и ясно ли решение? Кто ставил диагноз и верят ли ему те, кто будет внедрять? | Заказчику | Покупают экспертизу при неясной проблеме, и рецепт не внедрится | Шейн 1999, с. 24–33, 37–38 |
+| Чего на самом деле ждёт заказчик: оценить подчинённых, разобраться с «трудными людьми», продать уже принятое решение? Уверен ли он в ответе, ищет ли одобрения начатого? | Себе, после первой встречи | Консультанта зовут узаконить готовое решение | Шейн 1999, с. 243, 256 |
 
 ## Что делать в зависимости от зрелости
 
@@ -114,6 +118,10 @@ Scrum, OKR, ЦКП, бережливые инструменты, CRM или ИИ
 - **Lean внедрён событиями.** Пятилетний план с функцией улучшений, планом по каждому потоку и защитой занятости ([lean-transition-roadmap](../approaches/lean-transition-roadmap.md)).
 
 Где расходятся источники восьмого прохода. **Пересмотр 2003 года.** Вумек и Джонс сами признали, что последователи переняли «камикадзе-кайдзен» — разрозненные события без общего плана потока, не давшие ничего клиенту и прибыли (Вумек и Джонс, с. 372–374), и что недооценили менеджера потока: без ответственного и плана карты будущего состояния не воплощаются (с. 379–381). Это совпадает с Ротером и Шуком ([value-stream-manager](../approaches/value-stream-manager.md)) и смягчает их собственный рецепт 1996 года распустить функции. **Способ изменений.** Авторы делают ставку на сэнсэя и «убрать тормозящих» (с. 310–311, 321), Седдон — на переучивание руководителей на своих данных (Седдон, с. 140–142, 190–193). Позиции не сведены.
+
+**Подходы девятого прохода.** Заказ «внедрить метод» на первой встрече: выяснить, ясны ли проблема и решение, и выбрать режим помощи ([helping-mode-choice](../approaches/helping-mode-choice.md)); разложить, кто контактный, основной и конечный клиент ([client-map](../approaches/client-map.md)). Метод уже внедряют: вести переход людей и сверить слова с наградами ([transition-three-phases](../approaches/transition-three-phases.md)).
+
+Где расходятся источники девятого прохода. Шейн против интервью и анкет по умолчанию и против модели «диагностика → рекомендации»: «чистой диагностики не бывает» (Шейн 1999, с. 32–35, 246–247). Блок строит работу на данных, собранных консультантом, и встрече с выводами (Блок, с. 162–174, 213–238). Подробнее в [consulting-contract](../approaches/consulting-contract.md).
 
 ## Как понять, что стало лучше
 
